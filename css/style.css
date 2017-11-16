@@ -239,18 +239,18 @@ main {
 /* WINDOW BUTTONS */
 .buttons-wrap {
     box-sizing: border-box;
-    cursor: pointer;
-    margin-top: 0.5rem;
-    margin-left: 0.5rem;
+    margin-top: 0.7rem;
+    margin-left: 0.7rem;
     position: fixed;
     z-index: 2;
 }
 .buttons-wrap__window-btn {
     padding: 0;
-    width: 1.5rem;
+    width: 1rem;
     background-color: rgba(0,0,0,0);
     border: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    cursor: pointer;
 }

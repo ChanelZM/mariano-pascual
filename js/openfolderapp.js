@@ -22,9 +22,8 @@
         //Function will open the right window
         open: function(parent, id){
             giveSelectedDesign(parent);
-            console.log(id);
+
             var section = document.querySelector(id);
-            console.log(section);
 
             if(section.getAttribute('class').includes('desktop-folder_hidden')){
                 section.classList.add('desktop-folder_open');
@@ -35,16 +34,19 @@
 
     //Depending on the amount of clicks, a different function will be triggered.
     function checkAmountOfClicks(e){
-        console.log(e);
         clickCount++;
+
         if(clickCount === 1){
             singleClickTimer = setTimeout(function(){
                 clickCount = 0;
+
                 item.select(e.target.parentElement.parentElement);
             }, 200);
         } else if(clickCount === 2){
             clearTimeout(singleClickTimer);
+
             clickCount = 0;
+            
             item.open(e.target.parentElement.parentElement, e.target.hash);
         }
     }
