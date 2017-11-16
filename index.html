@@ -5,26 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mariano Pascual</title>
+    <link href="https://fonts.googleapis.com/css?family=Karla:400,400i,700" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <nav class="top-nav">
         <ul>
             <li class="top-nav__item">
-                <img src="img/folder.png" alt="Folder" />
-                <h1>About</h1>
+                <img src="img/folder.png" alt="Folder" hidden />
+                <h1><a href="#about">About</a></h1>
             </li>
             <li class="top-nav__item">
-                <img src="img/folder.png" alt="Folder" />
-                <h1>Projects</h1>
+                <img src="img/folder.png" alt="Folder" hidden />
+                <h1><a href="#projects">Projects</a></h1>
             </li>
             <li class="top-nav__item">
-                <img src="img/folder.png" alt="Folder" />
-                <h1>Spotify</h1>
+                <img src="img/folder.png" alt="Folder" hidden />
+                <h1><a href="#spotify">Spotify</a></h1>
             </li>
             <li class="top-nav__item">
-                <img src="img/folder.png" alt="Folder" />
-                <h1>Super secret stuff</h1>
+                <img src="img/folder.png" alt="Folder" hidden />
+                <h1><a href="#supersecretstuff">Super secret stuff</a></h1>
             </li>
         </ul>
     </nav>
@@ -77,19 +78,38 @@
             <h1 class="desktop-folder__title">Super Secret stuff</h1>
         </section>
     </main>
-    <nav>
-        <button>Start</button>
-        <ul>
-            <li>
-                Item 1
+    <nav class="bottom-nav" hidden>
+        <ul class="bottom-nav__list">
+            <li class="bottom-nav__item">
+                <img src="img/finder.png" alt="Finder logo" />
+                <h2><a href="#finder">Finder</a></h2>
             </li>
-            <li>
-                Item 2
+            <li class="bottom-nav__item">
+                <img src="img/chrome.ico" alt="Chrome logo" />
+                <h2><a href="#chrome">Chrome</a></h2>
+            </li class="bottom-nav__item">
+            <li class="bottom-nav__item">
+                <img src="img/spotify.png" alt="Spotify logo" />
+                <h2><a href="#spotify">Spotify</a></h2>
             </li>
-            <li>
-                Item 3
+            <li class="bottom-nav__item">
+                <img src="img/sketch.png" alt="Sketch logo" />
+                <h2><a href="#sketch">Sketch</a></h2>
+            </li>
+            <li class="bottom-nav__item">
+                <img src="img/ai.png" alt="Illustrator logo" />
+                <h2><a href="#illustrator">Illustrator</a></h2>
+            </li>
+            <li class="bottom-nav__item">
+                <img src="img/ps.svg" alt="Photoshop logo" />
+                <h2><a href="#photoshop">Photoshop</a></h2>
+            </li>
+            <li class="bottom-nav__item">
+                <img src="img/agenda.ico" alt="Agenda logo" />
+                <h2><a href="#agenda">Agenda</a></h2>
             </li>
         </ul>
     </nav>
+    <script src="js/script.js"></script>
 </body>
 </html>

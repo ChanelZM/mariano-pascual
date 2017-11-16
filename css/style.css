@@ -1,0 +1,78 @@
+/* GENERAL */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Karla', sans-serif;
+    background-color: lightseagreen
+}
+main {
+    display: block;
+}
+[hidden] {
+    display: none;
+}
+
+/* TOP NAVIGATION */
+.top-nav {
+    margin: 2rem;
+    width: fit-content;
+}
+.top-nav__item {
+    display: inline-block;
+    width: 8rem;
+    list-style: none;
+}
+.top-nav ul {
+    display: flex;
+    padding-left: 0;
+    width: 36rem;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.top-nav__item img {
+    width: 5rem;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+.top-nav__item h1 {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+/* DESKTOP FOLDERS */
+.desktop-folder__hidden {
+    display: none;
+}
+
+/* BOTTOM NAVIGATION */
+.bottom-nav {
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 8px 8px 0 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.bottom-nav__list {
+    box-sizing: border-box;
+    margin: 0;
+    padding-left: 0;
+    bottom: 2.4rem;
+    left: 0;
+}
+.bottom-nav__item {
+    display: inline-block;
+    padding: 0.2rem;
+    width: 3rem;
+    list-style: none;
+}
+.bottom-nav__item img {
+    width: 100%;
+}
+.bottom-nav__item h2 {
+    display: none;
+}
