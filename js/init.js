@@ -6,12 +6,17 @@
             bottomNav = document.querySelector('.bottom-nav'),
             folderLinks = document.querySelectorAll('.top-nav__item a'),
             macBar = document.querySelector('.mac-bar'),
+            folderNav = document.querySelectorAll('.folder-nav'),
             i,
             j,
-            k;
+            k,
+            m;
 
         for(i = 0; i < folderImg.length; i++){
             folderImg[i].removeAttribute('hidden');
+        }
+        for(m = 0; m < folderNav.length; m++){
+            folderNav[m].removeAttribute('hidden');
         }
 
         for(j = 0; j < desktopFolderContent.length; j++){

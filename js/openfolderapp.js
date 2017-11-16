@@ -5,23 +5,35 @@
     var clickCount = 0;
     var singleClickTimer;
 
-    var item = {
-        //Function that will handle the single click
-        select: function(parent){
-            console.log(parent);
-            if(parent.getAttribute('class') == 'top-nav__item'){
-                for(var i = 0; i < folders.length; i++){
-                    folders[i].classList.remove('top-nav__item_selected');
-                }
-                parent.classList.add('top-nav__item_selected');
+    function giveSelectedDesign(el){
+        if(el.getAttribute('class') == 'top-nav__item'){
+            for(var i = 0; i < folders.length; i++){
+                folders[i].classList.remove('top-nav__item_selected');
             }
+            el.classList.add('top-nav__item_selected');
+        }
+    }
+
+    var item = {
+        //Function gives the parent item a selected design
+        select: function(parent){
+            giveSelectedDesign(parent);
         },
-        //Function that will handle the double click
-        open: function(e){
-            console.log('double click worked: ' + e.target);
+        //Function will open the right window
+        open: function(parent, id){
+            giveSelectedDesign(parent);
+            console.log(id);
+            var section = document.querySelector(id);
+            console.log(section);
+
+            if(section.getAttribute('class').includes('desktop-folder_hidden')){
+                section.classList.add('desktop-folder_open');
+                section.classList.remove('desktop-folder_hidden');
+            }
         }
     };
 
+    //Depending on the amount of clicks, a different function will be triggered.
     function checkAmountOfClicks(e){
         console.log(e);
         clickCount++;
@@ -33,7 +45,7 @@
         } else if(clickCount === 2){
             clearTimeout(singleClickTimer);
             clickCount = 0;
-            item.open(e);
+            item.open(e.target.parentElement.parentElement, e.target.hash);
         }
     }
 

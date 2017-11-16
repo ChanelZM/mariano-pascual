@@ -7,9 +7,12 @@ The website is supposed to be mimicking an Operating System and contains all of 
 ## Wishlist
 - [ ] Drag and dropping folders everywhere.
 - [ ] Spotify list of his music.
-- [ ] Full Responsive.
+- [ ] Full Responsive Design.
 - [ ] Backwards Compatible.
 - [ ] Make it work without JavaScript.
+- [ ] Resizable windows.
+- [ ] The order of opening files/windows is the same order of z-index.
+- [ ] Windows open at different coordinates on the screen.
 
 ## Features
 - Single page application.
