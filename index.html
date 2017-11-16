@@ -9,26 +9,53 @@
     <link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <nav class="top-nav">
-        <ul>
-            <li class="top-nav__item">
-                <img src="img/folder.png" alt="Folder" hidden />
-                <h1><a href="#about">About</a></h1>
-            </li>
-            <li class="top-nav__item">
-                <img src="img/folder.png" alt="Folder" hidden />
-                <h1><a href="#projects">Projects</a></h1>
-            </li>
-            <li class="top-nav__item">
-                <img src="img/folder.png" alt="Folder" hidden />
-                <h1><a href="#spotify">Spotify</a></h1>
-            </li>
-            <li class="top-nav__item">
-                <img src="img/folder.png" alt="Folder" hidden />
-                <h1><a href="#supersecretstuff">Super secret stuff</a></h1>
-            </li>
-        </ul>
-    </nav>
+    <header>
+        <section class="mac-bar" hidden>
+            <ul>
+                <li class="mac-bar__item">
+                    <img src="img/apple.svg" alt="Apple icon" />
+                </li>
+                <li class="mac-bar__item mac-bar__item_strong">
+                    Finder
+                </li>
+                <li class="mac-bar__item">
+                    File
+                </li>
+                <li class="mac-bar__item">
+                    Edit
+                </li>
+                <li class="mac-bar__item">
+                    Go
+                </li>
+                <li class="mac-bar__item">
+                    Window
+                </li>
+                <li class="mac-bar__item">
+                    Help
+                </li>
+            </ul>
+        </section>
+        <nav class="top-nav">
+            <ul>
+                <li class="top-nav__item">
+                    <img src="img/folder.png" alt="Folder" hidden />
+                    <h1><a href="#about" class="link_style_normal">About</a></h1>
+                </li>
+                <li class="top-nav__item">
+                    <img src="img/folder.png" alt="Folder" hidden />
+                    <h1><a href="#projects" class="link_style_normal">Projects</a></h1>
+                </li>
+                <li class="top-nav__item">
+                    <img src="img/folder.png" alt="Folder" hidden />
+                    <h1><a href="#spotify" class="link_style_normal">Spotify</a></h1>
+                </li>
+                <li class="top-nav__item">
+                    <img src="img/folder.png" alt="Folder" hidden />
+                    <h1><a href="#supersecretstuff" class="link_style_normal">Super secret stuff</a></h1>
+                </li>
+            </ul>
+        </nav>
+    </header>
     <main>
         <section class="desktop-folder">
             <h1 class="desktop-folder__title">About</h1>
@@ -110,6 +137,7 @@
             </li>
         </ul>
     </nav>
-    <script src="js/script.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/openfolderapp.js"></script>
 </body>
 </html>

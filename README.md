@@ -9,6 +9,7 @@ The website is supposed to be mimicking an Operating System and contains all of 
 [ ] Spotify list of his music.
 [ ] Full Responsive.
 [ ] Backwards Compatible.
+[ ] Make it work without JavaScript.
 
 ## Features
 - Single page application.
