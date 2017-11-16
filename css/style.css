@@ -197,6 +197,7 @@ main {
 .folder-content.js {
     display: inline-block;
     padding-top: 3rem;
+    position: relative;
     margin-right: 1rem;
     width: calc(100% - 20rem);
     float: right;
@@ -233,4 +234,23 @@ main {
     box-sizing: border-box;
     padding: 2rem;
     width: 100%;
+}
+
+/* WINDOW BUTTONS */
+.buttons-wrap {
+    box-sizing: border-box;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+    position: fixed;
+    z-index: 2;
+}
+.buttons-wrap__window-btn {
+    padding: 0;
+    width: 1.5rem;
+    background-color: rgba(0,0,0,0);
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
