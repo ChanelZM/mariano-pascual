@@ -7,10 +7,12 @@
             folderLinks = document.querySelectorAll('.top-nav__item a'),
             macBar = document.querySelector('.mac-bar'),
             folderNav = document.querySelectorAll('.folder-nav'),
+            folderContent = document.querySelectorAll('.folder-content'),
             i,
             j,
             k,
-            m;
+            m,
+            n;
 
         for(i = 0; i < folderImg.length; i++){
             folderImg[i].removeAttribute('hidden');
@@ -21,6 +23,9 @@
 
         for(j = 0; j < desktopFolderContent.length; j++){
             desktopFolderContent[j].classList.add('desktop-folder_hidden');
+        }
+        for(n = 0; n < folderContent.length; n++){
+            folderContent[n].classList.add('js');
         }
 
         for(k = 0; k < folderLinks.length; k++){

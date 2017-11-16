@@ -11,7 +11,7 @@
 <body>
     <header>
         <section class="mac-bar" hidden>
-            <ul>
+            <ul class="nav_basic">
                 <li class="mac-bar__item">
                     <img src="img/apple.svg" alt="Apple icon" />
                 </li>
@@ -36,7 +36,7 @@
             </ul>
         </section>
         <nav class="top-nav">
-            <ul>
+            <ul class="nav_basic">
                 <li class="top-nav__item">
                     <img src="img/folder.png" alt="Folder" hidden />
                     <h1><a href="#about" class="link_style_normal">About</a></h1>
@@ -62,7 +62,7 @@
             <aside class="folder-nav" hidden>
                 <h2>Favorites</h2>
                 <nav>
-                    <ul>
+                    <ul class="nav_basic">
                         <li class="folder-nav__item">
                             <h3><a href="#about" class="link_style_normal">About</a></h3>
                         </li>
@@ -87,48 +87,88 @@
         </section>
         <section class="desktop-folder" id="projects">
             <h1 class="desktop-folder__title">Projects</h1>
-            <ul class="project-list">
-                <li class="project-list__item">
-                    <img src="img/folder.png" alt="Folder" />
-                    <h2>Project 1</h2>
-                    <section class="project-detail">
-                        <h2 class="project-detail__title">Project 1</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, ad natum hendrerit vel, no qui quem utamur disputationi, an vocent habemus pro. Dico maluisset ex vis, eam veri perpetua te, his inani impetus eleifend ad. Ferri assentior sententiae an eam. Ut nibh nostrum has, per meis ludus apeirian te, quo affert deseruisse at. Mei ex impetus nusquam rationibus, laudem doming qui eu. Eum nobis sapientem te. Has paulo libris delicata ne, consul petentium nec no.
-                        </p>
-                    </section>
-                </li>
-                <li class="project-list__item">
-                    <img src="img/folder.png" alt="Folder" />
-                    <h2>Project 2</h2>
-                    <section class="project-detail">
-                        <h2 class="project-detail__title">Project 2</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, ad natum hendrerit vel, no qui quem utamur disputationi, an vocent habemus pro. Dico maluisset ex vis, eam veri perpetua te, his inani impetus eleifend ad. Ferri assentior sententiae an eam. Ut nibh nostrum has, per meis ludus apeirian te, quo affert deseruisse at. Mei ex impetus nusquam rationibus, laudem doming qui eu. Eum nobis sapientem te. Has paulo libris delicata ne, consul petentium nec no.
-                        </p>
-                    </section>
-                </li>
-                <li class="project-list__item">
-                    <img src="img/folder.png" alt="Folder" />
-                    <h2>Project 3</h2>
-                    <section class="project-detail">
-                        <h2 class="project-detail__title">Project 3</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, ad natum hendrerit vel, no qui quem utamur disputationi, an vocent habemus pro. Dico maluisset ex vis, eam veri perpetua te, his inani impetus eleifend ad. Ferri assentior sententiae an eam. Ut nibh nostrum has, per meis ludus apeirian te, quo affert deseruisse at. Mei ex impetus nusquam rationibus, laudem doming qui eu. Eum nobis sapientem te. Has paulo libris delicata ne, consul petentium nec no.
-                        </p>
-                    </section>
-                </li>
-            </ul>
+            <aside class="folder-nav" hidden>
+                <h2>Favorites</h2>
+                <nav>
+                    <ul class="nav_basic">
+                        <li class="folder-nav__item">
+                            <h3><a href="#about" class="link_style_normal">About</a></h3>
+                        </li>
+                        <li class="folder-nav__item folder-nav__open">
+                            <h3><a href="#projects" class="link_style_normal">Projects</a></h3>
+                        </li>
+                        <li class="folder-nav__item">
+                            <h3><a href="#spotify" class="link_style_normal">Spotify</a></h3>
+                        </li>
+                        <li class="folder-nav__item">
+                            <h3><a href="#supersecretstuff" class="link_style_normal">Super secret stuff</a></h3>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+            <section class="folder-content">
+                <ul class="project-list nav_basic">
+                    <li class="project-list__item">
+                        <img src="img/folder.png" alt="Folder" />
+                        <h2>Project 1</h2>
+                        <section class="project-detail">
+                            <h2 class="project-detail__title">Project 1</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, ad natum hendrerit vel, no qui quem utamur disputationi, an vocent habemus pro. Dico maluisset ex vis, eam veri perpetua te, his inani impetus eleifend ad. Ferri assentior sententiae an eam. Ut nibh nostrum has, per meis ludus apeirian te, quo affert deseruisse at. Mei ex impetus nusquam rationibus, laudem doming qui eu. Eum nobis sapientem te. Has paulo libris delicata ne, consul petentium nec no.
+                            </p>
+                        </section>
+                    </li>
+                    <li class="project-list__item">
+                        <img src="img/folder.png" alt="Folder" />
+                        <h2>Project 2</h2>
+                        <section class="project-detail">
+                            <h2 class="project-detail__title">Project 2</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, ad natum hendrerit vel, no qui quem utamur disputationi, an vocent habemus pro. Dico maluisset ex vis, eam veri perpetua te, his inani impetus eleifend ad. Ferri assentior sententiae an eam. Ut nibh nostrum has, per meis ludus apeirian te, quo affert deseruisse at. Mei ex impetus nusquam rationibus, laudem doming qui eu. Eum nobis sapientem te. Has paulo libris delicata ne, consul petentium nec no.
+                            </p>
+                        </section>
+                    </li>
+                    <li class="project-list__item">
+                        <img src="img/folder.png" alt="Folder" />
+                        <h2>Project 3</h2>
+                        <section class="project-detail">
+                            <h2 class="project-detail__title">Project 3</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, ad natum hendrerit vel, no qui quem utamur disputationi, an vocent habemus pro. Dico maluisset ex vis, eam veri perpetua te, his inani impetus eleifend ad. Ferri assentior sententiae an eam. Ut nibh nostrum has, per meis ludus apeirian te, quo affert deseruisse at. Mei ex impetus nusquam rationibus, laudem doming qui eu. Eum nobis sapientem te. Has paulo libris delicata ne, consul petentium nec no.
+                            </p>
+                        </section>
+                    </li>
+                </ul>
+            </section>
         </section>
         <section class="desktop-folder" id="spotify">
             <h1 class="desktop-folder__title">Spotify</h1>
         </section>
         <section class="desktop-folder" id="supersecretstuff">
             <h1 class="desktop-folder__title">Super Secret stuff</h1>
+            <aside class="folder-nav" hidden>
+                <h2>Favorites</h2>
+                <nav>
+                    <ul class="nav_basic">
+                        <li class="folder-nav__item">
+                            <h3><a href="#about" class="link_style_normal">About</a></h3>
+                        </li>
+                        <li class="folder-nav__item">
+                            <h3><a href="#projects" class="link_style_normal">Projects</a></h3>
+                        </li>
+                        <li class="folder-nav__item">
+                            <h3><a href="#spotify" class="link_style_normal">Spotify</a></h3>
+                        </li>
+                        <li class="folder-nav__item">
+                            <h3><a href="#supersecretstuff" class="link_style_normal">Super secret stuff</a></h3>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
         </section>
     </main>
     <nav class="bottom-nav" hidden>
-        <ul class="bottom-nav__list">
+        <ul class="bottom-nav__list nav_basic">
             <li class="bottom-nav__item">
                 <img src="img/finder.png" alt="Finder logo" />
                 <h2><a href="#finder">Finder</a></h2>

@@ -12,6 +12,13 @@ main {
 [hidden] {
     display: none;
 }
+.nav_basic {
+    margin: 0;
+    padding-left: 0;
+}
+.nav_basic li {
+    list-style: none;
+}
 
 /* TOP NAVIGATION */
 .top-nav {
@@ -23,7 +30,6 @@ main {
     display: inline-block;
     position: relative;
     width: 8rem;
-    list-style: none;
     cursor: pointer;
 }
 .top-nav ul {
@@ -105,6 +111,7 @@ main {
     background: linear-gradient(to bottom, rgba(224,224,224,1) 0%,rgba(178,178,178,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0e0e0', endColorstr='#b2b2b2',GradientType=0 );
     border-radius: 5px 5px 0 0;
+    z-index: 1;
 }
 
 /* BOTTOM NAVIGATION */
@@ -118,7 +125,6 @@ main {
 }
 .bottom-nav__list {
     box-sizing: border-box;
-    margin: 0;
     padding-left: 0;
     bottom: 2.4rem;
     left: 0;
@@ -128,7 +134,6 @@ main {
     position: relative;
     padding: 0.2rem;
     width: 3rem;
-    list-style: none;
 }
 .bottom-nav__item img {
     width: 100%;
@@ -155,15 +160,55 @@ main {
     margin-right: 1rem;
     font-size: 1rem;
     font-weight: normal;
-    list-style: none;
 }
 .mac-bar__item_strong {
     font-weight: bold;
 }
 .mac-bar ul {
-    margin: 0;
     padding: 0.1rem 3rem;
 }
 .mac-bar__item img {
     width: 1rem;
 }
+
+/* FOLDER NAVIGATION */
+.folder-nav {
+    box-sizing: border-box;
+    display: inline-block;
+    height: 40rem;
+    position: fixed;
+    width: 18rem;
+    background-color: #e9e9e9;
+    border-radius: 5px 0 0 5px;
+    overflow-y: scroll;
+}
+.folder-nav__open {
+    background-color: #c9c9c9;
+}
+.folder-nav__item {
+    padding: 0.3rem 1rem;
+}
+.folder-content.js {
+    display: inline-block;
+    margin-top: 1.5rem;
+    margin-right: 1rem;
+    width: calc(100% - 20rem);
+    float: right;
+}
+.folder-nav h2 {
+    margin: 1.5rem 0 0 0;
+    padding: 1rem;
+    color: #a7a7a7;
+    font-size: 0.8rem;
+}
+.folder-nav__item h3 {
+    margin: 0;
+}
+.folder-nav__item a, .folder-nav__item a:visited {
+    color: black;
+    font-size: 1rem;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+/* PROJECT LIST */
