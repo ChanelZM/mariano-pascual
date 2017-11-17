@@ -105,7 +105,7 @@
             var relativeX = mouseX - containerX,
                 relativeY = mouseY - containerY;
 
-            document.addEventListener('mousemove', function(e){
+            section.addEventListener('mousemove', function(e){
                 //Otherwise this will still be true when you're not holding the mouse but simply hovering
                 if (moving === true){
                     if(boolean == true){
@@ -127,7 +127,7 @@
     };
 
         function checkWhichElement(e){
-            console.log(e);
+            e.preventDefault();
             if(e.target.className.includes('link_style')){
                 dragContainer = e.target.parentNode.parentNode.parentNode;
                 mouseX = e.clientX;

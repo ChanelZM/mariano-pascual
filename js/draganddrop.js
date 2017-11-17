@@ -89,7 +89,7 @@
     };
 
         function checkWhichElement(e){
-            console.log(e);
+            e.preventDefault();
             if(e.target.className.includes('link_style')){
                 dragContainer = e.target.parentNode.parentNode.parentNode;
                 mouseX = e.clientX;
