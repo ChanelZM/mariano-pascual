@@ -1,0 +1,22 @@
+{
+  "name": "mariano-pascual",
+  "version": "1.0.0",
+  "description": "Mariano Pascual is an Illustrator and Graphic Designer based in Barcelona. He came to us for a new portfolio website.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChanelZM/mariano-pascual.git"
+  },
+  "author": "Chanel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChanelZM/mariano-pascual/issues"
+  },
+  "homepage": "https://github.com/ChanelZM/mariano-pascual#readme",
+  "dependencies": {
+    "browserify": "^14.5.0"
+  }
+}

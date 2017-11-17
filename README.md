@@ -16,7 +16,7 @@ The website is supposed to be mimicking an Operating System and contains all of 
 
 ## Features
 - Single page application.
-- Drag and drop.
+- Drag and drop the windows everywhere you like.
 
 ## Known Bugs
 
