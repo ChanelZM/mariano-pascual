@@ -11,12 +11,15 @@
             var section = e.target.parentNode;
             moving = true;
 
+            var relativeX = e.clientX - section.offsetLeft,
+                relativeY = e.clientY - section.offsetTop;
+
             document.addEventListener('mousemove', function(e){
                 //Otherwise this will still be true when you're not holding the mouse but simply hovering
                 if (moving === true){
                     //Get the coordinates of the mouse
-                    var sectionX = e.clientX - 20,
-                        sectionY = e.clientY - 20;
+                    var sectionX = e.clientX - relativeX,
+                        sectionY = e.clientY - relativeY;
 
                     //place the section where the mouse is located
                     section.style.top = sectionY + 'px';
@@ -35,4 +38,6 @@
 
     body.addEventListener('mouseup', drag.end);
 
-//https://codepen.io/nickmoreton/pen/ogryWa
+//Creating JavaScript drag and drop: https://codepen.io/nickmoreton/pen/ogryWa
+//Getting mouse offset relative to section: http://jsfiddle.net/WhrFt/
+})();

@@ -13,7 +13,6 @@ The website is supposed to be mimicking an Operating System and contains all of 
 - [ ] Resizable windows.
 - [ ] The order of opening files/windows is the same order of z-index.
 - [ ] Windows open at different coordinates on the screen.
-- [ ] Ghost image when dragging and dropping full opacity.
 
 ## Features
 - Single page application.
@@ -24,6 +23,8 @@ The website is supposed to be mimicking an Operating System and contains all of 
 
 ## References
 - Single and double click function by [Karbassi](https://gist.github.com/karbassi/639453)
+- Creating an all JavaScript drag and drop by [Nick Moreton](https://codepen.io/nickmoreton/pen/ogryWa)
+- Getting the mouse position relative to the element [JS Fiddle](http://jsfiddle.net/WhrFt/)
 
 ## License
 MIT/X11
