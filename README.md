@@ -5,7 +5,7 @@ Mariano Pascual is an Illustrator and Graphic Designer based in Barcelona. He ca
 The website is supposed to be mimicking an Operating System and contains all of his work, information about him, how to contact him and possible some other personal information.
 
 ## Wishlist
-- [ ] Drag and dropping folders everywhere.
+- [x] Drag and dropping folders everywhere.
 - [ ] Spotify list of his music.
 - [ ] Full Responsive Design.
 - [ ] Backwards Compatible.
