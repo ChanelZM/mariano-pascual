@@ -245,6 +245,7 @@ main {
     z-index: 2;
 }
 .buttons-wrap__window-btn {
+    position: relative;
     padding: 0;
     width: 1rem;
     background-color: rgba(0,0,0,0);
@@ -253,4 +254,13 @@ main {
     -moz-appearance: none;
     appearance: none;
     cursor: pointer;
+}
+
+.buttons-wrap__window-btn::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    content: '';
 }
