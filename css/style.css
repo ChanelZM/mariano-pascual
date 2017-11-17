@@ -12,6 +12,9 @@ main {
 [hidden] {
     display: none;
 }
+.move {
+    position: absolute;
+}
 .nav_basic {
     margin: 0;
     padding-left: 0;
@@ -28,7 +31,6 @@ main {
 }
 .top-nav__item {
     display: inline-block;
-    position: relative;
     width: 8rem;
     cursor: pointer;
 }
@@ -39,6 +41,9 @@ main {
     align-items: flex-end;
     justify-content: space-between;
     flex-direction: column;
+}
+.top-nav__item > div {
+    position: relative;
 }
 .top-nav__item img {
     width: 5rem;

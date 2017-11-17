@@ -40,14 +40,14 @@
             singleClickTimer = setTimeout(function(){
                 clickCount = 0;
 
-                item.select(e.target.parentElement.parentElement);
+                item.select(e.target.parentElement.parentElement.parentElement);
             }, 200);
         } else if(clickCount === 2){
             clearTimeout(singleClickTimer);
 
             clickCount = 0;
-            
-            item.open(e.target.parentElement.parentElement, e.target.hash);
+
+            item.open(e.target.parentElement.parentElement.parentElement, e.target.hash);
         }
     }
 
