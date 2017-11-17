@@ -38,27 +38,44 @@
 },{}],2:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
-    var dropZone = document.querySelector('body'),
-        elTriggerDrag = document.querySelectorAll('.drag');
+    var elTriggerDrag = document.querySelectorAll('.drag'),
+        body = document.querySelector('body'),
+        i,
+        moving;
 
     var drag = {
-        start: function(){
+        starts: function(e){
             console.log('drag start');
-        },
-        over: function(){
-            console.log('drag over');
-        },
-        enter: function(){
-            console.log('drag enter');
-        },
-        drop: function(){
-            console.log('drop');
+            var section = e.target.parentNode;
+            moving = true;
+
+            document.addEventListener('mousemove', function(e){
+                if (moving === true){
+                    var mouseX = e.clientX,
+                        mouseY = e.clientY,
+                        sectionX = mouseX - 20,
+                        sectionY = mouseY - 20;
+
+                    section.style.top = sectionY + 'px';
+                    section.style.left = sectionX + 'px';
+                }
+            }, false);
         },
         end: function(){
             console.log('drag end');
+            moving = false;
         }
     };
+
+    for(i = 0; i < elTriggerDrag.length; i++){
+        elTriggerDrag[i].addEventListener('mousedown', drag.starts);
+    }
+
+    body.addEventListener('mouseup', drag.end);
+    
 })();
+//https://codepen.io/zz85/pen/gbOoVP?q=drag&order=popularity&depth=everything&show_forks=false
+//https://codepen.io/nickmoreton/pen/ogryWa
 
 },{}],3:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/

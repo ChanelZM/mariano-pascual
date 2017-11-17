@@ -1,23 +1,38 @@
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
-    var dropZone = document.querySelector('body'),
-        elTriggerDrag = document.querySelectorAll('.drag');
+    var elTriggerDrag = document.querySelectorAll('.drag'),
+        body = document.querySelector('body'),
+        i,
+        moving;
 
     var drag = {
-        start: function(){
-            console.log('drag start');
-        },
-        over: function(){
-            console.log('drag over');
-        },
-        enter: function(){
-            console.log('drag enter');
-        },
-        drop: function(){
-            console.log('drop');
+        starts: function(e){
+            //Get the parent to drag the whole section
+            var section = e.target.parentNode;
+            moving = true;
+
+            document.addEventListener('mousemove', function(e){
+                //Otherwise this will still be true when you're not holding the mouse but simply hovering
+                if (moving === true){
+                    //Get the coordinates of the mouse
+                    var sectionX = e.clientX - 20,
+                        sectionY = e.clientY - 20;
+
+                    //place the section where the mouse is located
+                    section.style.top = sectionY + 'px';
+                    section.style.left = sectionX + 'px';
+                }
+            });
         },
         end: function(){
-            console.log('drag end');
+            moving = false;
         }
     };
-})();
+
+    for(i = 0; i < elTriggerDrag.length; i++){
+        elTriggerDrag[i].addEventListener('mousedown', drag.starts);
+    }
+
+    body.addEventListener('mouseup', drag.end);
+
+//https://codepen.io/nickmoreton/pen/ogryWa
