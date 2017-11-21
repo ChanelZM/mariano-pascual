@@ -39,12 +39,10 @@
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var elTriggerDrag = document.querySelectorAll('.drag'),
-        body = document.querySelector('body'),
         i,
         moving,
         containerX,
         containerY;
-    console.log(elTriggerDrag);
 
     var dragContainer,
         mouseX,
@@ -52,13 +50,12 @@
 
     var drag = {
         starts: function(section, mouseX, mouseY, containerX, containerY, boolean){
-            console.log(section);
             moving = true;
 
             var relativeX = mouseX - containerX,
                 relativeY = mouseY - containerY;
 
-            document.addEventListener('mousemove', function(e){
+            var moveFunction = function(e){
                 //Otherwise this will still be true when you're not holding the mouse but simply hovering
                 if (moving === true){
                     if(boolean == true){
@@ -67,24 +64,29 @@
                     //Get the coordinates of the mouse
                     var sectionX = e.clientX - relativeX,
                         sectionY = e.clientY - relativeY;
-
                     //place the section where the mouse is located
                     section.style.top = sectionY + 'px';
                     section.style.left = sectionX + 'px';
                 }
+            };
+
+            document.addEventListener('mousemove', moveFunction);
+            document.addEventListener('mouseup', function(){
+                document.removeEventListener('mousemove', moveFunction);
+                moving = false;
             });
-        },
-        end: function(){
-            moving = false;
         }
     };
 
         function checkWhichElement(e){
             e.preventDefault();
+
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
             if(e.target.className.includes('link_style')){
                 dragContainer = e.target.parentNode.parentNode.parentNode;
-                mouseX = e.clientX;
-                mouseY = e.clientY;
+                console.log(dragContainer);
                 containerX = dragContainer.offsetLeft;
                 containerY = dragContainer.offsetTop;
 
@@ -92,8 +94,6 @@
 
             } else if(e.target.className.includes('desktop-folder')){
                 dragContainer = e.target.parentNode;
-                mouseX = e.clientX;
-                mouseY = e.clientY;
                 containerX = dragContainer.offsetLeft;
                 containerY = dragContainer.offsetTop;
 
@@ -102,11 +102,8 @@
         }
 
     for(i = 0; i < elTriggerDrag.length; i++){
-        console.log(i);
         elTriggerDrag[i].addEventListener('mousedown', checkWhichElement);
     }
-
-    body.addEventListener('mouseup', drag.end);
 
 //Creating JavaScript drag and drop: https://codepen.io/nickmoreton/pen/ogryWa
 //Getting mouse offset relative to section: http://jsfiddle.net/WhrFt/
