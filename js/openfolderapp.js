@@ -2,7 +2,10 @@
 (function(){
     var folderContainer = document.querySelector('.top-nav'),
         folders = document.querySelectorAll('.top-nav__item');
-    var clickCount = 0;
+
+    var clickCount = 0,
+        clickedOpen = [];
+
     var singleClickTimer,
         i;
 
@@ -15,6 +18,11 @@
         }
     }
 
+    function changeZIndex(windows){
+        var amountOpenWindows = clickedOpen.length;
+        //Every time a folder opens, this folder needs to be displayed at the front
+    }
+
     var item = {
         //Function gives the parent item a selected design
         select: function(parent){
@@ -22,7 +30,10 @@
         },
         //Function will open the right window
         open: function(parent, id){
+            clickedOpen.push(parent);
+
             giveSelectedDesign(parent);
+            changeZIndex(parent);
 
             var section = document.querySelector(id);
 
