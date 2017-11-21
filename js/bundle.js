@@ -86,7 +86,6 @@
 
             if(e.target.className.includes('link_style')){
                 dragContainer = e.target.parentNode.parentNode.parentNode;
-                console.log(dragContainer);
                 containerX = dragContainer.offsetLeft;
                 containerY = dragContainer.offsetTop;
 
@@ -120,33 +119,43 @@
             macBar = document.querySelector('.mac-bar'),
             folderNav = document.querySelectorAll('.folder-nav'),
             folderContent = document.querySelectorAll('.folder-content'),
-            i,
-            j,
-            k,
-            m,
-            n;
+            detailSections = document.querySelectorAll('.detail'),
+            i;
 
-        for(i = 0; i < folderImg.length; i++){
-            folderImg[i].removeAttribute('hidden');
-        }
-        for(m = 0; m < folderNav.length; m++){
-            folderNav[m].removeAttribute('hidden');
-        }
-
-        for(j = 0; j < desktopFolderContent.length; j++){
-            desktopFolderContent[j].classList.add('desktop-folder_hidden');
-        }
-        for(n = 0; n < folderContent.length; n++){
-            folderContent[n].classList.add('js');
+        function removeAttribute(dataType, variable){
+            if(dataType == 'array'){
+                for(i = 0; i < variable.length; i++){
+                    variable[i].removeAttribute('hidden');
+                }
+            }
+            if(dataType == 'el'){
+                variable.removeAttribute('hidden');
+            }
         }
 
-        for(k = 0; k < folderLinks.length; k++){
-            folderLinks[k].classList.remove('link_style_normal');
-            folderLinks[k].classList.add('link_style_desktop');
+        function changeClass(change, variable, className){
+            if(change == 'add'){
+                for(i = 0; i < variable.length; i++){
+                    variable[i].classList.add(className);
+                }
+            }
+            if(change == 'remove'){
+                for(i = 0; i < variable.length; i++){
+                    variable[i].classList.remove(className);
+                }
+            }
         }
 
-        bottomNav.removeAttribute('hidden');
-        macBar.removeAttribute('hidden');
+        removeAttribute('array', folderImg);
+        removeAttribute('array', folderNav);
+        removeAttribute('el', bottomNav);
+        removeAttribute('el', macBar);
+
+        changeClass('add', desktopFolderContent, 'desktop-folder_hidden');
+        changeClass('add', folderContent, 'js');
+        changeClass('add', folderLinks, 'link_style_desktop');
+        changeClass('add', detailSections, 'detail_hidden');
+        changeClass('remove', folderLinks, 'link_style_normal');
     }
 
     init();

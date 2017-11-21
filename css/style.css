@@ -241,6 +241,19 @@ main {
     width: 100%;
 }
 
+/* DETAILS */
+.detail {
+    position: absolute;
+    background-color: white;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 4rem;
+}
+.detail_hidden {
+    display: none;
+}
+
 /* WINDOW BUTTONS */
 .buttons-wrap {
     box-sizing: border-box;

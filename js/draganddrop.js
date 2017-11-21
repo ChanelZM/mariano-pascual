@@ -48,7 +48,6 @@
 
             if(e.target.className.includes('link_style')){
                 dragContainer = e.target.parentNode.parentNode.parentNode;
-                console.log(dragContainer);
                 containerX = dragContainer.offsetLeft;
                 containerY = dragContainer.offsetTop;
 
