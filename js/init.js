@@ -3,6 +3,7 @@
     function init(){
         var folderImg = document.querySelectorAll('.top-nav__item [hidden]'),
             desktopFolderContent = document.querySelectorAll('.desktop-folder'),
+            closeButtonsDetail = document.querySelectorAll('.detail .close'),
             bottomNav = document.querySelector('.bottom-nav'),
             folderLinks = document.querySelectorAll('.top-nav__item a'),
             macBar = document.querySelector('.mac-bar'),
@@ -37,6 +38,7 @@
 
         removeAttribute('array', folderImg);
         removeAttribute('array', folderNav);
+        removeAttribute('array', closeButtonsDetail);
         removeAttribute('el', bottomNav);
         removeAttribute('el', macBar);
 

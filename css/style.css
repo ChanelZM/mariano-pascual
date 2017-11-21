@@ -3,11 +3,18 @@ body {
     margin: 0;
     padding: 0;
     position: relative;
-    font-family: 'Cutive Mono', sans-serif;
-    background-color: lightseagreen
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 400;
+    background-color: lightseagreen;
 }
 main {
     display: block;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cutive Mono', sans-serif;
+}
+p {
+    line-height: 1.6;
 }
 [hidden] {
     display: none;
@@ -103,7 +110,7 @@ main {
     color: black;
 }
 .desktop-folder__title {
-    font-family: 'Inconsolata', sans-serif;
+    font-family: 'Cutive Mono', sans-serif;
 }
 .desktop-folder_open .desktop-folder__title {
     box-sizing: border-box;
@@ -240,6 +247,9 @@ main {
     padding: 2rem;
     width: 100%;
 }
+.project-list__item > h2 {
+    text-align: center;
+}
 
 /* DETAILS */
 .detail {
@@ -252,6 +262,10 @@ main {
 }
 .detail_hidden {
     display: none;
+}
+.detail .close {
+    position: absolute;
+    right: 0;
 }
 
 /* WINDOW BUTTONS */

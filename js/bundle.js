@@ -114,6 +114,7 @@
     function init(){
         var folderImg = document.querySelectorAll('.top-nav__item [hidden]'),
             desktopFolderContent = document.querySelectorAll('.desktop-folder'),
+            closeButtonsDetail = document.querySelectorAll('.detail .close'),
             bottomNav = document.querySelector('.bottom-nav'),
             folderLinks = document.querySelectorAll('.top-nav__item a'),
             macBar = document.querySelector('.mac-bar'),
@@ -148,6 +149,7 @@
 
         removeAttribute('array', folderImg);
         removeAttribute('array', folderNav);
+        removeAttribute('array', closeButtonsDetail);
         removeAttribute('el', bottomNav);
         removeAttribute('el', macBar);
 
@@ -220,4 +222,37 @@
 })();
 //Single and double click function by Karbassi: https://gist.github.com/karbassi/639453
 
-},{}]},{},[3,4,1,2]);
+},{}],5:[function(require,module,exports){
+/*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
+(function(){
+    var detailSections = document.querySelectorAll('.detail'),
+        folderLinks = document.querySelectorAll('.folderlink'),
+        closeButtons = document.querySelectorAll('.detail .close'),
+        i;
+
+    var detail = {
+        open: function(e){
+            var id = e.target.hash.replace('#','');
+
+            for(i = 0; i < detailSections.length; i++){
+                if(!detailSections[i].className.includes('detail_hidden')){
+                    detailSections[i].classList.add('detail_hidden');
+                }
+            }
+
+            document.getElementById(id).classList.remove('detail_hidden');
+        },
+        close: function(e){
+            e.target.parentNode.classList.add('detail_hidden');
+        }
+    };
+
+    for(i = 0; i < folderLinks.length; i++){
+        folderLinks[i].addEventListener('click', detail.open);
+    }
+    for(i = 0; i < closeButtons.length; i++){
+        closeButtons[i].addEventListener('click', detail.close);
+    }
+})();
+
+},{}]},{},[3,4,1,2,5]);
