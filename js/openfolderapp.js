@@ -3,11 +3,12 @@
     var folderContainer = document.querySelector('.top-nav'),
         folders = document.querySelectorAll('.top-nav__item');
     var clickCount = 0;
-    var singleClickTimer;
+    var singleClickTimer,
+        i;
 
     function giveSelectedDesign(el){
-        if(el.getAttribute('class') == 'top-nav__item'){
-            for(var i = 0; i < folders.length; i++){
+        if(!el.getAttribute('class').includes('selected')){
+            for(i = 0; i < folders.length; i++){
                 folders[i].classList.remove('top-nav__item_selected');
             }
             el.classList.add('top-nav__item_selected');
