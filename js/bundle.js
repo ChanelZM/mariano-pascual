@@ -121,9 +121,10 @@
             folderNav = document.querySelectorAll('.folder-nav'),
             folderContent = document.querySelectorAll('.folder-content'),
             detailSections = document.querySelectorAll('.detail'),
+            loadingScreen = document.querySelector('.loading-screen'),
             i;
 
-        function removeAttribute(dataType, variable){
+        function removeHidden(dataType, variable){
             if(dataType == 'array'){
                 for(i = 0; i < variable.length; i++){
                     variable[i].removeAttribute('hidden');
@@ -147,17 +148,22 @@
             }
         }
 
-        removeAttribute('array', folderImg);
-        removeAttribute('array', folderNav);
-        removeAttribute('array', closeButtonsDetail);
-        removeAttribute('el', bottomNav);
-        removeAttribute('el', macBar);
+        removeHidden('array', folderImg);
+        removeHidden('array', folderNav);
+        removeHidden('array', closeButtonsDetail);
+        removeHidden('el', bottomNav);
+        removeHidden('el', macBar);
+        removeHidden('el', loadingScreen);
 
         changeClass('add', desktopFolderContent, 'desktop-folder_hidden');
         changeClass('add', folderContent, 'js');
         changeClass('add', folderLinks, 'link_style_desktop');
         changeClass('add', detailSections, 'detail_hidden');
         changeClass('remove', folderLinks, 'link_style_normal');
+
+        setTimeout(function(){
+            loadingScreen.classList.add('hidden');
+        }, 3001);
     }
 
     init();
@@ -168,7 +174,10 @@
 (function(){
     var folderContainer = document.querySelector('.top-nav'),
         folders = document.querySelectorAll('.top-nav__item');
-    var clickCount = 0;
+
+    var clickCount = 0,
+        clickedOpen = [];
+
     var singleClickTimer,
         i;
 
@@ -181,6 +190,11 @@
         }
     }
 
+    function changeZIndex(windows){
+        var amountOpenWindows = clickedOpen.length;
+        //Every time a folder opens, this folder needs to be displayed at the front
+    }
+
     var item = {
         //Function gives the parent item a selected design
         select: function(parent){
@@ -188,7 +202,10 @@
         },
         //Function will open the right window
         open: function(parent, id){
+            clickedOpen.push(parent);
+
             giveSelectedDesign(parent);
+            changeZIndex(parent);
 
             var section = document.querySelector(id);
 

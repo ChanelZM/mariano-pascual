@@ -10,9 +10,10 @@
             folderNav = document.querySelectorAll('.folder-nav'),
             folderContent = document.querySelectorAll('.folder-content'),
             detailSections = document.querySelectorAll('.detail'),
+            loadingScreen = document.querySelector('.loading-screen'),
             i;
 
-        function removeAttribute(dataType, variable){
+        function removeHidden(dataType, variable){
             if(dataType == 'array'){
                 for(i = 0; i < variable.length; i++){
                     variable[i].removeAttribute('hidden');
@@ -36,17 +37,22 @@
             }
         }
 
-        removeAttribute('array', folderImg);
-        removeAttribute('array', folderNav);
-        removeAttribute('array', closeButtonsDetail);
-        removeAttribute('el', bottomNav);
-        removeAttribute('el', macBar);
+        removeHidden('array', folderImg);
+        removeHidden('array', folderNav);
+        removeHidden('array', closeButtonsDetail);
+        removeHidden('el', bottomNav);
+        removeHidden('el', macBar);
+        removeHidden('el', loadingScreen);
 
         changeClass('add', desktopFolderContent, 'desktop-folder_hidden');
         changeClass('add', folderContent, 'js');
         changeClass('add', folderLinks, 'link_style_desktop');
         changeClass('add', detailSections, 'detail_hidden');
         changeClass('remove', folderLinks, 'link_style_normal');
+
+        setTimeout(function(){
+            loadingScreen.classList.add('hidden');
+        }, 3001);
     }
 
     init();

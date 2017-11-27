@@ -16,7 +16,7 @@ h1, h2, h3, h4, h5, h6 {
 p {
     line-height: 1.6;
 }
-[hidden] {
+[hidden], .hidden {
     display: none;
 }
 .move {
@@ -319,4 +319,53 @@ p {
     right: 0;
     top: 0;
     content: '';
+}
+
+/* LOADING SCREEN */
+@keyframes load {
+    0% {
+        width: 3%;
+    } 20% {
+        width: 10%;
+    } 80% {
+        width: 90%;
+    } 100% {
+        border-radius: 6px;
+        width: 100%;
+    }
+}
+.loading-screen {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #FBD952;
+}
+.wrap {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 14rem;
+    width: 21rem;
+    transform: translate(-50%, -50%);
+}
+.loading-screen .loading-icon {
+    display: block;
+    margin: auto;
+    margin-bottom: 3rem;
+    width: 8rem;
+}
+.loading-wrap__bar {
+    box-sizing: border-box;
+    height: 0.8rem;
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 6px;
+}
+.loading-wrap__progress {
+    height: 100%;
+    background-color: #4C8DE9;
+    border-radius: 6px 0 0 6px;
+    animation: load 3s ease;
 }
