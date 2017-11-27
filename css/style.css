@@ -356,14 +356,14 @@ p {
     margin-bottom: 3rem;
     width: 8rem;
 }
-.loading-wrap__bar {
+.loading-screen__bar {
     box-sizing: border-box;
     height: 0.8rem;
     width: 100%;
     border: 2px solid black;
     border-radius: 6px;
 }
-.loading-wrap__progress {
+.loading-screen__progress {
     height: 100%;
     background-color: #4C8DE9;
     border-radius: 6px 0 0 6px;

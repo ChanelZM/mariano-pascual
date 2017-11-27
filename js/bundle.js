@@ -122,6 +122,7 @@
             folderContent = document.querySelectorAll('.folder-content'),
             detailSections = document.querySelectorAll('.detail'),
             loadingScreen = document.querySelector('.loading-screen'),
+            loadingSound = document.querySelector('.loading-screen__audio'),
             i;
 
         function removeHidden(dataType, variable){
@@ -160,6 +161,9 @@
         changeClass('add', folderLinks, 'link_style_desktop');
         changeClass('add', detailSections, 'detail_hidden');
         changeClass('remove', folderLinks, 'link_style_normal');
+
+        loadingSound.autoplay = true;
+        loadingSound.load();
 
         setTimeout(function(){
             loadingScreen.classList.add('hidden');
