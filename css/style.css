@@ -163,6 +163,19 @@ p {
     padding: 0.2rem;
     width: 3rem;
 }
+.bottom-nav__tooltip {
+    display: none;
+    position: absolute;
+    width: max-content;
+    bottom: 4rem;
+    left: -2.5rem;
+    padding: 0.3rem;
+    font-size: 1rem;
+    text-align: center;
+    background-color: #c9c9c9;
+    border: 2px solid black;
+    border-radius: 3px;
+}
 .bottom-nav__item img {
     width: 100%;
 }
@@ -177,6 +190,9 @@ p {
     left: 0;
     right: 0;
     top: 0;
+}
+.bottom-nav__item:hover .bottom-nav__tooltip {
+    display: block;
 }
 
 /* MAC BAR */

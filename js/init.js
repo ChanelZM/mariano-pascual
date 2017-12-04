@@ -51,9 +51,9 @@
         changeClass('add', detailSections, 'detail_hidden');
         changeClass('remove', folderLinks, 'link_style_normal');
 
-        loadingSound.autoplay = true;
-        loadingSound.load();
-
+        // loadingSound.autoplay = true;
+        // loadingSound.load();
+        //
         setTimeout(function(){
             loadingScreen.classList.add('hidden');
         }, 3001);
