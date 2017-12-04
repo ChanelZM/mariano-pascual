@@ -48,12 +48,12 @@
         changeClass('add', desktopFolderContent, 'desktop-folder_hidden');
         changeClass('add', folderContent, 'js');
         changeClass('add', folderLinks, 'link_style_desktop');
-        changeClass('add', detailSections, 'detail_hidden');
+        changeClass('add', detailSections, 'hidden');
         changeClass('remove', folderLinks, 'link_style_normal');
 
-        // loadingSound.autoplay = true;
-        // loadingSound.load();
-        //
+        loadingSound.autoplay = true;
+        loadingSound.load();
+
         setTimeout(function(){
             loadingScreen.classList.add('hidden');
         }, 3001);

@@ -2,7 +2,7 @@
 (function(){
     var detailSections = document.querySelectorAll('.detail'),
         folderLinks = document.querySelectorAll('.folderlink'),
-        closeButtons = document.querySelectorAll('.detail .close'),
+        closeButtons = document.querySelectorAll('.project__close'),
         i;
 
     var detail = {
@@ -10,15 +10,19 @@
             var id = e.target.hash.replace('#','');
 
             for(i = 0; i < detailSections.length; i++){
-                if(!detailSections[i].className.includes('detail_hidden')){
-                    detailSections[i].classList.add('detail_hidden');
+                if(!detailSections[i].className.includes('hidden')){
+                    detailSections[i].classList.add('hidden');
                 }
             }
 
-            document.getElementById(id).classList.remove('detail_hidden');
+            document.getElementById(id).classList.remove('hidden');
         },
         close: function(e){
-            e.target.parentNode.classList.add('detail_hidden');
+            e.target.parentNode.classList.add('hidden');
+
+            if(e.target.parentNode.querySelector('.project__desc').className.includes('hidden')){
+                e.target.parentNode.querySelector('.project__desc').classList.remove('hidden');
+            }
         }
     };
 

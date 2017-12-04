@@ -4,16 +4,16 @@
         i;
 
     //Close window with the id of the section
-    function closeWindow(id){
-        document.querySelector('#' + id).classList.add('desktop-folder_hidden');
+    function closeWindow(id, classNam){
+        document.querySelector('#' + id).classList.add(classNam);
     }
 
     //Trigger the right function for the right button.
-    function forwardToFunction(el){
-        var windowSection = el.parentNode.parentNode.getAttribute('id');
+    function forwardToFunction(el, targetWindow, classNam){
+        var id = targetWindow.getAttribute('id');
 
         if (el.className.includes('close')){
-            closeWindow(windowSection);
+            closeWindow(id, classNam);
         }
 
         if (el.className.includes('minimize')){
@@ -29,7 +29,7 @@
 
     for(i = 0; i < buttonsWrap.length; i++){
         buttonsWrap[i].addEventListener('click', function(e){
-            forwardToFunction(e.target);
+            forwardToFunction(e.target, e.target.parentNode.parentNode, 'hidden');
         });
     }
 })();

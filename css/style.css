@@ -17,7 +17,7 @@ p {
     line-height: 1.6;
 }
 [hidden], .hidden {
-    display: none;
+    display: none !important;
 }
 .move {
     position: absolute;
@@ -37,6 +37,9 @@ p {
 }
 .z4 {
     z-index: 4;
+}
+.desktop-folder__title.drag {
+    cursor: move;
 }
 .nav_basic li {
     list-style: none;
@@ -114,6 +117,12 @@ p {
     overflow-y: scroll;
     top: 6rem;
 }
+.desktop-folder_big {
+    height: calc(100vh - 8rem);
+    width: calc(100vw - 8rem);
+    left: 4rem;
+    top: 4rem;
+}
 .link_style_desktop {
     color: black;
     text-decoration: none;
@@ -134,12 +143,10 @@ p {
     text-align: center;
     background-color: #b0b0b0;
     border-bottom: 3px solid #1d1e1c;
-    /*background: rgb(224,224,224);
-    background: -moz-linear-gradient(top, rgba(224,224,224,1) 0%, rgba(178,178,178,1) 100%);
-    background: -webkit-linear-gradient(top, rgba(224,224,224,1) 0%,rgba(178,178,178,1) 100%);
-    background: linear-gradient(to bottom, rgba(224,224,224,1) 0%,rgba(178,178,178,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0e0e0', endColorstr='#b2b2b2',GradientType=0 );*/
     z-index: 1;
+}
+.desktop-folder_big .desktop-folder__title {
+    width: calc(100vw - 8s.4rem);
 }
 
 /* BOTTOM NAVIGATION */
@@ -168,13 +175,14 @@ p {
     position: absolute;
     width: max-content;
     bottom: 4rem;
-    left: -2.5rem;
+    left: 50%;
     padding: 0.3rem;
     font-size: 1rem;
     text-align: center;
     background-color: #c9c9c9;
     border: 2px solid black;
     border-radius: 3px;
+    transform: translateX(-50%);
 }
 .bottom-nav__item img {
     width: 100%;
@@ -292,20 +300,52 @@ p {
 
 /* DETAILS */
 .detail {
-    position: absolute;
+    position: fixed;
     background-color: white;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    bottom: 4rem;
+    left: 4rem;
+    right: 4rem;
     top: 4rem;
+    border: 3px solid #1d1e1c;
+    overflow-y: scroll;
     z-index: 2;
 }
 .detail_hidden {
     display: none;
 }
-.detail .close {
-    position: absolute;
-    right: 0;
+.project__desc {
+    position: fixed;
+    left: 8rem;
+    bottom: 2rem;
+    height: 25rem;
+    width: 30rem;
+    background-color: white;
+    border: 3px solid #1d1e1c;
+    overflow-y: scroll;
+}
+.project__img {
+    max-height: calc(100vh - 8rem);
+    max-width: 100%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+.project__desc p {
+    padding: 1rem;
+}
+.project__desc p:first-of-type {
+    margin-top: 3rem;
+}
+.detail .project__close {
+    position: fixed;
+    top: 5rem;
+    right: 5rem;
+    z-index: 2;
+}
+.project__desc .detail__title {
+    width: 30rem;
+}
+.desktop-folder_open .detail__title-big {
+    width: calc(100vw - 8.4rem);
 }
 
 /* WINDOW BUTTONS */
@@ -313,6 +353,7 @@ p {
     box-sizing: border-box;
     margin-top: 0.7rem;
     margin-left: 0.7rem;
+    width: 4rem;
     position: fixed;
     z-index: 2;
 }

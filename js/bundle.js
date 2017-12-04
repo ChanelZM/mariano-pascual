@@ -5,16 +5,16 @@
         i;
 
     //Close window with the id of the section
-    function closeWindow(id){
-        document.querySelector('#' + id).classList.add('desktop-folder_hidden');
+    function closeWindow(id, classNam){
+        document.querySelector('#' + id).classList.add(classNam);
     }
 
     //Trigger the right function for the right button.
-    function forwardToFunction(el){
-        var windowSection = el.parentNode.parentNode.getAttribute('id');
+    function forwardToFunction(el, targetWindow, classNam){
+        var id = targetWindow.getAttribute('id');
 
         if (el.className.includes('close')){
-            closeWindow(windowSection);
+            closeWindow(id, classNam);
         }
 
         if (el.className.includes('minimize')){
@@ -30,7 +30,7 @@
 
     for(i = 0; i < buttonsWrap.length; i++){
         buttonsWrap[i].addEventListener('click', function(e){
-            forwardToFunction(e.target);
+            forwardToFunction(e.target, e.target.parentNode.parentNode, 'hidden');
         });
     }
 })();
@@ -159,12 +159,12 @@
         changeClass('add', desktopFolderContent, 'desktop-folder_hidden');
         changeClass('add', folderContent, 'js');
         changeClass('add', folderLinks, 'link_style_desktop');
-        changeClass('add', detailSections, 'detail_hidden');
+        changeClass('add', detailSections, 'hidden');
         changeClass('remove', folderLinks, 'link_style_normal');
 
-        // loadingSound.autoplay = true;
-        // loadingSound.load();
-        //
+        loadingSound.autoplay = true;
+        loadingSound.load();
+
         setTimeout(function(){
             loadingScreen.classList.add('hidden');
         }, 3001);
@@ -176,17 +176,18 @@
 },{}],4:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
-    var folderContainer = document.querySelector('.top-nav'),
+    var topNavCon = document.querySelector('.top-nav'),
+        bottomNavCon = document.querySelector('.bottom-nav'),
         folders = document.querySelectorAll('.top-nav__item');
 
-    var clickCount = 0,
-        clickedOpen = [];
+    var clickCount = 0;
+        // clickedOpen = [];
 
     var singleClickTimer,
         i;
 
     function giveSelectedDesign(el){
-        if(!el.getAttribute('class').includes('selected')){
+        if(!el.getAttribute('class').includes('selected') && !el.getAttribute('class').includes('app')){
             for(i = 0; i < folders.length; i++){
                 folders[i].classList.remove('top-nav__item_selected');
             }
@@ -194,10 +195,10 @@
         }
     }
 
-    function changeZIndex(windows){
-        var amountOpenWindows = clickedOpen.length;
-        //Every time a folder opens, this folder needs to be displayed at the front
-    }
+    // function changeZIndex(windows){
+    //     var amountOpenWindows = clickedOpen.length;
+    //     //Every time a folder opens, this folder needs to be displayed at the front
+    // }
 
     var item = {
         //Function gives the parent item a selected design
@@ -206,10 +207,8 @@
         },
         //Function will open the right window
         open: function(parent, id){
-            clickedOpen.push(parent);
-
             giveSelectedDesign(parent);
-            changeZIndex(parent);
+            // changeZIndex(parent);
 
             var section = document.querySelector(id);
 
@@ -239,7 +238,10 @@
         }
     }
 
-    folderContainer.addEventListener('click', checkAmountOfClicks);
+    topNavCon.addEventListener('click', checkAmountOfClicks);
+    bottomNavCon.addEventListener('click', function(e){
+        item.open(e.target, e.target.hash);
+    });
 })();
 //Single and double click function by Karbassi: https://gist.github.com/karbassi/639453
 
@@ -248,7 +250,7 @@
 (function(){
     var detailSections = document.querySelectorAll('.detail'),
         folderLinks = document.querySelectorAll('.folderlink'),
-        closeButtons = document.querySelectorAll('.detail .close'),
+        closeButtons = document.querySelectorAll('.project__close'),
         i;
 
     var detail = {
@@ -256,15 +258,19 @@
             var id = e.target.hash.replace('#','');
 
             for(i = 0; i < detailSections.length; i++){
-                if(!detailSections[i].className.includes('detail_hidden')){
-                    detailSections[i].classList.add('detail_hidden');
+                if(!detailSections[i].className.includes('hidden')){
+                    detailSections[i].classList.add('hidden');
                 }
             }
 
-            document.getElementById(id).classList.remove('detail_hidden');
+            document.getElementById(id).classList.remove('hidden');
         },
         close: function(e){
-            e.target.parentNode.classList.add('detail_hidden');
+            e.target.parentNode.classList.add('hidden');
+
+            if(e.target.parentNode.querySelector('.project__desc').className.includes('hidden')){
+                e.target.parentNode.querySelector('.project__desc').classList.remove('hidden');
+            }
         }
     };
 

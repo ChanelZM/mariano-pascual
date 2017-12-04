@@ -1,16 +1,17 @@
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
-    var folderContainer = document.querySelector('.top-nav'),
+    var topNavCon = document.querySelector('.top-nav'),
+        bottomNavCon = document.querySelector('.bottom-nav'),
         folders = document.querySelectorAll('.top-nav__item');
 
-    var clickCount = 0,
-        clickedOpen = [];
+    var clickCount = 0;
+        // clickedOpen = [];
 
     var singleClickTimer,
         i;
 
     function giveSelectedDesign(el){
-        if(!el.getAttribute('class').includes('selected')){
+        if(!el.getAttribute('class').includes('selected') && !el.getAttribute('class').includes('app')){
             for(i = 0; i < folders.length; i++){
                 folders[i].classList.remove('top-nav__item_selected');
             }
@@ -18,10 +19,10 @@
         }
     }
 
-    function changeZIndex(windows){
-        var amountOpenWindows = clickedOpen.length;
-        //Every time a folder opens, this folder needs to be displayed at the front
-    }
+    // function changeZIndex(windows){
+    //     var amountOpenWindows = clickedOpen.length;
+    //     //Every time a folder opens, this folder needs to be displayed at the front
+    // }
 
     var item = {
         //Function gives the parent item a selected design
@@ -30,10 +31,8 @@
         },
         //Function will open the right window
         open: function(parent, id){
-            clickedOpen.push(parent);
-
             giveSelectedDesign(parent);
-            changeZIndex(parent);
+            // changeZIndex(parent);
 
             var section = document.querySelector(id);
 
@@ -63,6 +62,9 @@
         }
     }
 
-    folderContainer.addEventListener('click', checkAmountOfClicks);
+    topNavCon.addEventListener('click', checkAmountOfClicks);
+    bottomNavCon.addEventListener('click', function(e){
+        item.open(e.target, e.target.hash);
+    });
 })();
 //Single and double click function by Karbassi: https://gist.github.com/karbassi/639453
