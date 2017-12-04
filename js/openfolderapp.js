@@ -63,8 +63,8 @@
     }
 
     topNavCon.addEventListener('click', checkAmountOfClicks);
-    bottomNavCon.addEventListener('click', function(e){
-        item.open(e.target, e.target.hash);
-    });
+    // bottomNavCon.addEventListener('click', function(e){
+    //     item.open(e.target, e.target.hash);
+    // });
 })();
 //Single and double click function by Karbassi: https://gist.github.com/karbassi/639453
