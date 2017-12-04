@@ -36,9 +36,9 @@
 
             var section = document.querySelector(id);
 
-            if(section.getAttribute('class').includes('desktop-folder_hidden')){
+            if(section.getAttribute('class').includes('hidden')){
                 section.classList.add('desktop-folder_open');
-                section.classList.remove('desktop-folder_hidden');
+                section.classList.remove('hidden');
             }
         }
     };
@@ -63,8 +63,8 @@
     }
 
     topNavCon.addEventListener('click', checkAmountOfClicks);
-    // bottomNavCon.addEventListener('click', function(e){
-    //     item.open(e.target, e.target.hash);
-    // });
+    bottomNavCon.addEventListener('click', function(e){
+        item.open(e.target, e.target.hash);
+    });
 })();
 //Single and double click function by Karbassi: https://gist.github.com/karbassi/639453

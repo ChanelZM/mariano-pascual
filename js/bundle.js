@@ -156,11 +156,13 @@
         removeHidden('el', macBar);
         removeHidden('el', loadingScreen);
 
-        changeClass('add', desktopFolderContent, 'desktop-folder_hidden');
+        changeClass('add', desktopFolderContent, 'hidden');
         changeClass('add', folderContent, 'js');
         changeClass('add', folderLinks, 'link_style_desktop');
         changeClass('add', detailSections, 'hidden');
         changeClass('remove', folderLinks, 'link_style_normal');
+
+        document.querySelector('.contact-info').classList.add('hidden');
 
         loadingSound.autoplay = true;
         loadingSound.load();
@@ -212,9 +214,9 @@
 
             var section = document.querySelector(id);
 
-            if(section.getAttribute('class').includes('desktop-folder_hidden')){
+            if(section.getAttribute('class').includes('hidden')){
                 section.classList.add('desktop-folder_open');
-                section.classList.remove('desktop-folder_hidden');
+                section.classList.remove('hidden');
             }
         }
     };
@@ -239,9 +241,9 @@
     }
 
     topNavCon.addEventListener('click', checkAmountOfClicks);
-    // bottomNavCon.addEventListener('click', function(e){
-    //     item.open(e.target, e.target.hash);
-    // });
+    bottomNavCon.addEventListener('click', function(e){
+        item.open(e.target, e.target.hash);
+    });
 })();
 //Single and double click function by Karbassi: https://gist.github.com/karbassi/639453
 

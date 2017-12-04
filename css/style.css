@@ -236,6 +236,14 @@ p {
     border-right: 3px solid #1d1e1c;
     overflow-y: scroll;
 }
+.folderlink, .folderlink:visited {
+    text-decoration: none;
+    color: black;
+}
+.folderlink:hover {
+    color: white;
+    background-color: #4C8DE9;
+}
 .folder-nav__open {
     background-color: #c9c9c9;
 }
@@ -346,6 +354,9 @@ p {
 }
 .desktop-folder_open .detail__title-big {
     width: calc(100vw - 8.4rem);
+}
+#trash .project-list {
+    margin-top: 4rem;
 }
 
 /* WINDOW BUTTONS */

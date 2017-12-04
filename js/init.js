@@ -45,11 +45,13 @@
         removeHidden('el', macBar);
         removeHidden('el', loadingScreen);
 
-        changeClass('add', desktopFolderContent, 'desktop-folder_hidden');
+        changeClass('add', desktopFolderContent, 'hidden');
         changeClass('add', folderContent, 'js');
         changeClass('add', folderLinks, 'link_style_desktop');
         changeClass('add', detailSections, 'hidden');
         changeClass('remove', folderLinks, 'link_style_normal');
+
+        document.querySelector('.contact-info').classList.add('hidden');
 
         loadingSound.autoplay = true;
         loadingSound.load();
