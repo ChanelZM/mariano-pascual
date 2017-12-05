@@ -294,7 +294,6 @@
         pornLinks[i].addEventListener('click', function(){
             setTimeout(function(){
                 if(document.querySelector('#porn.desktop-folder_open') && called == false){
-                    console.log('event is executed');
                     called = true;
                     animatePornWindows();
                 }
@@ -303,9 +302,7 @@
     }
 
     pornContainer.addEventListener('click', function(){
-        console.log(pornContainer.querySelectorAll('.desktop-folder_open'));
         if(!pornContainer.querySelector('.desktop-folder_open')){
-            console.log('called is false');
             called = false;
             for(i = 1; i < pornWindows.length; i++){
                 pornWindows[i].classList.remove('desktop-folder_open');

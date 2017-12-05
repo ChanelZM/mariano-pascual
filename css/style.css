@@ -1,3 +1,18 @@
+/* ANIMATIONS */
+@keyframes changeColor {
+    0% {
+        color: black;
+    }
+    49% {
+        color: black;
+    }
+    50% {
+        color: #E84C3D;
+    }
+    100% {
+        color: #E84C3D;
+    }
+}
 /* GENERAL */
 body {
     margin: 0;
@@ -43,6 +58,15 @@ p {
 }
 .body-overflow-h {
     overflow: hidden;
+}
+.censored {
+    color: black;
+    font-family: sans-serif;
+    font-size: 10rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    animation: changeColor 0.5s linear infinite;
+    transform: rotate(45deg) translateY(4rem) translateX(-3rem);
 }
 .nav_basic li {
     list-style: none;
@@ -119,7 +143,6 @@ p {
     border: 3px solid #1d1e1c;
     box-shadow: -1.5rem 1.5rem 0 rgba(29, 30, 28, 0.26);
     overflow-y: scroll;
-    transform: translate(0);
 }
 .desktop-folder_big {
     height: calc(100vh - 8rem);
@@ -131,6 +154,7 @@ p {
     height: 49rem;
     width: 37rem;
     overflow: hidden;
+    transform: translate(0);
 }
 .link_style_desktop {
     color: black;
