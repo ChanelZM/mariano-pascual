@@ -6,6 +6,7 @@
     //Close window with the id of the section
     function closeWindow(id, classNam){
         document.querySelector('#' + id).classList.add(classNam);
+        document.querySelector('#' + id).classList.remove('desktop-folder_open');
     }
 
     //Trigger the right function for the right button.

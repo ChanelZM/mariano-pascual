@@ -12,6 +12,7 @@
             detailSections = document.querySelectorAll('.detail'),
             loadingScreen = document.querySelector('.loading-screen'),
             loadingSound = document.querySelector('.loading-screen__audio'),
+            pornWindows = document.querySelectorAll('.porn-window'),
             i;
 
         function removeHidden(dataType, variable){
@@ -41,6 +42,7 @@
         removeHidden('array', folderImg);
         removeHidden('array', folderNav);
         removeHidden('array', closeButtonsDetail);
+        removeHidden('array', pornWindows);
         removeHidden('el', bottomNav);
         removeHidden('el', macBar);
         removeHidden('el', loadingScreen);
@@ -52,6 +54,7 @@
         changeClass('remove', folderLinks, 'link_style_normal');
 
         document.querySelector('.contact-info').classList.add('hidden');
+        document.querySelector('body').classList.add('body-overflow-h');
 
         loadingSound.autoplay = true;
         loadingSound.load();

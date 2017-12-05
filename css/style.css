@@ -41,6 +41,9 @@ p {
 .desktop-folder__title.drag {
     cursor: move;
 }
+.body-overflow-h {
+    overflow: hidden;
+}
 .nav_basic li {
     list-style: none;
 }
@@ -108,14 +111,15 @@ p {
 .desktop-folder_open {
     box-sizing: border-box;
     position: absolute;
+    left: 6rem;
+    top: 6rem;
     height: 40rem;
     width: 60rem;
     background-color: white;
     border: 3px solid #1d1e1c;
     box-shadow: -1.5rem 1.5rem 0 rgba(29, 30, 28, 0.26);
-    left: 6rem;
     overflow-y: scroll;
-    top: 6rem;
+    transform: translate(0);
 }
 .desktop-folder_big {
     height: calc(100vh - 8rem);
@@ -126,6 +130,7 @@ p {
 .desktop-folder_narrow {
     height: 49rem;
     width: 37rem;
+    overflow: hidden;
 }
 .link_style_desktop {
     color: black;
@@ -136,6 +141,9 @@ p {
 }
 .desktop-folder__title {
     font-family: 'Cutive Mono', sans-serif;
+}
+.porn-img {
+    height: 100%;
 }
 .desktop-folder_open .desktop-folder__title {
     box-sizing: border-box;
@@ -242,6 +250,7 @@ p {
 }
 .project-list__item {
     /*width: 30%;*/
+    text-align: center;
     width: 12.9rem;
 }
 .project-list__item:nth-of-type(4n + 1), .project-list__item:nth-of-type(4n + 2),
@@ -267,7 +276,6 @@ p {
     position: relative;
     /*width: calc(100% - 20rem);*/
     width: 100%;
-    float: right;
 }
 .project-list__item .folderlink {
     position: relative;
