@@ -113,19 +113,10 @@
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     function init(){
-        var folderImg = document.querySelectorAll('.top-nav__item [hidden]'),
-            desktopFolderContent = document.querySelectorAll('.desktop-folder'),
-            closeButtonsDetail = document.querySelectorAll('.detail .close'),
-            bottomNav = document.querySelector('.bottom-nav'),
-            folderLinks = document.querySelectorAll('.top-nav__item a'),
-            macBar = document.querySelector('.mac-bar'),
-            folderNav = document.querySelectorAll('.folder-nav'),
-            folderContent = document.querySelectorAll('.folder-content'),
-            detailSections = document.querySelectorAll('.detail'),
-            loadingScreen = document.querySelector('.loading-screen'),
-            loadingSound = document.querySelector('.loading-screen__audio'),
-            pornWindows = document.querySelectorAll('.porn-window'),
-            i;
+        var folderLinks = document.querySelectorAll('.top-nav__item a'),
+            loadingSound = document.querySelector('.loading-screen__audio');
+
+        var i;
 
         function removeHidden(dataType, variable){
             if(dataType == 'array'){
@@ -151,18 +142,18 @@
             }
         }
 
-        removeHidden('array', folderImg);
-        removeHidden('array', folderNav);
-        removeHidden('array', closeButtonsDetail);
-        removeHidden('array', pornWindows);
-        removeHidden('el', bottomNav);
-        removeHidden('el', macBar);
-        removeHidden('el', loadingScreen);
+        removeHidden('array', document.querySelectorAll('.top-nav__item [hidden]'));
+        removeHidden('array', document.querySelectorAll('.folder-nav'));
+        removeHidden('array', document.querySelectorAll('.detail .close'));
+        removeHidden('array', document.querySelectorAll('.porn-window'));
+        removeHidden('el', document.querySelector('.bottom-nav'));
+        removeHidden('el', document.querySelector('.mac-bar'));
+        removeHidden('el', document.querySelector('.loading-screen'));
 
-        changeClass('add', desktopFolderContent, 'hidden');
-        changeClass('add', folderContent, 'js');
+        changeClass('add', document.querySelectorAll('.desktop-folder'), 'hidden');
+        changeClass('add', document.querySelectorAll('.folder-content'), 'js');
         changeClass('add', folderLinks, 'link_style_desktop');
-        changeClass('add', detailSections, 'hidden');
+        changeClass('add', document.querySelectorAll('.detail'), 'hidden');
         changeClass('remove', folderLinks, 'link_style_normal');
 
         document.querySelector('.contact-info').classList.add('hidden');
@@ -172,7 +163,7 @@
         loadingSound.load();
 
         setTimeout(function(){
-            loadingScreen.classList.add('hidden');
+            document.querySelector('.loading-screen').classList.add('hidden');
         }, 3001);
     }
 
@@ -314,6 +305,53 @@
 },{}],6:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
+    var screensaver = document.querySelector('.screensaver'),
+        screensaverRect = document.querySelector('.screensaver__rect');
+
+    var isActive = false;
+
+    // function changeColor(){
+    //     var colors = ['#379FA9', '#FD8A83', '#50C1EC', '#FEE242', '#1CB59F', '#EB3E49', '#398CB0', '#F8D059'];
+    //
+    //     count == colors.length ? count = 1 : count++;
+    //     console.log(count + ' ' + (count - 1));
+    //     screensaver.style.backgroundColor = colors[count - 1];
+    //     screensaverRect.style.backgroundColor = colors[count];
+    //
+    //     setTimeout(function(){
+    //         changeColor();
+    //     }, 2000);
+    // }
+
+    function showScreensaver(){
+        screensaver.removeAttribute('hidden');
+    }
+
+    function stopScreensaver(){
+        screensaver.setAttribute('hidden', 'true');
+
+        isActive = false;
+    }
+
+    function clearScreensaver(){
+        clearTimeout(mouseTimeout);
+
+        if(isActive == true){
+            stopScreensaver();
+        }
+
+        var mouseTimeout = setTimeout(function(){
+            isActive = true;
+            showScreensaver();
+        }, 13000);
+    }
+
+    document.addEventListener('mousemove', clearScreensaver);
+})();
+
+},{}],7:[function(require,module,exports){
+/*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
+(function(){
     var detailSections = document.querySelectorAll('.detail'),
         folderLinks = document.querySelectorAll('.folderlink'),
         closeButtons = document.querySelectorAll('.project__close'),
@@ -348,4 +386,4 @@
     }
 })();
 
-},{}]},{},[3,4,1,2,6,5]);
+},{}]},{},[3,4,1,2,7,5,6]);
