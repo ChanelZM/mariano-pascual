@@ -80,6 +80,7 @@ p {
 }
 .top-nav__item {
     display: inline-block;
+    padding-bottom: 1rem;
     width: 8rem;
     cursor: pointer;
 }
@@ -452,4 +453,12 @@ p {
     background-color: #4C8DE9;
     border-radius: 6px 0 0 6px;
     animation: load 3s ease;
+}
+@media screen and (max-width: 90rem){
+    .bottom-nav__item {
+        width: 2.5rem;
+    }
+    .top-nav__item img {
+        width: 3.5rem;
+    }
 }
