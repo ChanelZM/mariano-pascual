@@ -41,6 +41,9 @@ p {
     margin: 0;
     padding-left: 0;
 }
+.italic {
+    font-style: italic;
+}
 .z1 {
     z-index: 1;
 }
@@ -183,7 +186,7 @@ p {
     z-index: 1;
 }
 .desktop-folder_big .desktop-folder__title {
-    width: calc(100vw - 8s.4rem);
+    width: calc(100vw - 8.4rem);
 }
 .desktop-folder_narrow .desktop-folder__title {
     width: 36.6rem;
@@ -191,6 +194,29 @@ p {
 #about .folder-content {
     padding: 4rem 2.5rem 2.5rem 2.5rem;
     width: auto;
+}
+#about .project-list {
+    padding: 0;
+}
+.logo-wrap {
+    position: relative;
+    width: 13rem;
+    height: 9rem;
+}
+.black-background {
+    background-color: black;
+}
+#experimenta {
+    transform: translateX(-50%) scale(1.6);
+}
+.logo-wrap .landscape-img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 50%;
+    left: 0;
+    margin-left: 0;
+    transform: translateY(-50%);
 }
 
 /* BOTTOM NAVIGATION */
@@ -274,9 +300,9 @@ p {
     flex-wrap: wrap;
 }
 .project-list__item {
-    /*width: 30%;*/
-    text-align: center;
     width: 12.9rem;
+    margin-bottom: 2rem;
+    text-align: center;
 }
 .project-list__item:nth-of-type(4n + 1), .project-list__item:nth-of-type(4n + 2),
 .project-list__item:nth-of-type(4n + 3) {
@@ -454,6 +480,13 @@ p {
     border-radius: 6px 0 0 6px;
     animation: load 3s ease;
 }
+/* SOCIAL MEDIA */
+.social-media {
+    margin-top: 1.9rem;
+    height: 100%;
+    width: 100%;
+}
+
 @media screen and (max-width: 90rem){
     .bottom-nav__item {
         width: 2.5rem;
