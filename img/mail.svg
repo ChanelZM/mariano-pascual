@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 109.1 109.2" style="enable-background:new 0 0 109.1 109.2;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FEE242;}
+	.st1{fill:none;stroke:#000000;stroke-width:3;stroke-miterlimit:10;}
+	.st2{opacity:0.75;}
+	.st3{fill:#C9B139;}
+	.st4{fill:none;stroke:#C9B139;stroke-width:2;stroke-miterlimit:10;}
+	.st5{fill:#FFF5C2;}
+	.st6{fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+	.st7{opacity:0.25;}
+	.st8{fill:#8E8E8E;}
+</style>
+<g>
+	<g>
+		<rect x="3.5" y="3.6" class="st0" width="102" height="102"/>
+		<rect x="3.5" y="3.6" class="st1" width="102" height="102"/>
+	</g>
+	<g>
+		<g>
+			<g class="st2">
+				<rect x="15.3" y="36.5" class="st3" width="72.4" height="42.2"/>
+				<rect x="15.3" y="36.5" class="st4" width="72.4" height="42.2"/>
+			</g>
+			<g>
+				<rect x="18.3" y="33.5" class="st5" width="72.4" height="42.2"/>
+				<rect x="18.3" y="33.5" class="st6" width="72.4" height="42.2"/>
+			</g>
+		</g>
+		<g class="st7">
+			<polygon class="st8" points="19.2,35.6 54.4,65.5 89.9,35.6 89.9,32.6 19.2,32.6 			"/>
+		</g>
+		<g>
+			<polygon class="st5" points="19.2,34.6 54.5,57.6 89.8,34.6 			"/>
+		</g>
+		<polyline class="st6" points="89.8,34.6 54.5,57.6 19.2,34.6 		"/>
+	</g>
+</g>
+</svg>

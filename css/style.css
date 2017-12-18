@@ -1,4 +1,5 @@
 /* ANIMATIONS */
+/* #379FA9, #FD8A83, #50C1EC, #FEE242, '#1CB59F', #EB3E49, #398CB0, #F8D059*/
 @keyframes changeColor {
     0% {
         color: black;
@@ -17,10 +18,28 @@
 body {
     margin: 0;
     padding: 0;
+    height: 100vh;
+    width: 100vw;
     position: relative;
     font-family: 'Montserrat Alternates', sans-serif;
     font-weight: 400;
     background-color: #F2ACA7;
+}
+body::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-size: auto 100vh;
+    background-repeat: no-repeat;
+    background-position: top center;
+    content: '';
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+.opac::before {
+    opacity: 0;
 }
 main {
     display: block;
@@ -77,8 +96,9 @@ p {
 
 /* TOP NAVIGATION */
 .top-nav {
-    margin: 2rem;
+    margin: 0 2rem 2rem 2rem;
     margin-left: auto;
+    padding-top: 3rem;
     width: fit-content;
 }
 .top-nav__item {
@@ -102,6 +122,7 @@ p {
     width: 5rem;
     margin-left: 50%;
     transform: translateX(-50%);
+    box-shadow: -3px 3px 0 rgba(130, 130, 130, 0.4);
 }
 .top-nav__item a {
     padding: 0.2rem;
@@ -120,7 +141,7 @@ p {
 }
 .top-nav__item_selected a, .top-nav__item_selected a:visited {
     color: white;
-    background-color: blue;
+    background-color: #4C8DE9;
     border-radius: 3px;
 }
 .top-nav__item .top-nav__title {
@@ -250,12 +271,24 @@ p {
     font-size: 1rem;
     text-align: center;
     background-color: #c9c9c9;
-    border: 2px solid black;
     border-radius: 3px;
     transform: translateX(-50%);
 }
+.tooltip__arrow {
+    position: absolute;
+    width: 1.3rem;
+    height: 1.3rem;
+    top: 100%;
+    left: 50%;
+    margin-left: -12.5px;
+    margin-top: -14px;
+    background-color: #c9c9c9;
+    transform: rotate(-45deg);
+    z-index: -1;
+}
 .bottom-nav__item img {
     width: 100%;
+    box-shadow: -3px 3px 0 rgba(130, 130, 130, 0.4);
 }
 .bottom-nav__item .bottom-nav__name {
     clip: rect(0, 0, 0, 0);
@@ -327,6 +360,9 @@ p {
     position: relative;
     /*width: calc(100% - 20rem);*/
     width: 100%;
+}
+.folder-content__sub-title {
+    color: #FD8A83;
 }
 .project-list__item .folderlink {
     position: relative;

@@ -44,7 +44,7 @@
         removeHidden('array', closeButtonsDetail);
         removeHidden('array', pornWindows);
         removeHidden('el', bottomNav);
-        removeHidden('el', macBar);
+        // removeHidden('el', macBar);
         removeHidden('el', loadingScreen);
 
         changeClass('add', desktopFolderContent, 'hidden');
