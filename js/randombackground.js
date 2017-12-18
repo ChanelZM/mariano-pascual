@@ -4,6 +4,29 @@
 
     var count = 0;
 
+    var projects = [
+        {
+            name: 'Daniel & Emma',
+            href: '#project1',
+            imgSrc: 'http://payload541.cargocollective.com/1/5/167802/13130602/SayHiTo_slide_2000_c_2000_c.jpg'
+        },
+        {
+            name: '36 Days of Type #2',
+            href: '#project1',
+            imgSrc: 'http://payload541.cargocollective.com/1/5/167802/13130373/A_2000_c.jpg'
+        },
+        {
+            name: 'Penetrate',
+            href: '#project1',
+            imgSrc: 'http://payload490.cargocollective.com/1/5/167802/12119976/theastonshuffle_penetrate_2000_c.jpg'
+        },
+        {
+            name: 'Penetrate',
+            href: '#project1',
+            imgSrc: 'http://payload490.cargocollective.com/1/5/167802/12119976/theastonshuffle_penetrate_2000_c.jpg'
+        }
+    ];
+
     var srcImg = ['http://payload541.cargocollective.com/1/5/167802/13130602/SayHiTo_slide_2000_c_2000_c.jpg',
                 'http://payload541.cargocollective.com/1/5/167802/13130373/A_2000_c.jpg',
                 'http://payload490.cargocollective.com/1/5/167802/12119976/theastonshuffle_penetrate_2000_c.jpg',

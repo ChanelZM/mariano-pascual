@@ -6,7 +6,7 @@
 
     var i;
 
-    var delay = 1500,
+    var delay = 900,
         called = false;
     //
     // function animationDone(animationTime){
