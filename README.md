@@ -6,20 +6,20 @@ The website is supposed to be mimicking an Operating System and contains all of 
 
 ## Wishlist
 - [x] Drag and dropping folders everywhere.
-- [ ] Spotify list of his music.
 - [ ] Full Responsive Design.
 - [ ] Backwards Compatible.
 - [ ] Make it work without JavaScript.
-- [ ] Resizable windows.
 - [ ] The order of opening files/windows is the same order of z-index.
 - [ ] Windows open at different coordinates on the screen.
 
 ## Features
 - Single page application.
 - Drag and drop the windows everywhere you like.
+- Drag and drop the applications on the desktop everywhere you like.
+- Slide show of products as the desktop background
 
 ## Known Bugs
-- [ ] Bottom navigation also turns into a ghost image when dragging window.
+- [ ] Folders don't have the same z-index as the order of opening them.
 
 ## References
 - Single and double click function by [Karbassi](https://gist.github.com/karbassi/639453)
