@@ -11,31 +11,52 @@
 </head>
 <body>
     <header>
-        <!-- <section class="mac-bar" hidden>
-            <ul class="nav_basic">
-                <li class="mac-bar__item">
-                    <img src="img/apple.svg" alt="Apple icon" />
-                </li>
-                <li class="mac-bar__item mac-bar__item_strong">
-                    Finder
-                </li>
-                <li class="mac-bar__item">
-                    File
-                </li>
-                <li class="mac-bar__item">
-                    Edit
-                </li>
-                <li class="mac-bar__item">
-                    Go
-                </li>
-                <li class="mac-bar__item">
-                    Window
-                </li>
-                <li class="mac-bar__item">
-                    Help
-                </li>
-            </ul>
-        </section> -->
+        <section class="mac-bar" hidden>
+            <div class="mac-bar_left">
+                <ul class="nav_basic">
+                    <li class="mac-bar__item">
+                        <img src="img/apple.svg" alt="Apple icon" />
+                    </li>
+                    <li class="mac-bar__item mac-bar__item_strong">
+                        Finder
+                    </li>
+                    <li class="mac-bar__item">
+                        File
+                    </li>
+                    <li class="mac-bar__item">
+                        Edit
+                    </li>
+                    <li class="mac-bar__item">
+                        Go
+                    </li>
+                    <li class="mac-bar__item">
+                        Window
+                    </li>
+                    <li class="mac-bar__item">
+                        Help
+                    </li>
+                </ul>
+            </div>
+            <div class="mac-bar_right">
+                <ul class="nav_basic">
+                    <li class="mac-bar__item mac-bar__img">
+                        <img src="img/wifi.png" alt="Wi-Fi icon" id="wifi" />
+                    </li>
+                    <li class="mac-bar__item mac-bar__img">
+                        <img src="img/bluetooth.png" alt="Bluetooth icon" id="bluetooth" />
+                    </li>
+                    <li class="mac-bar__item mac-bar__img">
+                        <img src="img/battery.png" alt="Battery icon" id="battery" />
+                    </li>
+                    <li class="mac-bar__item">
+                        Wed 13:19
+                    </li>
+                    <li class="mac-bar__item">
+                        Mariano Pascual
+                    </li>
+                </ul>
+            </div>
+        </section>
         <nav class="top-nav">
             <ul class="nav_basic">
                 <li class="top-nav__item">
@@ -669,6 +690,11 @@
                 <img src="img/mail.svg" alt="Mail icon" />
                 <h2 class="bottom-nav__name"><a href="mailto:hello@mariano-pascual.com?Subject=Boludo... aquí tenes mi plata!">Mail</a></h2>
                 <h3 class="bottom-nav__tooltip"><span class="tooltip__arrow"></span>Send mail to Mariano</h3>
+            </li>
+            <li class="bottom-nav__item" id="print-art">
+                <img src="img/print.svg" alt="Print icon" />
+                <h2 class="bottom-nav__name">Print</h2>
+                <h3 class="bottom-nav__tooltip"><span class="tooltip__arrow"></span>Print some artwork</h3>
             </li>
             <li class="bottom-nav__item">
                 <img src="img/bin.svg" alt="Trashcan icon" />

@@ -327,22 +327,45 @@ p {
 
 /* MAC BAR */
 .mac-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
     background-color: rgb(230, 230, 230);
 }
 .mac-bar__item {
     display: inline-block;
-    margin-right: 1rem;
+    height: 1rem;
+    overflow: hidden;
     font-size: 1rem;
     font-weight: normal;
 }
 .mac-bar__item_strong {
     font-weight: bold;
 }
+#wifi {
+    margin-right: -0.1rem;
+    height: 1.2rem;
+}
+#battery {
+    margin-top: -0.1rem;
+    height: 1.4rem;
+}
 .mac-bar ul {
     padding: 0.1rem 3rem;
 }
 .mac-bar__item img {
-    width: 1rem;
+    height: 1rem;
+}
+.mac-bar_left .mac-bar__item {
+    margin-right: 1rem;
+}
+.mac-bar_right .mac-bar__item {
+    margin-left: 1rem;
+}
+.mac-bar_right .mac-bar__img {
+    margin: 0;
 }
 
 /* PROJECT LIST */

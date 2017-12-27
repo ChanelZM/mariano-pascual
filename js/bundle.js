@@ -146,6 +146,7 @@
         removeHidden('array', document.querySelectorAll('.folder-nav'));
         removeHidden('array', document.querySelectorAll('.detail .close'));
         removeHidden('array', document.querySelectorAll('.porn-window'));
+        removeHidden('el', document.querySelector('.mac-bar'));
         removeHidden('el', document.querySelector('.bottom-nav'));
         removeHidden('el', document.querySelector('.loading-screen'));
 
@@ -166,6 +167,10 @@
         setTimeout(function(){
             document.querySelector('.loading-screen').classList.add('hidden');
         }, 3001);
+
+        document.getElementById('print-art').addEventListener('click', function(){
+            window.print();
+        });
     }
 
     init();
