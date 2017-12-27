@@ -25,6 +25,7 @@ The website is supposed to be mimicking an Operating System and contains all of 
 - Single and double click function by [Karbassi](https://gist.github.com/karbassi/639453)
 - Creating an all JavaScript drag and drop by [Nick Moreton](https://codepen.io/nickmoreton/pen/ogryWa)
 - Getting the mouse position relative to the element [JS Fiddle](http://jsfiddle.net/WhrFt/)
+- Snake Game made by [Patorjk](https://github.com/patorjk/JavaScript-Snake)
 
 ## License
 MIT/X11

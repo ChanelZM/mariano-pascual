@@ -40,6 +40,14 @@
                 section.classList.add('desktop-folder_open');
                 section.classList.remove('hidden');
             }
+            if(id == '#snake'){
+                var mySnakeBoard = new SNAKE.Board({
+                                        boardContainer: "game-area",
+                                        fullScreen: false,
+                                        width: 954,
+                                        height: 608
+                                    });
+            }
         }
     };
 

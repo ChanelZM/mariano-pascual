@@ -167,6 +167,8 @@
 
         document.querySelector('.contact-info').classList.add('hidden');
         document.querySelector('body').classList.add('body-overflow-h');
+        document.querySelector('#projects').classList.remove('hidden');
+        document.querySelector('#projects').classList.add('desktop-folder_open');
 
         loadingSound.autoplay = true;
         loadingSound.load();
@@ -221,6 +223,14 @@
             if(section.getAttribute('class').includes('hidden')){
                 section.classList.add('desktop-folder_open');
                 section.classList.remove('hidden');
+            }
+            if(id == '#snake'){
+                var mySnakeBoard = new SNAKE.Board({
+                                        boardContainer: "game-area",
+                                        fullScreen: false,
+                                        width: 954,
+                                        height: 608
+                                    });
             }
         }
     };
