@@ -1,8 +1,5 @@
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
-    document.querySelector('body').style.backgroundColor = 'white';
-    document.querySelector('.sldr-info').removeAttribute('hidden');
-
     var count = 0;
 
     var projects = [
@@ -65,6 +62,8 @@
     ];
 
     function randomImg(){
+        document.querySelector('.sldr-info').removeAttribute('hidden');
+
         checkCount();
         var backgroundImg = 'background-image: url(' + projects[count].imgSrc + ')';
 
@@ -89,7 +88,8 @@
         }
     }
 
-    setTimeout(function(){
-        randomImg();
-    }, 3000);
+    // setTimeout(function(){
+    //     document.querySelector('body').style.backgroundColor = 'white';
+    //     randomImg();
+    // }, 3000);
 })();
