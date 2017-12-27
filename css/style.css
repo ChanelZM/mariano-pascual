@@ -469,14 +469,15 @@ p {
 }
 /* SCREENSAVER */
 .screensaver {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: fixed;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
-    background-color: #50C1EC;
+    background-color: #FEF8E8;
+    background-image: url('../img/200w_d.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 18rem auto;
     z-index: 3;
 }
