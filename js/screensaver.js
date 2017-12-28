@@ -19,14 +19,19 @@
     function clearScreensaver(){
         clearTimeout(mouseTimeout);
 
+        //Hide screensaver if shown
         if(isActive == true){
             stopScreensaver();
         }
 
-        mouseTimeout = setTimeout(function(){
-            isActive = true;
-            showScreensaver();
-        }, 13000);
+        //If You're playing snake, don't show the screensaver
+        if(document.querySelector('#snake').className.includes('desktop-folder_open') == false){
+            //Set again so when the user doesn't move anymore, the screensaver will be shown.
+            mouseTimeout = setTimeout(function(){
+                isActive = true;
+                showScreensaver();
+            }, 13000);
+        }
     }
 
     document.addEventListener('mousemove', clearScreensaver);

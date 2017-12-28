@@ -40,6 +40,7 @@
                 section.classList.add('desktop-folder_open');
                 section.classList.remove('hidden');
             }
+            //Create snakeboard if the user clicked on snake
             if(id == '#snake'){
                 var mySnakeBoard = new SNAKE.Board({
                                         boardContainer: "game-area",
@@ -56,6 +57,7 @@
         clickCount++;
 
         if(clickCount === 1){
+            //To check if the user clicked twice, set timeout, if not, give item selected style
             singleClickTimer = setTimeout(function(){
                 clickCount = 0;
 

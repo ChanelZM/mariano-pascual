@@ -48,7 +48,7 @@
                     <li class="mac-bar__item mac-bar__img">
                         <img src="img/battery.png" alt="Battery icon" id="battery" />
                     </li>
-                    <li class="mac-bar__item">
+                    <li class="mac-bar__item time">
                         Wed 13:19
                     </li>
                     <li class="mac-bar__item">
@@ -62,19 +62,19 @@
                 <li class="top-nav__item">
                     <div>
                         <img src="img/notes.svg" alt="Notepad icon" hidden />
-                        <h1 class="top-nav__title"><a href="#about" class="link_style_normal drag">About</a></h1>
+                        <h1 class="top-nav__title"><a href="#about" class="app link_style_normal drag">About</a></h1>
                     </div>
                 </li>
                 <li class="top-nav__item">
                     <div>
                         <img src="img/folder1.svg" alt="Folder" hidden />
-                        <h1 class="top-nav__title"><a href="#projects" class="link_style_normal drag">Projects</a></h1>
+                        <h1 class="top-nav__title"><a href="#projects" class="app link_style_normal drag">Projects</a></h1>
                     </div>
                 </li>
                 <li class="top-nav__item">
                     <div>
                         <img src="img/snake.svg" alt="Folder" hidden />
-                        <h1 class="top-nav__title"><a href="#snake" class="link_style_normal drag">Snake</a></h1>
+                        <h1 class="top-nav__title"><a href="#snake" class="app link_style_normal drag">Snake</a></h1>
                     </div>
                 </li>
             </ul>
@@ -463,6 +463,17 @@
                 </ul>
             </section>
         </section>
+        <section class="desktop-folder" id="settings">
+            <h1 class="desktop-folder__title drag">Settings</h1>
+            <div class="buttons-wrap">
+                <button class="buttons-wrap__window-btn close"><img src="img/x.svg" alt="close button" /></button>
+                <button class="buttons-wrap__window-btn minimize"><img src="img/_.svg" alt="minimize button" /></button>
+                <button class="buttons-wrap__window-btn fullscreen"><img src="img/square.svg" alt="fullscreen button" /></button>
+            </div>
+            <section class="folder-content">
+
+            </section>
+        </section>
         <section class="desktop-folder" id="trash">
             <h1 class="desktop-folder__title drag">Shit: Random Art</h1>
             <div class="buttons-wrap">
@@ -554,15 +565,6 @@
             </div>
             <iframe src="http://marianopascual.tumblr.com/" frameborder="0" class="social-media"></iframe>
         </section>
-        <!-- <section class="desktop-folder desktop-folder_big" id="chrome">
-            <h1 class="desktop-folder__title drag">Chrome</h1>
-            <div class="buttons-wrap">
-                <button class="buttons-wrap__window-btn close"><img src="img/x.svg" alt="close button" /></button>
-                <button class="buttons-wrap__window-btn minimize"><img src="img/_.svg" alt="minimize button" /></button>
-                <button class="buttons-wrap__window-btn fullscreen"><img src="img/square.svg" alt="fullscreen button" /></button>
-            </div>
-            <iframe src="https://www.ixquick.com/" frameborder="0" class="social-media"></iframe>
-        </section> -->
         <div class="porn">
             <section class="desktop-folder desktop-folder_narrow porn-window" id="porn">
                 <h1 class="desktop-folder__title drag">Porn</h1>
@@ -612,7 +614,7 @@
                 </p>
             </section>
         </div>
-        <section class="desktop-folder" id="snake">
+        <section class="desktop-folder" id="snake" hidden>
             <h1 class="desktop-folder__title drag">Snake</h1>
             <div class="buttons-wrap">
                 <button class="buttons-wrap__window-btn close"><img src="img/x.svg" alt="close button" /></button>
@@ -634,6 +636,9 @@
                 </div>
             </section>
         </section>
+        <section class="desktop-folder print" id="print" hidden>
+            <img src="http://payload541.cargocollective.com/1/5/167802/13130602/SayHiTo_slide_2000_c_2000_c.jpg" alt="Daniel & Emma" class="print__img" />
+        </section>
     </main>
     <footer class="contact-info">
         <h2>Contact me</h2>
@@ -641,19 +646,19 @@
     </footer>
     <nav class="bottom-nav" draggable="false" hidden>
         <ul class="bottom-nav__list nav_basic">
-            <li class="bottom-nav__item" hidden>
+            <!-- <li class="bottom-nav__item" hidden>
                 <img src="img/finder.png" alt="Finder logo" />
                 <h2 class="bottom-nav__name"><a href="#finder" class="app">Finder</a></h2>
                 <h3 class="bottom-nav__tooltip"><span class="tooltip__arrow"></span>All projects</h3>
-            </li>
-            <li class="bottom-nav__item" hidden>
+            </li> -->
+            <!-- <li class="bottom-nav__item" hidden>
                 <img src="img/spotify.svg" alt="Spotify logo" />
                 <h2 class="bottom-nav__name"><a href="#spotify" class="app">Spotify</a></h2>
                 <h3 class="bottom-nav__tooltip"><span class="tooltip__arrow"></span>[insert text here]</h3>
-            </li>
+            </li> -->
             <li class="bottom-nav__item">
                 <img src="img/instagram.svg" alt="Instagram logo" />
-                <h2 class="bottom-nav__name"><a href="https://www.instagram.com/mariano_pascual/" target="_blank" class="app">Instagram</a></h2>
+                <h2 class="bottom-nav__name"><a href="https://www.instagram.com/mariano_pascual/" target="_blank">Instagram</a></h2>
                 <h3 class="bottom-nav__tooltip"><span class="tooltip__arrow"></span>Open my Instagram</h3>
             </li>
             <li class="bottom-nav__item">
@@ -666,7 +671,7 @@
                 <h2 class="bottom-nav__name"><a href="#porn" class="app">Chrome</a></h2>
                 <h3 class="bottom-nav__tooltip"><span class="tooltip__arrow"></span>Open Chrome</h3>
             </li>
-            <li class="bottom-nav__item" hidden>
+            <!-- <li class="bottom-nav__item" hidden>
                 <img src="img/sketch.png" alt="Sketch logo" />
                 <h2 class="bottom-nav__name"><a href="#sketch" class="app">Sketch</a></h2>
                 <h3 class="bottom-nav__tooltip"><span class="tooltip__arrow"></span>[insert text here]</h3>
@@ -680,11 +685,6 @@
                 <img src="img/ps.svg" alt="Photoshop logo" />
                 <h2 class="bottom-nav__name"><a href="#photoshop" class="app">Photoshop</a></h2>
                 <h3 class="bottom-nav__tooltip"><span class="tooltip__arrow"></span>[insert text here]</h3>
-            </li>
-            <!-- <li class="bottom-nav__item">
-                <img src="img/porn.svg" alt="Porn logo" />
-                <h2 class="bottom-nav__name"><a href="#porn" class="app">Porn</a></h2>
-                <h3 class="bottom-nav__tooltip"><span class="tooltip__arrow"></span>Watch some porn</h3>
             </li> -->
             <li class="bottom-nav__item">
                 <img src="img/mail.svg" alt="Mail icon" />
@@ -693,8 +693,13 @@
             </li>
             <li class="bottom-nav__item" id="print-art">
                 <img src="img/print.svg" alt="Print icon" />
-                <h2 class="bottom-nav__name">Print</h2>
+                <h2 class="bottom-nav__name"><a href="#print" class="app">Print</a></h2>
                 <h3 class="bottom-nav__tooltip"><span class="tooltip__arrow"></span>Print some artwork</h3>
+            </li>
+            <li class="bottom-nav__item">
+                <img src="img/settings.svg" alt="Settings icon" />
+                <h2 class="bottom-nav__name"><a href="#settings" class="app">Settings</a></h2>
+                <h3 class="bottom-nav__tooltip"><span class="tooltip__arrow"></span>Change the background</h3>
             </li>
             <li class="bottom-nav__item">
                 <img src="img/bin.svg" alt="Trashcan icon" />

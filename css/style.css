@@ -60,6 +60,9 @@ body::before {
 }
 main {
     display: block;
+    position: fixed;
+    top: 0;
+    transform: translate(0);
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Cutive Mono', sans-serif;
@@ -502,7 +505,6 @@ p {
 .minimize, .fullscreen {
     opacity: 0.3;
 }
-
 .buttons-wrap__window-btn::after {
     position: absolute;
     bottom: 0;
@@ -561,11 +563,26 @@ p {
     border-radius: 6px 0 0 6px;
     animation: load 3s ease;
 }
-<<<<<<< HEAD
 /* SOCIAL MEDIA */
 .social-media {
     margin-top: 1.9rem;
     height: 100%;
+    width: 100%;
+}
+/* PRINT */
+.print {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    border: none;
+    z-index: 4;
+}
+.print__img {
     width: 100%;
 }
 

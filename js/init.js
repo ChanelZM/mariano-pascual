@@ -37,6 +37,8 @@
         removeHidden('el', document.querySelector('.mac-bar'));
         removeHidden('el', document.querySelector('.bottom-nav'));
         removeHidden('el', document.querySelector('.loading-screen'));
+        removeHidden('el', document.querySelector('#snake'));
+        removeHidden('el', document.querySelector('#print'));
 
         changeClass('add', document.querySelectorAll('.desktop-folder'), 'hidden');
         changeClass('add', document.querySelectorAll('.folder-content'), 'js');
@@ -57,8 +59,52 @@
         }, 3001);
 
         document.getElementById('print-art').addEventListener('click', function(){
-            window.print();
+            document.querySelector('.bottom-nav').classList.add('hidden');
+
+            var closePrint = function(){
+                document.querySelector('.bottom-nav').classList.remove('hidden');
+                document.querySelector('#print').classList.add('hidden');
+            };
+
+            setTimeout(function(){
+                window.print();
+                closePrint();
+            }, 1000);
         });
+
+        //Functions that handle the clock
+        function parseHourMin(num){
+            var parseNum;
+
+            //Otherwise there will only be one digit when the minute/hour is less then 10
+            if(num < 10){
+                parseNum = '0' + num;
+            } else {
+                parseNum = num;
+            }
+            return parseNum;
+        }
+
+        //Change date into correct apple format
+        function formatDate(day, hour, min){
+            var parseHour = parseHourMin(hour),
+                parseMin = parseHourMin(min),
+                date = day + ' ' + parseHour + ':' + parseMin;
+
+            return date;
+        }
+
+        function updateTime(){
+            var d = new Date(),
+                days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
+            document.querySelector('.time').innerHTML = formatDate(days[d.getDay() -1], d.getHours(), d.getMinutes());
+
+            //Check every half a second if the time has changed
+            var timeout = setTimeout(updateTime, 500);
+        }
+
+        updateTime();
     }
 
     init();
