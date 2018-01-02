@@ -40,9 +40,8 @@ body {
     position: relative;
     font-family: 'Heebo', sans-serif;
     font-weight: 400;
-    background-color: #F2ACA7;
 }
-body::before {
+/* body::before {
     position: absolute;
     top: 0;
     left: 0;
@@ -54,7 +53,7 @@ body::before {
     content: '';
     opacity: 1;
     transition: opacity 0.4s ease;
-}
+} */
 .opac::before {
     opacity: 0;
 }
@@ -102,6 +101,11 @@ p {
 }
 .body-overflow-h {
     overflow: hidden;
+}
+.body-wrap {
+    width: 100vw;
+    height: 100vh;
+    background-color: #F2ACA7;
 }
 .censored {
     color: black;
@@ -564,6 +568,8 @@ p {
     left: 4rem;
     right: 4rem;
     top: 4rem;
+    width: calc(100vw - 8rem);
+    height: calc(100vh - 8rem);
     border: 3px solid #1d1e1c;
     overflow-y: scroll;
     z-index: 2;
@@ -574,12 +580,13 @@ p {
 .project__desc {
     position: fixed;
     left: 8rem;
-    bottom: 2rem;
+    top: 53vh;
     height: 25rem;
     width: 30rem;
     background-color: white;
     border: 3px solid #1d1e1c;
     overflow-y: scroll;
+    z-index: 1;
 }
 .project__img {
     max-height: calc(100vh - 8rem);
