@@ -1,6 +1,44 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
+    //Functions that handle the clock
+    function parseHourMin(num){
+        var parseNum;
+
+        //Otherwise there will only be one digit when the minute/hour is less then 10
+        if(num < 10){
+            parseNum = '0' + num;
+        } else {
+            parseNum = num;
+        }
+        return parseNum;
+    }
+
+    //Change date into correct apple format
+    function formatDate(day, hour, min){
+        var parseHour = parseHourMin(hour),
+            parseMin = parseHourMin(min),
+            date = day + ' ' + parseHour + ':' + parseMin;
+
+        return date;
+    }
+
+    function updateTime(){
+        var d = new Date(),
+            days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
+        document.querySelector('.time').innerHTML = formatDate(days[d.getDay() -1], d.getHours(), d.getMinutes());
+
+        //Check every half a second if the time has changed
+        var timeout = setTimeout(updateTime, 500);
+    }
+
+    updateTime();
+})();
+
+},{}],2:[function(require,module,exports){
+/*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
+(function(){
     var buttonsWrap = document.querySelectorAll('.buttons-wrap'),
         i;
 
@@ -36,7 +74,7 @@
     }
 })();
 
-},{}],2:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var elTriggerDrag = document.querySelectorAll('.drag'),
@@ -85,13 +123,14 @@
             mouseX = e.clientX;
             mouseY = e.clientY;
 
+            //If it's a desktop icon
             if(e.target.className.includes('link_style')){
                 dragContainer = e.target.parentNode.parentNode.parentNode;
                 containerX = dragContainer.offsetLeft;
                 containerY = dragContainer.offsetTop;
 
                 drag.starts(dragContainer, mouseX, mouseY, containerX, containerY, true);
-
+            //If it's a desktop folder
             } else if(e.target.className.includes('desktop-folder')){
                 dragContainer = e.target.parentNode;
                 containerX = dragContainer.offsetLeft;
@@ -102,6 +141,7 @@
         }
 
     for(i = 0; i < elTriggerDrag.length; i++){
+        //No mouse/touchpad, no drag and drop
         elTriggerDrag[i].addEventListener('mousedown', checkWhichElement);
     }
 
@@ -109,7 +149,7 @@
 //Getting mouse offset relative to section: http://jsfiddle.net/WhrFt/
 })();
 
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     function init(){
@@ -149,8 +189,8 @@
         removeHidden('el', document.querySelector('.mac-bar'));
         removeHidden('el', document.querySelector('.bottom-nav'));
         removeHidden('el', document.querySelector('.loading-screen'));
-        removeHidden('el', document.querySelector('#snake'));
-        removeHidden('el', document.querySelector('#print'));
+        removeHidden('el', document.querySelector('.mac-bar_center'));
+        removeHidden('el', document.querySelector('#nav-phone'));
 
         changeClass('add', document.querySelectorAll('.desktop-folder'), 'hidden');
         changeClass('add', document.querySelectorAll('.folder-content'), 'js');
@@ -158,71 +198,64 @@
         changeClass('add', document.querySelectorAll('.detail'), 'hidden');
         changeClass('remove', folderLinks, 'link_style_normal');
 
+        document.querySelector('.mac-bar_left').classList.add('hidden');
+        document.querySelector('.mac-bar_right').classList.add('hidden');
         document.querySelector('.contact-info').classList.add('hidden');
         document.querySelector('body').classList.add('body-overflow-h');
+        document.querySelector('.top-nav').classList.add('hidden');
+        document.querySelector('#projects').classList.add('device-app_open');
+        document.querySelector('body').classList.add('touch');
         document.querySelector('#projects').classList.remove('hidden');
-        document.querySelector('#projects').classList.add('desktop-folder_open');
 
+        //If you're viewing this page on desktop
+        if("ontouchstart" in document.documentElement == false){
+            removeHidden('el', document.querySelector('#print'));
+            removeHidden('el', document.querySelector('#snake'));
+            removeHidden('el', document.querySelector('#print-art'));
+            removeHidden('el', document.querySelector('#nav-setting'));
+            removeHidden('el', document.querySelector('#nav-snake'));
+            removeHidden('el', document.querySelector('#nav-chrome'));
+            removeHidden('el', document.querySelector('#nav-trash'));
+            removeHidden('el', document.querySelector('#settings'));
+            removeHidden('el', document.querySelector('#tumblr'));
+
+            document.querySelector('body').classList.remove('touch');
+            document.querySelector('.mac-bar_left').classList.remove('hidden');
+            document.querySelector('.top-nav').classList.remove('hidden');
+            document.querySelector('.mac-bar_right').classList.remove('hidden');
+            document.querySelector('#projects').classList.remove('device-app_open');
+            document.querySelector('.mac-bar_center').classList.add('hidden');
+            document.querySelector('#nav-phone').classList.add('hidden');
+            document.querySelector('#projects').classList.add('desktop-folder_open');
+
+            document.getElementById('print-art').addEventListener('click', function(){
+                document.querySelector('.bottom-nav').classList.add('hidden');
+
+                var closePrint = function(){
+                    document.querySelector('.bottom-nav').classList.remove('hidden');
+                    document.querySelector('#print').classList.add('hidden');
+                };
+
+                setTimeout(function(){
+                    window.print();
+                    closePrint();
+                }, 1000);
+            });
+        }
+
+        //Screaming goat sound when 'fake loading'
         loadingSound.autoplay = true;
         loadingSound.load();
 
         setTimeout(function(){
             document.querySelector('.loading-screen').classList.add('hidden');
         }, 3001);
-
-        document.getElementById('print-art').addEventListener('click', function(){
-            document.querySelector('.bottom-nav').classList.add('hidden');
-
-            var closePrint = function(){
-                document.querySelector('.bottom-nav').classList.remove('hidden');
-                document.querySelector('#print').classList.add('hidden');
-            };
-
-            setTimeout(function(){
-                window.print();
-                closePrint();
-            }, 1000);
-        });
-
-        //Functions that handle the clock
-        function parseHourMin(num){
-            var parseNum;
-
-            //Otherwise there will only be one digit when the minute/hour is less then 10
-            if(num < 10){
-                parseNum = '0' + num;
-            } else {
-                parseNum = num;
-            }
-            return parseNum;
-        }
-
-        //Change date into correct apple format
-        function formatDate(day, hour, min){
-            var parseHour = parseHourMin(hour),
-                parseMin = parseHourMin(min),
-                date = day + ' ' + parseHour + ':' + parseMin;
-
-            return date;
-        }
-
-        function updateTime(){
-            var d = new Date(),
-                days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-
-            document.querySelector('.time').innerHTML = formatDate(days[d.getDay() -1], d.getHours(), d.getMinutes());
-
-            //Check every half a second if the time has changed
-            var timeout = setTimeout(updateTime, 500);
-        }
-
-        updateTime();
     }
 
     init();
 })();
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var topNavCon = document.querySelector('.top-nav'),
@@ -261,9 +294,18 @@
 
             var section = document.querySelector(id);
 
-            if(section.getAttribute('class').includes('hidden')){
-                section.classList.add('desktop-folder_open');
+            if("ontouchstart" in document.documentElement == false){
+                if(section.getAttribute('class').includes('hidden')){
+                    section.classList.add('desktop-folder_open');
+                    section.classList.remove('hidden');
+                }
+            }
+            if ("ontouchstart" in document.documentElement == true) {
+                section.classList.add('device-app_open');
                 section.classList.remove('hidden');
+            }
+            //If you're viewing this page on desktop
+            if("ontouchstart" in document.documentElement == false){
             }
             //Create snakeboard if the user clicked on snake
             if(id == '#snake'){
@@ -296,17 +338,25 @@
             item.open(e.target.parentElement.parentElement.parentElement, e.target.hash);
         }
     }
-
-    topNavCon.addEventListener('click', checkAmountOfClicks);
+    if("ontouchstart" in document.documentElement == false){
+        topNavCon.addEventListener('click', checkAmountOfClicks);
+    } else {
+        topNavCon.addEventListener('click', function(e){
+            if(e.target.hash){
+                item.open(e.target, e.target.hash);
+            }
+        });
+    }
     bottomNavCon.addEventListener('click', function(e){
         if(e.target.hash){
             item.open(e.target, e.target.hash);
         }
     });
+
 })();
 //Single and double click function by Karbassi: https://gist.github.com/karbassi/639453
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var pornLinks = document.querySelectorAll('[href="#porn"]'),
@@ -366,7 +416,7 @@
     });
 })();
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var count = 0;
@@ -463,7 +513,7 @@
     // }, 3000);
 })();
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var screensaver = document.querySelector('.screensaver');
@@ -500,10 +550,27 @@
         }
     }
 
-    document.addEventListener('mousemove', clearScreensaver);
+    if("ontouchstart" in document.documentElement == false){
+        document.addEventListener('mousemove', clearScreensaver);
+    }
 })();
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
+/*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
+(function(){
+    function getClickedColor(e){
+        e.preventDefault();
+        changeBodyColor(e.target.id);
+    }
+
+    function changeBodyColor(color){
+        document.querySelector('body').className = 'body-overflow-h' + ' ' + color;
+    }
+
+    document.querySelector('.color-list').addEventListener('click', getClickedColor);
+})();
+
+},{}],10:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var detailSections = document.querySelectorAll('.detail'),
@@ -540,4 +607,4 @@
     }
 })();
 
-},{}]},{},[3,4,1,2,8,5,6,7]);
+},{}]},{},[4,5,2,3,10,6,7,8,1,9]);

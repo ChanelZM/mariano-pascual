@@ -46,13 +46,14 @@
             mouseX = e.clientX;
             mouseY = e.clientY;
 
+            //If it's a desktop icon
             if(e.target.className.includes('link_style')){
                 dragContainer = e.target.parentNode.parentNode.parentNode;
                 containerX = dragContainer.offsetLeft;
                 containerY = dragContainer.offsetTop;
 
                 drag.starts(dragContainer, mouseX, mouseY, containerX, containerY, true);
-
+            //If it's a desktop folder
             } else if(e.target.className.includes('desktop-folder')){
                 dragContainer = e.target.parentNode;
                 containerX = dragContainer.offsetLeft;
@@ -63,6 +64,7 @@
         }
 
     for(i = 0; i < elTriggerDrag.length; i++){
+        //No mouse/touchpad, no drag and drop
         elTriggerDrag[i].addEventListener('mousedown', checkWhichElement);
     }
 

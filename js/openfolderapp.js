@@ -36,9 +36,18 @@
 
             var section = document.querySelector(id);
 
-            if(section.getAttribute('class').includes('hidden')){
-                section.classList.add('desktop-folder_open');
+            if("ontouchstart" in document.documentElement == false){
+                if(section.getAttribute('class').includes('hidden')){
+                    section.classList.add('desktop-folder_open');
+                    section.classList.remove('hidden');
+                }
+            }
+            if ("ontouchstart" in document.documentElement == true) {
+                section.classList.add('device-app_open');
                 section.classList.remove('hidden');
+            }
+            //If you're viewing this page on desktop
+            if("ontouchstart" in document.documentElement == false){
             }
             //Create snakeboard if the user clicked on snake
             if(id == '#snake'){
@@ -71,12 +80,20 @@
             item.open(e.target.parentElement.parentElement.parentElement, e.target.hash);
         }
     }
-
-    topNavCon.addEventListener('click', checkAmountOfClicks);
+    if("ontouchstart" in document.documentElement == false){
+        topNavCon.addEventListener('click', checkAmountOfClicks);
+    } else {
+        topNavCon.addEventListener('click', function(e){
+            if(e.target.hash){
+                item.open(e.target, e.target.hash);
+            }
+        });
+    }
     bottomNavCon.addEventListener('click', function(e){
         if(e.target.hash){
             item.open(e.target, e.target.hash);
         }
     });
+
 })();
 //Single and double click function by Karbassi: https://gist.github.com/karbassi/639453

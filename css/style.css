@@ -60,9 +60,11 @@ body::before {
 }
 main {
     display: block;
-    position: fixed;
     top: 0;
-    transform: translate(0);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Cutive Mono', sans-serif;
@@ -120,6 +122,7 @@ p {
     margin-left: auto;
     padding-top: 3rem;
     width: fit-content;
+    z-index: 0;
 }
 .top-nav__item {
     display: inline-block;
@@ -155,10 +158,6 @@ p {
     right: 0;
     top: 0;
 }
-/* .top-nav__item_selected img {
-    border-radius: 3px;
-    box-shadow: 0px 0px 2px 2px rgba(229, 229, 229, 0.6);
-} */
 .top-nav__item_selected a, .top-nav__item_selected a:visited {
     color: white;
     background-color: #4C8DE9;
@@ -174,6 +173,12 @@ p {
 }
 
 /* DESKTOP FOLDERS */
+.folder-wrap {
+    transform: translate(0);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
 .desktop-folder_hidden {
     display: none;
 }
@@ -202,6 +207,10 @@ p {
     overflow: hidden;
     transform: translate(0);
 }
+.desktop-folder_small {
+    height: 31rem;
+    width: 31rem;
+}
 .link_style_desktop {
     color: black;
     text-decoration: none;
@@ -215,7 +224,8 @@ p {
 .porn-img {
     height: 100%;
 }
-.desktop-folder_open .desktop-folder__title {
+.desktop-folder_open .desktop-folder__title,
+.device-app_open .desktop-folder__title {
     box-sizing: border-box;
     margin: 0;
     position: fixed;
@@ -232,6 +242,9 @@ p {
 }
 .desktop-folder_narrow .desktop-folder__title {
     width: 36.6rem;
+}
+.desktop-folder_small .desktop-folder__title {
+    width: 30.6rem;
 }
 #about .folder-content {
     padding: 4rem 2.5rem 2.5rem 2.5rem;
@@ -261,6 +274,76 @@ p {
     transform: translateY(-50%);
 }
 
+/* TOUCH DEVICE*/
+.touch {
+    overflow: visible;
+}
+.device-app_open {
+    box-sizing: border-box;
+    width: 100vw;
+    min-height: 100vh;
+    bottom: 0;
+    background-color: white;
+    border: 3px solid #1d1e1c;
+    overflow: visible;
+}
+.touch .mac-bar {
+    z-index: 0;
+}
+.touch .buttons-wrap {
+    position: absolute;
+    margin-top: -1.5rem;
+}
+.touch .folder-wrap {
+    position: absolute;
+    transform: none;
+    z-index: 4;
+}
+.touch .project-list__item {
+    flex: 1;
+}
+.touch #projects > .desktop-folder__title {
+    display: none;
+}
+.touch .detail {
+    position: absolute;
+    top: 1.5rem;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    overflow: visible;
+}
+.touch .project__desc {
+    position: static;
+    height: auto;
+    max-width: 35rem;
+    margin: auto;
+    border: none;
+    overflow: visible;
+}
+.device-app_open .desktop-folder__title {
+    position: static;
+    width: initial;
+    border-bottom: 3px solid #1d1e1c;
+}
+.touch .detail .project__img {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.touch .detail .project__close {
+    position: absolute;
+    top: 0.4rem;
+    left: 0.4rem;
+}
+.touch .detail .detail__title, .touch .detail .buttons-wrap {
+    display: none;
+}
+.touch #projects.device-app_open {
+    max-height: 100vh;
+    background-color: inherit;
+    border: none;
+}
+
 /* BOTTOM NAVIGATION */
 .bottom-nav {
     position: fixed;
@@ -270,6 +353,7 @@ p {
     background-color: rgba(158, 158, 158, 0.8);
     border-radius: 8px 8px 0 0;
     transform: translateX(-50%);
+    z-index: 3;
 }
 .bottom-nav__list {
     box-sizing: border-box;
@@ -336,6 +420,11 @@ p {
     display: flex;
     justify-content: space-between;
     background-color: rgb(230, 230, 230);
+    z-index: 2;
+}
+.mac-bar_center {
+    text-align: center;
+    width: 100%;
 }
 .mac-bar__item {
     display: inline-block;
@@ -346,6 +435,10 @@ p {
 }
 .mac-bar__item_strong {
     font-weight: bold;
+}
+.mac-bar__title {
+    margin: 0.2rem;
+    font-size: 1rem;
 }
 #wifi {
     margin-right: -0.1rem;
@@ -369,6 +462,34 @@ p {
 }
 .mac-bar_right .mac-bar__img {
     margin: 0;
+}
+
+/* SETTINGS */
+.color-list {
+    display: flex;
+}
+.color-list__color {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 0;
+    border: 1px solid black;
+}
+#pink, .pink {
+    background-color: #EC9696;
+}
+#green, .green {
+    background-color: #54B9AD;
+}
+#yellow, .yellow {
+    background-color: #F8D059;
+}
+#blue, .blue {
+    background-color: #50C1EC;
+}
+#black, .black {
+    background-color: black;
 }
 
 /* PROJECT LIST */
@@ -534,7 +655,7 @@ p {
     top: 0;
     bottom: 0;
     background-color: #FBD952;
-    z-index: 2;
+    z-index: 4;
 }
 .wrap {
     position: absolute;
@@ -713,8 +834,11 @@ p {
     background-position: center;
     background-repeat: no-repeat;
     background-size: 18rem auto;
-    z-index: 3;
+    z-index: 4;
 }
+/* @media screen and (max-width: 34rem){
+
+} */
 
 @media screen and (max-width: 90rem){
     .bottom-nav__item {
@@ -722,5 +846,17 @@ p {
     }
     .top-nav__item img {
         width: 3.5rem;
+    }
+}
+
+@media screen and (max-width: 54rem){
+    .project-list__item .project-list__name {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 43rem){
+    .project-list__item .project-list__name {
+        font-size: 1rem;
     }
 }
