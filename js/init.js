@@ -2,7 +2,8 @@
 (function(){
     function init(){
         var folderLinks = document.querySelectorAll('.top-nav__item a'),
-            loadingSound = document.querySelector('.loading-screen__audio');
+            loadingSound = document.querySelector('.loading-screen__audio'),
+            clickSound = document.querySelector('.click-sound');
 
         var i;
 
@@ -98,6 +99,12 @@
         setTimeout(function(){
             document.querySelector('.loading-screen').classList.add('hidden');
         }, 3001);
+
+        //Click sound
+        document.querySelector('body').addEventListener('click', function(){
+            clickSound.autoplay = true;
+            clickSound.load();
+        })
     }
 
     init();

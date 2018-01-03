@@ -16,7 +16,11 @@ The website is supposed to be mimicking an Operating System and contains all of 
 - Single page application.
 - Drag and drop the windows everywhere you like.
 - Drag and drop the applications on the desktop everywhere you like.
-- Slide show of products as the desktop background
+- Slide show of products as the desktop background.
+- Play Snake.
+- Fullscreen mode.
+- Change background.
+- Print some artwork of Mariano.
 
 ## Known Bugs
 - [ ] Folders don't have the same z-index as the order of opening them.
@@ -26,6 +30,7 @@ The website is supposed to be mimicking an Operating System and contains all of 
 - Creating an all JavaScript drag and drop by [Nick Moreton](https://codepen.io/nickmoreton/pen/ogryWa)
 - Getting the mouse position relative to the element [JS Fiddle](http://jsfiddle.net/WhrFt/)
 - Snake Game made by [Patorjk](https://github.com/patorjk/JavaScript-Snake)
+- Fullscreen mode [Useful Angle](http://usefulangle.com/post/12/javascript-going-fullscreen-is-rare)
 
 ## License
 MIT/X11

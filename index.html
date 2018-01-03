@@ -481,10 +481,10 @@
                                 <button class="color-list__color" id="space">Space</button>
                             </div>
                         </section>
-                        <section class="setting">
+                        <section class="setting" hidden>
                             <h3 class="setting__title">Brightness</h3>
-                            <div class="slider">
-                                <div class="slider__circle">
+                            <div class="a-slider">
+                                <div class="a-slider__circle">
 
                                 </div>
                             </div>
@@ -493,10 +493,18 @@
                             <h3 class="setting__title">Screen area</h3>
                             <input type="range" min="30" max="100" value="100" class="range" />
                         </section>
-                        <section class="setting">
+                        <section class="setting" hidden>
                             <h3 class="setting__title">Appearance</h3>
-                            <div class="slider">
-                                <div class="slider__circle">
+                            <div class="a-slider">
+                                <div class="a-slider__circle">
+
+                                </div>
+                            </div>
+                        </section>
+                        <section class="setting">
+                            <h3 class="setting__title">Fullscreen</h3>
+                            <div class="a-slider">
+                                <div class="a-slider__circle">
 
                                 </div>
                             </div>
@@ -723,9 +731,9 @@
                 </li>
             </ul>
         </nav>
-        <section class="sldr-info" hidden>
-            <h2 class="sldr-info__title"><a href="" class="sldr-info__link"></a></h2>
-        </section>
+        <audio class="click-sound">
+            <source src="audio/click.wav" type="audio/mpeg" />
+        </audio>
         <div class="loading-screen" hidden>
             <div class="wrap">
                 <img src="img/apple.svg" alt="Apple icon" class="loading-icon" />
