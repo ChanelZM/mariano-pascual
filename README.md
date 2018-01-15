@@ -31,6 +31,7 @@ The website is supposed to be mimicking an Operating System and contains all of 
 - Getting the mouse position relative to the element [JS Fiddle](http://jsfiddle.net/WhrFt/)
 - Snake Game made by [Patorjk](https://github.com/patorjk/JavaScript-Snake)
 - Fullscreen mode [Useful Angle](http://usefulangle.com/post/12/javascript-going-fullscreen-is-rare)
+- Pendelum [Arushi](https://codepen.io/arushi011/pen/EXmMvx)
 
 ## License
 MIT/X11
