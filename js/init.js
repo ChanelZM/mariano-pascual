@@ -59,10 +59,10 @@
         //If you're viewing this page on desktop
         if("ontouchstart" in document.documentElement == false){
             removeHidden('el', document.querySelector('#print'));
-            removeHidden('el', document.querySelector('#snake'));
+            // removeHidden('el', document.querySelector('#snake'));
             removeHidden('el', document.querySelector('#print-art'));
             removeHidden('el', document.querySelector('#nav-setting'));
-            removeHidden('el', document.querySelector('#nav-snake'));
+            // removeHidden('el', document.querySelector('#nav-snake'));
             removeHidden('el', document.querySelector('#nav-chrome'));
             removeHidden('el', document.querySelector('#nav-trash'));
             removeHidden('el', document.querySelector('#settings'));

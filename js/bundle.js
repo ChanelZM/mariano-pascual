@@ -152,6 +152,37 @@
 },{}],4:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
+    var hoverImages = document.querySelectorAll('.hover-img');
+
+    var parent,
+        i,
+        src,
+        splitSrc;
+
+    function changeImg(e){
+        parent = e.target.parentNode.parentNode;
+        src = parent.children[0].getAttribute('src');
+
+        if(src.includes('-hover')){
+            splitSrc = src.split('-hover');
+            parent.children[0].setAttribute('src', (splitSrc[0] + '.svg'));
+        } else {
+            splitSrc = src.split('.svg');
+            parent.children[0].setAttribute('src', (splitSrc[0] + '-hover.svg'));
+        }
+    }
+
+    for(i = 0; i < hoverImages.length; i++){
+        hoverImages[i].addEventListener('mouseenter', changeImg);
+        hoverImages[i].addEventListener('mouseleave', changeImg);
+        hoverImages[i].addEventListener('focus', changeImg);
+        hoverImages[i].addEventListener('focusout', changeImg);
+    }
+})();
+
+},{}],5:[function(require,module,exports){
+/*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
+(function(){
     function init(){
         var folderLinks = document.querySelectorAll('.top-nav__item a'),
             loadingSound = document.querySelector('.loading-screen__audio'),
@@ -211,10 +242,10 @@
         //If you're viewing this page on desktop
         if("ontouchstart" in document.documentElement == false){
             removeHidden('el', document.querySelector('#print'));
-            removeHidden('el', document.querySelector('#snake'));
+            // removeHidden('el', document.querySelector('#snake'));
             removeHidden('el', document.querySelector('#print-art'));
             removeHidden('el', document.querySelector('#nav-setting'));
-            removeHidden('el', document.querySelector('#nav-snake'));
+            // removeHidden('el', document.querySelector('#nav-snake'));
             removeHidden('el', document.querySelector('#nav-chrome'));
             removeHidden('el', document.querySelector('#nav-trash'));
             removeHidden('el', document.querySelector('#settings'));
@@ -262,7 +293,7 @@
     init();
 })();
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var topNavCon = document.querySelector('.top-nav'),
@@ -363,7 +394,7 @@
 })();
 //Single and double click function by Karbassi: https://gist.github.com/karbassi/639453
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var pornLinks = document.querySelectorAll('[href="#porn"]'),
@@ -423,7 +454,7 @@
     });
 })();
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var count = 0;
@@ -520,7 +551,7 @@
     // }, 3000);
 })();
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var screensaver = document.querySelector('.screensaver');
@@ -557,12 +588,12 @@
         }
     }
 
-    if("ontouchstart" in document.documentElement == false){
-        document.addEventListener('mousemove', clearScreensaver);
-    }
+    // if("ontouchstart" in document.documentElement == false){
+    //     document.addEventListener('mousemove', clearScreensaver);
+    // }
 })();
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var appleSliders = document.querySelectorAll('.a-slider__circle'),
@@ -633,7 +664,7 @@
     }
 })();
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var detailSections = document.querySelectorAll('.detail'),
@@ -670,4 +701,4 @@
     }
 })();
 
-},{}]},{},[4,5,2,3,10,6,7,8,1,9]);
+},{}]},{},[5,6,2,3,11,7,8,9,1,10,4]);

@@ -34,7 +34,7 @@
         }
     }
 
-    if("ontouchstart" in document.documentElement == false){
-        document.addEventListener('mousemove', clearScreensaver);
-    }
+    // if("ontouchstart" in document.documentElement == false){
+    //     document.addEventListener('mousemove', clearScreensaver);
+    // }
 })();
