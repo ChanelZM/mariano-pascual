@@ -943,18 +943,69 @@ p {
     background-color: #4C8DE9;
     color: white;
 }
+
+/* SCREENSAVER */
 .screensaver {
     position: fixed;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
-    background-color: #FEF8E8;
-    background-image: url('../img/200w_d.gif');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 18rem auto;
+    background-color: black;
     z-index: 4;
+}
+.pendelum-box {
+    display: flex;
+    width: 64vw;
+    height: 60vh;
+    padding-top: 55vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+.pendelum__ball {
+    position: relative;
+    width: 8vw;
+    height: 8vw;
+    background-image: url('../img/icon-ball.svg');
+    background-size: cover;
+    transform-origin: 50% -55vh;
+}
+.pendelum__ball::before {
+    position: absolute;
+    height: 56vh;
+    width: 0.2rem;
+    left: 50%;
+    top: -55.5vh;
+    content: '';
+    background-color: #BD453E;
+    border: 2px solid black;
+    border-radius: 1rem;
+    transform: translateX(-50%);
+}
+.pendelum__ball-first {
+  animation: firstball .9s alternate ease-in infinite;
+}
+
+@keyframes firstball{
+  0%{
+    transform: rotate(35deg);
+  }
+  50%{
+    transform: rotate(0deg);
+  }
+}
+
+.pendelum__ball-last{
+  animation: lastball .9s alternate ease-out infinite;
+}
+
+@keyframes lastball{
+  50%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(-35deg);
+  }
 }
 /* @media screen and (max-width: 34rem){
 
