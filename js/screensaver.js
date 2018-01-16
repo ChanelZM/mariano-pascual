@@ -36,5 +36,10 @@
 
     if("ontouchstart" in document.documentElement == false){
         document.addEventListener('mousemove', clearScreensaver);
+        document.addEventListener('keydown', function(e){
+            if(e.keyCode == 9){
+                clearScreensaver();
+            }
+        });
     }
 })();
