@@ -159,9 +159,60 @@
         src,
         splitSrc;
 
+    function playSound(e){
+        parent = e.target.parentNode.parentNode;
+        src = parent.children[0].getAttribute('src');
+
+        var splits = src.split('img/icon-');
+        var iconName = splits[1].split('.svg');
+        console.log(splits);
+
+        switch (iconName[0]){
+            case 'about':
+                //play about sound
+                console.log('about');
+                break;
+            case 'bin':
+                //play bin sound
+                console.log('bin');
+                break;
+            case 'folder':
+                //play folder sound
+                console.log('folder');
+                break;
+            case 'home':
+                //play home sound
+                console.log('home');
+                break;
+            case 'mail':
+                //play mail sound
+                console.log('mail');
+                break;
+            // case message:
+            //     //play message sound
+            //     break;
+            // case photos:
+            //     //play photos sound
+            //     break;
+            case 'printer':
+                //play printer sound
+                console.log('printer');
+                break;
+            case 'settings':
+                //play settings sound
+                console.log('settings');
+                break;
+            case 'web':
+                //play web sound
+                console.log('web');
+                break;
+        }
+    }
+
     function changeImg(e){
         parent = e.target.parentNode.parentNode;
         src = parent.children[0].getAttribute('src');
+        console.log(src);
 
         if(src.includes('-hover')){
             splitSrc = src.split('-hover');
@@ -173,6 +224,7 @@
     }
 
     for(i = 0; i < hoverImages.length; i++){
+        hoverImages[i].addEventListener('mouseenter', playSound);
         hoverImages[i].addEventListener('mouseenter', changeImg);
         hoverImages[i].addEventListener('mouseleave', changeImg);
         hoverImages[i].addEventListener('focus', changeImg);

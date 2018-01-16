@@ -478,7 +478,7 @@ p {
 #home-icon {
     width: 2rem;
     margin-left: 0;
-    margin-top: -0.3rem;
+    margin-top: -0.2rem;
 }
 #instagram-small {
     width: 1rem;
@@ -758,14 +758,14 @@ p {
 /* LOADING SCREEN */
 @keyframes load {
     0% {
-        width: 3%;
+        width: calc(3% - 2rem);
     } 20% {
-        width: 10%;
+        width: calc(10% - 2rem);
     } 80% {
-        width: 90%;
+        width: calc(90% - 2rem);
     } 100% {
         border-radius: 6px;
-        width: 100%;
+        width: calc(100% - 2rem);
     }
 }
 .loading-screen {
@@ -803,6 +803,12 @@ p {
     border: 2px solid black;
     border-radius: 1rem;
     background-color: #DABC47;
+}
+.loading-screen__text {
+    margin-top: 2rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.4rem;
 }
 .loading-screen__progress {
     height: 1rem;
