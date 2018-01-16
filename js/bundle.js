@@ -163,57 +163,20 @@
         parent = e.target.parentNode.parentNode;
         src = parent.children[0].getAttribute('src');
 
+        //Only get the cion name
         var splits = src.split('img/icon-');
         var iconName = splits[1].split('.svg');
-        console.log(splits);
 
-        switch (iconName[0]){
-            case 'about':
-                //play about sound
-                console.log('about');
-                break;
-            case 'bin':
-                //play bin sound
-                console.log('bin');
-                break;
-            case 'folder':
-                //play folder sound
-                console.log('folder');
-                break;
-            case 'home':
-                //play home sound
-                console.log('home');
-                break;
-            case 'mail':
-                //play mail sound
-                console.log('mail');
-                break;
-            // case message:
-            //     //play message sound
-            //     break;
-            // case photos:
-            //     //play photos sound
-            //     break;
-            case 'printer':
-                //play printer sound
-                console.log('printer');
-                break;
-            case 'settings':
-                //play settings sound
-                console.log('settings');
-                break;
-            case 'web':
-                //play web sound
-                console.log('web');
-                break;
-        }
+        //The name of the icon depends on which sound will be played when hovering
+        document.querySelector('.' + iconName[0] + '-sound').autoplay = true;
+        document.querySelector('.' + iconName[0] + '-sound').play();
     }
 
     function changeImg(e){
         parent = e.target.parentNode.parentNode;
         src = parent.children[0].getAttribute('src');
-        console.log(src);
 
+        //Toggle images when hovering
         if(src.includes('-hover')){
             splitSrc = src.split('-hover');
             parent.children[0].setAttribute('src', (splitSrc[0] + '.svg'));
@@ -223,6 +186,7 @@
         }
     }
 
+    //For every image that needs a hover effect, add Eventlistener
     for(i = 0; i < hoverImages.length; i++){
         hoverImages[i].addEventListener('mouseenter', playSound);
         hoverImages[i].addEventListener('mouseenter', changeImg);
