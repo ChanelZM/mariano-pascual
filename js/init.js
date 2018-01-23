@@ -37,7 +37,6 @@
         removeHidden('array', document.querySelectorAll('.porn-window'));
         removeHidden('el', document.querySelector('.mac-bar'));
         removeHidden('el', document.querySelector('.bottom-nav'));
-        removeHidden('el', document.querySelector('.loading-screen'));
         removeHidden('el', document.querySelector('.mac-bar_center'));
         removeHidden('el', document.querySelector('#nav-phone'));
 
@@ -62,6 +61,8 @@
             // removeHidden('el', document.querySelector('#snake'));
             removeHidden('el', document.querySelector('#print-art'));
             removeHidden('el', document.querySelector('#nav-setting'));
+            removeHidden('el', document.querySelector('#nav-messages'));
+            removeHidden('el', document.querySelector('#nav-photos'));
             // removeHidden('el', document.querySelector('#nav-snake'));
             removeHidden('el', document.querySelector('#nav-chrome'));
             removeHidden('el', document.querySelector('#nav-trash'));

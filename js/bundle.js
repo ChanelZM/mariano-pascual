@@ -261,6 +261,8 @@
             // removeHidden('el', document.querySelector('#snake'));
             removeHidden('el', document.querySelector('#print-art'));
             removeHidden('el', document.querySelector('#nav-setting'));
+            removeHidden('el', document.querySelector('#nav-messages'));
+            removeHidden('el', document.querySelector('#nav-photos'));
             // removeHidden('el', document.querySelector('#nav-snake'));
             removeHidden('el', document.querySelector('#nav-chrome'));
             removeHidden('el', document.querySelector('#nav-trash'));
