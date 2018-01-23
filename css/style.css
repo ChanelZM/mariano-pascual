@@ -112,6 +112,10 @@ p {
 .nav_basic li {
     list-style: none;
 }
+.link_no-style, .link_no-style:visited {
+    text-decoration: none;
+    color: black;
+}
 
 /* TOP NAVIGATION */
 .top-nav {
@@ -343,8 +347,8 @@ p {
 /* BOTTOM NAVIGATION */
 .bottom-nav {
     position: fixed;
-    width: 62rem;
-    height: 8rem;
+    width: 70rem;
+    height: 9rem;
     bottom: 2rem;
     left: 50%;
     padding: 0.5rem;
@@ -361,7 +365,7 @@ p {
     margin-right: auto;
     box-sizing: border-box;
     padding-left: 0;
-    transform: translateY(1rem);
+    transform: translateY(1.6rem);
 }
 .bottom-nav__item {
     display: inline-block;
@@ -426,7 +430,7 @@ p {
     display: flex;
     justify-content: space-between;
     background-color: #DADAD3;
-    border-bottom: 2px solid black;
+    border-bottom: 0.2rem solid black;
     z-index: 2;
 }
 .mac-bar_center {
@@ -434,9 +438,9 @@ p {
     width: 100%;
 }
 .mac-bar__item {
+    position: relative;
     display: inline-block;
     height: 1.3rem;
-    overflow: hidden;
     font-size: 1rem;
     font-weight: normal;
 }
@@ -447,10 +451,35 @@ p {
     margin: 0.2rem;
     font-size: 1rem;
 }
+.dropdown {
+    position: absolute;
+    padding: 0;
+    width: 10rem;
+    left: -0.5rem;
+    top: 1.65rem;
+    background-color: #DADAD3;
+    border-style: solid;
+    border-width: 2px;
+}
+.dropdown-button {
+    appearance: none;
+    padding: 0;
+    font-size: 1rem;
+    background-color: inherit;
+    border: none;
+}
+.dropdown__item {
+    display: block;
+    padding: 0.2rem 1rem;
+}
+.dropdown__item:hover {
+    background-color: black;
+    color: white;
+}
 .mac-bar_right img {
     width: 100%;
 }
-.mac-bar ul {
+.mac-bar .mac-bar_padding {
     padding: 0.3rem 3rem 0 3rem;
 }
 .mac-bar_left .mac-bar__item {
@@ -467,9 +496,8 @@ p {
     width: 1.5rem;
 }
 #home-icon {
-    width: 2rem;
+    width: 1.2rem;
     margin-left: 0;
-    margin-top: -0.2rem;
 }
 #instagram-small {
     width: 1rem;

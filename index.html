@@ -63,21 +63,43 @@
         <header>
             <section class="mac-bar" hidden>
                 <div class="mac-bar_left">
-                    <ul class="nav_basic">
+                    <ul class="mac-bar_padding nav_basic">
                         <li class="mac-bar__item mac-bar__item_first">
-                            <img src="img/icon-home.svg" alt="Home icon" id="home-icon" />
+                            <img src="img/icon-mac-bar.svg" alt="Home icon" id="home-icon" />
                         </li>
                         <li class="mac-bar__item mac-bar__item_strong">
                             Mariano Pascual
                         </li>
                         <li class="mac-bar__item">
-                            File
+                            <button class="dropdown-button">File</button>
+                            <ul class="dropdown" hidden>
+                                <li>
+                                    <a href="#about" class="dropdown__item link_no-style">About</a>
+                                </li>
+                                <li>
+                                    <a href="#projects" class="dropdown__item link_no-style">Projects</a>
+                                </li>
+                                <li>
+                                    <a href="#projects" class="dropdown__item link_no-style">Photos</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="mac-bar__item dropdown-button">
+                            <button class="dropdown-button">Contact</button>
+                            <ul class="dropdown">
+                                <li>
+                                    <a href="mailto:hello@mariano-pascual.com?Subject=Boludo... aquí tenes mi plata!" class="dropdown__item link_no-style">Email</a>
+                                </li>
+                                <li>
+                                    <a href="#message" class="dropdown__item link_no-style">Message</a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="mac-bar__item">
-                            View
+                            <a href="#print" class="link_no-style">Print</a>
                         </li>
                         <li class="mac-bar__item">
-                            Settings
+                            <a href="#settings" class="link_no-style">Settings</a>
                         </li>
                     </ul>
                 </div>
@@ -85,7 +107,7 @@
                     <h1 class="mac-bar__title">Mariano Pascual</h1>
                 </div>
                 <div class="mac-bar_right">
-                    <ul class="nav_basic">
+                    <ul class="mac-bar_padding nav_basic">
                         <li class="mac-bar__item mac-bar__img">
                             <img src="img/icon-small-insta.svg" alt="Instagram icon" id="instagram-small" />
                         </li>
@@ -729,7 +751,7 @@
             <div class="eyeball">
                 <div class="pupil">
                     <div class="gloss">
-
+                        <a href="#latestwork"></a>
                     </div>
                 </div>
             </div>

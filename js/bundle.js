@@ -236,7 +236,6 @@
         removeHidden('array', document.querySelectorAll('.porn-window'));
         removeHidden('el', document.querySelector('.mac-bar'));
         removeHidden('el', document.querySelector('.bottom-nav'));
-        removeHidden('el', document.querySelector('.loading-screen'));
         removeHidden('el', document.querySelector('.mac-bar_center'));
         removeHidden('el', document.querySelector('#nav-phone'));
 
@@ -257,9 +256,11 @@
 
         //If you're viewing this page on desktop
         if("ontouchstart" in document.documentElement == false){
+            removeHidden('array', document.querySelectorAll('.dropdown'));
             removeHidden('el', document.querySelector('#print'));
             // removeHidden('el', document.querySelector('#snake'));
             removeHidden('el', document.querySelector('#print-art'));
+            removeHidden('el', document.querySelector('.loading-screen'));
             removeHidden('el', document.querySelector('#nav-setting'));
             removeHidden('el', document.querySelector('#nav-messages'));
             removeHidden('el', document.querySelector('#nav-photos'));
@@ -268,6 +269,8 @@
             removeHidden('el', document.querySelector('#nav-trash'));
             removeHidden('el', document.querySelector('#settings'));
             removeHidden('el', document.querySelector('#tumblr'));
+
+            changeClass('add', document.querySelectorAll('.dropdown'), 'hidden');
 
             document.querySelector('body').classList.remove('touch');
             document.querySelector('.mac-bar_left').classList.remove('hidden');
@@ -316,7 +319,9 @@
 (function(){
     var topNavCon = document.querySelector('.top-nav'),
         bottomNavCon = document.querySelector('.bottom-nav'),
-        folders = document.querySelectorAll('.top-nav__item');
+        folders = document.querySelectorAll('.top-nav__item'),
+        dropDownButtons = document.querySelectorAll('.dropdown-button'),
+        macBar = document.querySelector('.mac-bar');
 
     var clickCount = 0;
         // clickedOpen = [];
@@ -350,6 +355,7 @@
 
             var section = document.querySelector(id);
 
+            //If you're viewing this page on desktop
             if("ontouchstart" in document.documentElement == false){
                 if(section.getAttribute('class').includes('hidden')){
                     section.classList.add('desktop-folder_open');
@@ -359,9 +365,6 @@
             if ("ontouchstart" in document.documentElement == true) {
                 section.classList.add('device-app_open');
                 section.classList.remove('hidden');
-            }
-            //If you're viewing this page on desktop
-            if("ontouchstart" in document.documentElement == false){
             }
             //Create snakeboard if the user clicked on snake
             if(id == '#snake'){
@@ -394,6 +397,24 @@
             item.open(e.target.parentElement.parentElement.parentElement, e.target.hash);
         }
     }
+
+    function toggleDropDown(e){
+        e.preventDefault();
+        closeOtherDropDowns();
+        if(e.target.parentNode.querySelector('.dropdown').className.includes('hidden')){
+            e.target.parentNode.querySelector('.dropdown').classList.remove('hidden');
+        } else {
+            e.target.parentNode.querySelector('.dropdown').classList.add('hidden');
+        }
+    }
+
+    function closeOtherDropDowns(){
+        var dropDowns = document.querySelectorAll('.dropdown');
+        for(var i = 0; i < dropDowns.length; i++){
+            dropDowns[i].classList.add('hidden');
+        }
+    }
+
     if("ontouchstart" in document.documentElement == false){
         topNavCon.addEventListener('click', checkAmountOfClicks);
     } else {
@@ -409,6 +430,16 @@
         }
     });
 
+    macBar.addEventListener('click', function(e){
+        if(e.target.hash){
+            item.open(e.target, e.target.hash);
+        }
+    });
+
+    for(var i = 0; i < dropDownButtons.length; i++){
+        dropDownButtons[i].addEventListener('click', toggleDropDown);
+        dropDownButtons[i].addEventListener('focus', toggleDropDown);
+    }
 })();
 //Single and double click function by Karbassi: https://gist.github.com/karbassi/639453
 

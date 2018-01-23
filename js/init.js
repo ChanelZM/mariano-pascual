@@ -57,9 +57,11 @@
 
         //If you're viewing this page on desktop
         if("ontouchstart" in document.documentElement == false){
+            removeHidden('array', document.querySelectorAll('.dropdown'));
             removeHidden('el', document.querySelector('#print'));
             // removeHidden('el', document.querySelector('#snake'));
             removeHidden('el', document.querySelector('#print-art'));
+            removeHidden('el', document.querySelector('.loading-screen'));
             removeHidden('el', document.querySelector('#nav-setting'));
             removeHidden('el', document.querySelector('#nav-messages'));
             removeHidden('el', document.querySelector('#nav-photos'));
@@ -68,6 +70,8 @@
             removeHidden('el', document.querySelector('#nav-trash'));
             removeHidden('el', document.querySelector('#settings'));
             removeHidden('el', document.querySelector('#tumblr'));
+
+            changeClass('add', document.querySelectorAll('.dropdown'), 'hidden');
 
             document.querySelector('body').classList.remove('touch');
             document.querySelector('.mac-bar_left').classList.remove('hidden');
