@@ -58,14 +58,14 @@
         //If you're viewing this page on desktop
         if("ontouchstart" in document.documentElement == false){
             removeHidden('array', document.querySelectorAll('.dropdown'));
-            removeHidden('el', document.querySelector('#print'));
-            // removeHidden('el', document.querySelector('#snake'));
-            removeHidden('el', document.querySelector('#print-art'));
             removeHidden('el', document.querySelector('.loading-screen'));
+            removeHidden('el', document.querySelector('.eyeball'));
+            removeHidden('el', document.querySelector('.fullscreen-folder'));
+            removeHidden('el', document.querySelector('#print'));
+            removeHidden('el', document.querySelector('#print-art'));
             removeHidden('el', document.querySelector('#nav-setting'));
             removeHidden('el', document.querySelector('#nav-messages'));
             removeHidden('el', document.querySelector('#nav-photos'));
-            // removeHidden('el', document.querySelector('#nav-snake'));
             removeHidden('el', document.querySelector('#nav-chrome'));
             removeHidden('el', document.querySelector('#nav-trash'));
             removeHidden('el', document.querySelector('#settings'));
@@ -80,20 +80,23 @@
             document.querySelector('#projects').classList.remove('device-app_open');
             document.querySelector('.mac-bar_center').classList.add('hidden');
             document.querySelector('#nav-phone').classList.add('hidden');
+            document.querySelector('.fullscreen-folder').classList.add('hidden');
             document.querySelector('#projects').classList.add('desktop-folder_open');
 
-            document.getElementById('print-art').addEventListener('click', function(){
-                document.querySelector('.bottom-nav').classList.add('hidden');
+            window.addEventListener('hashchange', function(){
+                if(location.hash == '#print'){
+                    document.querySelector('.bottom-nav').classList.add('hidden');
 
-                var closePrint = function(){
-                    document.querySelector('.bottom-nav').classList.remove('hidden');
-                    document.querySelector('#print').classList.add('hidden');
-                };
+                    var closePrint = function(){
+                        document.querySelector('.bottom-nav').classList.remove('hidden');
+                        document.querySelector('#print').classList.add('hidden');
+                    };
 
-                setTimeout(function(){
-                    window.print();
-                    closePrint();
-                }, 1000);
+                    setTimeout(function(){
+                        window.print();
+                        closePrint();
+                    }, 1000);
+                }
             });
         }
 
@@ -109,7 +112,7 @@
         document.querySelector('body').addEventListener('click', function(){
             clickSound.autoplay = true;
             clickSound.load();
-        })
+        });
     }
 
     init();

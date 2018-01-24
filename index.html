@@ -84,7 +84,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="mac-bar__item dropdown-button">
+                        <li class="mac-bar__item">
                             <button class="dropdown-button">Contact</button>
                             <ul class="dropdown">
                                 <li>
@@ -137,12 +137,6 @@
                             <h2 class="top-nav__title"><a href="#projects" class="app link_style_normal drag hover-img">Projects</a></h2>
                         </div>
                     </li>
-                    <!-- <li class="top-nav__item" id="nav-snake" hidden>
-                        <div>
-                            <img src="img/snake.svg" alt="Folder" hidden />
-                            <h2 class="top-nav__title"><a href="#snake" class="app link_style_normal drag">Snake</a></h2>
-                        </div>
-                    </li> -->
                 </ul>
             </nav>
         </header>
@@ -722,36 +716,62 @@
                         </p>
                     </section>
                 </div>
-                <section class="desktop-folder" id="snake" hidden>
-                    <h2 class="desktop-folder__title drag">Snake</h2>
-                    <div class="buttons-wrap">
-                        <button class="buttons-wrap__window-btn close"><img src="img/x.svg" alt="close button" /></button>
-                        <button class="buttons-wrap__window-btn minimize"><img src="img/underscore.svg" alt="minimize button" /></button>
-                        <button class="buttons-wrap__window-btn fullscreen"><img src="img/square.svg" alt="fullscreen button" /></button>
-                    </div>
-                    <section class="folder-content">
-                        <div id="mode-wrapper">
-                            <p>
-                                Select which mode you would like to play in.
-                            </p>
-                            <button class="difficulty" id="Easy">Easy</button>
-                            <button class="difficulty" id="Medium">Medium</button>
-                            <button class="difficulty" id="Difficult">Difficult</button>
-                        </div>
-                        <p id="high-score">Here comes your high score</p>
-                        <div id="game-area" tabindex="0">
-
-                        </div>
-                    </section>
-                </section>
                 <section class="desktop-folder print" id="print" hidden>
                     <img src="http://payload541.cargocollective.com/1/5/167802/13130602/SayHiTo_slide_2000_c_2000_c.jpg" alt="Daniel & Emma" class="print__img" />
                 </section>
+                <section class="fullscreen-folder" id="latestwork" hidden>
+                    <h2 class="slideshow__pjt-title">Latest work</h2>
+                    <button class="fullscreen__close-button close"><img src="img/x.svg" alt="close button" /></button>
+                    <ul class="basic_list slideshow">
+                        <li class="slideshow__slide slideshow__slide_first">
+                            <div class="slideshow__slide-wrap">
+                                <img src="img/icon-eyeball.svg" alt="Mariano logo" class="slideshow__eye" />
+                                <h3 class="slideshow__title">Hello! I'm Mariano Pascual and this is a fresh selection of my latest projects...</h3>
+                                <p class="slideshow__p">
+                                    Take a quick view
+                                </p>
+                                <button class="slideshow__start-btn">
+                                    Take a look
+                                </button>
+                            </div>
+                        </li>
+                        <li class="slideshow__slide">
+                            <h4 class="slideshow__pjt-title">Name of project</h4>
+                            <!-- <img src="" alt="" class="slideshow__img" /> -->
+                            <div class="slideshow__img">
+                            </div>
+                            <a href="" class="slideshow__pjt-button">click to see full project</a>
+                        </li>
+                        <li class="slideshow__slide">
+                            <h4 class="slideshow__pjt-title">Name of project</h4>
+                            <!-- <img src="" alt="" class="slideshow__img" /> -->
+                            <div class="slideshow__img">
+                            </div>
+                            <a href="" class="slideshow__pjt-button">click to see full project</a>
+                        </li>
+                        <li class="slideshow__slide">
+                            <h4 class="slideshow__pjt-title">Name of project</h4>
+                            <!-- <img src="" alt="" class="slideshow__img" /> -->
+                            <div class="slideshow__img">
+                            </div>
+                            <a href="" class="slideshow__pjt-button">click to see full project</a>
+                        </li>
+                        <li class="slideshow__slide">
+                            <h4 class="slideshow__pjt-title">Name of project</h4>
+                            <!-- <img src="" alt="" class="slideshow__img" /> -->
+                            <div class="slideshow__img">
+                            </div>
+                            <a href="" class="slideshow__pjt-button">click to see full project</a>
+                        </li>
+                    </ul>
+                    <button class="slideshow__nav-button" id="prev-button">Previous</button>
+                    <button class="slideshow__nav-button" id="next-button">Next</button>
+                </section>
             </div>
-            <div class="eyeball">
+            <div class="eyeball" hidden>
                 <div class="pupil">
                     <div class="gloss">
-                        <a href="#latestwork"></a>
+                        <a href="#latestwork" class="eyeball__link"></a>
                     </div>
                 </div>
             </div>
@@ -832,6 +852,11 @@
                 <div class="pendelum__ball"></div>
                 <div class="pendelum__ball"></div>
                 <div class="pendelum__ball pendelum__ball-last"></div>
+            </div>
+        </div>
+        <div class="slider-anim_wrap" hidden>
+            <div class="slider-anim__circle">
+
             </div>
         </div>
         <audio class="bin-sound">

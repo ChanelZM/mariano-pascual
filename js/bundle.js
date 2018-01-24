@@ -40,38 +40,50 @@
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var buttonsWrap = document.querySelectorAll('.buttons-wrap'),
+        closeButtons = document.querySelectorAll('.close'),
         i;
 
     //Close window with the id of the section
     function closeWindow(id, classNam){
+        location.hash = '#home';
         document.querySelector('#' + id).classList.add(classNam);
         document.querySelector('#' + id).classList.remove('desktop-folder_open');
+        document.querySelector('.eyeball').classList.remove('hidden');
+        document.querySelector('.bottom-nav').classList.remove('hidden');
     }
 
-    //Trigger the right function for the right button.
-    function forwardToFunction(el, targetWindow, classNam){
-        var id = targetWindow.getAttribute('id');
-
-        if (el.className.includes('close')){
-            closeWindow(id, classNam);
-        }
-
-        if (el.className.includes('minimize')){
-            // Function reference for minimize here
-            console.log('minimize');
-        }
-
-        if (el.className.includes('fullscreen')){
-            // Function reference for fullscreen here
-            console.log('fullscreen');
-        }
-    }
-
-    for(i = 0; i < buttonsWrap.length; i++){
-        buttonsWrap[i].addEventListener('click', function(e){
-            forwardToFunction(e.target, e.target.parentNode.parentNode, 'hidden');
+    for(i = 0; i < closeButtons.length; i++){
+        closeButtons[i].addEventListener('click', function(e){
+            var id = e.target.parentNode.parentNode.id;
+            closeWindow(id, 'hidden');
         });
     }
+
+    // //Trigger the right function for the right button.
+    // function forwardToFunction(el, targetWindow, classNam){
+    //     console.log(targetWindow);
+    //     var id = targetWindow.getAttribute('id');
+    //
+    //     if (el.className.includes('close')){
+    //         closeWindow(id, classNam);
+    //     }
+    //
+    //     if (el.className.includes('minimize')){
+    //         // Function reference for minimize here
+    //         console.log('minimize');
+    //     }
+    //
+    //     if (el.className.includes('fullscreen')){
+    //         // Function reference for fullscreen here
+    //         console.log('fullscreen');
+    //     }
+    // }
+
+    // for(i = 0; i < buttonsWrap.length; i++){
+    //     buttonsWrap[i].addEventListener('click', function(e){
+    //         forwardToFunction(e.target, e.target.parentNode.parentNode, 'hidden');
+    //     });
+    // }
 })();
 
 },{}],3:[function(require,module,exports){
@@ -257,14 +269,14 @@
         //If you're viewing this page on desktop
         if("ontouchstart" in document.documentElement == false){
             removeHidden('array', document.querySelectorAll('.dropdown'));
-            removeHidden('el', document.querySelector('#print'));
-            // removeHidden('el', document.querySelector('#snake'));
-            removeHidden('el', document.querySelector('#print-art'));
             removeHidden('el', document.querySelector('.loading-screen'));
+            removeHidden('el', document.querySelector('.eyeball'));
+            removeHidden('el', document.querySelector('.fullscreen-folder'));
+            removeHidden('el', document.querySelector('#print'));
+            removeHidden('el', document.querySelector('#print-art'));
             removeHidden('el', document.querySelector('#nav-setting'));
             removeHidden('el', document.querySelector('#nav-messages'));
             removeHidden('el', document.querySelector('#nav-photos'));
-            // removeHidden('el', document.querySelector('#nav-snake'));
             removeHidden('el', document.querySelector('#nav-chrome'));
             removeHidden('el', document.querySelector('#nav-trash'));
             removeHidden('el', document.querySelector('#settings'));
@@ -279,20 +291,23 @@
             document.querySelector('#projects').classList.remove('device-app_open');
             document.querySelector('.mac-bar_center').classList.add('hidden');
             document.querySelector('#nav-phone').classList.add('hidden');
+            document.querySelector('.fullscreen-folder').classList.add('hidden');
             document.querySelector('#projects').classList.add('desktop-folder_open');
 
-            document.getElementById('print-art').addEventListener('click', function(){
-                document.querySelector('.bottom-nav').classList.add('hidden');
+            window.addEventListener('hashchange', function(){
+                if(location.hash == '#print'){
+                    document.querySelector('.bottom-nav').classList.add('hidden');
 
-                var closePrint = function(){
-                    document.querySelector('.bottom-nav').classList.remove('hidden');
-                    document.querySelector('#print').classList.add('hidden');
-                };
+                    var closePrint = function(){
+                        document.querySelector('.bottom-nav').classList.remove('hidden');
+                        document.querySelector('#print').classList.add('hidden');
+                    };
 
-                setTimeout(function(){
-                    window.print();
-                    closePrint();
-                }, 1000);
+                    setTimeout(function(){
+                        window.print();
+                        closePrint();
+                    }, 1000);
+                }
             });
         }
 
@@ -308,7 +323,7 @@
         document.querySelector('body').addEventListener('click', function(){
             clickSound.autoplay = true;
             clickSound.load();
-        })
+        });
     }
 
     init();
@@ -321,7 +336,8 @@
         bottomNavCon = document.querySelector('.bottom-nav'),
         folders = document.querySelectorAll('.top-nav__item'),
         dropDownButtons = document.querySelectorAll('.dropdown-button'),
-        macBar = document.querySelector('.mac-bar');
+        macBar = document.querySelector('.mac-bar'),
+        eye = document.querySelector('.eyeball');
 
     var clickCount = 0;
         // clickedOpen = [];
@@ -343,11 +359,14 @@
     //     //Every time a folder opens, this folder needs to be displayed at the front
     // }
 
+    //if where you clicked has a link to an application/folder open it up
+    function checkIfApp(e){
+        if(e.target.hash){
+            item.open(e.target, e.target.hash);
+        }
+    }
+
     var item = {
-        //Function gives the parent item a selected design
-        select: function(parent){
-            giveSelectedDesign(parent);
-        },
         //Function will open the right window
         open: function(parent, id){
             giveSelectedDesign(parent);
@@ -356,52 +375,31 @@
             var section = document.querySelector(id);
 
             //If you're viewing this page on desktop
-            if("ontouchstart" in document.documentElement == false){
+            if("ontouchstart" in document.documentElement == false && section.getAttribute('class').includes('desktop-folder')){
                 if(section.getAttribute('class').includes('hidden')){
                     section.classList.add('desktop-folder_open');
                     section.classList.remove('hidden');
                 }
             }
+            //If you're viewing this page on desktop
+            if("ontouchstart" in document.documentElement == false && section.getAttribute('class').includes('fullscreen-folder')){
+                if(section.getAttribute('class').includes('hidden')){
+                    section.classList.remove('hidden');
+                }
+            }
+            //If you're viewing this page on a touch device, styling is different
             if ("ontouchstart" in document.documentElement == true) {
                 section.classList.add('device-app_open');
                 section.classList.remove('hidden');
             }
-            //Create snakeboard if the user clicked on snake
-            if(id == '#snake'){
-                var mySnakeBoard = new SNAKE.Board({
-                                        boardContainer: "game-area",
-                                        fullScreen: false,
-                                        width: 954,
-                                        height: 608
-                                    });
-            }
         }
     };
 
-    //Depending on the amount of clicks, a different function will be triggered.
-    function checkAmountOfClicks(e){
-        clickCount++;
-
-        if(clickCount === 1){
-            //To check if the user clicked twice, set timeout, if not, give item selected style
-            singleClickTimer = setTimeout(function(){
-                clickCount = 0;
-
-                item.select(e.target.parentElement.parentElement.parentElement);
-            }, 200);
-        } else if(clickCount === 2){
-            clearTimeout(singleClickTimer);
-
-            clickCount = 0;
-
-            item.open(e.target.parentElement.parentElement.parentElement, e.target.hash);
-        }
-    }
-
     function toggleDropDown(e){
         e.preventDefault();
-        closeOtherDropDowns();
+
         if(e.target.parentNode.querySelector('.dropdown').className.includes('hidden')){
+            closeOtherDropDowns();
             e.target.parentNode.querySelector('.dropdown').classList.remove('hidden');
         } else {
             e.target.parentNode.querySelector('.dropdown').classList.add('hidden');
@@ -415,30 +413,31 @@
         }
     }
 
-    if("ontouchstart" in document.documentElement == false){
-        topNavCon.addEventListener('click', checkAmountOfClicks);
-    } else {
-        topNavCon.addEventListener('click', function(e){
-            if(e.target.hash){
-                item.open(e.target, e.target.hash);
-            }
-        });
-    }
-    bottomNavCon.addEventListener('click', function(e){
-        if(e.target.hash){
-            item.open(e.target, e.target.hash);
-        }
-    });
+    topNavCon.addEventListener('click', checkIfApp);
+    bottomNavCon.addEventListener('click', checkIfApp);
+    eye.addEventListener('click', function(e){
+        var animCircle = document.querySelector('.slider-anim__circle');
 
-    macBar.addEventListener('click', function(e){
-        if(e.target.hash){
-            item.open(e.target, e.target.hash);
-        }
+        document.querySelector('.slider-anim_wrap').removeAttribute('hidden');
+        setTimeout(function(){
+            animCircle.style.height = '130vw';
+            animCircle.style.width = '130vw';
+        }, 2);
+
+        setTimeout(function(){
+            document.querySelector('.bottom-nav').classList.add('hidden');
+            document.querySelector('.eyeball').classList.add('hidden');
+
+            document.querySelector('.slider-anim_wrap').setAttribute('hidden', 'true');
+            animCircle.removeAttribute('style');
+
+            checkIfApp(e);
+        }, 1001);
     });
+    macBar.addEventListener('click', checkIfApp);
 
     for(var i = 0; i < dropDownButtons.length; i++){
         dropDownButtons[i].addEventListener('click', toggleDropDown);
-        dropDownButtons[i].addEventListener('focus', toggleDropDown);
     }
 })();
 //Single and double click function by Karbassi: https://gist.github.com/karbassi/639453
@@ -506,103 +505,6 @@
 },{}],8:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
-    var count = 0;
-
-    var projects = [
-        {
-            name: 'Daniel & Emma',
-            href: '#project1',
-            imgSrc: 'http://payload541.cargocollective.com/1/5/167802/13130602/SayHiTo_slide_2000_c_2000_c.jpg'
-        },
-        {
-            name: '36 Days of Type #2',
-            href: '#project1',
-            imgSrc: 'http://payload541.cargocollective.com/1/5/167802/13130373/A_2000_c.jpg'
-        },
-        {
-            name: 'Penetrate',
-            href: '#project1',
-            imgSrc: 'http://payload490.cargocollective.com/1/5/167802/12119976/theastonshuffle_penetrate_2000_c.jpg'
-        },
-        {
-            name: '36 Days of type',
-            href: '#project1',
-            imgSrc: 'http://payload388.cargocollective.com/1/5/167802/10074091/36slide_2_2000_c.jpg'
-        },
-        {
-            name: 'Ghost Army',
-            href: '#project1',
-            imgSrc: 'http://payload432.cargocollective.com/1/5/167802/10946398/Ghost_Army_1_1000.jpg'
-        },
-        {
-            name: 'Roald Dahl Tribute',
-            href: '#project1',
-            imgSrc: 'http://payload482.cargocollective.com/1/5/167802/11953073/lixivate-it-s-nice-that-09_2000_c.jpg'
-        },
-        {
-            name: 'La velocidad de una fiesta',
-            href: '#project1',
-            imgSrc: 'http://payload474.cargocollective.com/1/5/167802/11789231/lvvduf_8_2000_c.jpg'
-        },
-        {
-            name: 'Read nothing here',
-            href: '#project1',
-            imgSrc: 'http://payload447.cargocollective.com/1/5/167802/11257371/Read_cover_2000_c.jpg'
-        },
-        {
-            name: 'Cherry Glazer',
-            href: '#project1',
-            imgSrc: 'http://payload490.cargocollective.com/1/5/167802/12107233/cherry_2000_c.jpg'
-        }
-        ,
-        {
-            name: 'Isamo Noguchi\'s sculptures',
-            href: '#project1',
-            imgSrc: 'http://payload490.cargocollective.com/1/5/167802/12112855/noguchi_total-06_900.jpg'
-        },
-        {
-            name: 'The floating world',
-            href: '#project1',
-            imgSrc: 'http://payload407.cargocollective.com/1/5/167802/10453919/the-floating-world-02_2000_c.jpg'
-        }
-    ];
-
-    function randomImg(){
-        document.querySelector('.sldr-info').removeAttribute('hidden');
-
-        checkCount();
-        var backgroundImg = 'background-image: url(' + projects[count].imgSrc + ')';
-
-        document.querySelector('body').classList.add('opac');
-
-        setTimeout(function(){
-            document.querySelector('body').classList.remove('opac');
-            document.styleSheets[0].addRule('body::before', backgroundImg);
-            document.querySelector('.sldr-info__link').innerHTML = projects[count].name;
-            document.querySelector('.sldr-info__link').setAttribute('href', projects[count].href);
-        }, 401);
-
-        setTimeout(function(){
-            count++;
-            randomImg();
-        }, 7000);
-    }
-
-    function checkCount(){
-        if(count == projects.length){
-            count = 0;
-        }
-    }
-
-    // setTimeout(function(){
-    //     document.querySelector('body').style.backgroundColor = 'white';
-    //     randomImg();
-    // }, 3000);
-})();
-
-},{}],9:[function(require,module,exports){
-/*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
-(function(){
     var screensaver = document.querySelector('.screensaver');
 
     var isActive = false;
@@ -626,15 +528,6 @@
         if(isActive == true){
             stopScreensaver();
         }
-
-        //If You're playing snake, don't show the screensaver
-        if(document.querySelector('#snake').className.includes('desktop-folder_open') == false){
-            //Set again so when the user doesn't move anymore, the screensaver will be shown.
-            mouseTimeout = setTimeout(function(){
-                isActive = true;
-                showScreensaver();
-            }, 13000);
-        }
     }
 
     if("ontouchstart" in document.documentElement == false){
@@ -647,7 +540,7 @@
     }
 })();
 
-},{}],10:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var appleSliders = document.querySelectorAll('.a-slider__circle'),
@@ -718,7 +611,7 @@
     }
 })();
 
-},{}],11:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var detailSections = document.querySelectorAll('.detail'),
@@ -755,4 +648,4 @@
     }
 })();
 
-},{}]},{},[5,6,2,3,11,7,8,9,1,10,4]);
+},{}]},{},[5,6,2,3,10,7,8,1,9,4]);
