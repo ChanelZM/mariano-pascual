@@ -246,8 +246,10 @@ p {
     text-align: center;
     background-color: #DADAD3;
     border-bottom: 2px solid #1d1e1c;
-    border-radius: 18px;
     z-index: 1;
+}
+.desktop-folder_open {
+    border-radius: 18px;
 }
 .desktop-folder_big .desktop-folder__title {
     width: calc(100vw - 8.4rem);
