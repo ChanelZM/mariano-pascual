@@ -204,7 +204,7 @@ p {
     height: 40rem;
     width: 60rem;
     background-color: white;
-    border: 3px solid #1d1e1c;
+    border: 2px solid #1d1e1c;
     box-shadow: -1.5rem 1.5rem 0 rgba(29, 30, 28, 0.26);
     overflow-y: scroll;
     z-index: 2;
@@ -241,11 +241,11 @@ p {
     margin: 0;
     position: fixed;
     padding: 0.2rem 4rem;
-    width: 59.6rem;
+    width: 59.75rem;
     font-size: 1.2rem;
     text-align: center;
     background-color: #DADAD3;
-    border-bottom: 3px solid #1d1e1c;
+    border-bottom: 2px solid #1d1e1c;
     z-index: 1;
 }
 .desktop-folder_big .desktop-folder__title {
@@ -441,7 +441,7 @@ p {
     display: flex;
     justify-content: space-between;
     background-color: #DADAD3;
-    border-bottom: 0.2rem solid black;
+    border-bottom: 2px solid black;
     z-index: 2;
 }
 .mac-bar_center {
@@ -1208,7 +1208,7 @@ svg #ball {
         width: 53rem;
     }
     .desktop-folder_open .desktop-folder__title, .device-app_open .desktop-folder__title {
-        width: 52.6rem;
+        width: 52.85rem;
     }
     .eyeball {
         width: 6rem;
