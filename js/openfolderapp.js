@@ -81,28 +81,35 @@
         }
     }
 
-    topNavCon.addEventListener('click', checkIfApp);
-    bottomNavCon.addEventListener('click', checkIfApp);
-    eye.addEventListener('click', function(e){
+    function animateFullscreen(e, callback){
         var animCircle = document.querySelector('.slider-anim__circle');
 
         document.querySelector('.slider-anim_wrap').removeAttribute('hidden');
         setTimeout(function(){
             animCircle.style.height = '130vw';
             animCircle.style.width = '130vw';
-        }, 2);
+        }, 1);
 
         setTimeout(function(){
-            document.querySelector('.bottom-nav').classList.add('hidden');
-            document.querySelector('.eyeball').classList.add('hidden');
-
+            callback();
             document.querySelector('.slider-anim_wrap').setAttribute('hidden', 'true');
             animCircle.removeAttribute('style');
 
             checkIfApp(e);
         }, 1001);
-    });
+    }
+
+    function removeNavAndEye(){
+        document.querySelector('.bottom-nav').classList.add('hidden');
+        document.querySelector('.eyeball').classList.add('hidden');
+    }
+
+    topNavCon.addEventListener('click', checkIfApp);
+    bottomNavCon.addEventListener('click', checkIfApp);
     macBar.addEventListener('click', checkIfApp);
+    eye.addEventListener('click', function(e){
+        animateFullscreen(e, removeNavAndEye);
+    });
 
     for(var i = 0; i < dropDownButtons.length; i++){
         dropDownButtons[i].addEventListener('click', toggleDropDown);

@@ -72,6 +72,8 @@
             removeHidden('el', document.querySelector('#tumblr'));
 
             changeClass('add', document.querySelectorAll('.dropdown'), 'hidden');
+            changeClass('add', document.querySelectorAll('.desktop-folder'), 'hidden');
+            changeClass('add', document.querySelectorAll('.desktop-folder'), 'desktop-folder_open');
 
             document.querySelector('body').classList.remove('touch');
             document.querySelector('.mac-bar_left').classList.remove('hidden');
@@ -81,7 +83,7 @@
             document.querySelector('.mac-bar_center').classList.add('hidden');
             document.querySelector('#nav-phone').classList.add('hidden');
             document.querySelector('.fullscreen-folder').classList.add('hidden');
-            document.querySelector('#projects').classList.add('desktop-folder_open');
+            document.querySelector('#projects').classList.remove('hidden');
 
             window.addEventListener('hashchange', function(){
                 if(location.hash == '#print'){

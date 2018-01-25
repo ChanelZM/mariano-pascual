@@ -47,7 +47,6 @@
     function closeWindow(id, classNam){
         location.hash = '#home';
         document.querySelector('#' + id).classList.add(classNam);
-        document.querySelector('#' + id).classList.remove('desktop-folder_open');
         document.querySelector('.eyeball').classList.remove('hidden');
         document.querySelector('.bottom-nav').classList.remove('hidden');
     }
@@ -164,6 +163,37 @@
 },{}],4:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
+    var screenWidth = window.innerWidth,
+        halfWidth = screenWidth / 2,
+        screenHeight = window.innerHeight,
+        halfHeight = screenHeight / 2,
+        mouseX = halfWidth,
+		mouseY = halfHeight,
+		eyeX = 50,
+		eyeY = 50;
+
+    document.addEventListener('mousemove', function(e){
+        mouseX = e.pageX;
+        mouseY = e.pageY;
+    });
+
+    function move(){
+        eyeX = mouseX / screenWidth * 25 + 40;
+        eyeY = mouseY / screenHeight * 25 + 40;
+        // console.log(eyeX);
+
+        document.querySelector('.pupil').style.left = eyeX + '%';
+        document.querySelector('.pupil').style.top = eyeY + '%';
+
+        window.requestAnimationFrame(move);
+    }
+
+    move();
+})();
+
+},{}],5:[function(require,module,exports){
+/*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
+(function(){
     var hoverImages = document.querySelectorAll('.hover-img');
 
     var parent,
@@ -208,7 +238,7 @@
     }
 })();
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     function init(){
@@ -283,6 +313,8 @@
             removeHidden('el', document.querySelector('#tumblr'));
 
             changeClass('add', document.querySelectorAll('.dropdown'), 'hidden');
+            changeClass('add', document.querySelectorAll('.desktop-folder'), 'hidden');
+            changeClass('add', document.querySelectorAll('.desktop-folder'), 'desktop-folder_open');
 
             document.querySelector('body').classList.remove('touch');
             document.querySelector('.mac-bar_left').classList.remove('hidden');
@@ -292,7 +324,7 @@
             document.querySelector('.mac-bar_center').classList.add('hidden');
             document.querySelector('#nav-phone').classList.add('hidden');
             document.querySelector('.fullscreen-folder').classList.add('hidden');
-            document.querySelector('#projects').classList.add('desktop-folder_open');
+            document.querySelector('#projects').classList.remove('hidden');
 
             window.addEventListener('hashchange', function(){
                 if(location.hash == '#print'){
@@ -329,7 +361,7 @@
     init();
 })();
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var topNavCon = document.querySelector('.top-nav'),
@@ -413,28 +445,35 @@
         }
     }
 
-    topNavCon.addEventListener('click', checkIfApp);
-    bottomNavCon.addEventListener('click', checkIfApp);
-    eye.addEventListener('click', function(e){
+    function animateFullscreen(e, callback){
         var animCircle = document.querySelector('.slider-anim__circle');
 
         document.querySelector('.slider-anim_wrap').removeAttribute('hidden');
         setTimeout(function(){
             animCircle.style.height = '130vw';
             animCircle.style.width = '130vw';
-        }, 2);
+        }, 1);
 
         setTimeout(function(){
-            document.querySelector('.bottom-nav').classList.add('hidden');
-            document.querySelector('.eyeball').classList.add('hidden');
-
+            callback();
             document.querySelector('.slider-anim_wrap').setAttribute('hidden', 'true');
             animCircle.removeAttribute('style');
 
             checkIfApp(e);
         }, 1001);
-    });
+    }
+
+    function removeNavAndEye(){
+        document.querySelector('.bottom-nav').classList.add('hidden');
+        document.querySelector('.eyeball').classList.add('hidden');
+    }
+
+    topNavCon.addEventListener('click', checkIfApp);
+    bottomNavCon.addEventListener('click', checkIfApp);
     macBar.addEventListener('click', checkIfApp);
+    eye.addEventListener('click', function(e){
+        animateFullscreen(e, removeNavAndEye);
+    });
 
     for(var i = 0; i < dropDownButtons.length; i++){
         dropDownButtons[i].addEventListener('click', toggleDropDown);
@@ -442,7 +481,7 @@
 })();
 //Single and double click function by Karbassi: https://gist.github.com/karbassi/639453
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var pornLinks = document.querySelectorAll('[href="#porn"]'),
@@ -502,7 +541,7 @@
     });
 })();
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var screensaver = document.querySelector('.screensaver');
@@ -540,7 +579,7 @@
     }
 })();
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var appleSliders = document.querySelectorAll('.a-slider__circle'),
@@ -611,7 +650,7 @@
     }
 })();
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var detailSections = document.querySelectorAll('.detail'),
@@ -648,4 +687,4 @@
     }
 })();
 
-},{}]},{},[5,6,2,3,10,7,8,1,9,4]);
+},{}]},{},[6,7,2,3,11,8,9,1,10,5,4]);

@@ -15,8 +15,8 @@
     });
 
     function move(){
-        eyeX = mouseX / screenWidth * 70;
-        eyeY = mouseY / screenHeight * 70;
+        eyeX = mouseX / screenWidth * 25 + 40;
+        eyeY = mouseY / screenHeight * 25 + 40;
         // console.log(eyeX);
 
         document.querySelector('.pupil').style.left = eyeX + '%';

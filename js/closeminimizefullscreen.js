@@ -8,7 +8,6 @@
     function closeWindow(id, classNam){
         location.hash = '#home';
         document.querySelector('#' + id).classList.add(classNam);
-        document.querySelector('#' + id).classList.remove('desktop-folder_open');
         document.querySelector('.eyeball').classList.remove('hidden');
         document.querySelector('.bottom-nav').classList.remove('hidden');
     }
