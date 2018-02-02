@@ -163,37 +163,6 @@
 },{}],4:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
-    var screenWidth = window.innerWidth,
-        halfWidth = screenWidth / 2,
-        screenHeight = window.innerHeight,
-        halfHeight = screenHeight / 2,
-        mouseX = halfWidth,
-		mouseY = halfHeight,
-		eyeX = 50,
-		eyeY = 50;
-
-    document.addEventListener('mousemove', function(e){
-        mouseX = e.pageX;
-        mouseY = e.pageY;
-    });
-
-    function move(){
-        eyeX = mouseX / screenWidth * 25 + 40;
-        eyeY = mouseY / screenHeight * 25 + 40;
-        // console.log(eyeX);
-
-        document.querySelector('.pupil').style.left = eyeX + '%';
-        document.querySelector('.pupil').style.top = eyeY + '%';
-
-        window.requestAnimationFrame(move);
-    }
-
-    move();
-})();
-
-},{}],5:[function(require,module,exports){
-/*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
-(function(){
     var hoverImages = document.querySelectorAll('.hover-img');
 
     var parent,
@@ -238,7 +207,7 @@
     }
 })();
 
-},{}],6:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     function init(){
@@ -310,6 +279,7 @@
             removeHidden('el', document.querySelector('#nav-chrome'));
             removeHidden('el', document.querySelector('#nav-trash'));
             removeHidden('el', document.querySelector('#settings'));
+            removeHidden('el', document.querySelector('#latestproject'));
             removeHidden('el', document.querySelector('#tumblr'));
 
             changeClass('add', document.querySelectorAll('.dropdown'), 'hidden');
@@ -324,7 +294,7 @@
             document.querySelector('.mac-bar_center').classList.add('hidden');
             document.querySelector('#nav-phone').classList.add('hidden');
             document.querySelector('.fullscreen-folder').classList.add('hidden');
-            document.querySelector('#projects').classList.remove('hidden');
+            document.querySelector('#latestproject').classList.remove('hidden');
 
             window.addEventListener('hashchange', function(){
                 if(location.hash == '#print'){
@@ -361,7 +331,7 @@
     init();
 })();
 
-},{}],7:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var topNavCon = document.querySelector('.top-nav'),
@@ -481,7 +451,7 @@
 })();
 //Single and double click function by Karbassi: https://gist.github.com/karbassi/639453
 
-},{}],8:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var pornLinks = document.querySelectorAll('[href="#porn"]'),
@@ -541,7 +511,7 @@
     });
 })();
 
-},{}],9:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var screensaver = document.querySelector('.screensaver');
@@ -579,7 +549,7 @@
     }
 })();
 
-},{}],10:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var appleSliders = document.querySelectorAll('.a-slider__circle'),
@@ -650,7 +620,7 @@
     }
 })();
 
-},{}],11:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var detailSections = document.querySelectorAll('.detail'),
@@ -687,4 +657,4 @@
     }
 })();
 
-},{}]},{},[6,7,2,3,11,8,9,1,10,5,4]);
+},{}]},{},[5,6,2,3,10,7,8,1,9,4]);

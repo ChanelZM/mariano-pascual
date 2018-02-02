@@ -69,6 +69,7 @@
             removeHidden('el', document.querySelector('#nav-chrome'));
             removeHidden('el', document.querySelector('#nav-trash'));
             removeHidden('el', document.querySelector('#settings'));
+            removeHidden('el', document.querySelector('#latestproject'));
             removeHidden('el', document.querySelector('#tumblr'));
 
             changeClass('add', document.querySelectorAll('.dropdown'), 'hidden');
@@ -83,7 +84,7 @@
             document.querySelector('.mac-bar_center').classList.add('hidden');
             document.querySelector('#nav-phone').classList.add('hidden');
             document.querySelector('.fullscreen-folder').classList.add('hidden');
-            document.querySelector('#projects').classList.remove('hidden');
+            document.querySelector('#latestproject').classList.remove('hidden');
 
             window.addEventListener('hashchange', function(){
                 if(location.hash == '#print'){
