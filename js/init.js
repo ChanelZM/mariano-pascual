@@ -39,6 +39,7 @@
         removeHidden('el', document.querySelector('.bottom-nav'));
         removeHidden('el', document.querySelector('.mac-bar_center'));
         removeHidden('el', document.querySelector('#nav-phone'));
+        removeHidden('el', document.querySelector('#photos'));
 
         changeClass('add', document.querySelectorAll('.desktop-folder'), 'hidden');
         changeClass('add', document.querySelectorAll('.folder-content'), 'js');
@@ -70,7 +71,6 @@
             removeHidden('el', document.querySelector('#nav-trash'));
             removeHidden('el', document.querySelector('#settings'));
             removeHidden('el', document.querySelector('#latestproject'));
-            removeHidden('el', document.querySelector('#tumblr'));
 
             changeClass('add', document.querySelectorAll('.dropdown'), 'hidden');
             changeClass('add', document.querySelectorAll('.desktop-folder'), 'hidden');

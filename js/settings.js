@@ -1,7 +1,8 @@
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var appleSliders = document.querySelectorAll('.a-slider__circle'),
-        body = document.querySelector('body');
+        body = document.querySelector('body'),
+        brightnessImgs = document.querySelectorAll('.brightness');
 
     var i,
         val;
@@ -28,10 +29,18 @@
     function switchOnOff(e){
         if(e.target.parentNode.className.includes('switch-on')){
             e.target.parentNode.classList.remove('switch-on');
-            setTimeout(fullscreen.off, 300);
+            getSetting(e.target.id, 'off');
         } else {
             e.target.parentNode.classList.add('switch-on');
-            setTimeout(fullscreen.on, 300);
+            getSetting(e.target.id, 'on');
+        }
+    }
+
+    function getSetting(id, state){
+        if(id == 'btn-fullscreen'){
+            setTimeout(fullscreen[state], 300);
+        } else if (id == 'btn-brightness'){
+            brightness[state]();
         }
     }
 
@@ -59,6 +68,19 @@
             }
         }
     };
+
+    var brightness = {
+        on: function(){
+            for(var i = 0; i < brightnessImgs.length; i++){
+                brightnessImgs[i].removeAttribute('hidden');
+            }
+        },
+        off: function(){
+            for(var i = 0; i < brightnessImgs.length; i++){
+                brightnessImgs[i].setAttribute('hidden', 'true');
+            }
+        }
+    }
 
     document.querySelector('.color-list').addEventListener('click', getClickedColor);
     document.querySelector('.range').addEventListener('change', getValue);

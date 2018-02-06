@@ -249,6 +249,7 @@
         removeHidden('el', document.querySelector('.bottom-nav'));
         removeHidden('el', document.querySelector('.mac-bar_center'));
         removeHidden('el', document.querySelector('#nav-phone'));
+        removeHidden('el', document.querySelector('#photos'));
 
         changeClass('add', document.querySelectorAll('.desktop-folder'), 'hidden');
         changeClass('add', document.querySelectorAll('.folder-content'), 'js');
@@ -280,7 +281,6 @@
             removeHidden('el', document.querySelector('#nav-trash'));
             removeHidden('el', document.querySelector('#settings'));
             removeHidden('el', document.querySelector('#latestproject'));
-            removeHidden('el', document.querySelector('#tumblr'));
 
             changeClass('add', document.querySelectorAll('.dropdown'), 'hidden');
             changeClass('add', document.querySelectorAll('.desktop-folder'), 'hidden');
@@ -553,7 +553,8 @@
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var appleSliders = document.querySelectorAll('.a-slider__circle'),
-        body = document.querySelector('body');
+        body = document.querySelector('body'),
+        brightnessImgs = document.querySelectorAll('.brightness');
 
     var i,
         val;
@@ -580,10 +581,18 @@
     function switchOnOff(e){
         if(e.target.parentNode.className.includes('switch-on')){
             e.target.parentNode.classList.remove('switch-on');
-            setTimeout(fullscreen.off, 300);
+            getSetting(e.target.id, 'off');
         } else {
             e.target.parentNode.classList.add('switch-on');
-            setTimeout(fullscreen.on, 300);
+            getSetting(e.target.id, 'on');
+        }
+    }
+
+    function getSetting(id, state){
+        if(id == 'btn-fullscreen'){
+            setTimeout(fullscreen[state], 300);
+        } else if (id == 'btn-brightness'){
+            brightness[state]();
         }
     }
 
@@ -612,6 +621,19 @@
         }
     };
 
+    var brightness = {
+        on: function(){
+            for(var i = 0; i < brightnessImgs.length; i++){
+                brightnessImgs[i].removeAttribute('hidden');
+            }
+        },
+        off: function(){
+            for(var i = 0; i < brightnessImgs.length; i++){
+                brightnessImgs[i].setAttribute('hidden', 'true');
+            }
+        }
+    }
+
     document.querySelector('.color-list').addEventListener('click', getClickedColor);
     document.querySelector('.range').addEventListener('change', getValue);
 
@@ -621,6 +643,61 @@
 })();
 
 },{}],10:[function(require,module,exports){
+/*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
+(function(){
+    var i;
+
+    var slideButtons = document.querySelectorAll('.slideshow__nav-button'),
+        slideShows = document.querySelectorAll('.slideshow');
+        count = {};
+
+    function getDirection(e){
+        var prevCount,
+            slideInfo = getSlideInfo(e);
+
+            console.log(count);
+        if(e.target.parentNode.id.includes('prev')){
+            count[slideInfo.slideshow.id] == 0 ? count[slideInfo.slideshow.id] = slideInfo.amount - 1 : count[slideInfo.slideshow.id]--;
+            animateSlideshow(count[slideInfo.slideshow.id], slideInfo);
+        } else {
+            count[slideInfo.slideshow.id] == slideInfo.amount - 1 ? count[slideInfo.slideshow.id] = 0 : count[slideInfo.slideshow.id]++;
+            animateSlideshow(count[slideInfo.slideshow.id], slideInfo);
+        }
+    }
+
+    function getSlideInfo(e){
+        var slideCont = e.target.parentNode.parentNode.querySelector('.slideshow'),
+            slides = slideCont.querySelectorAll('li'),
+            rect = slideCont.getBoundingClientRect();
+
+        return {
+            amount: slides.length,
+            width: rect.width / slides.length,
+            parent: e.target.parentNode.parentNode,
+            slideshow: e.target.parentNode.parentNode.querySelector('.slideshow')
+        };
+    }
+
+    function animateSlideshow(to, slide){
+        var position = to * slide.width;
+
+        slide.parent.scroll({
+            top: 0,
+            left: position,
+            behavior: 'smooth'
+        });
+    }
+
+    for(i = 0; i < slideButtons.length; i++){
+        slideButtons[i].addEventListener('click', getDirection);
+    }
+    for(i = 0; i < slideShows.length; i++){
+        count[slideShows[i].id] = 0;
+        slideShows[i].parentNode.style.overflowX = 'hidden';
+    }
+})();
+
+},{}],11:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var detailSections = document.querySelectorAll('.detail'),
@@ -657,4 +734,4 @@
     }
 })();
 
-},{}]},{},[5,6,2,3,10,7,8,1,9,4]);
+},{}]},{},[5,6,2,3,11,7,8,1,9,4,10]);

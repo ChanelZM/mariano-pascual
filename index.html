@@ -151,9 +151,14 @@
                     </div>
                     <section class="folder-content">
                         <div class="folder-content__wrap-overflow">
-                            <img src="img/slide-1.png" alt="Plastic Thoughts" class="latest-project" />
+                            <a href="#project1">
+                                <img src="img/slide-1.png" alt="Plastic Thoughts" class="latest-project" />
+                            </a>
                         </div>
                     </section>
+                    <a href="project1" class="btn-link">
+                        Check my last project here!
+                    </a>
                 </section>
                 <section class="desktop-folder" id="about">
                     <h2 class="desktop-folder__title drag">
@@ -325,10 +330,11 @@
                                                 M155.544,22.795l4.488,2.949c-0.044,0.176-0.132,0.352-0.22,0.528l-4.489-2.948L155.544,22.795z M156.028,21.519l4.489,2.948
                                                 l-0.176,0.572l-4.488-2.949C155.896,21.871,155.984,21.695,156.028,21.519z M160.384,13.994l-4.048-2.684l-0.264-0.88l3.96,2.597
                                                 C160.165,13.333,160.296,13.642,160.384,13.994z M160.736,23.719l-4.444-2.948l0.132-0.572l4.489,2.948L160.736,23.719z
-                                                M160.913,15.93l-4.181-2.772l-0.176-0.792l4.18,2.729L160.913,15.93z M161.044,22.355l-4.444-2.948l0.132-0.616l4.445,2.904
+                                                M160.913,15.93l-4.181-2.772l-0.176-0.792l4.18,2.729L160.913,15.93fz M161.044,22.355l-4.444-2.948l0.132-0.616l4.445,2.904
                                                 L161.044,22.355z M161.265,20.903l-4.445-2.948c0.044-0.22,0.044-0.44,0.044-0.66l4.401,2.904V20.903z M161.221,17.69l-4.313-2.816
                                                 c0-0.264-0.044-0.528-0.044-0.748l4.225,2.772L161.221,17.69z M161.309,19.319l-4.401-2.861c0-0.176,0.044-0.308,0.044-0.484v-0.22
-                                                l4.312,2.861C161.309,18.878,161.309,19.099,161.309,19.319z"></path>
+                                                l4.312,2.861C161.309,18.878,161.309,19.099,161.309,19.319z">
+                                                </path>
                                                 <path d="M166.979,0.352h2.716l19.143,19.935V0.528h5.457v31.157h-1.452l-19.407-19.407v19.187h-5.457V0.352z M169.487,32.256
                                                 l3.961,2.597h-1.1l-3.917-2.597h269.487z M171.908,32.256l3.917,2.597h-1.056l-3.96-2.597h271.908z M173.228,14.214l1.804,1.804
                                                 l-1.804-1.188V14.214z M173.228,15.71l4.356,2.905v0.704l-4.356-2.905V15.71z M173.228,17.294l4.356,2.904v0.704l-4.356-2.904
@@ -603,6 +609,38 @@
                         </div>
                     </section>
                 </section>
+                <section class="desktop-folder desktop-folder_narrow" id="photos" hidden>
+                    <h2 class="desktop-folder__title drag">
+                        <div class="desktop-folder__title-background"></div>
+                        <span class="desktop-folder__title-span">Photos</span>
+                    </h2>
+                    <div class="buttons-wrap">
+                        <button class="buttons-wrap__window-btn close"><img src="img/x.svg" alt="close button" /></button>
+                        <button class="buttons-wrap__window-btn minimize"><img src="img/underscore.svg" alt="minimize button" /></button>
+                        <button class="buttons-wrap__window-btn fullscreen"><img src="img/square.svg" alt="fullscreen button" /></button>
+                    </div>
+                    <section class="folder-content">
+                        <div class="folder-content__wrap-overflow">
+                            <ul class="basic_list slideshow slideshow-narrow" id="photo-slideshow">
+                                <li class="slideshow__slide">
+                                    <img src="img/slide-1.png" alt="1" class="slideshow__img" />
+                                </li>
+                                <li class="slideshow__slide">
+                                    <img src="img/slide-2.png" alt="1" class="slideshow__img" />
+                                </li>
+                                <li class="slideshow__slide">
+                                    <img src="img/slide-3.png" alt="1" class="slideshow__img" />
+                                </li>
+                            </ul>
+                            <button class="slideshow__nav-button" id="prev-button">
+                                <img src="img/prev-button.svg" alt="Previous" />
+                            </button>
+                            <button class="slideshow__nav-button" id="next-button">
+                                <img src="img/next-button.svg" alt="Next" />
+                            </button>
+                        </div>
+                    </section>
+                </section>
                 <section class="desktop-folder desktop-folder_small" id="settings" hidden>
                     <h2 class="desktop-folder__title drag">
                         <div class="desktop-folder__title-background"></div>
@@ -629,41 +667,35 @@
                                     <button class="color-list__color" id="space">Space</button>
                                 </div>
                             </section>
-                            <section class="setting" hidden>
-                                <h3 class="setting__title">Brightness</h3>
-                                <div class="a-slider">
-                                    <div class="a-slider__circle">
-
-                                    </div>
-                                </div>
-                            </section>
                             <section class="setting">
                                 <h3 class="setting__title">Screen area</h3>
                                 <input type="range" min="30" max="100" value="100" class="range" />
                             </section>
-                            <section class="setting" hidden>
-                                <h3 class="setting__title">Appearance</h3>
-                                <div class="a-slider">
-                                    <div class="a-slider__circle">
+                            <div class="setting-wrap">
+                                <section class="setting">
+                                    <h3 class="setting__title">Fullscreen</h3>
+                                    <div class="a-slider">
+                                        <div class="a-slider__circle" id="btn-fullscreen">
 
+                                        </div>
                                     </div>
-                                </div>
-                            </section>
-                            <section class="setting">
-                                <h3 class="setting__title">Fullscreen</h3>
-                                <div class="a-slider">
-                                    <div class="a-slider__circle">
+                                </section>
+                                <section class="setting">
+                                    <h3 class="setting__title">Brightness</h3>
+                                    <div class="a-slider">
+                                        <div class="a-slider__circle" id="btn-brightness">
 
+                                        </div>
                                     </div>
-                                </div>
-                            </section>
+                                </section>
+                            </div>
                         </div>
                     </section>
                 </section>
-                <section class="desktop-folder" id="trash">
+                <section class="desktop-folder desktop-folder_narrow" id="trash">
                     <h2 class="desktop-folder__title drag">
                         <div class="desktop-folder__title-background"></div>
-                        <span class="desktop-folder__title-span">Shit: Random Art</span>
+                        <span class="desktop-folder__title-span">Trash</span>
                     </h2>
                     <div class="buttons-wrap">
                         <button class="buttons-wrap__window-btn close"><img src="img/x.svg" alt="close button" /></button>
@@ -672,136 +704,25 @@
                     </div>
                     <section class="folder-content">
                         <div class="folder-content__wrap-overflow">
-                            <ul class="project-list nav_basic">
-                                <li class="project-list__item">
-                                    <img src="http://payload436.cargocollective.com/1/5/167802/11028298/prt_329x421_1460127115_2x.png" alt="Folder" class="project-list__preview" />
-                                    <h2 class="project-list__name"><a href="#shit1" class="folderlink">La Guerra</a></h2>
-                                    <section class="detail" id="shit1">
-                                        <button class="buttons-wrap__window-btn close project__close" hidden><img src="img/x.svg" alt="close button" /></button>
-                                        <h2 class="detail__title-big desktop-folder__title">
-                                            <div class="desktop-folder__title-background"></div>
-                                            <span class="desktop-folder__title-span">La Guerra</span>
-                                        </h2>
-                                        <section class="folder-content">
-                                            <div class="folder-content__wrap-overflow">
-                                                <img src="http://payload436.cargocollective.com/1/5/167802/11028298/_La-Guerra_4_995.jpg" alt="Photo of the magazine with the art on a dark blue background" class="project__img" />
-                                                <img src="http://payload436.cargocollective.com/1/5/167802/11028298/_La-Guerra_7_995.jpg" alt="Photo of the magazine with the art on a dark blue background" class="project__img" />
-                                                <div class="project__desc" id="laguerra-info">
-                                                    <h2 class="detail__title desktop-folder__title drag">
-                                                        <div class="desktop-folder__title-background"></div>
-                                                        <span class="desktop-folder__title-span">La Guerra</span>
-                                                    </h2>
-                                                    <div class="buttons-wrap">
-                                                        <button class="buttons-wrap__window-btn close"><img src="img/x.svg" alt="close button" /></button>
-                                                        <button class="buttons-wrap__window-btn minimize"><img src="img/underscore.svg" alt="minimize button" /></button>
-                                                        <button class="buttons-wrap__window-btn fullscreen"><img src="img/square.svg" alt="fullscreen button" /></button>
-                                                    </div>
-                                                    <div class="folder-content">
-                                                        <div class="folder-content__wrap-overflow">
-                                                            <p>
-                                                                Lorem ipsum dolor sit amet, ad natum hendrerit vel, no qui quem utamur disputationi, an vocent habemus pro. Dico maluisset ex vis, eam veri perpetua te, his inani impetus eleifend ad. Ferri assentior sententiae an eam. Ut nibh nostrum has, per meis ludus apeirian te, quo affert deseruisse at. Mei ex impetus nusquam rationibus, laudem doming qui eu. Eum nobis sapientem te. Has paulo libris delicata ne, consul petentium nec no.
-                                                            </p>
-                                                            <p>
-                                                                Lorem ipsum dolor sit amet, ad natum hendrerit vel, no qui quem utamur disputationi, an vocent habemus pro. Dico maluisset ex vis, eam veri perpetua te, his inani impetus eleifend ad. Ferri assentior sententiae an eam. Ut nibh nostrum has, per meis ludus apeirian te, quo affert deseruisse at. Mei ex impetus nusquam rationibus, laudem doming qui eu. Eum nobis sapientem te. Has paulo libris delicata ne, consul petentium nec no.
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </section>
-                                    </section>
+                            <ul class="basic_list slideshow slideshow-narrow" id="trash-slideshow">
+                                <li class="slideshow__slide">
+                                    <img src="img/slide-1.png" alt="1" class="slideshow__img" />
                                 </li>
-                                <li class="project-list__item">
-                                    <img src="http://payload419.cargocollective.com/1/5/167802/10691755/prt_288x347_1479329536_2x.png" alt="Folder" class="project-list__preview" />
-                                    <h2 class="project-list__name"><a href="#shit2" class="folderlink">Magic vases</a></h2>
-                                    <section class="detail" id="shit2">
-                                        <button class="buttons-wrap__window-btn close project__close" hidden><img src="img/x.svg" alt="close button" /></button>
-                                        <h2 class="detail__title-big desktop-folder__title">
-                                            <div class="desktop-folder__title-background"></div>
-                                            <span class="desktop-folder__title-span">Magic vase</span>
-                                        </h2>
-                                        <section class="folder-content">
-                                            <div class="folder-content__wrap-overflow">
-                                                <img src="http://payload419.cargocollective.com/1/5/167802/10691755/magic_vases_1_2000_c.jpg" alt="Photo of the magazine with the art on a dark blue background" class="project__img" />
-                                                <img src="http://payload419.cargocollective.com/1/5/167802/10691755/magic_vases_2_2000_c.jpg" alt="Photo of the magazine with the art on a dark blue background" class="project__img" />
-                                                <div class="project__desc" id="magicvases-info">
-                                                    <h2 class="detail__title desktop-folder__title drag">
-                                                        <div class="desktop-folder__title-background"></div>
-                                                        <span class="desktop-folder__title-span">Magic vases</span>
-                                                    </h2>
-                                                    <div class="buttons-wrap">
-                                                        <button class="buttons-wrap__window-btn close"><img src="img/x.svg" alt="close button" /></button>
-                                                        <button class="buttons-wrap__window-btn minimize"><img src="img/underscore.svg" alt="minimize button" /></button>
-                                                        <button class="buttons-wrap__window-btn fullscreen"><img src="img/square.svg" alt="fullscreen button" /></button>
-                                                    </div>
-                                                    <div class="folder-content">
-                                                        <div class="folder-content__wrap-overflow">
-                                                            <p>
-                                                                Lorem ipsum dolor sit amet, ad natum hendrerit vel, no qui quem utamur disputationi, an vocent habemus pro. Dico maluisset ex vis, eam veri perpetua te, his inani impetus eleifend ad. Ferri assentior sententiae an eam. Ut nibh nostrum has, per meis ludus apeirian te, quo affert deseruisse at. Mei ex impetus nusquam rationibus, laudem doming qui eu. Eum nobis sapientem te. Has paulo libris delicata ne, consul petentium nec no.
-                                                            </p>
-                                                            <p>
-                                                                Lorem ipsum dolor sit amet, ad natum hendrerit vel, no qui quem utamur disputationi, an vocent habemus pro. Dico maluisset ex vis, eam veri perpetua te, his inani impetus eleifend ad. Ferri assentior sententiae an eam. Ut nibh nostrum has, per meis ludus apeirian te, quo affert deseruisse at. Mei ex impetus nusquam rationibus, laudem doming qui eu. Eum nobis sapientem te. Has paulo libris delicata ne, consul petentium nec no.
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </section>
-                                    </section>
+                                <li class="slideshow__slide">
+                                    <img src="img/slide-2.png" alt="1" class="slideshow__img" />
                                 </li>
-                                <li class="project-list__item">
-                                    <img src="http://payload462.cargocollective.com/1/5/167802/11552377/prt_242x314_1479250384_2x.png" alt="Folder" class="project-list__preview" />
-                                    <h2 class="project-list__name"><a href="#shit3" class="folderlink">Quit smoking</a></h2>
-                                    <section class="detail" id="shit3">
-                                        <button class="buttons-wrap__window-btn close project__close" hidden><img src="img/x.svg" alt="close button" /></button>
-                                        <h2 class="detail__title-big desktop-folder__title">
-                                            <div class="desktop-folder__title-background"></div>
-                                            <span class="desktop-folder__title-span">Quit smoking</span>
-                                        </h2>
-                                        <section class="folder-content">
-                                            <div class="folder-content__wrap-overflow">
-                                                <img src="http://payload462.cargocollective.com/1/5/167802/11552377/smok1_2000_c.jpg" alt="Photo of the magazine with the art on a dark blue background" class="project__img" />
-                                                <img src="http://payload462.cargocollective.com/1/5/167802/11552377/smok2_2000_c.jpg" alt="Photo of the magazine with the art on a dark blue background" class="project__img" />
-                                                <div class="project__desc" id="quitsmoking-info">
-                                                    <h2 class="detail__title desktop-folder__title drag">
-                                                        <div class="desktop-folder__title-background"></div>
-                                                        <span class="desktop-folder__title-span">Quit smoking</span>
-                                                    </h2>
-                                                    <div class="buttons-wrap">
-                                                        <button class="buttons-wrap__window-btn close"><img src="img/x.svg" alt="close button" /></button>
-                                                        <button class="buttons-wrap__window-btn minimize"><img src="img/underscore.svg" alt="minimize button" /></button>
-                                                        <button class="buttons-wrap__window-btn fullscreen"><img src="img/square.svg" alt="fullscreen button" /></button>
-                                                    </div>
-                                                    <div class="folder-content">
-                                                        <div class="folder-content__wrap-overflow">
-                                                            <p>
-                                                                Lorem ipsum dolor sit amet, ad natum hendrerit vel, no qui quem utamur disputationi, an vocent habemus pro. Dico maluisset ex vis, eam veri perpetua te, his inani impetus eleifend ad. Ferri assentior sententiae an eam. Ut nibh nostrum has, per meis ludus apeirian te, quo affert deseruisse at. Mei ex impetus nusquam rationibus, laudem doming qui eu. Eum nobis sapientem te. Has paulo libris delicata ne, consul petentium nec no.
-                                                            </p>
-                                                            <p>
-                                                                Lorem ipsum dolor sit amet, ad natum hendrerit vel, no qui quem utamur disputationi, an vocent habemus pro. Dico maluisset ex vis, eam veri perpetua te, his inani impetus eleifend ad. Ferri assentior sententiae an eam. Ut nibh nostrum has, per meis ludus apeirian te, quo affert deseruisse at. Mei ex impetus nusquam rationibus, laudem doming qui eu. Eum nobis sapientem te. Has paulo libris delicata ne, consul petentium nec no.
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </section>
-                                    </section>
+                                <li class="slideshow__slide">
+                                    <img src="img/slide-3.png" alt="1" class="slideshow__img" />
                                 </li>
                             </ul>
+                            <button class="slideshow__nav-button" id="prev-button">
+                                <img src="img/prev-button.svg" alt="Previous" />
+                            </button>
+                            <button class="slideshow__nav-button" id="next-button">
+                                <img src="img/next-button.svg" alt="Next" />
+                            </button>
                         </div>
                     </section>
-                </section>
-                <section class="desktop-folder desktop-folder_big" id="tumblr" hidden>
-                    <h2 class="desktop-folder__title drag">
-                        <div class="desktop-folder__title-background"></div>
-                        <span class="desktop-folder__title-span">Tumblr</span>
-                    </h2>
-                    <div class="buttons-wrap">
-                        <button class="buttons-wrap__window-btn close"><img src="img/x.svg" alt="close button" /></button>
-                        <button class="buttons-wrap__window-btn minimize"><img src="img/underscore.svg" alt="minimize button" /></button>
-                        <button class="buttons-wrap__window-btn fullscreen"><img src="img/square.svg" alt="fullscreen button" /></button>
-                    </div>
-                    <iframe src="http://marianopascual.tumblr.com/" frameborder="0" class="social-media"></iframe>
                 </section>
                 <div class="porn">
                     <section class="desktop-folder desktop-folder_narrow porn-window" id="porn">
@@ -870,10 +791,10 @@
                 <section class="desktop-folder print" id="print" hidden>
                     <img src="http://payload541.cargocollective.com/1/5/167802/13130602/SayHiTo_slide_2000_c_2000_c.jpg" alt="Daniel & Emma" class="print__img" />
                 </section>
-                <section class="fullscreen-folder" id="latestwork" hidden>
+                <section class="fullscreen-folder slideshow-wrap" id="latestwork" hidden>
                     <h2 class="slideshow__pjt-title">Latest work</h2>
                     <button class="fullscreen__close-button close"><img src="img/x.svg" alt="close button" /></button>
-                    <ul class="basic_list slideshow">
+                    <ul class="basic_list slideshow" id="latest-slideshow">
                         <li class="slideshow__slide slideshow__slide_first">
                             <div class="slideshow__slide-wrap">
                                 <img src="img/icon-eyeball.svg" alt="Mariano logo" class="slideshow__eye" />
@@ -947,23 +868,15 @@
             <h2>Contact me</h2>
             <a href="mailto:hello@mariano-pascual.com?Subject=Boludo... aquí tenes mi plata!">Email me</a>
         </footer>
+        <img src="img/brightness1.png" alt="brightness" class="brightness" id="shine" hidden />
+        <img src="img/brightness2.png" alt="brightness" class="brightness" id="stars" hidden />
         <nav class="bottom-nav" draggable="false" hidden>
             <ul class="bottom-nav__list nav_basic">
-                <!-- <li class="bottom-nav__item">
-                    <img src="img/instagram.svg" alt="Instagram logo" />
-                    <h2 class="bottom-nav__name"><a href="https://www.instagram.com/mariano_pascual/" target="_blank">Instagram</a></h2>
-                    <h3 class="bottom-nav__tooltip"><span class="tooltip__arrow"></span>Open my Instagram</h3>
-                </li> -->
                 <li class="bottom-nav__item" id="nav-home">
                     <img src="img/icon-home.svg" alt="Home icon" />
                     <h2 class="bottom-nav__name"><a href="./index.html" class="app hover-img">Home</a></h2>
                     <h3 class="bottom-nav__tooltip"><span class="tooltip__arrow"></span>Reset everything</h3>
                 </li>
-                <!-- <li class="bottom-nav__item">
-                    <img src="img/tumblr.svg" alt="Tumblr logo" />
-                    <h2 class="bottom-nav__name"><a href="#tumblr" class="app">Tumblr</a></h2>
-                    <h3 class="bottom-nav__tooltip"><span class="tooltip__arrow"></span>Open my Tumblr</h3>
-                </li> -->
                 <li class="bottom-nav__item" id="nav-mail">
                     <img src="img/icon-mail.svg" alt="Mail icon" />
                     <h2 class="bottom-nav__name"><a href="mailto:hello@mariano-pascual.com?Subject=Boludo... aquí tenes mi plata!" class="hover-img">Mail</a></h2>
@@ -1041,6 +954,12 @@
         <audio class="mail-sound">
             <source src="audio/mail.wav" type="audio/mpeg" />
         </audio>
+        <audio class="message-sound">
+            <source src="audio/message.mp3" type="audio/mpeg" />
+        </audio>
+        <audio class="photos-sound">
+            <source src="audio/photos.mp3" type="audio/mpeg" />
+        </audio>
         <audio class="printer-sound">
             <source src="audio/printer.mp3" type="audio/mpeg" />
         </audio>
@@ -1051,7 +970,6 @@
             <source src="audio/web.mp3" type="audio/mpeg" />
         </audio>
     </div>
-    <script src="js/snake.js"></script>
     <script src="js/bundle.js"></script>
 </body>
 </html>
