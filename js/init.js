@@ -59,7 +59,6 @@
         //If you're viewing this page on desktop
         if("ontouchstart" in document.documentElement == false){
             removeHidden('array', document.querySelectorAll('.dropdown'));
-            removeHidden('el', document.querySelector('.loading-screen'));
             removeHidden('el', document.querySelector('.eyeball'));
             removeHidden('el', document.querySelector('.fullscreen-folder'));
             removeHidden('el', document.querySelector('#print'));

@@ -10,6 +10,9 @@
     <link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+    <script>
+        document.getElementsByTagName('body')[0].style.display = 'none';
+    </script>
     <div class="loading-screen" hidden>
         <div class="wrap">
             <div class="loading__img-wrap">
@@ -990,6 +993,10 @@
             <source src="audio/web.mp3" type="audio/mpeg" />
         </audio>
     </div>
+    <script>
+        document.querySelector('.loading-screen').removeAttribute('hidden');
+        document.getElementsByTagName('body')[0].style.display = 'block';
+    </script>
     <script src="js/bundle.js"></script>
 </body>
 </html>

@@ -19,6 +19,11 @@
     function clearScreensaver(){
         clearTimeout(mouseTimeout);
 
+        mouseTimeout = setTimeout(function(){
+            isActive = true;
+            showScreensaver();
+        }, 15000);
+
         //Hide screensaver if shown
         if(isActive == true){
             stopScreensaver();

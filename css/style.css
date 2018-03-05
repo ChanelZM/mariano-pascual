@@ -2,18 +2,6 @@
 /*
 '#379FA9', '#FD8A83', '#50C1EC', '#FEE242', '#1CB59F', '#EB3E49', '#398CB0', '#F8D059'
 */
-@-webkit-font-face {
-    font-family: 'Roboto Regular';
-    src: url('../fonts/Roboto-Regular.ttf');
-}
-@-moz-font-face {
-    font-family: 'Roboto Regular';
-    src: url('../fonts/Roboto-Regular.ttf');
-}
-@-ms-font-face {
-    font-family: 'Roboto Regular';
-    src: url('../fonts/Roboto-Regular.ttf');
-}
 @font-face {
     font-family: 'Roboto Regular';
     src: url('../fonts/Roboto-Regular.ttf');
