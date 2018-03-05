@@ -141,6 +141,13 @@
             </nav>
         </header>
         <main>
+            <div class="eyeball" hidden>
+                <div class="pupil">
+                    <div class="gloss">
+                        <a href="#latestwork" class="eyeball__link"></a>
+                    </div>
+                </div>
+            </div>
             <div class="folder-wrap">
                 <section class="desktop-folder desktop-folder_small" id="latestproject" hidden>
                     <h2 class="desktop-folder__title drag">
@@ -811,9 +818,6 @@
                         </section>
                     </section>
                 </div>
-                <section class="desktop-folder print" id="print" hidden>
-                    <img src="http://payload541.cargocollective.com/1/5/167802/13130602/SayHiTo_slide_2000_c_2000_c.jpg" alt="Daniel & Emma" class="print__img" />
-                </section>
                 <section class="fullscreen-folder slideshow-wrap" id="latestwork" hidden>
                     <h2 class="slideshow__pjt-title">Latest work</h2>
                     <button class="fullscreen__close-button close"><img src="img/x.svg" alt="close button" /></button>
@@ -879,13 +883,9 @@
                     </button>
                 </section>
             </div>
-            <div class="eyeball" hidden>
-                <div class="pupil">
-                    <div class="gloss">
-                        <a href="#latestwork" class="eyeball__link"></a>
-                    </div>
-                </div>
-            </div>
+            <!-- <section class="desktop-folder print" id="print" hidden>
+                <img src="http://payload541.cargocollective.com/1/5/167802/13130602/SayHiTo_slide_2000_c_2000_c.jpg" alt="Daniel & Emma" class="print__img" />
+            </section> -->
         </main>
         <footer class="contact-info">
             <h2>Contact me</h2>
@@ -917,7 +917,7 @@
                 </li>
                 <li class="bottom-nav__item" id="print-art" hidden>
                     <img src="img/icon-printer.svg" alt="Print icon" />
-                    <h2 class="bottom-nav__name"><a href="#print" class="app hover-img">Print</a></h2>
+                    <h2 class="bottom-nav__name"><a href="#print" class="hover-img">Print</a></h2>
                     <h3 class="bottom-nav__tooltip"><span class="tooltip__arrow"></span>Print some artwork</h3>
                 </li>
                 <li class="bottom-nav__item" id="nav-photos" hidden>
@@ -997,6 +997,7 @@
         document.querySelector('.loading-screen').removeAttribute('hidden');
         document.getElementsByTagName('body')[0].style.display = 'block';
     </script>
+    <script src="js/print.min.js"></script>
     <script src="js/bundle.js"></script>
 </body>
 </html>

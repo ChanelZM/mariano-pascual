@@ -1272,7 +1272,19 @@ svg #ball {
     z-index: 4;
 }
 .print__img {
-    width: 100%;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+}
+#print {
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+}
+#print::before {
+    display: none;
 }
 
 /* SCREENSAVER */

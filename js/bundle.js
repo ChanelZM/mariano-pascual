@@ -217,6 +217,8 @@
 
         var i;
 
+        location.hash = "";
+
         function removeHidden(dataType, variable){
             if(dataType == 'array'){
                 for(i = 0; i < variable.length; i++){
@@ -271,7 +273,6 @@
             removeHidden('array', document.querySelectorAll('.dropdown'));
             removeHidden('el', document.querySelector('.eyeball'));
             removeHidden('el', document.querySelector('.fullscreen-folder'));
-            removeHidden('el', document.querySelector('#print'));
             removeHidden('el', document.querySelector('#print-art'));
             removeHidden('el', document.querySelector('#nav-setting'));
             removeHidden('el', document.querySelector('#nav-messages'));
@@ -297,19 +298,14 @@
 
             window.addEventListener('hashchange', function(){
                 if(location.hash == '#print'){
-                    document.querySelector('.bottom-nav').classList.add('hidden');
-
-                    var closePrint = function(){
-                        document.querySelector('.bottom-nav').classList.remove('hidden');
-                        document.querySelector('#print').classList.add('hidden');
-                    };
-
-                    setTimeout(function(){
-                        window.print();
-                        closePrint();
-                    }, 1000);
+                    print();
                 }
             });
+        }
+
+        //Print artwork using library
+        function print(){
+            printJS('http://payload541.cargocollective.com/1/5/167802/13130602/SayHiTo_slide_2000_c_2000_c.jpg', 'image');
         }
 
         //Screaming goat sound when 'fake loading'
