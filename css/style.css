@@ -793,6 +793,9 @@ p {
 #space {
     background-size: 100vw;
 }
+#settings .folder-content {
+    background-color: #E8E7E2;
+}
 .space .link_style_desktop,
 .space .link_style_desktop:visited,
 .black .link_style_desktop,
