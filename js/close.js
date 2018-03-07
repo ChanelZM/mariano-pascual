@@ -14,7 +14,8 @@
 
     for(i = 0; i < closeButtons.length; i++){
         closeButtons[i].addEventListener('click', function(e){
-            var id = e.target.parentNode.parentNode.id;
+            console.log(e.target);
+            var id = e.target.parentNode.id;
             closeWindow(id, 'hidden');
         });
     }

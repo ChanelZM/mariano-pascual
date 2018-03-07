@@ -53,7 +53,8 @@
 
     for(i = 0; i < closeButtons.length; i++){
         closeButtons[i].addEventListener('click', function(e){
-            var id = e.target.parentNode.parentNode.id;
+            console.log(e.target);
+            var id = e.target.parentNode.id;
             closeWindow(id, 'hidden');
         });
     }
@@ -485,49 +486,6 @@
 },{}],8:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
-    var screensaver = document.querySelector('.screensaver');
-
-    var isActive = false;
-
-    var mouseTimeout;
-
-    function showScreensaver(){
-        screensaver.removeAttribute('hidden');
-    }
-
-    function stopScreensaver(){
-        screensaver.setAttribute('hidden', 'true');
-
-        isActive = false;
-    }
-
-    function clearScreensaver(){
-        clearTimeout(mouseTimeout);
-
-        mouseTimeout = setTimeout(function(){
-            isActive = true;
-            showScreensaver();
-        }, 15000);
-
-        //Hide screensaver if shown
-        if(isActive == true){
-            stopScreensaver();
-        }
-    }
-
-    if("ontouchstart" in document.documentElement == false){
-        document.addEventListener('mousemove', clearScreensaver);
-        document.addEventListener('keydown', function(e){
-            if(e.keyCode == 9){
-                clearScreensaver();
-            }
-        });
-    }
-})();
-
-},{}],9:[function(require,module,exports){
-/*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
-(function(){
     var appleSliders = document.querySelectorAll('.a-slider__circle'),
         body = document.querySelector('body'),
         brightnessImgs = document.querySelectorAll('.brightness');
@@ -618,7 +576,7 @@
     }
 })();
 
-},{}],10:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var i;
@@ -672,7 +630,7 @@
     }
 })();
 
-},{}],11:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var detailSections = document.querySelectorAll('.detail'),
@@ -709,4 +667,4 @@
     }
 })();
 
-},{}]},{},[5,6,2,3,11,7,8,1,9,4,10]);
+},{}]},{},[5,6,2,3,10,7,1,8,4,9]);
