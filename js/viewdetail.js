@@ -7,7 +7,8 @@
 
     var detail = {
         open: function(e){
-            var id = e.target.hash.replace('#','');
+            var id = e.target.hash.replace('#',''),
+                windows = document.getElementById(id).querySelectorAll('.window');
 
             for(i = 0; i < detailSections.length; i++){
                 if(!detailSections[i].className.includes('hidden')){
@@ -16,6 +17,10 @@
             }
 
             document.getElementById(id).classList.remove('hidden');
+
+            for(i = 0; i < windows.length; i++){
+                windows[i].classList.remove('hidden');
+            }
         },
         close: function(e){
             e.target.parentNode.classList.add('hidden');

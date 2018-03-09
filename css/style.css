@@ -385,8 +385,10 @@ p {
     overflow: hidden;
 }
 #latestproject .latest-project {
+    position: absolute;
     height: 31rem;
-    transform: translateX(-22%);
+    left: 50%;
+    transform: translateX(-50%);
 }
 #latestproject .folder-content__wrap-overflow {
     overflow: hidden;
@@ -836,7 +838,7 @@ p {
 }
 .folder-content__wrap-overflow {
     box-sizing: border-box;
-    height: inherit;
+    height: 38.15rem;
     padding: 4rem 2.5rem 2.5rem 2.5rem;
     overflow-y: scroll;
     overflow-x: hidden;

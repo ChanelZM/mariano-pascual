@@ -8,60 +8,39 @@
         eye = document.querySelector('.eyeball');
 
     var clickCount = 0;
-        // clickedOpen = [];
 
     var singleClickTimer,
         i;
 
-    function giveSelectedDesign(el){
-        if(!el.getAttribute('class').includes('selected') && !el.getAttribute('class').includes('app')){
-            for(i = 0; i < folders.length; i++){
-                folders[i].classList.remove('top-nav__item_selected');
-            }
-            el.classList.add('top-nav__item_selected');
-        }
-    }
-
-    // function changeZIndex(windows){
-    //     var amountOpenWindows = clickedOpen.length;
-    //     //Every time a folder opens, this folder needs to be displayed at the front
-    // }
-
     //if where you clicked has a link to an application/folder open it up
     function checkIfApp(e){
         if(e.target.hash){
-            item.open(e.target, e.target.hash);
+            openWindow(e.target, e.target.hash);
         }
     }
 
-    var item = {
-        //Function will open the right window
-        open: function(parent, id){
-            giveSelectedDesign(parent);
-            // changeZIndex(parent);
+    function openWindow(parent, id){
+        var section = document.querySelector(id);
 
-            var section = document.querySelector(id);
-
-            //If you're viewing this page on desktop
-            if("ontouchstart" in document.documentElement == false && section.getAttribute('class').includes('desktop-folder')){
-                if(section.getAttribute('class').includes('hidden')){
-                    section.classList.add('desktop-folder_open');
-                    section.classList.remove('hidden');
-                }
-            }
-            //If you're viewing this page on desktop
-            if("ontouchstart" in document.documentElement == false && section.getAttribute('class').includes('fullscreen-folder')){
-                if(section.getAttribute('class').includes('hidden')){
-                    section.classList.remove('hidden');
-                }
-            }
-            //If you're viewing this page on a touch device, styling is different
-            if ("ontouchstart" in document.documentElement == true) {
-                section.classList.add('device-app_open');
+        //If you're viewing this page on desktop
+        if("ontouchstart" in document.documentElement == false && section.getAttribute('class').includes('desktop-folder')){
+            if(section.getAttribute('class').includes('hidden')){
+                section.classList.add('desktop-folder_open');
                 section.classList.remove('hidden');
             }
         }
-    };
+        //If you're viewing this page on desktop
+        if("ontouchstart" in document.documentElement == false && section.getAttribute('class').includes('fullscreen-folder')){
+            if(section.getAttribute('class').includes('hidden')){
+                section.classList.remove('hidden');
+            }
+        }
+        //If you're viewing this page on a touch device, styling is different
+        if ("ontouchstart" in document.documentElement == true) {
+            section.classList.add('device-app_open');
+            section.classList.remove('hidden');
+        }
+    }
 
     function toggleDropDown(e){
         e.preventDefault();
