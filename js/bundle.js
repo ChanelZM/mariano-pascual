@@ -269,7 +269,7 @@
 
         //Print artwork using library
         function print(){
-            printJS('http://payload541.cargocollective.com/1/5/167802/13130602/SayHiTo_slide_2000_c_2000_c.jpg', 'image');
+            printJS('../img/projects/a-la-guerra-war.svg', 'image');
         }
 
         //Screaming goat sound when 'fake loading'
@@ -461,22 +461,37 @@
     var i,
         val;
 
-    function getClickedColor(e){
-        e.preventDefault();
-        changeBodyColor(e.target.id);
+    function toggleDropDown(){
+        var dropDown = document.querySelector('.setting__dropdown');
+
+        if(dropDown.className.includes('hidden')){
+            dropDown.classList.remove('hidden');
+        } else {
+            dropDown.classList.add('hidden');
+        }
     }
 
-    function changeBodyColor(color){
-        document.querySelector('.body-wrap').className = 'body-wrap' + ' ' + color;
+    function getFilter(e){
+        e.preventDefault();
+
+        var dropDown = document.querySelector('.setting__dropdown');
+        dropDown.classList.add('hidden');
+
+        document.querySelector('body').className = 'body-overflow-h' + ' ' + e.target.id;
+    }
+
+    function getClickedColor(e){
+        e.preventDefault();
+        document.querySelector('.body-wrap').className = 'body-wrap' + ' ' + e.target.id;
     }
 
     function getValue(){
         val = document.querySelector('.range').value;
 
         if (val == 100){
-            document.querySelector('.body-wrap').style.transform = 'scaleX(' + 1 + ')';
+            document.querySelector('.body-wrap').style.transform = 'scale(' + 1 + ')';
         } else {
-            document.querySelector('.body-wrap').style.transform = 'scaleX(0.' + val + ')';
+            document.querySelector('.body-wrap').style.transform = 'scale(0.' + val + ')';
         }
     }
 
@@ -535,7 +550,8 @@
             }
         }
     }
-
+    document.querySelector('.setting__dropdown-button').addEventListener('click', toggleDropDown);
+    document.querySelector('.setting__dropdown').addEventListener('click', getFilter);
     document.querySelector('.color-list').addEventListener('click', getClickedColor);
     document.querySelector('.range').addEventListener('change', getValue);
 

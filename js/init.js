@@ -95,7 +95,7 @@
 
         //Print artwork using library
         function print(){
-            printJS('http://payload541.cargocollective.com/1/5/167802/13130602/SayHiTo_slide_2000_c_2000_c.jpg', 'image');
+            printJS('../img/projects/a-la-guerra-war.svg', 'image');
         }
 
         //Screaming goat sound when 'fake loading'

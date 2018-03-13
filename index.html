@@ -1605,12 +1605,12 @@
                                     <button class="color-list__color" id="black">Black</button>
                                     <button class="color-list__color" id="grid">Grid</button>
                                     <button class="color-list__color" id="red-cow-pattern">Red cow pattern</button>
-                                    <button class="color-list__color" id="normal-cow-pattern">Normal cow pattern</button>
+                                    <!-- <button class="color-list__color" id="normal-cow-pattern">Normal cow pattern</button> -->
                                     <button class="color-list__color" id="space">Space</button>
                                 </div>
                             </section>
                             <div class="setting-wrap">
-                                <section class="setting setting_25">
+                                <section class="setting setting_50">
                                     <h3 class="setting__title">Fullscreen</h3>
                                     <div class="a-slider">
                                         <div class="a-slider__circle" id="btn-fullscreen">
@@ -1618,7 +1618,7 @@
                                         </div>
                                     </div>
                                 </section>
-                                <section class="setting setting_25">
+                                <section class="setting setting_50">
                                     <h3 class="setting__title">Brightness</h3>
                                     <div class="a-slider">
                                         <div class="a-slider__circle" id="btn-brightness">
@@ -1626,15 +1626,29 @@
                                         </div>
                                     </div>
                                 </section>
-                                <section class="setting setting_50">
+                                <section class="setting setting_100">
                                     <h3 class="setting__title">Screen area</h3>
                                     <input type="range" min="30" max="100" value="100" class="range" />
                                 </section>
-                                <!-- <section class="setting setting_50">
+                                <section class="setting setting_100">
                                     <h3 class="setting__title">Filters</h3>
-                                    <input type="range" min="30" max="100" value="100" class="range" />
+                                    <button class="setting__dropdown-button">Normal</button>
+                                    <div class="setting__dropdown hidden">
+                                        <a href="#" class="setting__dropdown__option" id="normal">
+                                            Normal
+                                        </a>
+                                        <a href="#" class="setting__dropdown__option" id="black-white">
+                                            Black and white
+                                        </a>
+                                        <a href="#" class="setting__dropdown__option" id="hue-rotate">
+                                            Invert Hue
+                                        </a>
+                                        <a href="#" class="setting__dropdown__option" id="negative">
+                                            Negative
+                                        </a>
+                                    </div>
                                 </section>
-                                <section class="setting setting_50">
+                                <!-- <section class="setting setting_50">
                                     <h3 class="setting__title">Font size</h3>
                                     <input type="range" min="30" max="100" value="100" class="range" />
                                 </section> -->
@@ -1745,9 +1759,6 @@
                                 <p class="slideshow__p">
                                     Take a quick view
                                 </p>
-                                <button class="slideshow__start-btn">
-                                    Take a look
-                                </button>
                             </div>
                         </li>
                         <li class="slideshow__slide">
@@ -1809,12 +1820,12 @@
         <nav class="bottom-nav" draggable="false" hidden>
             <ul class="bottom-nav__list nav_basic">
                 <li class="bottom-nav__item" id="nav-home">
-                    <img src="img/icon-home.svg" alt="Home icon" />
+                    <img src="img/icon-home.svg" id="icon-home" alt="Home icon" />
                     <h2 class="bottom-nav__name"><a href="./index.html" class="app hover-img">Home</a></h2>
                     <h3 class="bottom-nav__tooltip"><span class="tooltip__arrow"></span>Reset everything</h3>
                 </li>
                 <li class="bottom-nav__item" id="nav-mail">
-                    <img src="img/icon-mail.svg" alt="Mail icon" />
+                    <img src="img/icon-mail.svg" id="icon-mail" alt="Mail icon" />
                     <h2 class="bottom-nav__name"><a href="mailto:hello@mariano-pascual.com?Subject=Boludo... aquí tenes mi plata!" class="hover-img">Mail</a></h2>
                     <h3 class="bottom-nav__tooltip"><span class="tooltip__arrow"></span>Send mail to Mariano</h3>
                 </li>
@@ -1829,7 +1840,7 @@
                     <h3 class="bottom-nav__tooltip"><span class="tooltip__arrow"></span>View my messages</h3>
                 </li>
                 <li class="bottom-nav__item" id="print-art" hidden>
-                    <img src="img/icon-printer.svg" alt="Print icon" />
+                    <img src="img/icon-printer.svg" id="icon-print" alt="Print icon" />
                     <h2 class="bottom-nav__name"><a href="#print" class="hover-img">Print</a></h2>
                     <h3 class="bottom-nav__tooltip"><span class="tooltip__arrow"></span>Print some artwork</h3>
                 </li>
@@ -1839,12 +1850,12 @@
                     <h3 class="bottom-nav__tooltip"><span class="tooltip__arrow"></span>See some photos</h3>
                 </li>
                 <li class="bottom-nav__item" id="nav-setting" hidden>
-                    <img src="img/icon-settings.svg" alt="Settings icon" />
+                    <img src="img/icon-settings.svg" id="icon-setting" alt="Settings icon" />
                     <h2 class="bottom-nav__name"><a href="#settings" class="app hover-img">Settings</a></h2>
                     <h3 class="bottom-nav__tooltip"><span class="tooltip__arrow"></span>Change the background</h3>
                 </li>
                 <li class="bottom-nav__item" id="nav-trash" hidden>
-                    <img src="img/icon-bin.svg" alt="Trashcan icon" />
+                    <img src="img/icon-bin.svg" id="icon-bin" alt="Trashcan icon" />
                     <h2 class="bottom-nav__name"><a href="#trash" class="app hover-img">Trashcan</a></h2>
                     <h3 class="bottom-nav__tooltip"><span class="tooltip__arrow"></span>Trash</h3>
                 </li>
