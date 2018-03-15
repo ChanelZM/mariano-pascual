@@ -1,6 +1,7 @@
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
-    var hoverImages = document.querySelectorAll('.hover-img');
+    var hoverImages = document.querySelectorAll('.hover-img'),
+        projectLinks = document.querySelectorAll('.folderlink');
 
     var parent,
         i,
@@ -34,6 +35,15 @@
         }
     }
 
+    function scaleUp(e){
+        var img = e.target.parentNode.parentNode.querySelector('.project-list__preview');
+        img.classList.add('project-list__preview-bigger');
+    }
+    function scaleDown(e){
+        var img = e.target.parentNode.parentNode.querySelector('.project-list__preview');
+        img.classList.remove('project-list__preview-bigger');
+    }
+
     //For every image that needs a hover effect, add Eventlistener
     for(i = 0; i < hoverImages.length; i++){
         hoverImages[i].addEventListener('mouseenter', playSound);
@@ -41,5 +51,12 @@
         hoverImages[i].addEventListener('mouseleave', changeImg);
         hoverImages[i].addEventListener('focus', changeImg);
         hoverImages[i].addEventListener('focusout', changeImg);
+    }
+
+    for(i = 0; i < projectLinks.length; i++){
+        projectLinks[i].addEventListener('mouseenter', scaleUp);
+        projectLinks[i].addEventListener('mouseleave', scaleDown);
+        projectLinks[i].addEventListener('focus', scaleUp);
+        projectLinks[i].addEventListener('focusout', scaleDown);
     }
 })();
