@@ -20,8 +20,11 @@
     function getFilter(e){
         e.preventDefault();
 
-        var dropDown = document.querySelector('.setting__dropdown');
+        var dropDown = document.querySelector('.setting__dropdown'),
+            dropDownButton = document.querySelector('.setting__dropdown-button');
+
         dropDown.classList.add('hidden');
+        dropDownButton.textContent = e.target.textContent;
 
         document.querySelector('body').className = 'body-overflow-h' + ' ' + e.target.id;
     }

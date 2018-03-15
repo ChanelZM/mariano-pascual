@@ -14,7 +14,7 @@
 
     //if where you clicked has a link to an application/folder open it up
     function checkIfApp(e){
-        if(e.target.hash){
+        if(e.target.hash != '#print'){
             openWindow(e.target, e.target.hash);
         }
     }
@@ -31,9 +31,8 @@
         }
         //If you're viewing this page on desktop
         if("ontouchstart" in document.documentElement == false && section.getAttribute('class').includes('fullscreen-folder')){
-            if(section.getAttribute('class').includes('hidden')){
-                section.classList.remove('hidden');
-            }
+            section.removeAttribute('hidden');
+            section.classList.remove('hidden');
         }
         //If you're viewing this page on a touch device, styling is different
         if ("ontouchstart" in document.documentElement == true) {

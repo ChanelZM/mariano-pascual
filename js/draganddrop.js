@@ -1,6 +1,6 @@
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
-    var elTriggerDrag = document.querySelectorAll('.drag'),
+    var dragables = document.querySelectorAll('.drag'),
         i,
         moving,
         containerX,
@@ -60,12 +60,18 @@
                 containerY = dragContainer.offsetTop;
 
                 drag.starts(dragContainer, mouseX, mouseY, containerX, containerY, false);
+            } else {
+                dragContainer = e.target;
+                containerX = dragContainer.offsetLeft;
+                containerY = dragContainer.offsetTop;
+
+                drag.starts(dragContainer, mouseX, mouseY, containerX, containerY, false);
             }
         }
 
-    for(i = 0; i < elTriggerDrag.length; i++){
+    for(i = 0; i < dragables.length; i++){
         //No mouse/touchpad, no drag and drop
-        elTriggerDrag[i].addEventListener('mousedown', checkWhichElement);
+        dragables[i].addEventListener('mousedown', checkWhichElement);
     }
 
 //Creating JavaScript drag and drop: https://codepen.io/nickmoreton/pen/ogryWa

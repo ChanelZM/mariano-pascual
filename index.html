@@ -55,7 +55,7 @@
                 <div class="loading-screen__progress"></div>
             </div>
             <p class="loading-screen__text">
-                Hiding porn from mum...
+                Opening...
             </p>
             <audio class="loading-screen__audio">
                 <source src="audio/screaming-goat.mp3" type="audio/mpeg" />
@@ -162,7 +162,7 @@
                             </a>
                         </div>
                     </section>
-                    <a href="project1" class="btn-link">
+                    <a href="#project1" class="btn-link">
                         Check my last project here!
                     </a>
                 </section>
@@ -1559,31 +1559,25 @@
                         </div>
                     </section>
                 </section>
-                <section class="desktop-folder desktop-folder_narrow" id="photos" hidden>
+                <section class="desktop-folder desktop-folder_large desktop-folder_large-center" id="photos" hidden>
                     <h2 class="desktop-folder__title drag">
                         <div class="desktop-folder__title-background"></div>
-                        <span class="desktop-folder__title-span">Photos</span>
+                        <span class="desktop-folder__title-span">Gallery</span>
                     </h2>
                     <button class="close"><img src="img/x.svg" alt="close button" /></button>
                     <section class="folder-content">
-                        <div class="folder-content__wrap-overflow">
-                            <ul class="basic_list slideshow slideshow-narrow" id="photo-slideshow">
-                                <li class="slideshow__slide">
-                                    <img src="img/slide-1.png" alt="1" class="slideshow__img" />
+                        <div class="folder-content__wrap-overflow scrollbar">
+                            <ul class="basic_list gallery">
+                                <li class="gallery__item">
+                                    <img src="img/slide-1.png" alt="1" class="gallery__img" />
                                 </li>
-                                <li class="slideshow__slide">
-                                    <img src="img/slide-2.png" alt="1" class="slideshow__img" />
+                                <li class="gallery__item">
+                                    <img src="img/slide-2.png" alt="1" class="gallery__img" />
                                 </li>
-                                <li class="slideshow__slide">
-                                    <img src="img/slide-3.png" alt="1" class="slideshow__img" />
+                                <li class="gallery__item">
+                                    <img src="img/slide-3.png" alt="1" class="gallery__img" />
                                 </li>
                             </ul>
-                            <button class="slideshow__nav-button" id="prev-button">
-                                <img src="img/prev-button.svg" alt="Previous" />
-                            </button>
-                            <button class="slideshow__nav-button" id="next-button">
-                                <img src="img/next-button.svg" alt="Next" />
-                            </button>
                         </div>
                     </section>
                 </section>
@@ -1605,7 +1599,6 @@
                                     <button class="color-list__color" id="black">Black</button>
                                     <button class="color-list__color" id="grid">Grid</button>
                                     <button class="color-list__color" id="red-cow-pattern">Red cow pattern</button>
-                                    <!-- <button class="color-list__color" id="normal-cow-pattern">Normal cow pattern</button> -->
                                     <button class="color-list__color" id="space">Space</button>
                                 </div>
                             </section>
@@ -1633,6 +1626,7 @@
                                 <section class="setting setting_100">
                                     <h3 class="setting__title">Filters</h3>
                                     <button class="setting__dropdown-button">Normal</button>
+                                    <img src="img/dropdown-arrow.svg" class="dropdown__arrow" alt="down arrow" />
                                     <div class="setting__dropdown hidden">
                                         <a href="#" class="setting__dropdown__option" id="normal">
                                             Normal
@@ -1648,41 +1642,25 @@
                                         </a>
                                     </div>
                                 </section>
-                                <!-- <section class="setting setting_50">
-                                    <h3 class="setting__title">Font size</h3>
-                                    <input type="range" min="30" max="100" value="100" class="range" />
-                                </section> -->
                             </div>
                         </div>
                     </section>
                 </section>
-                <section class="desktop-folder desktop-folder_narrow" id="trash">
-                    <h2 class="desktop-folder__title drag">
-                        <div class="desktop-folder__title-background"></div>
-                        <span class="desktop-folder__title-span">Trash</span>
-                    </h2>
-                    <button class="close"><img src="img/x.svg" alt="close button" /></button>
-                    <section class="folder-content">
-                        <div class="folder-content__wrap-overflow">
-                            <ul class="basic_list slideshow slideshow-narrow" id="trash-slideshow">
-                                <li class="slideshow__slide">
-                                    <img src="img/slide-1.png" alt="1" class="slideshow__img" />
-                                </li>
-                                <li class="slideshow__slide">
-                                    <img src="img/slide-2.png" alt="1" class="slideshow__img" />
-                                </li>
-                                <li class="slideshow__slide">
-                                    <img src="img/slide-3.png" alt="1" class="slideshow__img" />
-                                </li>
-                            </ul>
-                            <button class="slideshow__nav-button" id="prev-button">
-                                <img src="img/prev-button.svg" alt="Previous" />
-                            </button>
-                            <button class="slideshow__nav-button" id="next-button">
-                                <img src="img/next-button.svg" alt="Next" />
-                            </button>
-                        </div>
-                    </section>
+                <section class="fullscreen-folder" id="trash">
+                    <button class="fullscreen__close-button close"><img src="img/x.svg" alt="close button" /></button>
+                    <img src="img/trash_1.svg" alt="trash item" class="trash__img drag" />
+                    <img src="img/trash_1.svg" alt="trash item" class="trash__img drag" />
+                    <img src="img/trash_1.svg" alt="trash item" class="trash__img drag" />
+                    <img src="img/trash_1.svg" alt="trash item" class="trash__img drag" />
+                    <img src="img/trash_1.svg" alt="trash item" class="trash__img drag" />
+                    <img src="img/trash_1.svg" alt="trash item" class="trash__img drag" />
+                    <img src="img/trash_1.svg" alt="trash item" class="trash__img drag" />
+                    <img src="img/trash_1.svg" alt="trash item" class="trash__img drag" />
+                    <img src="img/trash_1.svg" alt="trash item" class="trash__img drag" />
+                    <img src="img/trash_1.svg" alt="trash item" class="trash__img drag" />
+                    <img src="img/trash_1.svg" alt="trash item" class="trash__img drag" />
+                    <img src="img/trash_1.svg" alt="trash item" class="trash__img drag" />
+                    <img src="img/trash_1.svg" alt="trash item" class="trash__img drag" />
                 </section>
                 <div class="porn">
                     <section class="desktop-folder desktop-folder_narrow porn-window" id="porn">

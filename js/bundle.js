@@ -44,6 +44,10 @@
 
     for(i = 0; i < closeButtons.length; i++){
         closeButtons[i].addEventListener('click', function(e){
+            if(document.querySelector('.bottom-nav').className.includes('hidden') || document.querySelector('.eyeball').className.includes('hidden')){
+                document.querySelector('.bottom-nav').classList.remove('hidden');
+                document.querySelector('.eyeball').classList.remove('hidden');
+            }
             e.target.parentNode.classList.add('hidden');
         });
     }
@@ -52,7 +56,7 @@
 },{}],3:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
-    var elTriggerDrag = document.querySelectorAll('.drag'),
+    var dragables = document.querySelectorAll('.drag'),
         i,
         moving,
         containerX,
@@ -112,12 +116,18 @@
                 containerY = dragContainer.offsetTop;
 
                 drag.starts(dragContainer, mouseX, mouseY, containerX, containerY, false);
+            } else {
+                dragContainer = e.target;
+                containerX = dragContainer.offsetLeft;
+                containerY = dragContainer.offsetTop;
+
+                drag.starts(dragContainer, mouseX, mouseY, containerX, containerY, false);
             }
         }
 
-    for(i = 0; i < elTriggerDrag.length; i++){
+    for(i = 0; i < dragables.length; i++){
         //No mouse/touchpad, no drag and drop
-        elTriggerDrag[i].addEventListener('mousedown', checkWhichElement);
+        dragables[i].addEventListener('mousedown', checkWhichElement);
     }
 
 //Creating JavaScript drag and drop: https://codepen.io/nickmoreton/pen/ogryWa
@@ -269,7 +279,7 @@
 
         //Print artwork using library
         function print(){
-            printJS('../img/projects/a-la-guerra-war.svg', 'image');
+            printJS('http://stafmagazine.com/wp-content/uploads/2015/11/mariano7-615x615.jpg', 'image');
         }
 
         //Screaming goat sound when 'fake loading'
@@ -307,7 +317,7 @@
 
     //if where you clicked has a link to an application/folder open it up
     function checkIfApp(e){
-        if(e.target.hash){
+        if(e.target.hash != '#print'){
             openWindow(e.target, e.target.hash);
         }
     }
@@ -324,9 +334,8 @@
         }
         //If you're viewing this page on desktop
         if("ontouchstart" in document.documentElement == false && section.getAttribute('class').includes('fullscreen-folder')){
-            if(section.getAttribute('class').includes('hidden')){
-                section.classList.remove('hidden');
-            }
+            section.removeAttribute('hidden');
+            section.classList.remove('hidden');
         }
         //If you're viewing this page on a touch device, styling is different
         if ("ontouchstart" in document.documentElement == true) {
@@ -474,8 +483,11 @@
     function getFilter(e){
         e.preventDefault();
 
-        var dropDown = document.querySelector('.setting__dropdown');
+        var dropDown = document.querySelector('.setting__dropdown'),
+            dropDownButton = document.querySelector('.setting__dropdown-button');
+
         dropDown.classList.add('hidden');
+        dropDownButton.innerHTML = e.target.innerHTML;
 
         document.querySelector('body').className = 'body-overflow-h' + ' ' + e.target.id;
     }
@@ -617,6 +629,39 @@
 },{}],10:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
+    var images = document.querySelectorAll('.trash__img'),
+        bodyWidth = window.innerWidth,
+        bodyHeight = window.innerHeight;
+
+    var i;
+
+    function randomizeImg(){
+        for(i = 0; i < images.length; i++){
+            var xPosition = randomCoordinate(bodyWidth),
+                yPosition = randomCoordinate(bodyHeight),
+                rotation = randomDeg(45);
+
+            images[i].style.transform = 'translate(' + xPosition + 'px, ' + yPosition + 'px) rotate(' + rotation + 'deg)';
+        }
+    }
+
+    function randomCoordinate(parent){
+        var coordinate = Math.floor(Math.random() * (parent - 500));
+
+        return coordinate;
+    }
+
+    function randomDeg(maxDeg){
+        var direction = Math.random() < 0.5 ? '-' : '';
+        return direction + Math.floor(Math.random() * maxDeg);
+    }
+
+    document.getElementById('nav-trash').addEventListener('click', randomizeImg);
+})();
+
+},{}],11:[function(require,module,exports){
+/*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
+(function(){
     var detailSections = document.querySelectorAll('.detail'),
         folderLinks = document.querySelectorAll('.folderlink'),
         closeButtons = document.querySelectorAll('.project__close'),
@@ -656,4 +701,4 @@
     }
 })();
 
-},{}]},{},[5,6,2,3,10,7,1,8,4,9]);
+},{}]},{},[5,6,2,3,11,7,1,8,4,9,10]);

@@ -95,7 +95,7 @@
 
         //Print artwork using library
         function print(){
-            printJS('../img/projects/a-la-guerra-war.svg', 'image');
+            printJS('http://stafmagazine.com/wp-content/uploads/2015/11/mariano7-615x615.jpg', 'image');
         }
 
         //Screaming goat sound when 'fake loading'
