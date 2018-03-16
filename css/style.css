@@ -648,6 +648,9 @@ p {
 #icon-bin {
     transform: translateX(-1rem);
 }
+#icon-eye {
+    transform: translateY(-0.4rem);
+}
 #instagram-small {
     height: 1.3rem;
     transform: translateY(0.1rem);

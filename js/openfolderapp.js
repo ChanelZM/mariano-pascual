@@ -4,8 +4,7 @@
         bottomNavCon = document.querySelector('.bottom-nav'),
         folders = document.querySelectorAll('.top-nav__item'),
         dropDownButtons = document.querySelectorAll('.dropdown-button'),
-        macBar = document.querySelector('.mac-bar'),
-        eye = document.querySelector('.eyeball');
+        macBar = document.querySelector('.mac-bar');
 
     var clickCount = 0;
 
@@ -14,7 +13,9 @@
 
     //if where you clicked has a link to an application/folder open it up
     function checkIfApp(e){
-        if(e.target.hash != '#print'){
+        if(e.target.hash == '#latestwork'){
+            animateFullscreen(e, removeNav);
+        } else if(e.target.hash != '#print'){
             openWindow(e.target, e.target.hash);
         }
     }
@@ -63,31 +64,29 @@
         var animCircle = document.querySelector('.slider-anim__circle');
 
         document.querySelector('.slider-anim_wrap').removeAttribute('hidden');
+
         setTimeout(function(){
             animCircle.style.height = '130vw';
             animCircle.style.width = '130vw';
         }, 1);
 
         setTimeout(function(){
+            console.log('test');
             callback();
             document.querySelector('.slider-anim_wrap').setAttribute('hidden', 'true');
             animCircle.removeAttribute('style');
 
-            checkIfApp(e);
+            openWindow(e.target, e.target.hash);
         }, 1001);
     }
 
-    function removeNavAndEye(){
+    function removeNav(){
         document.querySelector('.bottom-nav').classList.add('hidden');
-        document.querySelector('.eyeball').classList.add('hidden');
     }
 
     topNavCon.addEventListener('click', checkIfApp);
     bottomNavCon.addEventListener('click', checkIfApp);
     macBar.addEventListener('click', checkIfApp);
-    eye.addEventListener('click', function(e){
-        animateFullscreen(e, removeNavAndEye);
-    });
 
     for(var i = 0; i < dropDownButtons.length; i++){
         dropDownButtons[i].addEventListener('click', toggleDropDown);
