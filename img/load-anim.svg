@@ -4,7 +4,7 @@
 	 viewBox="0 0 192.9 320.2" style="enable-background:new 0 0 192.9 320.2;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#1D1D1B;stroke:#1D1D1B;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st1{fill:#BBBABA;stroke:#1D1D1B;stroke-width:1.5;stroke-linecap:square;stroke-miterlimit:10;}
+	.st1{fill:#D6B650;stroke:#1D1D1B;stroke-width:1.5;stroke-linecap:square;stroke-miterlimit:10;}
 	.st2{fill:#333333;stroke:#1D1D1B;stroke-width:2;stroke-linecap:square;stroke-miterlimit:10;}
 	.st3{fill:#FFFFFF;stroke:#1D1D1B;stroke-width:2;stroke-miterlimit:10;}
 	.st4{fill:#FBD952;}
@@ -24,11 +24,11 @@
 	<g>
 		<circle class="st2" cx="96.6" cy="240.5" r="71.1"/>
 		
-			<ellipse transform="matrix(0.7172 -0.6969 0.6969 0.7172 -124.0558 102.8856)" class="st3" cx="64.7" cy="204.3" rx="22.7" ry="13"/>
+			<ellipse transform="matrix(0.7172 -0.6969 0.6969 0.7172 -124.0825 102.89)" class="st3" cx="64.7" cy="204.3" rx="22.7" ry="13"/>
 	</g>
 </g>
 <g id="background">
-	<path class="st4" d="M187.3,295.1c-11.2,14.3-47.6,24.7-90.8,24.7c-43.2,0-79.7-10.5-90.9-24.7h-5.8v28h192.9v-28H187.3z"/>
+	<path class="st4" d="M187.3,295.1c-11.2,14.3-47.6,24.7-90.8,24.7s-79.7-10.5-90.9-24.7h-5.8v28h192.9v-28H187.3z"/>
 </g>
 <g id="front-line">
 	<path class="st5" d="M187.9,293.5c-10.5,14.7-47.4,25.5-91.4,25.5c-44.5,0-81.8-11.1-91.8-26"/>

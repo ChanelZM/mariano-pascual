@@ -615,9 +615,17 @@ p {
 }
 .mac-bar_left .mac-bar__item {
     margin-right: 1rem;
+    transform: translateY(-0.2rem);
 }
 .mac-bar_left .mac-bar__item_first {
     margin-right: 0.3rem;
+    overflow: hidden;
+}
+.mac-bar_left .mac-bar__item_first img {
+    position: absolute;
+    height: 1.3rem;
+    left: -1.5rem;
+    top: 0.3rem;
 }
 .mac-bar_right .mac-bar__item {
     margin-left: 1rem;
@@ -876,24 +884,22 @@ p {
 }
 #grid, .grid {
     background-image: url('../img/pattern-grid.png');
+    background-size: 96rem;
 }
 #red-cow-pattern, .red-cow-pattern {
     background-image: url('../img/pattern-redcow.png');
-}
-#normal-cow-pattern, .normal-cow-pattern {
-    background-color: white;
-    background-image: url('../img/pattern-cow.png');
+    background-size: 90rem;
 }
 #space, .space {
     background-image: url('../img/pattern-space.png');
+    background-size: 108rem;
 }
 #grid,
-#red-cow-pattern,
-#normal-cow-pattern {
-    background-size: 11vw;
+#red-cow-pattern {
+    background-size: 15rem;
 }
 #space {
-    background-size: 100vw;
+    background-size: 67rem;
 }
 #settings .folder-content {
     background-color: #E8E7E2;
@@ -1198,7 +1204,10 @@ p {
     height: 100vh;
 }
 .slideshow__pjt-title {
-    font-size: 0;
+    position: absolute;
+    left: 2rem;
+    top: 2rem;
+    font-size: 1rem;
 }
 .slideshow__img {
     position: absolute;
@@ -1376,6 +1385,19 @@ p {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2rem;
+}
+/* fix weird yellow line in animation */
+.loading__img-wrap::before {
+    position: absolute;
+    content: '';
+    left: 50%;
+    bottom: 13rem;
+    width: 9rem;
+    height: 2rem;
+    background-color: black;
+    transform: translateX(-50%);
+    border-radius: 100%;
+    z-index: -1;
 }
 .loading-screen .loading-icon {
     display: block;
