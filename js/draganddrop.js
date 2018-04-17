@@ -27,8 +27,10 @@
                     var sectionX = e.clientX - relativeX,
                         sectionY = e.clientY - relativeY;
                     //place the section where the mouse is located
-                    section.style.top = sectionY + 'px';
-                    section.style.left = sectionX + 'px';
+                    if(sectionY > 32){
+                        section.style.top = sectionY + 'px';
+                        section.style.left = sectionX + 'px';
+                    }
                 }
             };
 

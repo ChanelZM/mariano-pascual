@@ -354,35 +354,31 @@ p {
 }
 
 /* LATEST PROJECT*/
-@keyframes tilt {
-    from {
-        transform: rotate(20deg);
-    } to {
-        transform: rotate(-40deg);
-    }
-}
 .btn-link-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: 5rem;
     right: -5.5rem;
-    height: 5rem;
+    height: 11rem;
     width: 11rem;
-    background-image: url('../img/projects/bubble.svg');
+    background-image: url('../img/new.png');
     background-repeat: no-repeat;
     background-size: 100%;
-    animation: tilt 1s steps(2, end) infinite;
     z-index: 2;
 }
 .btn-link {
     box-sizing: border-box;
     display: block;
     color: black;
-    font-size: 1rem;
+    font-size: 2.3rem;
     font-weight: bold;
     letter-spacing: 1px;
     text-align: center;
     text-decoration: none;
-    transform: translate(0.5rem, 1.5rem);
+    text-transform: uppercase;
+    transform: rotate(-20deg) translateX(0.2rem);
 }
 #latestproject {
     top: 18vh;
@@ -618,13 +614,15 @@ p {
     transform: translateY(-0.2rem);
 }
 .mac-bar_left .mac-bar__item_first {
+    width: 1.5rem;
     margin-right: 0.3rem;
     overflow: hidden;
+    transform: translateY(-0.1rem);
 }
 .mac-bar_left .mac-bar__item_first img {
     position: absolute;
     height: 1.3rem;
-    left: -1.5rem;
+    left: 0;
     top: 0.3rem;
 }
 .mac-bar_right .mac-bar__item {
@@ -1059,6 +1057,10 @@ p {
     width: 54rem;
     height: 32.5rem;
     box-shadow: -0.6rem 0.6rem 0 rgba(29, 30, 28, 0.26);
+}
+.detail_d__horizontal_center {
+    left: 50vw;
+    transform: translateX(-27rem);
 }
 .detail_d__horizontal .folder-content.js {
     height: 30.5rem;

@@ -5,9 +5,8 @@
 
     for(i = 0; i < closeButtons.length; i++){
         closeButtons[i].addEventListener('click', function(e){
-            if(document.querySelector('.bottom-nav').className.includes('hidden') || document.querySelector('.eyeball').className.includes('hidden')){
+            if(document.querySelector('.bottom-nav').className.includes('hidden')){
                 document.querySelector('.bottom-nav').classList.remove('hidden');
-                document.querySelector('.eyeball').classList.remove('hidden');
             }
             e.target.parentNode.classList.add('hidden');
         });
