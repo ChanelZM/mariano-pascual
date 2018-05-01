@@ -323,20 +323,90 @@ p {
     height: 9rem;
 }
 /* ABOUT */
-.img_center {
+.about-wrap {
+    position: relative;
+    padding: 2rem;
+    height: 21rem;
+    border: 2px solid black;
+    overflow-y: scroll;
+}
+.btn1-list {
+    position: fixed;
+    display: flex;
+    align-items: flex-end;
+    z-index: 1;
+}
+.btn1-list_top {
+    width: 47.5rem;
+    top: 3.2rem;
+}
+.btn1-list_bottom {
+    width: 47.5rem;
+    top: 28.2rem;
+}
+.btn1-list__item {
+    flex: 1;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border: 2px solid black;
+    background-color: #DADAD3;
+}
+.btn1-list__shadow {
+    height: 0.5rem;
+    border-top: 2px solid black;
+    background-color: #C1C1BF;
+}
+.btn1-list__link {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 19rem;
+    padding: 0.2rem;
+}
+.btn1-list__item_big {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+}
+.btn1-list__item:not(:first-child){
+    margin-left: -2px;
+}
+.section2 {
+    display: flex;
+    align-items: flex-start;
+}
+.head {
+    width: 17rem;
+}
+.title1 {
+    font-size: 2.5rem;
+}
+.title2 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: normal;
+}
+.folder-content__title2 {
+    font-size: 1.8rem;
+    text-align: center;
+}
+.about-link, .about-link:visited {
+    color: black;
+}
+.about-link_block {
+    display: block;
 }
 .black-background {
     background-color: black;
 }
-#experimenta {
-    transform: translateX(-50%) scale(1.6);
+.btn1-list__item_active {
+    background-color: #C1C1BF;
+}
+.btn1-list__item_active .btn1-list__shadow {
+    display: none;
+}
+#press {
+    margin: 0 4rem;
 }
 #about .folder-content.js {
-    background-color: #81CCD8;
+    background-color: #DADAD3;
 }
 
 /* PORN */
@@ -929,7 +999,7 @@ p {
 .folder-content__wrap-overflow {
     box-sizing: border-box;
     height: 38.15rem;
-    padding: 4rem 2.5rem 2.5rem 2.5rem;
+    padding: 2.5rem 2.5rem 2.5rem 2.5rem;
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -1054,7 +1124,7 @@ p {
     position: fixed;
     top: 11rem;
     left: 11rem;
-    width: 54rem;
+    width: 53rem;
     height: 32.5rem;
     box-shadow: -0.6rem 0.6rem 0 rgba(29, 30, 28, 0.26);
 }
@@ -1066,7 +1136,7 @@ p {
     height: 30.5rem;
 }
 .detail_d__horizontal .folder-content__wrap-overflow {
-    height: 30.5rem;
+    height: 30.25rem;
 }
 .detail_d__vertical {
     position: fixed;
@@ -1213,6 +1283,7 @@ p {
     left: 2rem;
     top: 2rem;
     font-size: 1rem;
+    z-index: 1;
 }
 .slideshow__img {
     position: absolute;
@@ -1279,6 +1350,7 @@ p {
     background: url('../img/start-button.svg');
     background-repeat: no-repeat;
     background-size: cover;
+    cursor: pointer;
 }
 .slideshow__nav-button {
     appearance: none;

@@ -1,6 +1,43 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
+    var tabs = document.querySelectorAll('.tab'),
+        links = document.querySelectorAll('.btn1-list__item'),
+        tabNav = document.querySelector('.btn1-list_top');
+
+    var i;
+
+    function getHash(e){
+        var id = e.target.hash,
+            link = e.target;
+
+        openTab(id, link);
+    }
+
+    function openTab(id, link){
+        closeTabs();
+        console.log(link);
+
+        document.querySelector(id).classList.remove('hidden');
+        link.parentNode.classList.add('btn1-list__item_active');
+    }
+    function closeTabs(){
+        for(i = 0; i < tabs.length; i++){
+            links[i].classList.remove('btn1-list__item_active');
+            tabs[i].classList.add('hidden');
+        }
+    }
+
+    closeTabs();
+    links[0].classList.add('btn1-list__item_active');
+    tabs[0].classList.remove('hidden');
+
+    tabNav.addEventListener('click', getHash);
+})();
+
+},{}],2:[function(require,module,exports){
+/*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
+(function(){
     //Functions that handle the clock
     function parseHourMin(num){
         var parseNum;
@@ -36,7 +73,7 @@
     updateTime();
 })();
 
-},{}],2:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var closeButtons = document.querySelectorAll('.close'),
@@ -52,7 +89,7 @@
     }
 })();
 
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var dragables = document.querySelectorAll('.drag'),
@@ -135,7 +172,30 @@
 //Getting mouse offset relative to section: http://jsfiddle.net/WhrFt/
 })();
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
+/*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
+(function(){
+    var slides = document.querySelectorAll('.slideshow__slide');
+
+    var i;
+
+    function getMousePosition(e){
+        var rect = this.querySelector('.slideshow__pjt-title').getBoundingClientRect(),
+            titleHeight = rect.height/2,
+            titleWidth = rect.width/2,
+            titleX = e.clientX - titleWidth,
+            titleY = e.clientY - titleHeight;
+
+        this.querySelector('.slideshow__pjt-title').style.left = titleX + 'px';
+        this.querySelector('.slideshow__pjt-title').style.top = titleY + 'px';
+    }
+
+    for(i = 1; i < slides.length; i++){
+        slides[i].addEventListener('mousemove', getMousePosition);
+    }
+})();
+
+},{}],6:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var hoverImages = document.querySelectorAll('.hover-img'),
@@ -199,7 +259,7 @@
     }
 })();
 
-},{}],5:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     function init(){
@@ -317,7 +377,7 @@
     init();
 })();
 
-},{}],6:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var topNavCon = document.querySelector('.top-nav'),
@@ -414,7 +474,7 @@
 })();
 //Single and double click function by Karbassi: https://gist.github.com/karbassi/639453
 
-},{}],7:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var pornLinks = document.querySelectorAll('[href="#porn"]'),
@@ -476,7 +536,7 @@
     });
 })();
 
-},{}],8:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var appleSliders = document.querySelectorAll('.a-slider__circle'),
@@ -588,7 +648,7 @@
     }
 })();
 
-},{}],9:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var i;
@@ -642,7 +702,7 @@
     }
 })();
 
-},{}],10:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var images = document.querySelectorAll('.trash__img'),
@@ -675,7 +735,7 @@
     document.getElementById('nav-trash').addEventListener('click', randomizeImg);
 })();
 
-},{}],11:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var detailSections = document.querySelectorAll('.detail'),
@@ -717,4 +777,4 @@
     }
 })();
 
-},{}]},{},[5,6,2,3,11,7,1,8,4,9,10]);
+},{}]},{},[7,8,3,4,13,9,2,10,6,11,12,1,5]);
