@@ -337,14 +337,15 @@ p {
     z-index: 1;
 }
 .btn1-list_top {
-    width: 47.5rem;
+    width: 46.55rem;
     top: 3.2rem;
 }
 .btn1-list_bottom {
-    width: 47.5rem;
+    width: 46.5rem;
     top: 28.2rem;
 }
 .btn1-list__item {
+    position: relative;
     flex: 1;
     text-align: center;
     font-size: 0.8rem;
@@ -361,6 +362,14 @@ p {
     display: block;
     padding: 0.2rem;
 }
+.btn1-list__link::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
 .btn1-list__item_big {
     font-size: 1.3rem;
     letter-spacing: 1px;
@@ -371,6 +380,8 @@ p {
 .section2 {
     display: flex;
     align-items: flex-start;
+    margin-top: 16px;
+    margin-top: 1rem;
 }
 .head {
     width: 17rem;
@@ -403,7 +414,7 @@ p {
     display: none;
 }
 #press {
-    margin: 0 4rem;
+    margin: 2.5rem 4rem 0 4rem;
 }
 #about .folder-content.js {
     background-color: #DADAD3;
@@ -431,8 +442,8 @@ p {
     position: absolute;
     top: 5rem;
     right: -5.5rem;
-    height: 11rem;
-    width: 11rem;
+    height: 10.5rem;
+    width: 10.5rem;
     background-image: url('../img/new.png');
     background-repeat: no-repeat;
     background-size: 100%;
@@ -442,13 +453,13 @@ p {
     box-sizing: border-box;
     display: block;
     color: black;
-    font-size: 2.3rem;
+    font-size: 2.2rem;
     font-weight: bold;
     letter-spacing: 1px;
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
-    transform: rotate(-20deg) translateX(0.2rem);
+    transform: rotate(-20deg) translate(0.2rem, 0.3rem);
 }
 #latestproject {
     top: 18vh;
@@ -656,7 +667,7 @@ p {
     padding: 0;
     width: 10rem;
     left: -0.5rem;
-    top: 1.65rem;
+    top: 1.49rem;
     background-color: #DADAD3;
     border-style: solid;
     border-width: 2px;
@@ -1079,16 +1090,16 @@ p {
     z-index: 2;
 }
 .detail_a {
-    height: 55rem;
+    height: 55.5rem;
     width: 40rem;
     left: calc(50vw - 20rem);
     top: 6vh;
 }
 .detail_a .folder-content.js {
-    height: 53rem;
+    height: 53.55rem;
 }
 .detail_a .folder-content__wrap-overflow {
-    height: 52.75rem;
+    height: 53.3rem;
 }
 .detail_b {
     height: 47rem;
@@ -1116,6 +1127,9 @@ p {
 }
 .detail_d {
     box-shadow: none;
+}
+.detail_d_wrap {
+    overflow-y: hidden;
 }
 .detail_d > .folder-content.js {
     border: none;
@@ -1198,7 +1212,7 @@ p {
     width: 30rem;
 }
 .project__desc .folder-content__wrap-overflow {
-    height: 10.5rem;
+    height: 10.8rem;
     width: 100%;
 }
 .desktop-folder_open .detail__title-big {
@@ -1282,7 +1296,7 @@ p {
     position: absolute;
     left: 2rem;
     top: 2rem;
-    font-size: 1rem;
+    font-size: 1.5rem;
     z-index: 1;
 }
 .slideshow__img {
