@@ -382,12 +382,33 @@
         bottomNavCon = document.querySelector('.bottom-nav'),
         folders = document.querySelectorAll('.top-nav__item'),
         dropDownButtons = document.querySelectorAll('.dropdown-button'),
-        macBar = document.querySelector('.mac-bar');
+        macBar = document.querySelector('.mac-bar'),
+        windows = document.querySelectorAll('.window');
 
-    var clickCount = 0;
+    var clickCount = 0,
+        zIndex = 2;
 
     var singleClickTimer,
         i;
+
+    function findNearestWindowEl(e){
+        console.log('findNearest');
+        var el = findAncestor(e.target, 'window');
+
+        windowToFront(el);
+    }
+
+    function findAncestor(el, cls) {
+        while ((el = el.parentElement) && !el.classList.contains(cls));
+        return el;
+    }
+
+    function windowToFront(win){
+        if(win.style.zIndex != zIndex){
+            zIndex++;
+            win.style.zIndex = zIndex;
+        }
+    }
 
     //if where you clicked has a link to an application/folder open it up
     function checkIfApp(e){
@@ -400,6 +421,12 @@
 
     function openWindow(parent, id){
         var section = document.querySelector(id);
+
+        console.log('open window');
+        if(section.classList.contains('window')){
+            console.log('contains window');
+            windowToFront(section);
+        }
 
         //If you're viewing this page on desktop
         if("ontouchstart" in document.documentElement == false && section.getAttribute('class').includes('desktop-folder')){
@@ -468,6 +495,9 @@
 
     for(var i = 0; i < dropDownButtons.length; i++){
         dropDownButtons[i].addEventListener('click', toggleDropDown);
+    }
+    for(var i = 0; i < windows.length; i++){
+        windows[i].addEventListener('click', findNearestWindowEl);
     }
 })();
 //Single and double click function by Karbassi: https://gist.github.com/karbassi/639453

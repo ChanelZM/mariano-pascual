@@ -871,7 +871,7 @@ p {
     background-color: #AFAEA9;
 }
 .switch-on .a-slider__circle {
-    margin-left: 4rem;
+    margin-left: 4.37rem;
 }
 .range {
     box-sizing: border-box;
@@ -938,11 +938,12 @@ p {
 }
 .brightness {
     position: absolute;
-    left: 0;
-    top: 0;
+    left: 50%;
+    top: 50%;
     width: auto;
-    height: 100vh;
+    height: 120vh;
     pointer-events: none;
+    transform: translate(-50%, -50%);
 }
 .normal {
     filter: none;
@@ -1130,6 +1131,10 @@ p {
 }
 .detail_b .folder-content__wrap-overflow {
     height: 44.75rem;
+}
+.detail_b
+.desktop-folder__title-background {
+    transform: scaleX(1.23);
 }
 .detail_c {
     height: 53rem;
@@ -1683,15 +1688,19 @@ svg #ball {
 } */
 
 @media screen and (max-width: 90rem){
+    .bottom-nav {
+        width: 71rem;
+        bottom: -1rem;
+    }
     .bottom-nav__item {
         width: 6rem;
     }
-    .top-nav__item img {
-        width: 6rem;
+    .top-nav__item {
+        width: 5rem;
     }
     /* NORMAL WINDOWS */
     .desktop-folder_open {
-        height: 35rem;
+        height: 34.7rem;
         width: 53rem;
     }
     .folder-content.js {
@@ -1702,19 +1711,21 @@ svg #ball {
         height: 32.5rem;
     }
     .desktop-folder_open .desktop-folder__title, .device-app_open .desktop-folder__title {
-        width: 52.75rem;
+        width: 52rem;
     }
     /* SMALL WINDOWS */
     .desktop-folder_small {
-        height: 24rem;
+        height: 26rem;
+        width: 24rem;
+    }
+    .desktop-folder_small .folder-content.js {
         width: 24rem;
     }
     .desktop-folder_small .desktop-folder__title, .desktop-folder_small .folder-content.js {
-        width: 23.75rem;
+        width: inherit;
     }
-    .desktop-folder_small .folder-content.js,
-    .desktop-folder_small .folder-content__wrap-overflow  {
-        height: 22rem;
+    .desktop-folder_xsmall {
+        width: 15rem;
     }
     /* NARROW WINDOWS */
     .desktop-folder_narrow {
@@ -1741,61 +1752,114 @@ svg #ball {
     .slideshow-narrow .slideshow__img {
         height: 34rem;
     }
-    .btn-link {
-        right: -4rem;
-        width: 8rem;
-        height: 8rem;
-        font-size: 1.1rem;
-    }
     /* PROJECT WINDOWS */
     .detail,
     .detail .folder-content.js {
-        height: calc(100vh - 15rem);
+        height: calc(100vh - 16.5rem);
     }
     .detail .folder-content__wrap-overflow {
-        height: calc(100vh - 15.25rem);
+        height: calc(100vh - 16.75rem);
     }
     .desktop-folder_open .detail__title-big {
         width: calc(100vw - 8rem);
+    }
+    .detail .desktop-folder__title,
+    .detail .folder-content.js {
+        width: inherit;
+    }
+    .detail_a {
+        height: 43.1rem;
+        width: 31rem;
+        left: calc(50vw - 15.5rem);
+    }
+    .detail_a .folder-content.js {
+        height: 41.15rem;
+    }
+    .detail_a .folder-content__wrap-overflow {
+        height: 40.9rem;
+    }
+    .detail_b {
+        height: 39.5rem;
+        width: 72rem;
+        left: calc(50vw - 36rem);
+    }
+    .detail_b
+    .folder-content.js {
+        height: 37.59rem;
+    }
+    .detail_b
+    .folder-content__wrap-overflow {
+        height: 37.3rem;
+    }
+    .detail_b
+    .desktop-folder__title {
+        width: inherit;
+    }
+    .detail_b
+    .desktop-folder__title-background {
+        transform: scaleX(1.02);
+    }
+    .detail_c {
+        width: 41rem;
+        left: calc(50vw - 20.5rem);
+    }
+    .detail_c
+    .desktop-folder__title {
+        width: 41rem;
+    }
+    .detail_d__horizontal {
+        height: 26.9rem;
+        height: 27.5rem;
+    }
+    .detail_d__horizontal .folder-content.js {
+        height: 24.9rem;
+    }
+    .detail_d__horizontal .folder-content__wrap-overflow {
+        height: 24.6rem;
+    }
+    .detail_d__vertical {
+        width: 30rem;
+        height: 41.7rem;
+    }
+    .detail_d__vertical .folder-content.js {
+        height: 39.75rem;
+    }
+    .detail_d__vertical .folder-content__wrap-overflow {
+        height: 39.5rem;
     }
     .project__img {
         max-height: calc(100vh - 8rem);
         margin-top: 0;
     }
     .project__desc {
-        height: 19rem;
+        width: 27rem;
+        height: 14rem;
         top: 46vh;
     }
+    .project__desc_small {
+        height: 9.5rem;
+    }
     .project__desc .detail__title {
-        width: 30rem;
+        width: 27.75rem;
     }
     .project__desc .folder-content.js {
-        height: 17rem;
-        width: 30rem;
+        height: 12rem;
+        width: 27.75rem;
     }
     .project__desc .folder-content__wrap-overflow {
-        height: 16.5rem;
-        width: 29.75rem;
+        height: 11.8rem;
+        width: 27.5rem;
     }
-    /* PORN */
-    .censored {
-        font-size: 6.5rem;
+    .project__desc_small .folder-content.js {
+        height: 7.5rem;
     }
-    .porn .folder-content__wrap-overflow {
-        overflow-x: hidden;
+    .project__desc_small .folder-content__wrap-overflow {
+        height: 7.3rem;
     }
-    /* EYES */
-    .eyeball {
-        width: 6rem;
-        height: 6rem;
-    }
-    .pupil {
-        width: 2.8rem;
-        height: 2.2rem;
-    }
-    .gloss {
-        width: 0.5rem;
-        height: 0.7rem;
+    /* SETTINGS */
+    .color-list__color {
+        width: 2.3rem;
+        height: 2.3rem;
     }
     #latestproject .latest-project {
         height: 24rem;
