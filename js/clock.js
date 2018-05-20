@@ -24,9 +24,9 @@
 
     function updateTime(){
         var d = new Date(),
-            days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+            days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-        document.querySelector('.time').innerHTML = formatDate(days[d.getDay() -1], d.getHours(), d.getMinutes());
+        document.querySelector('.time').innerHTML = formatDate(days[d.getDay()], d.getHours(), d.getMinutes());
 
         //Check every half a second if the time has changed
         var timeout = setTimeout(updateTime, 500);

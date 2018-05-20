@@ -220,10 +220,10 @@ p {
 }
 .desktop-folder_large-center {
     left: calc(50vw - 35rem);
-    top: 5vh;
+    top: 15vh;
 }
 .desktop-folder_large {
-    height: 51.25rem;
+    height: 40.6rem;
     width: 70rem;
 }
 .desktop-folder_narrow {
@@ -295,7 +295,7 @@ p {
     width: 17rem;
 }
 .desktop-folder_large .folder-content.js {
-    height: 49.25rem;
+    height: 38.75rem;
 }
 .desktop-folder_narrow .folder-content.js {
     height: 47rem;
@@ -311,7 +311,7 @@ p {
     padding: 0;
 }
 .desktop-folder_large .folder-content__wrap-overflow {
-    height: 49rem;
+    height: 38.5rem;
 }
 .desktop-folder_xsmall .folder-content__wrap-overflow {
     height: 31.75rem;
@@ -416,6 +416,9 @@ p {
 #press {
     margin: 2.5rem 4rem 0 4rem;
 }
+#about {
+    box-shadow: none;
+}
 #about .folder-content.js {
     background-color: #DADAD3;
 }
@@ -488,9 +491,23 @@ p {
 }
 
 /* PHOTOS */
+.gallery__item {
+    position: relative;
+}
 .gallery__img {
     display: block;
     width: 100%;
+}
+.gallery-h3 {
+    position: absolute;
+    margin: 0;
+    left: 2rem;
+    top: 2rem;
+    font-size: 0.9rem;
+    font-weight: normal;
+}
+.gallery-h3_white {
+    color: white;
 }
 
 /* TOUCH DEVICE*/
@@ -1080,6 +1097,7 @@ p {
 .trash__img {
     position: absolute;
     width: 21rem;
+    border: 2px solid black;
     box-shadow: -0.6rem 0.6rem 0 rgba(29, 30, 28, 0.26);
 }
 
@@ -1114,16 +1132,16 @@ p {
     height: 44.75rem;
 }
 .detail_c {
-    height: 52rem;
+    height: 53rem;
     width: 52rem;
     left: calc(50vw - 26rem);
     top: 10vh;
 }
 .detail_c .folder-content.js {
-    height: 50rem;
+    height: 51rem;
 }
 .detail_c .folder-content__wrap-overflow {
-    height: 49.75rem;
+    height: 50.75rem;
 }
 .detail_d {
     box-shadow: none;
@@ -1137,8 +1155,8 @@ p {
 .detail_d__horizontal {
     position: fixed;
     top: 11rem;
-    left: 11rem;
-    width: 53rem;
+    left: 6vw;
+    width: 58rem;
     height: 32.5rem;
     box-shadow: -0.6rem 0.6rem 0 rgba(29, 30, 28, 0.26);
 }
@@ -1147,24 +1165,24 @@ p {
     transform: translateX(-27rem);
 }
 .detail_d__horizontal .folder-content.js {
-    height: 30.5rem;
+    height: 32.2rem;
 }
 .detail_d__horizontal .folder-content__wrap-overflow {
-    height: 30.25rem;
+    height: 32rem;
 }
 .detail_d__vertical {
     position: fixed;
     top: 5rem;
-    left: 67rem;
-    width: 34rem;
-    height: 50rem;
+    left: 62vw;
+    width: 37rem;
+    height: 52.8rem;
     box-shadow: -0.6rem 0.6rem 0 rgba(29, 30, 28, 0.26);
 }
 .detail_d__vertical .folder-content.js {
-    height: 48rem;
+    height: 50.80rem;
 }
 .detail_d__vertical .folder-content__wrap-overflow {
-    height: 48rem;
+    height: 50.55rem;
 }
 .detail_d {
     overflow: hidden;
@@ -1187,35 +1205,55 @@ p {
     box-shadow: -0.6rem 0.6rem 0 rgba(29, 30, 28, 0.26);
     z-index: 1;
 }
+.project__desc_small {
+    height: 9rem;
+}
 .project__img {
     display: block;
     max-width: 100%;
 }
-.project__desc p {
-    padding: 1rem 2rem;
+.project__desc
+p {
+    padding: 0 2rem;
 }
-.detail .desktop-folder__title,
-.detail .folder-content.js {
+.detail
+.desktop-folder__title,
+.detail
+.folder-content.js {
     width: inherit;
 }
-.detail .folder-content__wrap-overflow {
+.detail
+.folder-content__wrap-overflow {
     padding: 0;
 }
-.detail__title-big .desktop-folder__title-background {
+.detail__title-big
+.desktop-folder__title-background {
     background-image: none;
 }
-.project__desc .detail__title {
+.project__desc
+.detail__title {
     width: 30rem;
 }
-.project__desc .folder-content.js {
+.project__desc
+.folder-content.js {
     height: 11rem;
     width: 30rem;
 }
-.project__desc .folder-content__wrap-overflow {
+.project__desc
+.folder-content__wrap-overflow {
     height: 10.8rem;
     width: 100%;
 }
-.desktop-folder_open .detail__title-big {
+.project__desc_small
+.folder-content__wrap-overflow {
+    height: 6.8rem;
+}
+.project__desc_small
+.folder-content.js {
+    height: 7rem;
+}
+.desktop-folder_open
+.detail__title-big {
     width: calc(100vw - 8rem);
 }
 
@@ -1303,8 +1341,8 @@ p {
     position: absolute;
     top: 0;
     left: 50%;
-    height: 100%;
-    transform: translateX(-50%);
+    height: 120%;
+    transform: translate(-50%, -50%);
 }
 .slideshow__slide-wrap {
     left: 50%;
