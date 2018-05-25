@@ -371,8 +371,11 @@ p {
     bottom: 0;
 }
 .btn1-list__item_big {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     letter-spacing: 1px;
+}
+.btn1-list__item_big .btn1-list__link {
+    padding: 0.4rem;
 }
 .btn1-list__item:not(:first-child){
     margin-left: -2px;
@@ -668,6 +671,9 @@ p {
     height: 1.3rem;
     font-size: 1rem;
     font-weight: normal;
+}
+.mac-bar__item_tr {
+    transform: translateY(-0.2rem);
 }
 .mac-bar__item_strong {
     font-weight: bold;
@@ -1136,6 +1142,10 @@ p {
 .desktop-folder__title-background {
     transform: scaleX(1.23);
 }
+.project__desc
+.desktop-folder__title-background {
+    transform: none;
+}
 .detail_c {
     height: 53rem;
     width: 52rem;
@@ -1162,7 +1172,7 @@ p {
     top: 11rem;
     left: 6vw;
     width: 58rem;
-    height: 32.5rem;
+    height: 34.2rem;
     box-shadow: -0.6rem 0.6rem 0 rgba(29, 30, 28, 0.26);
 }
 .detail_d__horizontal_center {
@@ -1170,7 +1180,7 @@ p {
     transform: translateX(-27rem);
 }
 .detail_d__horizontal .folder-content.js {
-    height: 32.2rem;
+    height: 32.25rem;
 }
 .detail_d__horizontal .folder-content__wrap-overflow {
     height: 32rem;
