@@ -750,7 +750,7 @@
     }
 
     function randomCoordinate(parent){
-        var coordinate = Math.floor(Math.random() * (parent - 500));
+        var coordinate = Math.floor(Math.random() * (parent - 300));
 
         return coordinate;
     }

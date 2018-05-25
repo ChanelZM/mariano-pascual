@@ -1332,7 +1332,7 @@ p {
     display: flex;
     margin: 0;
     padding: 0;
-    width: 1100vw;
+    width: 1000vw;
 }
 .slideshow-narrow {
     height: 47rem;
@@ -1354,9 +1354,9 @@ p {
 }
 .slideshow__img {
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 50%;
-    height: 120%;
+    height: 110%;
     transform: translate(-50%, -50%);
 }
 .slideshow__slide-wrap {
@@ -1698,6 +1698,9 @@ svg #ball {
 } */
 
 @media screen and (max-width: 100rem){
+    p {
+        font-size: 0.9rem;
+    }
     .bottom-nav {
         width: 71rem;
         bottom: -1rem;
@@ -1708,24 +1711,69 @@ svg #ball {
     .top-nav__item {
         width: 5rem;
     }
+    .folderlink, .folderlink:visited {
+        font-size: 0.9rem;
+    }
+    .mac-bar__item {
+        font-size: 0.9rem;
+    }
+    .dropdown-button {
+        font-size: 0.9rem;
+    }
+    #mail-small, #battery-small {
+        height: 1rem;
+    }
+    #instagram-small {
+        height: 1.2rem;
+    }
     /* ABOUT */
     .about-wrap {
-        height: 16rem;
+        height: 14.1rem;
+        padding: 1rem;
+    }
+    .head {
+        width: 11rem;
+    }
+    .title1 {
+        font-size: 1.9rem;
+    }
+    .title2 {
+        font-size: 1.2rem;
+    }
+    .btn1-list_bottom {
+        top: 20.7rem;
+        width: 37.75rem;
+    }
+    .folder-content__title2 {
+        font-size: 1.45rem;
+    }
+    .btn1-list__item_big {
+        font-size: 1rem;
+    }
+    .btn1-list_top {
+        width: 37.75rem
     }
     /* NORMAL WINDOWS */
     .desktop-folder_open {
         height: 34.7rem;
-        width: 53rem;
+        width: 44rem;
+    }
+    .desktop-folder_center {
+        left: calc(50vw - 22rem);
+        top: 11vh;
     }
     .folder-content.js {
         height: 32.75rem;
-        width: 52.75rem;
+        width: 44rem;
     }
     .folder-content__wrap-overflow {
         height: 32.5rem;
     }
     .desktop-folder_open .desktop-folder__title, .device-app_open .desktop-folder__title {
-        width: 52.75rem;
+        width: 44rem;
+    }
+    .desktop-folder_open .desktop-folder__title, .device-app_open .desktop-folder__title {
+        font-size: 0.8rem;
     }
     /* SMALL WINDOWS */
     .desktop-folder_small {
@@ -1753,9 +1801,6 @@ svg #ball {
     .desktop-folder_narrow .folder-content.js {
         height: 37rem;
     }
-    #photos .folder-content__wrap-overflow, #trash .folder-content__wrap-overflow {
-        height: 37rem;
-    }
     .slideshow-narrow {
         height: 37rem;
         width: 88.25rem;
@@ -1767,7 +1812,28 @@ svg #ball {
     .slideshow-narrow .slideshow__img {
         height: 34rem;
     }
-    /* PROJECT WINDOWS */
+    /* LARGE WINDOWS */
+    .desktop-folder_large {
+        width: 56rem;
+        height: 33.05rem;
+    }
+    .desktop-folder_large .desktop-folder__title, .desktop-folder_large .folder-content.js {
+        width: 56rem;
+    }
+    .desktop-folder_large-center {
+        left: calc(50vw - 28rem);
+        top: 10vh;
+    }
+    .desktop-folder_large .folder-content.js {
+        height: 31.05rem;
+    }
+    .desktop-folder_large .folder-content__wrap-overflow {
+        height: 30.8rem;
+    }
+    .desktop-folder_large .desktop-folder__title {
+        width: 56rem;
+    }
+    /* PROJECT */
     .detail,
     .detail .folder-content.js {
         height: calc(100vh - 16.5rem);
@@ -1783,28 +1849,29 @@ svg #ball {
         width: inherit;
     }
     .detail_a {
-        height: 43.1rem;
-        width: 31rem;
-        left: calc(50vw - 15.5rem);
+        height: 37.7rem;
+        width: 27rem;
+        left: calc(50vw - 13.5rem);
+        top: 9vh;
     }
     .detail_a .folder-content.js {
-        height: 41.15rem;
+        height: 35.7rem;
     }
     .detail_a .folder-content__wrap-overflow {
-        height: 40.9rem;
+        height: 35.45rem;
     }
     .detail_b {
-        height: 39.5rem;
-        width: 72rem;
-        left: calc(50vw - 36rem);
+        height: 33.25rem;
+        width: 60rem;
+        left: calc(50vw - 30rem);
     }
     .detail_b
     .folder-content.js {
-        height: 37.59rem;
+        height: 31.25rem;
     }
     .detail_b
     .folder-content__wrap-overflow {
-        height: 37.3rem;
+        height: 31rem;
     }
     .detail_b
     .desktop-folder__title {
@@ -1815,32 +1882,44 @@ svg #ball {
         transform: scaleX(1.02);
     }
     .detail_c {
-        width: 41rem;
-        left: calc(50vw - 20.5rem);
+        width: 37rem;
+        left: calc(50vw - 18.5rem);
+    }
+    .detail_c
+    .folder-content.js {
+        height: 36rem;
+    }
+    .detail_c
+    .folder-content__wrap-overflow {
+        height: 35.75rem;
     }
     .detail_c
     .desktop-folder__title {
-        width: 41rem;
+        width: 37rem;
     }
     .detail_d__horizontal {
-        height: 26.9rem;
-        height: 27.5rem;
+        height: 27.45rem;
+        width: 43rem;
+        top: 15vh;
     }
     .detail_d__horizontal .folder-content.js {
-        height: 24.9rem;
+        height: 23.75rem;
     }
     .detail_d__horizontal .folder-content__wrap-overflow {
-        height: 24.6rem;
+        height: 23.5rem;
     }
     .detail_d__vertical {
-        width: 30rem;
-        height: 41.7rem;
+        width: 26rem;
+        height: 37.25rem;
     }
     .detail_d__vertical .folder-content.js {
-        height: 39.75rem;
+        height: 35.25rem;
     }
     .detail_d__vertical .folder-content__wrap-overflow {
-        height: 39.5rem;
+        height: 35rem;
+    }
+    .detail_d__horizontal_center {
+        transform: translateX(-23rem);
     }
     .project__img {
         max-height: calc(100vh - 8rem);
@@ -1848,28 +1927,31 @@ svg #ball {
     }
     .project__desc {
         width: 27rem;
-        height: 14rem;
-        top: 46vh;
+        height: 12.6rem;
+        top: 60vh;
     }
     .project__desc_small {
-        height: 9.5rem;
+        height: 8.5rem;
     }
     .project__desc .detail__title {
         width: 27.75rem;
     }
     .project__desc .folder-content.js {
-        height: 12rem;
+        height: 10.6rem;
         width: 27.75rem;
     }
     .project__desc .folder-content__wrap-overflow {
-        height: 11.8rem;
+        height: 10.4rem;
         width: 27.5rem;
     }
     .project__desc_small .folder-content.js {
-        height: 7.5rem;
+        height: 6.5rem;
     }
     .project__desc_small .folder-content__wrap-overflow {
-        height: 7.3rem;
+        height: 6.3rem;
+    }
+    .project-list__preview {
+        height: 4.5rem;
     }
     /* SETTINGS */
     .color-list__color {
@@ -1878,6 +1960,14 @@ svg #ball {
     }
     #latestproject .latest-project {
         height: 24rem;
+    }
+    /* TRASH */
+    .trash__img {
+        width: 18rem;
+    }
+    /* SLIDESHOW */
+    .slideshow__title {
+        font-size: 2.4rem;
     }
 }
 
