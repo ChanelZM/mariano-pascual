@@ -1697,7 +1697,7 @@ svg #ball {
 
 } */
 
-@media screen and (max-width: 90rem){
+@media screen and (max-width: 100rem){
     .bottom-nav {
         width: 71rem;
         bottom: -1rem;
@@ -1707,6 +1707,10 @@ svg #ball {
     }
     .top-nav__item {
         width: 5rem;
+    }
+    /* ABOUT */
+    .about-wrap {
+        height: 16rem;
     }
     /* NORMAL WINDOWS */
     .desktop-folder_open {
@@ -1721,7 +1725,7 @@ svg #ball {
         height: 32.5rem;
     }
     .desktop-folder_open .desktop-folder__title, .device-app_open .desktop-folder__title {
-        width: 52rem;
+        width: 52.75rem;
     }
     /* SMALL WINDOWS */
     .desktop-folder_small {
@@ -1733,6 +1737,7 @@ svg #ball {
     }
     .desktop-folder_small .desktop-folder__title, .desktop-folder_small .folder-content.js {
         width: inherit;
+        height: 24rem;
     }
     .desktop-folder_xsmall {
         width: 15rem;
