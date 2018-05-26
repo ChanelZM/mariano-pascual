@@ -1039,6 +1039,7 @@ p {
     overflow-x: hidden;
 }
 .project-list__item {
+    position: relative;
     box-sizing: border-box;
     flex: 1;
     padding: 0.5rem;
@@ -1060,14 +1061,6 @@ p {
     font-weight: bold;
     font-size: 1rem;
 }
-/* .project-list__item:hover .project-list__preview {
-    transform: scale(1.2);
-} */
-/* .folderlink:hover {
-    /* background-color: #FEE242;
-    background-color: black;
-    color: white;
-} */
 .folder-content.js {
     box-sizing: border-box;
     display: inline-block;
@@ -1079,13 +1072,10 @@ p {
     border: 2px solid #1d1e1c;
     z-index: 2;
 }
-.project-list__item .folderlink {
-    position: relative;
-}
 .project-list__item .folderlink::after {
     content: '';
     position: absolute;
-    top: -9rem;
+    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
@@ -1150,7 +1140,7 @@ p {
     height: 53rem;
     width: 52rem;
     left: calc(50vw - 26rem);
-    top: 10vh;
+    top: 6vh;
 }
 .detail_c .folder-content.js {
     height: 51rem;
@@ -1693,11 +1683,8 @@ svg #ball {
     transform: rotate(-35deg);
   }
 }
-/* @media screen and (max-width: 34rem){
 
-} */
-
-@media screen and (max-width: 100rem){
+@media screen and (max-height: 66rem) and (orientation: landscape){
     p {
         font-size: 0.9rem;
     }
@@ -1710,6 +1697,9 @@ svg #ball {
     }
     .top-nav__item {
         width: 5rem;
+    }
+    .top-nav__item .top-nav__title {
+        font-size: 1rem;
     }
     .folderlink, .folderlink:visited {
         font-size: 0.9rem;
@@ -1882,31 +1872,32 @@ svg #ball {
         transform: scaleX(1.02);
     }
     .detail_c {
-        width: 37rem;
-        left: calc(50vw - 18.5rem);
+        height: 41rem;
+        width: 40rem;
+        left: calc(50vw - 20rem);
     }
     .detail_c
     .folder-content.js {
-        height: 36rem;
+        height: 39rem;
     }
     .detail_c
     .folder-content__wrap-overflow {
-        height: 35.75rem;
+        height: 38.75rem;
     }
     .detail_c
     .desktop-folder__title {
-        width: 37rem;
+        width: 40rem;
     }
     .detail_d__horizontal {
-        height: 27.45rem;
+        height: 25.65rem;
         width: 43rem;
         top: 15vh;
     }
     .detail_d__horizontal .folder-content.js {
-        height: 23.75rem;
+        height: 23.65rem;
     }
     .detail_d__horizontal .folder-content__wrap-overflow {
-        height: 23.5rem;
+        height: 23.4rem;
     }
     .detail_d__vertical {
         width: 26rem;
@@ -1958,6 +1949,12 @@ svg #ball {
         width: 2.3rem;
         height: 2.3rem;
     }
+    .switch-on .a-slider__circle {
+        margin-left: 3.37rem;
+    }
+    .dropdown__arrow {
+        height: 2.1rem;
+    }
     #latestproject .latest-project {
         height: 24rem;
     }
@@ -1969,16 +1966,251 @@ svg #ball {
     .slideshow__title {
         font-size: 2.4rem;
     }
-}
-
-@media screen and (max-width: 54rem){
-    .project-list__item .project-list__name {
-        font-size: 1.1rem;
+    .slideshow__pjt-title {
+        font-size: 1.2rem;
     }
 }
 
-@media screen and (max-width: 43rem){
-    .project-list__item .project-list__name {
-        font-size: 1rem;
+@media screen and (max-height: 54rem) and (orientation: landscape){
+    #latestproject {
+        left: 39vw;
+    }
+    /* ABOUT */
+    #about {
+        width: 44rem;
+    }
+    #about .desktop-folder__title {
+        width: inherit;
+    }
+    #about .folder-content.js {
+        width: 44rem;
+        height: 24rem;
+    }
+    #about .folder-content__wrap-overflow {
+        height: 23.8rem;
+    }
+    /* PROJECTS */
+    .desktop-folder_open {
+        height: 32.7rem;
+        width: 39rem;
+    }
+    .desktop-folder_center {
+        left: calc(50vw - 19.5rem);
+        top: 10vh;
+    }
+    .folder-content.js {
+        height: 30.75rem;
+        width: 39rem;
+    }
+    .folder-content__wrap-overflow {
+        height: 30.5rem;
+    }
+    .desktop-folder_open .desktop-folder__title, .device-app_open .desktop-folder__title {
+        width: 39rem;
+        padding: 0.5rem 3rem 1.5rem 4rem;
+    }
+    .desktop-folder_large {
+        width: 50rem;
+        height: 29.65rem;
+        left: calc(50vw - 25rem);
+    }
+    .desktop-folder_large .desktop-folder__title {
+        width: inherit;
+    }
+    .desktop-folder_large .folder-content.js {
+        height: 27.65rem;
+        width: 50rem;
+    }
+    .desktop-folder_large .folder-content__wrap-overflow {
+        height: 27.4rem;
+    }
+    .desktop-folder_small {
+        width: 21rem;
+        height: 23rem;
+    }
+    .desktop-folder_small .desktop-folder__title, .desktop-folder_small .folder-content.js {
+        height: 21rem;
+    }
+    .desktop-folder_small .desktop-folder__title, .desktop-folder_small .folder-content.js {
+        width: 21rem;
+    }
+    .desktop-folder_xsmall {
+        width: 14rem;
+        height: 26rem;
+    }
+    .desktop-folder_xsmall .desktop-folder__title,
+    .desktop-folder_xsmall .folder-content.js {
+        width: 14rem;
+    }
+    .desktop-folder_xsmall .folder-content.js {
+        height: 24rem;
+    }
+    .detail_b {
+        height: 29rem;
+        width: 52rem;
+        left: calc(50vw - 26rem);
+    }
+    .detail_b .desktop-folder__title {
+        width: inherit;
+    }
+    .detail_b .folder-content.js {
+        height: 27rem;
+    }
+    .detail_b .folder-content__wrap-overflow {
+        height: 26.75rem;
+    }
+    .detail_c {
+        height: 35rem;
+        width: 34rem;
+        left: calc(50vw - 17rem);
+    }
+    .detail_c .desktop-folder__title {
+        width: 34rem;
+    }
+    .detail_c .folder-content.js {
+        height: 33rem;
+    }
+    .detail_c .folder-content__wrap-overflow {
+        height: 32.75rem;
+    }
+    .detail_d__horizontal {
+        height: 23.45rem;
+        width: 39rem;
+        top: 13vh;
+    }
+    .detail_d__horizontal .folder-content.js {
+        height: 21.45rem;
+    }
+    .detail_d__horizontal .folder-content__wrap-overflow {
+        height: 21.2rem;
+    }
+    .detail_d__vertical {
+        width: 23rem;
+        height: 32.9rem;
+    }
+    .detail_d__vertical .folder-content.js {
+        height: 30.95rem;
+    }
+    .detail_d__vertical .folder-content__wrap-overflow {
+        height: 30.7rem;
+    }
+    .detail .desktop-folder__title, .detail .folder-content.js {
+        width: inherit;
+    }
+    .project__desc {
+        width: 27.8rem;
+        height: 11.2rem;
+        top: 57vh;
+    }
+    .project__desc p {
+        padding: 0 1rem;
+    }
+    .project__desc .detail__title {
+        width: 27.75rem;
+    }
+    .project__desc .folder-content.js {
+        height: 9.2rem;
+        width: 27.75rem;
+    }
+    .project__desc .folder-content__wrap-overflow {
+        height: 9rem;
+    }
+    .project__desc_small {
+        height: 6.95rem;
+    }
+    .project__desc_small .folder-content.js {
+        height: 4.95rem;
+    }
+    .project__desc_small .folder-content__wrap-overflow {
+        height: 4.7rem;
+    }
+    /* TRASH */
+    .trash__img {
+        width: 15rem;
+    }
+}
+@media screen and (max-height: 46rem) and (orientation: landscape){
+    /* ABOUT */
+    #about {
+        width: 39rem;
+        left: 0;
+        transform: translateX(calc(50vw - 19.5rem));
+    }
+    #press {
+        margin: 1rem 4rem 0 4rem;
+    }
+    #about .desktop-folder__title {
+        width: inherit;
+    }
+    #about .folder-content.js {
+        width: 39rem;
+        height: 21.5rem;
+    }
+    #about .folder-content__wrap-overflow {
+        height: 21.3rem;
+    }
+    .btn1-list_bottom,
+    .btn1-list_top {
+        width: 32.75rem;
+    }
+    .btn1-list_bottom{
+        top: 18.7rem;
+    }
+    .btn1-list__item_big {
+        font-size: 0.9rem;
+    }
+    .head {
+        width: 9rem;
+    }
+    .about-wrap {
+        height: 12.1rem;
+    }
+    .folder-content__title2 {
+        margin: 0.5rem 0;
+        font-size: 1.3rem;
+    }
+    /* WINDOWS */
+    .folder-content.js {
+        width: 35rem;
+        height: 23.75rem;
+    }
+    .folder-content__wrap-overflow {
+        padding: 1.5rem;
+        height: 23.5rem;
+    }
+    .folderlink, .folderlink:visited {
+        font-size: 0.8rem;
+    }
+    .desktop-folder_open {
+        height: 25.7rem;
+        width: 35rem;
+    }
+    .desktop-folder_center {
+        left: calc(50vw - 17.5rem);
+        top: 12vh;
+    }
+    .desktop-folder_open .desktop-folder__title, .device-app_open .desktop-folder__title {
+        width: 35rem;
+    }
+    .desktop-folder_small {
+        width: 18rem;
+        height: 20rem;
+    }
+    .desktop-folder_small .desktop-folder__title, .desktop-folder_small .folder-content.js {
+        height: 18rem;
+    }
+    .desktop-folder_small .desktop-folder__title, .desktop-folder_small .folder-content.js {
+        width: 18rem;
+    }
+    .desktop-folder_small .desktop-folder__title, .desktop-folder_small .folder-content.js {
+        width: 18rem;
+    }
+    /* LATEST PROJECT */
+    #latestproject .latest-project {
+        height: 19rem;
+    }
+    .btn-link-wrap {
+        top: 3rem;
+        transform: scale(0.8);
     }
 }
