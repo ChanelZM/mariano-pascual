@@ -95,16 +95,20 @@
         //Print artwork using library
         function print(){
             console.log('print');
-            printJS('../PrintArtwork.pdf', 'pdf');
+            printJS('PrintArtwork.pdf', 'pdf');
         }
 
         //Screaming goat sound when 'fake loading'
         loadingSound.autoplay = true;
         loadingSound.load();
 
-        setTimeout(function(){
+        window.addEventListener('load', function(){
             document.querySelector('.loading-screen').classList.add('hidden');
-        }, 3001);
+        });
+
+        // setTimeout(function(){
+        //     document.querySelector('.loading-screen').classList.add('hidden');
+        // }, 3001);
 
         //Click sound
         document.querySelector('body').addEventListener('click', function(){
