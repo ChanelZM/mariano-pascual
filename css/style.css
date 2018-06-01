@@ -2259,6 +2259,9 @@ svg #ball {
     .desktop-folder_open .desktop-folder__title, .device-app_open .desktop-folder__title {
         width: 35rem;
     }
+    .desktop-folder_large .desktop-folder__title {
+        width: inherit;
+    }
     .desktop-folder_large {
         height: 26.35rem;
         width: 45rem;

@@ -95,7 +95,7 @@
         //Print artwork using library
         function print(){
             console.log('print');
-            printJS('PrintArtwork.pdf', 'pdf');
+            printJS('mariano-pascual/PrintArtwork.pdf', 'pdf');
         }
 
         //Screaming goat sound when 'fake loading'
