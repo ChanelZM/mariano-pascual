@@ -94,7 +94,8 @@
 
         //Print artwork using library
         function print(){
-            printJS('http://stafmagazine.com/wp-content/uploads/2015/11/mariano7-615x615.jpg', 'image');
+            console.log('print');
+            printJS('../PrintArtwork.pdf', 'pdf');
         }
 
         //Screaming goat sound when 'fake loading'

@@ -1837,6 +1837,9 @@ svg #ball {
     .desktop-folder_large .desktop-folder__title {
         width: 56rem;
     }
+    .project-list__item .project-list__name {
+        line-height: 0.9;
+    }
     /* PROJECT */
     .detail,
     .detail .folder-content.js {
@@ -2142,10 +2145,51 @@ svg #ball {
     .trash__img {
         width: 15rem;
     }
+    /* SLIDESHOW */
+    .fullscreen__close-button img {
+        padding: 0.2rem;
+    }
 }
 @media screen and (max-height: 46rem) and (orientation: landscape){
     p {
         font-size: 0.8rem;
+    }
+    .mac-bar__item {
+        font-size: 0.8rem;
+        height: 1rem;
+    }
+    .mac-bar__item_tr {
+        transform: translateY(-0.2rem);
+    }
+    .mac-bar_left .mac-bar__item_first {
+        width: 1rem;
+        transform: translateY(0.1rem);
+    }
+    .mac-bar_right .mac-bar__img {
+        margin: 0 0 0 0.3rem;
+        transform: translateY(-0.1rem);
+    }
+    .mac-bar_left .mac-bar__item_first img {
+        height: 1rem;
+        top: 0;
+    }
+    .dropdown {
+        width: 10rem;
+    }
+    #mail-small, #battery-small {
+        height: 0.8rem;
+    }
+    #instagram-small {
+        height: 0.9rem;
+    }
+    .dropdown-button {
+        font-size: 0.8rem;
+    }
+    .top-nav__item {
+        width: 4.5rem;
+    }
+    .bottom-nav {
+        transform: translateX(-50%) scale(0.7);
     }
     /* ABOUT */
     #about {
@@ -2166,9 +2210,15 @@ svg #ball {
     #about .folder-content__wrap-overflow {
         height: 21.3rem;
     }
+    .about-wrap {
+        margin-top: 1.4rem;
+    }
     .btn1-list_bottom,
     .btn1-list_top {
-        width: 32.75rem;
+        width: 34.75rem;
+    }
+    .btn1-list_top {
+        top: 2.5rem;
     }
     .btn1-list_bottom{
         top: 18.7rem;
@@ -2209,6 +2259,18 @@ svg #ball {
     .desktop-folder_open .desktop-folder__title, .device-app_open .desktop-folder__title {
         width: 35rem;
     }
+    .desktop-folder_large {
+        height: 26.35rem;
+        width: 45rem;
+        left: calc(50vw - 22.5rem);
+    }
+    .desktop-folder_large .folder-content.js {
+        height: 24.85rem;
+        width: 45rem;
+    }
+    .desktop-folder_large .folder-content__wrap-overflow {
+        height: 24.6rem;
+    }
     .desktop-folder_small {
         width: 18rem;
         height: 19.5rem;
@@ -2222,8 +2284,27 @@ svg #ball {
     .desktop-folder_small .desktop-folder__title, .desktop-folder_small .folder-content.js {
         width: 18rem;
     }
+    .desktop-folder_xsmall {
+        width: 14rem;
+        height: 25.5rem;
+    }
+    .desktop-folder_xsmall .desktop-folder__title, .desktop-folder_xsmall .folder-content.js {
+        height: 24rem;
+        width: 14rem;
+    }
     .detail .desktop-folder__title, .detail .folder-content.js {
         width: inherit;
+    }
+    .detail_a {
+        width: 22rem;
+        height: 30.3rem;
+        left: calc(50vw - 11rem);
+    }
+    .detail_a .folder-content.js {
+        height: 28.8rem;
+    }
+    .detail_a .folder-content__wrap-overflow {
+        height: 28.55rem;
     }
     .detail_b {
         width: 45rem;
@@ -2276,6 +2357,7 @@ svg #ball {
     }
     .project__desc .folder-content__wrap-overflow {
         height: 8rem;
+        width: 100%;
     }
     .project__desc_small {
         height: 5.8rem;
@@ -2285,7 +2367,6 @@ svg #ball {
     }
     .project__desc_small .folder-content__wrap-overflow {
         height: 4.1rem;
-        width: 100%;
     }
     /* LATEST PROJECT */
     #latestproject .latest-project {
@@ -2296,10 +2377,40 @@ svg #ball {
         transform: scale(0.8);
     }
     /* PROJECTS */
-    .project-list__item .project-list__name {
-        line-height: 0.9;
-    }
     .project-list__preview {
         height: 4.2rem;
+    }
+    /* SETTINGS */
+    .color-list__color {
+        width: 2rem;
+        height: 2rem;
+    }
+    .setting__dropdown-button {
+        font-size: 0.8rem;
+    }
+    .dropdown__arrow {
+        height: 1.95rem;
+    }
+    /* SLIDESHOW */
+    .slideshow__slide-wrap {
+        width: 33rem;
+    }
+    .slideshow__eye {
+        width: 5rem;
+    }
+    .slideshow__title {
+        margin-bottom: 0;
+        font-size: 2rem;
+    }
+    .slideshow__pjt-title {
+        font-size: 1rem;
+    }
+    .slideshow__nav-button {
+        width: 2.5rem;
+        height: 3rem;
+    }
+    .slideshow__pjt-button {
+        font-size: 0.8rem;
+        padding: 0.5rem;
     }
 }
