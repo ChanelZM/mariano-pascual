@@ -89,6 +89,13 @@
                 if(location.hash == '#print'){
                     print();
                 }
+                if(location.hash.includes('#project')){
+                    document.querySelector('#latestproject').style.zIndex = '1';
+                    document.querySelector('#latestwork').setAttribute('hidden', '');
+                    document.querySelector('#projects').classList.remove('hidden');
+                    document.querySelector('.bottom-nav').classList.remove('hidden');
+                    document.querySelector(location.hash).classList.remove('hidden');
+                }
             });
         }
 

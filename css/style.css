@@ -1346,7 +1346,7 @@ p {
     position: absolute;
     top: 50%;
     left: 50%;
-    height: 110%;
+    width: 110%;
     transform: translate(-50%, -50%);
 }
 .slideshow__slide-wrap {
