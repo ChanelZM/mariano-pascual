@@ -2062,6 +2062,15 @@ svg #ball {
     .desktop-folder_xsmall .folder-content.js {
         height: 24.5rem;
     }
+    .detail_a {
+        width: 25rem;
+    }
+    .detail_a .folder-content.js {
+        height: 32.9rem;
+    }
+    .detail_a .folder-content__wrap-overflow {
+        height: 32.65rem;
+    }
     .detail_b {
         height: 28.5rem;
         width: 52rem;
