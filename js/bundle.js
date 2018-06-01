@@ -355,7 +355,7 @@
         //Print artwork using library
         function print(){
             console.log('print');
-            printJS('mariano-pascual/PrintArtwork.pdf', 'pdf');
+            printJS('https://chanelzm.github.io/mariano-pascual/PrintArtwork.pdf', 'pdf');
         }
 
         //Screaming goat sound when 'fake loading'
