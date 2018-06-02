@@ -419,6 +419,9 @@ p {
 .btn1-list__item_active .btn1-list__shadow {
     display: none;
 }
+.about__arrow {
+    display: none;
+}
 #press {
     margin: 2.5rem 4rem 0 4rem;
 }
@@ -2480,6 +2483,14 @@ svg #ball {
     .folder-content__wrap-overflow {
         height: 100%;
     }
+    .about__arrow {
+        display: block;
+        position: fixed;
+        width: 3rem;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 4rem;
+    }
     /* SLIDESHOW */
     .slideshow-wrap {
         position: static;
@@ -2537,10 +2548,13 @@ svg #ball {
         background-color: white;
         box-shadow: none;
     }
-    .detail_a .folder-content.js,
-    .detail_b .folder-content.js,
-    .detail_c .folder-content.js,
-    .detail_d .folder-content.js,
+    .detail_a > .folder-content.js,
+    .detail_b > .folder-content.js,
+    .detail_c > .folder-content.js,
+    .detail_d > .folder-content.js {
+        margin-top: 3rem;
+        height: calc(100% - 3rem);
+    }
     .detail_a .folder-content__wrap-overflow,
     .detail_b .folder-content__wrap-overflow,
     .detail_c .folder-content__wrap-overflow,
@@ -2563,11 +2577,19 @@ svg #ball {
     .detail_d__vertical .detail__title {
         display: none;
     }
+    .detail_d__horizontal > .folder-content.js,
+    .detail_d__vertical > .folder-content.js {
+        height: 100%;
+    }
     .detail_d-close {
         display: block;
     }
     .desktop-folder__title-background {
         display: none;
+    }
+    .desktop-folder__title {
+        display: block;
+        margin-top: 1rem;
     }
     .project__img {
         width: 100vw;
@@ -2602,6 +2624,12 @@ svg #ball {
     .project__desc .folder-content.js {
         width: inherit;
     }
+    .project__desc .folder-content.js,
+    .project__desc_small .folder-content.js,
+    .project__desc .folder-content__wrap-overflow ,
+    .project__desc_small .folder-content__wrap-overflow  {
+        height: auto;
+    }
     .project__desc .folder-content__wrap-overflow {
         width: 40rem;
         margin: 0 auto;
@@ -2616,5 +2644,41 @@ svg #ball {
         border: none;
         background-color: rgba(0, 0, 0, 0);
         z-index: 5;
+    }
+    /* ABOUT */
+    #about {
+        height: calc(100vh - 11rem);
+        transform: none;
+    }
+    #about .folder-content__wrap-overflow {
+        height: 100%;
+    }
+    .about-wrap {
+        box-sizing: border-box;
+        height: calc(100% - 4rem);
+        margin-top: 3.4rem;
+    }
+    .section2 {
+        display: block;
+        max-width: 33rem;
+        margin: 0.1rem auto;
+        text-align: center;
+    }
+    .tab {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .btn1-list_top {
+        display: none;
+    }
+    .btn1-list_bottom {
+        width: calc(100% - 5rem);
+        top: 4.7rem;
+    }
+    .btn1-list__item_big {
+        font-size: 1.4rem;
     }
 }

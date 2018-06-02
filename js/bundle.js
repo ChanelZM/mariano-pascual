@@ -28,11 +28,13 @@
         }
     }
 
-    closeTabs();
-    links[0].classList.add('btn1-list__item_active');
-    tabs[0].classList.remove('hidden');
+    if(window.innerWidth >= 1088){
+        closeTabs();
+        links[0].classList.add('btn1-list__item_active');
+        tabs[0].classList.remove('hidden');
 
-    tabNav.addEventListener('click', getHash);
+        tabNav.addEventListener('click', getHash);
+    }
 })();
 
 },{}],2:[function(require,module,exports){
