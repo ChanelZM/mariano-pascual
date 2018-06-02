@@ -113,6 +113,9 @@ p {
     cursor: pointer;
     z-index: 2;
 }
+.detail_d-close {
+    display: none;
+}
 .close img {
     pointer-events: none;
 }
@@ -511,71 +514,6 @@ p {
 }
 .gallery-h3_white {
     color: white;
-}
-
-/* TOUCH DEVICE*/
-.touch {
-    overflow: visible;
-}
-.device-app_open {
-    box-sizing: border-box;
-    width: 100vw;
-    min-height: 100vh;
-    bottom: 0;
-    background-color: white;
-    border: 2px solid #1d1e1c;
-    overflow: visible;
-}
-.touch .mac-bar {
-    z-index: 0;
-}
-.touch .buttons-wrap {
-    position: absolute;
-    margin-top: -1.5rem;
-}
-.touch .folder-wrap {
-    position: absolute;
-    transform: none;
-    z-index: 4;
-}
-.touch .project-list__item {
-    flex: 1;
-}
-.touch #projects > .desktop-folder__title {
-    display: none;
-}
-.touch .detail {
-    position: absolute;
-    top: 1.5rem;
-    left: 0;
-    right: 0;
-    bottom: auto;
-    overflow: visible;
-}
-.touch .project__desc {
-    position: static;
-    height: auto;
-    max-width: 35rem;
-    margin: auto;
-    border: none;
-    overflow: visible;
-}
-.device-app_open .desktop-folder__title {
-    position: static;
-    width: initial;
-    border-bottom: 3px solid #1d1e1c;
-}
-.touch .detail .project__img {
-    margin-bottom: 0;
-    margin-top: 0;
-}
-.touch .detail .detail__title, .touch .detail .buttons-wrap {
-    display: none;
-}
-.touch #projects.device-app_open {
-    max-height: 100vh;
-    background-color: inherit;
-    border: none;
 }
 
 /* BOTTOM NAVIGATION */
@@ -1192,12 +1130,6 @@ p {
 .detail_d {
     overflow: hidden;
 }
-/* .detail_d {
-    height: 70.7rem;
-    width: 40rem;
-    left: calc(50vw - 20rem);
-    top: 10vh;
-} */
 .detail_hidden {
     display: none;
 }
@@ -1221,44 +1153,37 @@ p {
 p {
     padding: 0 2rem;
 }
-.detail
-.desktop-folder__title,
-.detail
-.folder-content.js {
+.project-info-close {
+    display: none;
+}
+.detail .desktop-folder__title,
+.detail .folder-content.js {
     width: inherit;
 }
-.detail
-.folder-content__wrap-overflow {
+.detail .folder-content__wrap-overflow {
     padding: 0;
 }
-.detail__title-big
-.desktop-folder__title-background {
+.detail__title-big .desktop-folder__title-background {
     background-image: none;
 }
-.project__desc
-.detail__title {
+.project__desc .detail__title {
     width: 30rem;
 }
-.project__desc
-.folder-content.js {
+.project__desc .folder-content.js {
     height: 11rem;
     width: 30rem;
 }
-.project__desc
-.folder-content__wrap-overflow {
+.project__desc .folder-content__wrap-overflow {
     height: 10.8rem;
     width: 100%;
 }
-.project__desc_small
-.folder-content__wrap-overflow {
+.project__desc_small .folder-content__wrap-overflow {
     height: 6.8rem;
 }
-.project__desc_small
-.folder-content.js {
+.project__desc_small .folder-content.js {
     height: 7rem;
 }
-.desktop-folder_open
-.detail__title-big {
+.desktop-folder_open .detail__title-big {
     width: calc(100vw - 8rem);
 }
 
@@ -2426,5 +2351,270 @@ svg #ball {
     .slideshow__pjt-button {
         font-size: 0.8rem;
         padding: 0.5rem;
+    }
+}
+@media screen and (max-width: 68rem) and (orientation: portrait){
+    /* TOUCH DEVICE*/
+    .touch {
+        overflow: visible;
+    }
+    .touch .buttons-wrap {
+        position: absolute;
+        margin-top: -1.5rem;
+    }
+    .touch .folder-wrap {
+        position: absolute;
+        transform: none;
+        z-index: 4;
+    }
+    .touch .project-list__item {
+        flex: 1;
+    }
+    .touch #projects > .desktop-folder__title {
+        display: none;
+    }
+    .touch .detail {
+        position: absolute;
+        top: 1.5rem;
+        left: 0;
+        right: 0;
+        bottom: auto;
+        overflow: visible;
+    }
+    .device-app_open .desktop-folder__title {
+        position: static;
+        width: initial;
+        border-bottom: 3px solid #1d1e1c;
+    }
+    .touch .detail .project__img {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+    .touch .detail .detail__title, .touch .detail .buttons-wrap {
+        display: none;
+    }
+    .touch #projects.device-app_open {
+        max-height: 100vh;
+        background-color: inherit;
+        border: none;
+    }
+    .folderlink, .folderlink:visited {
+        font-size: 1.3rem;
+    }
+    /* GENERAL */
+    p {
+        line-height: 1.3;
+    }
+    .mobile-app {
+        position: static;
+        height: calc(100vh - 11rem);
+    }
+    .fullscreen-folder,
+    .desktop-folder {
+        margin-top: 2rem;
+    }
+    .mac-bar {
+        height: 2rem;
+        border-bottom: 3px solid black;
+    }
+    .mac-bar__title {
+        position: absolute;
+        margin: 0.4rem 0 0 0;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+    }
+    .mac-bar_center {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 0.4rem;
+    }
+    .mac-bar-m-icon {
+        height: 1.4rem;
+    }
+    .bottom-nav {
+        height: 9rem;
+        width: auto;
+        padding: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: none;
+        background-color: #DADAD3;
+        border-radius: 0;
+        border-top: 3px solid black;
+        transform: none;
+    }
+    .bottom-nav__list {
+        display: flex;
+        justify-content: space-around;
+        width: 32rem;
+        padding: 0.5rem;
+        transform: none;
+    }
+    .bottom-nav__item-m {
+        width: 6rem;
+        padding: 0;
+    }
+    .bottom-nav__item img {
+        box-sizing: border-box;
+        padding: 0;
+    }
+    .bottom-nav__item .bottom-nav__name {
+        clip: auto;
+        margin: 0.2rem 0;
+        font-size: 1.1rem;
+        text-align: center;
+    }
+    .hover-img {
+        text-decoration: none;
+        color: black;
+    }
+    .folder-content.js {
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        border: 0;
+    }
+    .folder-content__wrap-overflow {
+        height: 100%;
+    }
+    /* SLIDESHOW */
+    .slideshow-wrap {
+        position: static;
+        overflow-y: scroll;
+        height: calc(100vh - 11rem);
+    }
+    .slideshow {
+        flex-direction: column;
+        width: auto;
+    }
+    .slideshow__nav-button {
+        display: none;
+    }
+    .fullscreen__close-button {
+        display: none;
+    }
+    .slideshow__slide {
+        display: flex;
+        align-items: center;
+        height: auto;
+    }
+    .slideshow__slide_first {
+        height: calc(100vh - 11rem);
+    }
+    .slideshow__pjt-title {
+        display: none;
+    }
+    .slideshow__img {
+        position: static;
+        width: 100%;
+        transform: none;
+    }
+    /* PROJECTS */
+    #projects .folder-content.js {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    .desktop-folder > .desktop-folder__title,
+    .desktop-folder > .close {
+        display: none;
+    }
+    .project-list__preview {
+        height: 8rem;
+    }
+    .detail > .desktop-folder__title {
+        display: none;
+    }
+    .detail_a,
+    .detail_b,
+    .detail_c,
+    .detail_d {
+        height: calc(100% - 2rem);
+        width: 100%;
+        left: 0;
+        top: 2rem;
+        background-color: white;
+        box-shadow: none;
+    }
+    .detail_a .folder-content.js,
+    .detail_b .folder-content.js,
+    .detail_c .folder-content.js,
+    .detail_d .folder-content.js,
+    .detail_a .folder-content__wrap-overflow,
+    .detail_b .folder-content__wrap-overflow,
+    .detail_c .folder-content__wrap-overflow,
+    .detail_d .folder-content__wrap-overflow {
+        height: 100%;
+    }
+    .detail_d .detail_d_wrap {
+        height: calc(100vh - 11rem);
+        overflow-y: scroll;
+    }
+    .detail_d__horizontal,
+    .detail_d__vertical {
+        display: flex;
+        position: static;
+        width: auto;
+        height: auto;
+        box-shadow: none;
+    }
+    .detail_d__horizontal .detail__title,
+    .detail_d__vertical .detail__title {
+        display: none;
+    }
+    .detail_d-close {
+        display: block;
+    }
+    .desktop-folder__title-background {
+        display: none;
+    }
+    .project__img {
+        width: 100vw;
+    }
+    .project__desc {
+        height: auto;
+        width: 100%;
+        left: 0;
+        top: 2rem;
+        background-color: #DADAD3;
+        box-shadow: none;
+        border-bottom: 3px solid black;
+        z-index: 2;
+    }
+    .project-info-close {
+        display: block;
+        width: 3rem;
+        margin: 0 auto;
+        padding: 0;
+    }
+    .see-project-info {
+        font-size: 1rem;
+        text-transform: uppercase;
+    }
+    .project-info-close img {
+        width: 100%;
+    }
+    .project__desc .detail__title {
+        margin: 0.5rem 0;
+    }
+    .project__desc .detail__title,
+    .project__desc .folder-content.js {
+        width: inherit;
+    }
+    .project__desc .folder-content__wrap-overflow {
+        width: 40rem;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+    .project__desc .close {
+        display: none;
+    }
+    .detail > .close {
+        top: 0.5rem;
+        left: 0.3rem;
+        border: none;
+        background-color: rgba(0, 0, 0, 0);
+        z-index: 5;
     }
 }

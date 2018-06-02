@@ -42,11 +42,13 @@
         });
     }
 
-    for(i = 0; i < slideButtons.length; i++){
-        slideButtons[i].addEventListener('click', getDirection);
-    }
-    for(i = 0; i < slideShows.length; i++){
-        count[slideShows[i].id] = 0;
-        slideShows[i].parentNode.style.overflowX = 'hidden';
+    if(window.innerWidth >= 1088){
+        for(i = 0; i < slideButtons.length; i++){
+            slideButtons[i].addEventListener('click', getDirection);
+        }
+        for(i = 0; i < slideShows.length; i++){
+            count[slideShows[i].id] = 0;
+            slideShows[i].parentNode.style.overflowX = 'hidden';
+        }
     }
 })();

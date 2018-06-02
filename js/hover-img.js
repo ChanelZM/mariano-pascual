@@ -44,19 +44,21 @@
         img.classList.remove('project-list__preview-bigger');
     }
 
-    //For every image that needs a hover effect, add Eventlistener
-    for(i = 0; i < hoverImages.length; i++){
-        hoverImages[i].addEventListener('mouseenter', playSound);
-        hoverImages[i].addEventListener('mouseenter', changeImg);
-        hoverImages[i].addEventListener('mouseleave', changeImg);
-        hoverImages[i].addEventListener('focus', changeImg);
-        hoverImages[i].addEventListener('focusout', changeImg);
-    }
+    if(window.innerWidth >= 1088){
+        //For every image that needs a hover effect, add Eventlistener
+        for(i = 0; i < hoverImages.length; i++){
+            hoverImages[i].addEventListener('mouseenter', playSound);
+            hoverImages[i].addEventListener('mouseenter', changeImg);
+            hoverImages[i].addEventListener('mouseleave', changeImg);
+            hoverImages[i].addEventListener('focus', changeImg);
+            hoverImages[i].addEventListener('focusout', changeImg);
+        }
 
-    for(i = 0; i < projectLinks.length; i++){
-        projectLinks[i].addEventListener('mouseenter', scaleUp);
-        projectLinks[i].addEventListener('mouseleave', scaleDown);
-        projectLinks[i].addEventListener('focus', scaleUp);
-        projectLinks[i].addEventListener('focusout', scaleDown);
+        for(i = 0; i < projectLinks.length; i++){
+            projectLinks[i].addEventListener('mouseenter', scaleUp);
+            projectLinks[i].addEventListener('mouseleave', scaleDown);
+            projectLinks[i].addEventListener('focus', scaleUp);
+            projectLinks[i].addEventListener('focusout', scaleDown);
+        }
     }
 })();

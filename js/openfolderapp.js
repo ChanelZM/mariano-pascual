@@ -34,8 +34,10 @@
 
     //if where you clicked has a link to an application/folder open it up
     function checkIfApp(e){
-        if(e.target.hash == '#latestwork'){
+        if(e.target.hash == '#latestwork' && window.innerWidth >= 1088){
             animateFullscreen(e, removeNav);
+        } else if(e.target.hash == '#latestwork' && window.innerWidth < 1088){
+            openWindow(e.target, e.target.hash);
         } else if(e.target.hash != '#print'){
             openWindow(e.target, e.target.hash);
         }
@@ -51,20 +53,24 @@
         }
 
         //If you're viewing this page on desktop
-        if("ontouchstart" in document.documentElement == false && section.getAttribute('class').includes('desktop-folder')){
+        if(window.innerWidth >= 1088 && section.getAttribute('class').includes('desktop-folder')){
             if(section.getAttribute('class').includes('hidden')){
                 section.classList.add('desktop-folder_open');
                 section.classList.remove('hidden');
             }
         }
         //If you're viewing this page on desktop
-        if("ontouchstart" in document.documentElement == false && section.getAttribute('class').includes('fullscreen-folder')){
+        if(window.innerWidth >= 1088 && section.getAttribute('class').includes('fullscreen-folder')){
             section.removeAttribute('hidden');
             section.classList.remove('hidden');
         }
         //If you're viewing this page on a touch device, styling is different
-        if ("ontouchstart" in document.documentElement == true) {
-            section.classList.add('device-app_open');
+        if (window.innerWidth < 1088) {
+            var folders = document.querySelectorAll('.mobile-app');
+
+            for(i = 0; i < folders.length; i++){
+                folders[i].classList.add('hidden');
+            }
             section.classList.remove('hidden');
         }
     }
@@ -118,8 +124,10 @@
     for(var i = 0; i < dropDownButtons.length; i++){
         dropDownButtons[i].addEventListener('click', toggleDropDown);
     }
-    for(var i = 0; i < windows.length; i++){
-        windows[i].addEventListener('click', findNearestWindowEl);
+    if(window.innerWidth >= 1088){
+        for(var i = 0; i < windows.length; i++){
+            windows[i].addEventListener('click', findNearestWindowEl);
+        }
     }
 })();
 //Single and double click function by Karbassi: https://gist.github.com/karbassi/639453

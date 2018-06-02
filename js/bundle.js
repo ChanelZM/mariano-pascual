@@ -240,20 +240,22 @@
         img.classList.remove('project-list__preview-bigger');
     }
 
-    //For every image that needs a hover effect, add Eventlistener
-    for(i = 0; i < hoverImages.length; i++){
-        hoverImages[i].addEventListener('mouseenter', playSound);
-        hoverImages[i].addEventListener('mouseenter', changeImg);
-        hoverImages[i].addEventListener('mouseleave', changeImg);
-        hoverImages[i].addEventListener('focus', changeImg);
-        hoverImages[i].addEventListener('focusout', changeImg);
-    }
+    if(window.innerWidth >= 1088){
+        //For every image that needs a hover effect, add Eventlistener
+        for(i = 0; i < hoverImages.length; i++){
+            hoverImages[i].addEventListener('mouseenter', playSound);
+            hoverImages[i].addEventListener('mouseenter', changeImg);
+            hoverImages[i].addEventListener('mouseleave', changeImg);
+            hoverImages[i].addEventListener('focus', changeImg);
+            hoverImages[i].addEventListener('focusout', changeImg);
+        }
 
-    for(i = 0; i < projectLinks.length; i++){
-        projectLinks[i].addEventListener('mouseenter', scaleUp);
-        projectLinks[i].addEventListener('mouseleave', scaleDown);
-        projectLinks[i].addEventListener('focus', scaleUp);
-        projectLinks[i].addEventListener('focusout', scaleDown);
+        for(i = 0; i < projectLinks.length; i++){
+            projectLinks[i].addEventListener('mouseenter', scaleUp);
+            projectLinks[i].addEventListener('mouseleave', scaleDown);
+            projectLinks[i].addEventListener('focus', scaleUp);
+            projectLinks[i].addEventListener('focusout', scaleDown);
+        }
     }
 })();
 
@@ -263,7 +265,12 @@
     function init(){
         var folderLinks = document.querySelectorAll('.top-nav__item a'),
             loadingSound = document.querySelector('.loading-screen__audio'),
-            clickSound = document.querySelector('.click-sound');
+            clickSound = document.querySelector('.click-sound'),
+            scrollbars = document.querySelectorAll('.scrollbar'),
+            deviceApps = [document.querySelector('#latestwork'), document.querySelector('#about'), document.querySelector('#projects')],
+            projectInfoButtons = document.querySelectorAll('.see-project-info'),
+            projectInfoClose = document.querySelectorAll('.project-info-close'),
+            projectTitles = document.querySelectorAll('.project__desc .desktop-folder__title-span');
 
         var i;
 
@@ -293,6 +300,7 @@
             }
         }
 
+        removeHidden('array', deviceApps);
         removeHidden('array', document.querySelectorAll('.top-nav__item [hidden]'));
         removeHidden('array', document.querySelectorAll('.folder-nav'));
         removeHidden('array', document.querySelectorAll('.detail .close'));
@@ -300,37 +308,54 @@
         removeHidden('el', document.querySelector('.mac-bar'));
         removeHidden('el', document.querySelector('.bottom-nav'));
         removeHidden('el', document.querySelector('.mac-bar_center'));
-        removeHidden('el', document.querySelector('#nav-phone'));
-        removeHidden('el', document.querySelector('#photos'));
 
+        changeClass('add', deviceApps, 'mobile-app');
+        changeClass('add', deviceApps, 'hidden');
         changeClass('add', document.querySelectorAll('.desktop-folder'), 'hidden');
         changeClass('add', document.querySelectorAll('.folder-content'), 'js');
         changeClass('add', folderLinks, 'link_style_desktop');
         changeClass('add', document.querySelectorAll('.detail'), 'hidden');
+        changeClass('add', projectTitles, 'hidden');
+        changeClass('remove', projectInfoButtons, 'hidden');
+        changeClass('remove', scrollbars, 'scrollbar');
         changeClass('remove', folderLinks, 'link_style_normal');
 
+        document.querySelector('#latestwork').classList.remove('hidden');
         document.querySelector('.mac-bar_left').classList.add('hidden');
         document.querySelector('.mac-bar_right').classList.add('hidden');
         document.querySelector('.contact-info').classList.add('hidden');
         document.querySelector('body').classList.add('body-overflow-h');
         document.querySelector('.top-nav').classList.add('hidden');
-        document.querySelector('#projects').classList.add('device-app_open');
-        document.querySelector('body').classList.add('touch');
-        document.querySelector('#projects').classList.remove('hidden');
+
+        window.addEventListener('hashchange', function(){
+            if(location.hash == '#print'){
+                print();
+            }
+            if(location.hash.includes('#project')){
+                document.querySelector('#latestproject').style.zIndex = '1';
+                document.querySelector('#latestwork').classList.add('hidden');
+                document.querySelector('#projects').classList.remove('hidden');
+                document.querySelector('.bottom-nav').classList.remove('hidden');
+                document.querySelector(location.hash).classList.remove('hidden');
+            }
+        });
 
         //If you're viewing this page on desktop
-        if("ontouchstart" in document.documentElement == false){
+        if(window.innerWidth >= 1088){
+            var mobileIcons = document.querySelectorAll('bottom-nav__item-m');
+            for(i = 1; i < mobileIcons; i++){
+                mobileIcons[i].classList.add('hidden');
+            }
             removeHidden('array', document.querySelectorAll('.dropdown'));
+            removeHidden('array', document.querySelector('.bottom-nav__item'));
             removeHidden('el', document.querySelector('.fullscreen-folder'));
             removeHidden('el', document.querySelector('#print-art'));
-            removeHidden('el', document.querySelector('#nav-setting'));
-            removeHidden('el', document.querySelector('#nav-slideshow'));
-            removeHidden('el', document.querySelector('#nav-photos'));
-            removeHidden('el', document.querySelector('#nav-chrome'));
-            removeHidden('el', document.querySelector('#nav-trash'));
             removeHidden('el', document.querySelector('#settings'));
             removeHidden('el', document.querySelector('#latestproject'));
+            removeHidden('el', document.querySelector('#trash'));
 
+            changeClass('add', scrollbars, 'scrollbar');
+            changeClass('add', document.querySelectorAll('bottom-nav__item-m'), 'hidden');
             changeClass('add', document.querySelectorAll('.dropdown'), 'hidden');
             changeClass('add', document.querySelectorAll('.desktop-folder'), 'hidden');
             changeClass('add', document.querySelectorAll('.desktop-folder'), 'desktop-folder_open');
@@ -344,25 +369,26 @@
             document.querySelector('#nav-phone').classList.add('hidden');
             document.querySelector('.fullscreen-folder').classList.add('hidden');
             document.querySelector('#latestproject').classList.remove('hidden');
-
-            window.addEventListener('hashchange', function(){
-                if(location.hash == '#print'){
-                    print();
-                }
-                if(location.hash.includes('#project')){
-                    document.querySelector('#latestproject').style.zIndex = '1';
-                    document.querySelector('#latestwork').setAttribute('hidden', '');
-                    document.querySelector('#projects').classList.remove('hidden');
-                    document.querySelector('.bottom-nav').classList.remove('hidden');
-                    document.querySelector(location.hash).classList.remove('hidden');
-                }
-            });
+            document.querySelector('#trash').classList.add('hidden');
         }
 
         //Print artwork using library
         function print(){
             console.log('print');
             printJS('https://chanelzm.github.io/mariano-pascual/PrintArtwork.pdf', 'pdf');
+        }
+
+        function toggleProjectInfo(info, state){
+            if(state == 'open'){
+                info.querySelector('.folder-content').classList.remove('hidden');
+                info.querySelector('.see-project-info').classList.add('hidden');
+                info.querySelector('.desktop-folder__title-span').classList.remove('hidden');
+            } else {
+                console.log(info);
+                info.querySelector('.folder-content').classList.add('hidden');
+                info.querySelector('.see-project-info').classList.remove('hidden');
+                info.querySelector('.desktop-folder__title-span').classList.add('hidden');
+            }
         }
 
         //Screaming goat sound when 'fake loading'
@@ -373,15 +399,30 @@
             document.querySelector('.loading-screen').classList.add('hidden');
         });
 
-        // setTimeout(function(){
-        //     document.querySelector('.loading-screen').classList.add('hidden');
-        // }, 3001);
-
         //Click sound
         document.querySelector('body').addEventListener('click', function(){
             clickSound.autoplay = true;
             clickSound.load();
         });
+
+        if(window.innerWidth < 1088){
+            var projectInfos = document.querySelectorAll('.project__desc .folder-content');
+
+            for(i = 0; i < projectInfos.length; i++){
+                projectInfos[i].classList.add('hidden');
+            }
+
+            for(i = 0; i < projectInfoButtons.length; i++){
+                projectInfoButtons[i].addEventListener('click', function(e){
+                    toggleProjectInfo(e.target.parentNode.parentNode, 'open');
+                });
+            }
+            for(i = 0; i < projectInfoClose.length; i++){
+                projectInfoClose[i].addEventListener('click', function(e){
+                    toggleProjectInfo(e.target.parentNode.parentNode.parentNode, 'close');
+                });
+            }
+        }
     }
 
     init();
@@ -424,8 +465,10 @@
 
     //if where you clicked has a link to an application/folder open it up
     function checkIfApp(e){
-        if(e.target.hash == '#latestwork'){
+        if(e.target.hash == '#latestwork' && window.innerWidth >= 1088){
             animateFullscreen(e, removeNav);
+        } else if(e.target.hash == '#latestwork' && window.innerWidth < 1088){
+            openWindow(e.target, e.target.hash);
         } else if(e.target.hash != '#print'){
             openWindow(e.target, e.target.hash);
         }
@@ -441,20 +484,24 @@
         }
 
         //If you're viewing this page on desktop
-        if("ontouchstart" in document.documentElement == false && section.getAttribute('class').includes('desktop-folder')){
+        if(window.innerWidth >= 1088 && section.getAttribute('class').includes('desktop-folder')){
             if(section.getAttribute('class').includes('hidden')){
                 section.classList.add('desktop-folder_open');
                 section.classList.remove('hidden');
             }
         }
         //If you're viewing this page on desktop
-        if("ontouchstart" in document.documentElement == false && section.getAttribute('class').includes('fullscreen-folder')){
+        if(window.innerWidth >= 1088 && section.getAttribute('class').includes('fullscreen-folder')){
             section.removeAttribute('hidden');
             section.classList.remove('hidden');
         }
         //If you're viewing this page on a touch device, styling is different
-        if ("ontouchstart" in document.documentElement == true) {
-            section.classList.add('device-app_open');
+        if (window.innerWidth < 1088) {
+            var folders = document.querySelectorAll('.mobile-app');
+
+            for(i = 0; i < folders.length; i++){
+                folders[i].classList.add('hidden');
+            }
             section.classList.remove('hidden');
         }
     }
@@ -508,8 +555,10 @@
     for(var i = 0; i < dropDownButtons.length; i++){
         dropDownButtons[i].addEventListener('click', toggleDropDown);
     }
-    for(var i = 0; i < windows.length; i++){
-        windows[i].addEventListener('click', findNearestWindowEl);
+    if(window.innerWidth >= 1088){
+        for(var i = 0; i < windows.length; i++){
+            windows[i].addEventListener('click', findNearestWindowEl);
+        }
     }
 })();
 //Single and double click function by Karbassi: https://gist.github.com/karbassi/639453
@@ -733,12 +782,14 @@
         });
     }
 
-    for(i = 0; i < slideButtons.length; i++){
-        slideButtons[i].addEventListener('click', getDirection);
-    }
-    for(i = 0; i < slideShows.length; i++){
-        count[slideShows[i].id] = 0;
-        slideShows[i].parentNode.style.overflowX = 'hidden';
+    if(window.innerWidth >= 1088){
+        for(i = 0; i < slideButtons.length; i++){
+            slideButtons[i].addEventListener('click', getDirection);
+        }
+        for(i = 0; i < slideShows.length; i++){
+            count[slideShows[i].id] = 0;
+            slideShows[i].parentNode.style.overflowX = 'hidden';
+        }
     }
 })();
 
