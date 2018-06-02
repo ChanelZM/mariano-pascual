@@ -2618,7 +2618,7 @@ svg #ball {
         width: 100%;
     }
     .project__desc .detail__title {
-        margin: 0.5rem 0;
+        margin: 0.5rem 0 0.6rem 0;
     }
     .project__desc .detail__title,
     .project__desc .folder-content.js {
@@ -2631,7 +2631,7 @@ svg #ball {
         height: auto;
     }
     .project__desc .folder-content__wrap-overflow {
-        width: 40rem;
+        max-width: 40rem;
         margin: 0 auto;
         overflow: hidden;
     }
@@ -2665,7 +2665,7 @@ svg #ball {
         text-align: center;
     }
     .tab {
-        height: 100%;
+        min-height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -2680,5 +2680,175 @@ svg #ball {
     }
     .btn1-list__item_big {
         font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-width: 50rem) and (orientation: portrait){
+    #about,
+    .mobile-app,
+    .slideshow-wrap,
+    .slideshow__slide_first,
+    .detail_d .detail_d_wrap {
+        height: calc(100vh - 10rem);
+    }
+    .bottom-nav {
+        height: 8rem;
+    }
+    .bottom-nav__list {
+        padding: 0;
+        width: 28rem;
+    }
+    .bottom-nav__item img {
+        padding: 0.5rem 0.5rem 0 0.5rem;
+    }
+    /* PROJECTS */
+    .project-list__preview {
+        height: 6.5rem;
+    }
+    .folderlink, .folderlink:visited {
+        font-size: 1.1rem;
+    }
+    /* ABOUT */
+    .btn1-list__item_big {
+        font-size: 1.1rem;
+    }
+    .btn1-list__item_big .btn1-list__link {
+        padding: 0.6rem;
+    }
+    /* SLIDESHOW */
+    .slideshow__slide-wrap {
+        width: 80%;
+    }
+    .slideshow__title {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 43rem) and (orientation: portrait){
+    p {
+        font-size: 0.8rem;
+    }
+    #about,
+    .mobile-app,
+    .slideshow-wrap,
+    .slideshow__slide_first,
+    .detail_d .detail_d_wrap {
+        height: calc(100vh - 9rem);
+    }
+    .mac-bar {
+        border-bottom: 2px solid black;
+    }
+    .mac-bar__title {
+        margin: 0.6rem 0 0 0;
+        font-size: 0.8rem;
+    }
+    .mac-bar-m-icon {
+        height: 0.9rem;
+    }
+    .bottom-nav {
+        height: 7rem;
+        border-top: 2px solid black;
+    }
+    .bottom-nav__list {
+        width: 23rem;
+    }
+    .bottom-nav__item .bottom-nav__name {
+        font-size: 0.9rem;
+    }
+    .bottom-nav__item-m {
+        width: 5rem;
+    }
+    /* PROJECTS */
+    .folderlink, .folderlink:visited {
+        font-size: 0.9rem;
+    }
+    .close {
+        width: 1.9rem;
+    }
+    .detail_a > .folder-content.js,
+    .detail_b > .folder-content.js,
+    .detail_c > .folder-content.js,
+    .detail_d > .folder-content.js {
+        margin-top: 2.6rem;
+        height: calc(100% - 2.6rem);
+    }
+    .detail > .close {
+        top: 0.3rem;
+        left: 0.1rem;
+    }
+    .project-list__preview {
+        height: 5.5rem;
+    }
+    .see-project-info {
+        font-size: 0.8rem;
+    }
+    .project__desc {
+        border-bottom: 2px solid black;
+    }
+    .project-info-close {
+        width: 2.2rem;
+    }
+    .project__desc .desktop-folder__title-span {
+        display: block;
+        padding-top: 0.5rem;
+        font-size: 1.1rem;
+    }
+    /* SLIDESHOWS */
+    .slideshow__eye {
+        width: 5rem;
+    }
+    .slideshow__title {
+        font-size: 2rem;
+    }
+    /* ABOUT */
+    .about-wrap {
+        margin-top: 3.3rem;
+    }
+    .section2 {
+        max-width: 26rem;
+    }
+    .title1 {
+        font-size: 2rem;
+    }
+    .title2 {
+        font-size: 1.1rem;
+    }
+    .head {
+        width: 12rem;
+    }
+    .about__arrow {
+        width: 2rem;
+    }
+    .folder-content__title2 {
+        font-size: 1.4rem;
+    }
+    .btn1-list__item_big {
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width: 38rem) and (orientation: portrait){
+    .wrap {
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    /* ABOUT */
+    .btn1-list__item_big {
+        font-size: 0.8rem;
+    }
+    .about-wrap {
+        margin-top: 3rem;
+        height: calc(100% - 3.5rem);
+    }
+    /* RPOJECTS */
+    .project-list__preview {
+        height: 4.5rem;
+    }
+    /* SLIDESHOW */
+    .slideshow__title {
+        font-size: 1.8rem;
+    }
+}
+@media screen and (max-width: 32.5rem) and (orientation: portrait){
+    .project-list__preview {
+        height: 6rem;
     }
 }
