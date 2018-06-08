@@ -2,7 +2,6 @@
 (function(){
     function init(){
         var folderLinks = document.querySelectorAll('.top-nav__item a'),
-            loadingSound = document.querySelector('.loading-screen__audio'),
             clickSound = document.querySelector('.click-sound'),
             scrollbars = document.querySelectorAll('.scrollbar'),
             deviceApps = [document.querySelector('#latestwork'), document.querySelector('#about'), document.querySelector('#projects')],
@@ -130,10 +129,6 @@
                 info.querySelector('.desktop-folder__title-span').classList.add('hidden');
             }
         }
-
-        //Screaming goat sound when 'fake loading'
-        loadingSound.autoplay = true;
-        loadingSound.load();
 
         window.addEventListener('load', function(){
             document.querySelector('.loading-screen').classList.add('hidden');
