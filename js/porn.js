@@ -41,7 +41,7 @@
     for(i = 0; i < pornLinks.length; i++){
         pornLinks[i].addEventListener('click', function(){
             setTimeout(function(){
-                if(document.querySelector('#porn.desktop-folder_open') && called == false){
+                if(document.querySelector('#porn').contains('hidden') == false && called == false){
                     called = true;
                     animatePornWindows();
                 }

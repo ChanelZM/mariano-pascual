@@ -390,7 +390,8 @@ p {
     margin-top: 1rem;
 }
 .head {
-    width: 17rem;
+    padding-bottom: 2rem;
+    width: 14rem;
 }
 .title1 {
     font-size: 2.5rem;
@@ -419,7 +420,7 @@ p {
 .btn1-list__item_active .btn1-list__shadow {
     display: none;
 }
-.about__arrow {
+.arrow-down {
     display: none;
 }
 #press {
@@ -433,17 +434,13 @@ p {
 }
 
 /* PORN */
-.porn-img {
-    height: 100%;
+.porn-window {
+    position: absolute;
 }
-.censored {
-    color: black;
-    font-family: sans-serif;
-    font-size: 10rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    animation: changeColor 0.5s linear infinite;
-    transform: rotate(45deg) translateY(4rem) translateX(-3rem);
+.porn-window img,
+.porn-window video {
+    max-width: 60vw;
+    max-height: 70vh;
 }
 
 /* LATEST PROJECT*/
@@ -2483,13 +2480,16 @@ svg #ball {
     .folder-content__wrap-overflow {
         height: 100%;
     }
-    .about__arrow {
+    .arrow-down {
         display: block;
         position: fixed;
         width: 3rem;
         left: 50%;
         transform: translateX(-50%);
         bottom: 4rem;
+    }
+    .arrow-down_quickview {
+        bottom: 2rem;
     }
     /* SLIDESHOW */
     .slideshow-wrap {
@@ -2591,6 +2591,10 @@ svg #ball {
         display: block;
         margin-top: 1rem;
     }
+    .desktop-folder__title-span {
+        display: block;
+        padding-top: 1rem;
+    }
     .project__img {
         width: 100vw;
     }
@@ -2603,6 +2607,11 @@ svg #ball {
         box-shadow: none;
         border-bottom: 3px solid black;
         z-index: 2;
+    }
+    .project__desc p {
+        padding: 0 0 1rem 0;
+        margin: 0;
+        font-size: 0.9rem;
     }
     .project-info-close {
         display: block;
@@ -2816,7 +2825,7 @@ svg #ball {
     .head {
         width: 12rem;
     }
-    .about__arrow {
+    .arrow-down {
         width: 2rem;
     }
     .folder-content__title2 {

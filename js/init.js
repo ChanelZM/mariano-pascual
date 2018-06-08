@@ -42,7 +42,6 @@
         removeHidden('array', document.querySelectorAll('.top-nav__item [hidden]'));
         removeHidden('array', document.querySelectorAll('.folder-nav'));
         removeHidden('array', document.querySelectorAll('.detail .close'));
-        removeHidden('array', document.querySelectorAll('.porn-window'));
         removeHidden('el', document.querySelector('.mac-bar'));
         removeHidden('el', document.querySelector('.bottom-nav'));
         removeHidden('el', document.querySelector('.mac-bar_center'));
@@ -89,15 +88,18 @@
             removeHidden('el', document.querySelector('.fullscreen-folder'));
             removeHidden('el', document.querySelector('#print-art'));
             removeHidden('el', document.querySelector('#settings'));
+            removeHidden('el', document.querySelector('#photos'));
+            removeHidden('el', document.querySelector('.porn'));
             removeHidden('el', document.querySelector('#latestproject'));
             removeHidden('el', document.querySelector('#trash'));
 
             changeClass('add', scrollbars, 'scrollbar');
+            changeClass('remove', document.querySelectorAll('.desktop-folder__title-span'), 'hidden');
+            changeClass('add', document.querySelectorAll('.see-project-info'), 'hidden');
             changeClass('add', document.querySelectorAll('.bottom-nav__item-m'), 'hidden');
             changeClass('add', document.querySelectorAll('.dropdown'), 'hidden');
             changeClass('add', document.querySelectorAll('.desktop-folder'), 'hidden');
             changeClass('add', document.querySelectorAll('.desktop-folder'), 'desktop-folder_open');
-
             document.querySelector('body').classList.remove('touch');
             document.querySelector('.mac-bar_left').classList.remove('hidden');
             document.querySelector('.top-nav').classList.remove('hidden');

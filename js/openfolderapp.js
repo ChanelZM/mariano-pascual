@@ -38,6 +38,8 @@
             animateFullscreen(e, removeNav);
         } else if(e.target.hash == '#latestwork' && window.innerWidth < 1088){
             openWindow(e.target, e.target.hash);
+        } else if(e.target.hash == '#porn'){
+            openWindow(e.target, e.target.hash);
         } else if(e.target.hash != '#print'){
             openWindow(e.target, e.target.hash);
         }
@@ -58,6 +60,9 @@
                 section.classList.add('desktop-folder_open');
                 section.classList.remove('hidden');
             }
+        }
+        if(window.innerWidth >= 1088 && section.getAttribute('class').includes('porn-window')){
+            section.classList.remove('hidden');
         }
         //If you're viewing this page on desktop
         if(window.innerWidth >= 1088 && section.getAttribute('class').includes('fullscreen-folder')){
