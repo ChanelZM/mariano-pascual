@@ -15,33 +15,42 @@
     //     }, animationTime);
     // }
 
-    function delayWindowOpen(el, time, xOffset, yOffset){
+    // function delayWindowOpen(el, time, xOffset, yOffset){
+    //     setTimeout(function(){
+    //         el.classList.remove('hidden');
+    //         el.style.left = xOffset/16 + 'rem';
+    //         el.style.top = yOffset/16 + 'rem';
+    //     }, time);
+    // }
+    function delayWindowOpen(el, time){
         setTimeout(function(){
             el.classList.remove('hidden');
-            el.classList.add('desktop-folder_open');
-            el.style.left = xOffset/16 + 'rem';
-            el.style.top = yOffset/16 + 'rem';
-        }, time);
+        }, time)
     }
 
     function animatePornWindows(){
-        var widthRange = window.innerWidth * 0.50,
-            heightRange = window.innerHeight * 0.20;
-        //Starting at 1 because the first one doesn't need to change positions
-        for(i = 1; i < pornWindows.length; i++){
-            var time = delay * i,
-                xOffset = Math.floor((Math.random() * widthRange) + 10),
-                yOffset = Math.floor((Math.random() * heightRange) +10);
-
-            delayWindowOpen(pornWindows[i], time, xOffset, yOffset);
-        }
+        // var widthRange = window.innerWidth * 0.50,
+        //     heightRange = window.innerHeight * 0.20;
+        // //Starting at 1 because the first one doesn't need to change positions
+        // for(i = 1; i < pornWindows.length; i++){
+        //     var time = delay * i,
+        //         xOffset = Math.floor((Math.random() * widthRange) + 32),
+        //         yOffset = Math.floor((Math.random() * heightRange) + 32);
+        //
+        //     delayWindowOpen(pornWindows[i], time, xOffset, yOffset);
+        // }
         //animationDone(pornWindows.length * delay);
+        for(i = 1; i < pornWindows.length; i++){
+            var time = delay * i;
+            delayWindowOpen(pornWindows[i], time);
+        }
     }
 
     for(i = 0; i < pornLinks.length; i++){
         pornLinks[i].addEventListener('click', function(){
             setTimeout(function(){
-                if(document.querySelector('#porn').contains('hidden') == false && called == false){
+                if(called == false){
+                    document.querySelector('#porn1').classList.remove('hidden');
                     called = true;
                     animatePornWindows();
                 }

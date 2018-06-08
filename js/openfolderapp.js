@@ -61,7 +61,7 @@
                 section.classList.remove('hidden');
             }
         }
-        if(window.innerWidth >= 1088 && section.getAttribute('class').includes('porn-window')){
+        if(window.innerWidth >= 1088 && section.getAttribute('id') == 'porn'){
             section.classList.remove('hidden');
         }
         //If you're viewing this page on desktop
