@@ -85,7 +85,7 @@
                 mobileIcons[i].classList.add('hidden');
             }
             removeHidden('array', document.querySelectorAll('.dropdown'));
-            removeHidden('array', document.querySelector('.bottom-nav__item'));
+            removeHidden('array', document.querySelectorAll('.bottom-nav__item'));
             removeHidden('el', document.querySelector('.fullscreen-folder'));
             removeHidden('el', document.querySelector('#print-art'));
             removeHidden('el', document.querySelector('#settings'));
@@ -93,7 +93,7 @@
             removeHidden('el', document.querySelector('#trash'));
 
             changeClass('add', scrollbars, 'scrollbar');
-            changeClass('add', document.querySelectorAll('bottom-nav__item-m'), 'hidden');
+            changeClass('add', document.querySelectorAll('.bottom-nav__item-m'), 'hidden');
             changeClass('add', document.querySelectorAll('.dropdown'), 'hidden');
             changeClass('add', document.querySelectorAll('.desktop-folder'), 'hidden');
             changeClass('add', document.querySelectorAll('.desktop-folder'), 'desktop-folder_open');
@@ -104,7 +104,7 @@
             document.querySelector('.mac-bar_right').classList.remove('hidden');
             document.querySelector('#projects').classList.remove('device-app_open');
             document.querySelector('.mac-bar_center').classList.add('hidden');
-            document.querySelector('#nav-phone').classList.add('hidden');
+            document.querySelector('#latestwork').classList.add('hidden');
             document.querySelector('.fullscreen-folder').classList.add('hidden');
             document.querySelector('#latestproject').classList.remove('hidden');
             document.querySelector('#trash').classList.add('hidden');
