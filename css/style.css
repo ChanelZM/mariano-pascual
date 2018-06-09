@@ -897,7 +897,7 @@ p {
     background-color: #AFAEA9;
 }
 .switch-on .a-slider__circle {
-    margin-left: 4.37rem;
+    margin-left: calc(100% - 1.05rem);
 }
 .range {
     box-sizing: border-box;
@@ -1706,29 +1706,35 @@ svg #ball {
     position: absolute;
     left: 50%;
     top: 50%;
+    text-align: center;
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
 .browser-msg__section {
-    max-width: 40rem;
-    height: 40rem;
-    text-align: center;
+    max-width: 33rem;
     background-color: white;
     border: 2px solid black;
 }
 .browser-msg__h3 {
     padding: 2rem 0;
-    font-size: 2.4rem;
+    font-size: 2rem;
 }
 .browser-msg__p {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 }
 .browser-msg__h3,
 .browser-msg__p {
     width: 70%;
     margin: 0 auto;
+}
+.browser-msg__img {
+    width: 10rem;
+    margin-top: 2rem;
+}
+.orient-msg__img {
+    width: 80%;
 }
 .overlay__msg  .porn__title {
     width: 100%;
@@ -1741,6 +1747,7 @@ svg #ball {
 .overlay__msg .btn1-list {
     position: static;
     flex-direction: column;
+    margin-bottom: 4rem;
     align-items: center;
 }
 .overlay__msg .btn1-list__item {

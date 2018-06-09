@@ -1640,8 +1640,8 @@
                     <img src="img/trash_16.png" alt="trash item" class="trash__img drag" />
                 </section>
                 <div class="porn window hidden" id="porn">
-                    <section class="porn-window window" id="porn1">
-                        <h2 class="desktop-folder__title porn__title drag">
+                    <section class="porn-window" id="porn1">
+                        <h2 class="desktop-folder__title porn__title">
                             <div class="desktop-folder__title-background"></div>
                             <span class="desktop-folder__title-span">Explorer</span>
                         </h2>
@@ -1826,13 +1826,13 @@
                 </li>
             </ul>
         </nav>
-        <div class="overlay" hidden>
+        <div class="overlay" id="browser-old-overlay" hidden>
             <section class="overlay__msg browser__msg window">
                 <h2 class="desktop-folder__title porn__title">
                     <div class="desktop-folder__title-background"></div>
                 </h2>
                 <section class="browser-msg__section">
-                    <!-- <img /> -->
+                    <img src="img/hole.png" alt="Empty hole" class="browser-msg__img" />
                     <h3 class="browser-msg__h3">Oops!<br /> Your browser is too old to see this awesomeness.</h3>
                     <p class="browser-msg__p">
                         But don't worry, you can still check out my work on my Instagram or send me an email to receive more info. Thank you!
@@ -1852,6 +1852,12 @@
                         </li>
                     </ul>
                 </section>
+            </section>
+        </div>
+        <div class="overlay" id="orientation-overlay" hidden>
+            <section class="overlay__msg">
+                <img src="img/flip.png" alt="Flip icon" class="orient-msg__img" />
+                <h2>Hey! Flip your device for a better experience</h2>
             </section>
         </div>
         <audio class="click-sound">

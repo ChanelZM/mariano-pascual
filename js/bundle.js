@@ -40,6 +40,38 @@
 },{}],2:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
+    function detectOrientation(){
+        var orientation = window.innerWidth > window.innerHeight ? 'Landscape' : 'Portrait';
+
+        var ua = navigator.userAgent.toLowerCase(),
+            isAndroid = ua.indexOf('android') > -1;
+
+        if(isAndroid){
+            var orientationNum =  screen.orientation || screen.mozOrientation || screen.msOrientation || window.orientation;
+
+            orientation = orientationNum.type === "portrait-secondary" || orientationNum.type === "portrait-primary" ? 'Portrait' : 'Landscape';
+        }
+
+
+        if(orientation == 'Landscape' && window.innerWidth < 1088 && document.getElementById('browser-old-overlay').hasAttribute('hidden')){
+            document.getElementById('orientation-overlay').removeAttribute('hidden');
+        } else {
+            document.getElementById('orientation-overlay').setAttribute('hidden', '');
+        }
+    }
+
+    detectOrientation();
+
+    window.addEventListener('resize', function(){
+        setTimeout(function(){
+            detectOrientation();
+        }, 5);
+    });
+})();
+
+},{}],3:[function(require,module,exports){
+/*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
+(function(){
     //Functions that handle the clock
     function parseHourMin(num){
         var parseNum;
@@ -75,7 +107,7 @@
     updateTime();
 })();
 
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var closeButtons = document.querySelectorAll('.close'),
@@ -91,7 +123,7 @@
     }
 })();
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var dragables = document.querySelectorAll('.drag'),
@@ -174,7 +206,7 @@
 //Getting mouse offset relative to section: http://jsfiddle.net/WhrFt/
 })();
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var slides = document.querySelectorAll('.slideshow__slide');
@@ -195,7 +227,7 @@
     }
 })();
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var hoverImages = document.querySelectorAll('.hover-img'),
@@ -261,7 +293,7 @@
     }
 })();
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     function init(){
@@ -427,7 +459,7 @@
     init();
 })();
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var topNavCon = document.querySelector('.top-nav'),
@@ -567,7 +599,7 @@
 })();
 //Single and double click function by Karbassi: https://gist.github.com/karbassi/639453
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var pornLinks = document.querySelectorAll('[href="#porn"]'),
@@ -614,7 +646,7 @@
     });
 })();
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var appleSliders = document.querySelectorAll('.a-slider__circle'),
@@ -726,7 +758,7 @@
     }
 })();
 
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var i;
@@ -782,7 +814,7 @@
     }
 })();
 
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var images = document.querySelectorAll('.trash__img'),
@@ -815,7 +847,7 @@
     document.getElementById('nav-trash').addEventListener('click', randomizeImg);
 })();
 
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 (function(){
     var detailSections = document.querySelectorAll('.detail'),
@@ -857,4 +889,4 @@
     }
 })();
 
-},{}]},{},[7,8,3,4,13,9,2,10,6,11,12,1,5]);
+},{}]},{},[8,9,4,5,14,10,3,11,7,12,13,1,6,2]);
