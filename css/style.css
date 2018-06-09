@@ -2743,6 +2743,9 @@ svg #ball {
     #about .folder-content__wrap-overflow {
         height: 100%;
     }
+    #exhibition {
+        margin-bottom: 4rem;
+    }
     .head {
         padding-right: 0;
     }
@@ -3028,9 +3031,14 @@ svg #ball {
     }
 }
 @media screen and (max-width: 30rem) and (orientation: portrait){
+    .desktop-folder > .folder-content > .folder-content__wrap-overflow,
+    .fullscreen-folder > .slideshow,
+    .detail > .folder-content > .folder-content__wrap-overflow {
+        padding-bottom: 2rem;
+    }
     /* ABOUT */
     #about .folder-content__wrap-overflow {
-        padding: 0;
+        padding: 0 0 4rem 0;
     }
     .about-wrap {
         height: calc(100% - 3.1rem);
