@@ -437,6 +437,8 @@ p {
 
 /* PORN */
 .porn-window {
+    display: flex;
+    align-items: flex-start;
     position: absolute;
     box-shadow: -0.6rem 0.6rem 0 rgba(29, 30, 28, 0.26);
 }
@@ -515,7 +517,9 @@ p {
     top: 10vh;
 }
 .porn-window .porn_img {
+    box-sizing: border-box;
     width: 100%;
+    border: 2px solid black;
 }
 .porn-window .porn__title {
     width: 100%;
@@ -1687,6 +1691,63 @@ svg #ball {
   }
 }
 
+/* OVERLAYS */
+.overlay {
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #E7E7E1;
+    z-index: 999;
+}
+.overlay__msg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.browser-msg__section {
+    max-width: 40rem;
+    height: 40rem;
+    text-align: center;
+    background-color: white;
+    border: 2px solid black;
+}
+.browser-msg__h3 {
+    padding: 2rem 0;
+    font-size: 2.4rem;
+}
+.browser-msg__p {
+    font-size: 1.4rem;
+}
+.browser-msg__h3,
+.browser-msg__p {
+    width: 70%;
+    margin: 0 auto;
+}
+.overlay__msg  .porn__title {
+    width: 100%;
+}
+.overlay__msg .desktop-folder__title-background {
+    height: 2rem;
+    margin: 0 1rem;
+    z-index: 0;
+}
+.overlay__msg .btn1-list {
+    position: static;
+    flex-direction: column;
+    align-items: center;
+}
+.overlay__msg .btn1-list__item {
+    width: 70%;
+    margin-top: 2rem;
+}
+
 @media screen and (max-height: 66rem) and (orientation: landscape){
     p {
         font-size: 0.9rem;
@@ -1989,6 +2050,15 @@ svg #ball {
     .slideshow__pjt-title {
         font-size: 1.2rem;
     }
+    /* PORN */
+    .porn__title {
+        height: 1.6rem;
+        top: -1.6rem;
+    }
+    .porn .close {
+        height: 1.6rem;
+        top: -1.6rem;
+    }
 }
 
 @media screen and (max-height: 54rem) and (orientation: landscape){
@@ -2162,6 +2232,10 @@ svg #ball {
     /* SLIDESHOW */
     .fullscreen__close-button img {
         padding: 0.2rem;
+    }
+    /* PORN */
+    .porn .desktop-folder__title-span {
+        font-size: 0.7rem;
     }
 }
 @media screen and (max-height: 46rem) and (orientation: landscape){
@@ -3034,7 +3108,7 @@ svg #ball {
     .desktop-folder > .folder-content > .folder-content__wrap-overflow,
     .fullscreen-folder > .slideshow,
     .detail > .folder-content > .folder-content__wrap-overflow {
-        padding-bottom: 2rem;
+        padding-bottom: 5rem;
     }
     /* ABOUT */
     #about .folder-content__wrap-overflow {
