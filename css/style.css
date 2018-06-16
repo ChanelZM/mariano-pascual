@@ -140,6 +140,11 @@ p {
     text-decoration: none;
     color: black;
 }
+@supports(display: flex){
+    #browser-old-overlay {
+        display: none;
+    }
+}
 
 /* TOP NAVIGATION */
 .top-nav {

@@ -1825,7 +1825,7 @@
                 </li>
             </ul>
         </nav>
-        <div class="overlay" id="browser-old-overlay" hidden>
+        <div class="overlay" id="browser-old-overlay">
             <section class="overlay__msg browser__msg window">
                 <h2 class="desktop-folder__title porn__title">
                     <div class="desktop-folder__title-background"></div>
@@ -1920,8 +1920,9 @@
 
         //If the browser doesn't support any of these features, show the 'your browser is too old' overlay
         if (supportsSVG() == false || document.querySelector == false || document.addEventListener == false){
-            document.getElementById('orientation-overlay').removeAttribute('hidden');
+            console.log('Your browser is too old');
         } else {
+            document.getElementById('orientation-overlay').setAttribute('hidden', '');
             function addJavaScript(file){
                 var tag = document.createElement('script'),
                     src = tag.setAttribute('src', file);
