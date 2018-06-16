@@ -1923,10 +1923,11 @@
         }
 
         //If the browser doesn't support any of these features, show the 'your browser is too old' overlay
-        if (supportsSVG() == false || document.querySelector == false || document.addEventListener == false){
+        if (supportsSVG() == false || document.querySelector == false || document.addEventListener == false || !document.documentElement.classList){
+            document.getElementById('browser-old-overlay').style.display = 'block';
             console.log('Your browser is too old');
         } else {
-            document.getElementById('orientation-overlay').setAttribute('hidden', '');
+            document.getElementById('browser-old-overlay').setAttribute('hidden', '');
             function addJavaScript(file){
                 var tag = document.createElement('script'),
                     src = tag.setAttribute('src', file);

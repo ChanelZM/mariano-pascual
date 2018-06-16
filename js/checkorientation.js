@@ -14,10 +14,8 @@
 
 
         if(orientation == 'Landscape' && window.innerWidth < 1088){
-            console.log('landscape');
             document.getElementById('orientation-overlay').removeAttribute('hidden');
         } else {
-            console.log('portrait');
             document.getElementById('orientation-overlay').setAttribute('hidden', 'true');
         }
     }
