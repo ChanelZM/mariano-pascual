@@ -53,16 +53,19 @@
         }
 
 
-        if(orientation == 'Landscape' && window.innerWidth < 1088 && document.getElementById('orientation-overlay').hasAttribute('hidden')){
+        if(orientation == 'Landscape' && window.innerWidth < 1088){
+            console.log('landscape');
             document.getElementById('orientation-overlay').removeAttribute('hidden');
         } else {
-            document.getElementById('orientation-overlay').setAttribute('hidden', '');
+            console.log('portrait');
+            document.getElementById('orientation-overlay').setAttribute('hidden', 'true');
         }
     }
 
     detectOrientation();
 
     window.addEventListener('resize', function(){
+        console.log('resize');
         setTimeout(function(){
             detectOrientation();
         }, 5);
