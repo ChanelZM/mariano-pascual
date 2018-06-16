@@ -49,14 +49,14 @@
             mouseY = e.clientY;
 
             //If it's a desktop icon
-            if(e.target.className.includes('link_style')){
+            if(e.target.className.indexOf('link_style') >= 0){
                 dragContainer = e.target.parentNode.parentNode.parentNode;
                 containerX = dragContainer.offsetLeft;
                 containerY = dragContainer.offsetTop;
 
                 drag.starts(dragContainer, mouseX, mouseY, containerX, containerY, true);
             //If it's a desktop folder
-            } else if(e.target.className.includes('desktop-folder')){
+        } else if(e.target.className.indexOf('desktop-folder') >= 0){
                 dragContainer = e.target.parentNode;
                 containerX = dragContainer.offsetLeft;
                 containerY = dragContainer.offsetTop;

@@ -67,7 +67,7 @@
             if(location.hash == '#print'){
                 print();
             }
-            if(location.hash.includes('#project')){
+            if(location.hash.indexOf('#project')  >= 0){
                 document.querySelector('#latestproject').style.zIndex = '1';
                 document.querySelector('#latestwork').classList.add('hidden');
                 document.querySelector('#projects').classList.remove('hidden');

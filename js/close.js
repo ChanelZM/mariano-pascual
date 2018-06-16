@@ -5,7 +5,7 @@
 
     for(i = 0; i < closeButtons.length; i++){
         closeButtons[i].addEventListener('click', function(e){
-            if(document.querySelector('.bottom-nav').className.includes('hidden')){
+            if(document.querySelector('.bottom-nav').className.indexOf('hidden') >= 0){
                 document.querySelector('.bottom-nav').classList.remove('hidden');
             }
             e.target.parentNode.classList.add('hidden');

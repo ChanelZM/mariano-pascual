@@ -8,11 +8,14 @@
 
     function randomizeImg(){
         for(i = 0; i < images.length; i++){
+            console.log('loop');
             var xPosition = randomCoordinate(bodyWidth),
                 yPosition = randomCoordinate(bodyHeight),
                 rotation = randomDeg(45);
 
-            images[i].style.transform = 'translate(' + xPosition + 'px, ' + yPosition + 'px) rotate(' + rotation + 'deg)';
+            images[i].style.top = yPosition + 'px';
+            images[i].style.left = xPosition + 'px';
+            images[i].style.transform = 'rotate(' + rotation + 'deg)';
         }
     }
 

@@ -5,7 +5,9 @@
         folders = document.querySelectorAll('.top-nav__item'),
         dropDownButtons = document.querySelectorAll('.dropdown-button'),
         macBar = document.querySelector('.mac-bar'),
-        windows = document.querySelectorAll('.window');
+        windows = document.querySelectorAll('.window'),
+        dropDownLists = document.querySelectorAll('.dropdown'),
+        detail = document.querySelectorAll('.detail');
 
     var clickCount = 0,
         zIndex = 2;
@@ -49,14 +51,14 @@
         var section = document.querySelector(id);
 
         console.log('open window');
-        if(section.classList.contains('window')){
+        if(section.classList.contains('window') || section.classList.contains('fullscreen-folder')){
             console.log('contains window');
             windowToFront(section);
         }
 
         //If you're viewing this page on desktop
-        if(window.innerWidth >= 1088 && section.getAttribute('class').includes('desktop-folder')){
-            if(section.getAttribute('class').includes('hidden')){
+        if(window.innerWidth >= 1088 && section.getAttribute('class').indexOf('desktop-folder') >= 0){
+            if(section.getAttribute('class').indexOf('hidden') >= 0){
                 section.classList.add('desktop-folder_open');
                 section.classList.remove('hidden');
             }
@@ -65,7 +67,7 @@
             section.classList.remove('hidden');
         }
         //If you're viewing this page on desktop
-        if(window.innerWidth >= 1088 && section.getAttribute('class').includes('fullscreen-folder')){
+        if(window.innerWidth >= 1088 && section.getAttribute('class').indexOf('fullscreen-folder') >= 0){
             section.removeAttribute('hidden');
             section.classList.remove('hidden');
         }
@@ -76,6 +78,9 @@
             for(i = 0; i < folders.length; i++){
                 folders[i].classList.add('hidden');
             }
+            for(i = 0; i < detail.length; i++){
+                detail[i].classList.add('hidden');
+            }
             section.classList.remove('hidden');
         }
     }
@@ -83,7 +88,7 @@
     function toggleDropDown(e){
         e.preventDefault();
 
-        if(e.target.parentNode.querySelector('.dropdown').className.includes('hidden')){
+        if(e.target.parentNode.querySelector('.dropdown').className.indexOf('hidden') >= 0){
             closeOtherDropDowns();
             e.target.parentNode.querySelector('.dropdown').classList.remove('hidden');
         } else {
@@ -109,7 +114,6 @@
         }, 1);
 
         setTimeout(function(){
-            console.log('test');
             callback();
             document.querySelector('.slider-anim_wrap').setAttribute('hidden', 'true');
             animCircle.removeAttribute('style');
@@ -127,7 +131,10 @@
     macBar.addEventListener('click', checkIfApp);
 
     for(var i = 0; i < dropDownButtons.length; i++){
-        dropDownButtons[i].addEventListener('click', toggleDropDown);
+        dropDownButtons[i].addEventListener('mouseenter', toggleDropDown);
+    }
+    for(var i = 0; i < dropDownLists.length; i++){
+        dropDownLists[i].addEventListener('mouseleave', toggleDropDown);
     }
     if(window.innerWidth >= 1088){
         for(var i = 0; i < windows.length; i++){

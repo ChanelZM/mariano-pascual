@@ -10,7 +10,7 @@
         var prevCount,
             slideInfo = getSlideInfo(e);
 
-        if(e.target.parentNode.id.includes('prev')){
+        if(e.target.parentNode.id.indexOf('prev') >= 0){
             count[slideInfo.slideshow.id] == 0 ? count[slideInfo.slideshow.id] = slideInfo.amount - 1 : count[slideInfo.slideshow.id]--;
             animateSlideshow(count[slideInfo.slideshow.id], slideInfo);
         } else {

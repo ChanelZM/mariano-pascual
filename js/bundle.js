@@ -115,7 +115,7 @@
 
     for(i = 0; i < closeButtons.length; i++){
         closeButtons[i].addEventListener('click', function(e){
-            if(document.querySelector('.bottom-nav').className.includes('hidden')){
+            if(document.querySelector('.bottom-nav').className.indexOf('hidden') >= 0){
                 document.querySelector('.bottom-nav').classList.remove('hidden');
             }
             e.target.parentNode.classList.add('hidden');
@@ -175,14 +175,14 @@
             mouseY = e.clientY;
 
             //If it's a desktop icon
-            if(e.target.className.includes('link_style')){
+            if(e.target.className.indexOf('link_style') >= 0){
                 dragContainer = e.target.parentNode.parentNode.parentNode;
                 containerX = dragContainer.offsetLeft;
                 containerY = dragContainer.offsetTop;
 
                 drag.starts(dragContainer, mouseX, mouseY, containerX, containerY, true);
             //If it's a desktop folder
-            } else if(e.target.className.includes('desktop-folder')){
+        } else if(e.target.className.indexOf('desktop-folder') >= 0){
                 dragContainer = e.target.parentNode;
                 containerX = dragContainer.offsetLeft;
                 containerY = dragContainer.offsetTop;
@@ -220,6 +220,7 @@
 
         this.querySelector('.slideshow__pjt-title').style.left = titleX + 'px';
         this.querySelector('.slideshow__pjt-title').style.top = titleY + 'px';
+        this.querySelector('.slideshow__pjt-title').style.opacity = 1;
     }
 
     for(i = 1; i < slides.length; i++){
@@ -256,7 +257,7 @@
         src = parent.children[0].getAttribute('src');
 
         //Toggle images when hovering
-        if(src.includes('-hover')){
+        if(src.indexOf('-hover') >= 0){
             splitSrc = src.split('-hover');
             parent.children[0].setAttribute('src', (splitSrc[0] + '.svg'));
         } else {
@@ -363,7 +364,7 @@
             if(location.hash == '#print'){
                 print();
             }
-            if(location.hash.includes('#project')){
+            if(location.hash.indexOf('#project')  >= 0){
                 document.querySelector('#latestproject').style.zIndex = '1';
                 document.querySelector('#latestwork').classList.add('hidden');
                 document.querySelector('#projects').classList.remove('hidden');
@@ -467,7 +468,9 @@
         folders = document.querySelectorAll('.top-nav__item'),
         dropDownButtons = document.querySelectorAll('.dropdown-button'),
         macBar = document.querySelector('.mac-bar'),
-        windows = document.querySelectorAll('.window');
+        windows = document.querySelectorAll('.window'),
+        dropDownLists = document.querySelectorAll('.dropdown'),
+        detail = document.querySelectorAll('.detail');
 
     var clickCount = 0,
         zIndex = 2;
@@ -511,14 +514,14 @@
         var section = document.querySelector(id);
 
         console.log('open window');
-        if(section.classList.contains('window')){
+        if(section.classList.contains('window') || section.classList.contains('fullscreen-folder')){
             console.log('contains window');
             windowToFront(section);
         }
 
         //If you're viewing this page on desktop
-        if(window.innerWidth >= 1088 && section.getAttribute('class').includes('desktop-folder')){
-            if(section.getAttribute('class').includes('hidden')){
+        if(window.innerWidth >= 1088 && section.getAttribute('class').indexOf('desktop-folder') >= 0){
+            if(section.getAttribute('class').indexOf('hidden') >= 0){
                 section.classList.add('desktop-folder_open');
                 section.classList.remove('hidden');
             }
@@ -527,7 +530,7 @@
             section.classList.remove('hidden');
         }
         //If you're viewing this page on desktop
-        if(window.innerWidth >= 1088 && section.getAttribute('class').includes('fullscreen-folder')){
+        if(window.innerWidth >= 1088 && section.getAttribute('class').indexOf('fullscreen-folder') >= 0){
             section.removeAttribute('hidden');
             section.classList.remove('hidden');
         }
@@ -538,6 +541,9 @@
             for(i = 0; i < folders.length; i++){
                 folders[i].classList.add('hidden');
             }
+            for(i = 0; i < detail.length; i++){
+                detail[i].classList.add('hidden');
+            }
             section.classList.remove('hidden');
         }
     }
@@ -545,7 +551,7 @@
     function toggleDropDown(e){
         e.preventDefault();
 
-        if(e.target.parentNode.querySelector('.dropdown').className.includes('hidden')){
+        if(e.target.parentNode.querySelector('.dropdown').className.indexOf('hidden') >= 0){
             closeOtherDropDowns();
             e.target.parentNode.querySelector('.dropdown').classList.remove('hidden');
         } else {
@@ -571,7 +577,6 @@
         }, 1);
 
         setTimeout(function(){
-            console.log('test');
             callback();
             document.querySelector('.slider-anim_wrap').setAttribute('hidden', 'true');
             animCircle.removeAttribute('style');
@@ -589,7 +594,10 @@
     macBar.addEventListener('click', checkIfApp);
 
     for(var i = 0; i < dropDownButtons.length; i++){
-        dropDownButtons[i].addEventListener('click', toggleDropDown);
+        dropDownButtons[i].addEventListener('mouseenter', toggleDropDown);
+    }
+    for(var i = 0; i < dropDownLists.length; i++){
+        dropDownLists[i].addEventListener('mouseleave', toggleDropDown);
     }
     if(window.innerWidth >= 1088){
         for(var i = 0; i < windows.length; i++){
@@ -659,7 +667,7 @@
     function toggleDropDown(){
         var dropDown = document.querySelector('.setting__dropdown');
 
-        if(dropDown.className.includes('hidden')){
+        if(dropDown.className.indexOf('hidden')  >= 0){
             dropDown.classList.remove('hidden');
         } else {
             dropDown.classList.add('hidden');
@@ -694,7 +702,7 @@
     }
 
     function switchOnOff(e){
-        if(e.target.parentNode.className.includes('switch-on')){
+        if(e.target.parentNode.className.indexOf('switch-on') >= 0){
             e.target.parentNode.classList.remove('switch-on');
             getSetting(e.target.id, 'off');
         } else {
@@ -771,7 +779,7 @@
         var prevCount,
             slideInfo = getSlideInfo(e);
 
-        if(e.target.parentNode.id.includes('prev')){
+        if(e.target.parentNode.id.indexOf('prev') >= 0){
             count[slideInfo.slideshow.id] == 0 ? count[slideInfo.slideshow.id] = slideInfo.amount - 1 : count[slideInfo.slideshow.id]--;
             animateSlideshow(count[slideInfo.slideshow.id], slideInfo);
         } else {
@@ -825,11 +833,14 @@
 
     function randomizeImg(){
         for(i = 0; i < images.length; i++){
+            console.log('loop');
             var xPosition = randomCoordinate(bodyWidth),
                 yPosition = randomCoordinate(bodyHeight),
                 rotation = randomDeg(45);
 
-            images[i].style.transform = 'translate(' + xPosition + 'px, ' + yPosition + 'px) rotate(' + rotation + 'deg)';
+            images[i].style.top = yPosition + 'px';
+            images[i].style.left = xPosition + 'px';
+            images[i].style.transform = 'rotate(' + rotation + 'deg)';
         }
     }
 
@@ -861,7 +872,7 @@
                 windows = document.getElementById(id).querySelectorAll('.window');
 
             for(i = 0; i < detailSections.length; i++){
-                if(!detailSections[i].className.includes('hidden')){
+                if(!detailSections[i].className.indexOf('hidden') >= 0){
                     detailSections[i].classList.add('hidden');
                 }
             }
@@ -875,7 +886,7 @@
         close: function(e){
             e.target.parentNode.classList.add('hidden');
 
-            if(e.target.parentNode.querySelector('.project__desc').className.includes('hidden')){
+            if(e.target.parentNode.querySelector('.project__desc').className.indexOf('hidden') >= 0){
                 e.target.parentNode.querySelector('.project__desc').classList.remove('hidden');
             }
         }

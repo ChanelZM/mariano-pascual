@@ -11,6 +11,7 @@
 
         this.querySelector('.slideshow__pjt-title').style.left = titleX + 'px';
         this.querySelector('.slideshow__pjt-title').style.top = titleY + 'px';
+        this.querySelector('.slideshow__pjt-title').style.opacity = 1;
     }
 
     for(i = 1; i < slides.length; i++){

@@ -11,7 +11,7 @@
                 windows = document.getElementById(id).querySelectorAll('.window');
 
             for(i = 0; i < detailSections.length; i++){
-                if(!detailSections[i].className.includes('hidden')){
+                if(!detailSections[i].className.indexOf('hidden') >= 0){
                     detailSections[i].classList.add('hidden');
                 }
             }
@@ -25,7 +25,7 @@
         close: function(e){
             e.target.parentNode.classList.add('hidden');
 
-            if(e.target.parentNode.querySelector('.project__desc').className.includes('hidden')){
+            if(e.target.parentNode.querySelector('.project__desc').className.indexOf('hidden') >= 0){
                 e.target.parentNode.querySelector('.project__desc').classList.remove('hidden');
             }
         }

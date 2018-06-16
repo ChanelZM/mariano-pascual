@@ -10,7 +10,7 @@
     function toggleDropDown(){
         var dropDown = document.querySelector('.setting__dropdown');
 
-        if(dropDown.className.includes('hidden')){
+        if(dropDown.className.indexOf('hidden')  >= 0){
             dropDown.classList.remove('hidden');
         } else {
             dropDown.classList.add('hidden');
@@ -45,7 +45,7 @@
     }
 
     function switchOnOff(e){
-        if(e.target.parentNode.className.includes('switch-on')){
+        if(e.target.parentNode.className.indexOf('switch-on') >= 0){
             e.target.parentNode.classList.remove('switch-on');
             getSetting(e.target.id, 'off');
         } else {

@@ -26,7 +26,7 @@
         src = parent.children[0].getAttribute('src');
 
         //Toggle images when hovering
-        if(src.includes('-hover')){
+        if(src.indexOf('-hover') >= 0){
             splitSrc = src.split('-hover');
             parent.children[0].setAttribute('src', (splitSrc[0] + '.svg'));
         } else {
