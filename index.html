@@ -1918,9 +1918,8 @@
           return document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image", "1.1");
         }
 
-        console.log(supportsSVG());
-
-        if (supportsSVG() == false || document.querySelector == false){
+        //If the browser doesn't support any of these features, show the 'your browser is too old' overlay
+        if (supportsSVG() == false || document.querySelector == false || document.addEventListener == false){
             document.getElementById('orientation-overlay').removeAttribute('hidden');
         } else {
             function addJavaScript(file){
