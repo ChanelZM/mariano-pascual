@@ -14,6 +14,7 @@
             count[slideInfo.slideshow.id] == 0 ? count[slideInfo.slideshow.id] = slideInfo.amount - 1 : count[slideInfo.slideshow.id]--;
             animateSlideshow(count[slideInfo.slideshow.id], slideInfo);
         } else {
+            console.log('next');
             count[slideInfo.slideshow.id] == slideInfo.amount - 1 ? count[slideInfo.slideshow.id] = 0 : count[slideInfo.slideshow.id]++;
             animateSlideshow(count[slideInfo.slideshow.id], slideInfo);
         }
