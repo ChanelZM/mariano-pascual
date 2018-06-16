@@ -13,7 +13,7 @@
         }
 
 
-        if(orientation == 'Landscape' && window.innerWidth < 1088 && document.getElementById('browser-old-overlay').hasAttribute('hidden')){
+        if(orientation == 'Landscape' && window.innerWidth < 1088 && document.getElementById('orientation-overlay').hasAttribute('hidden')){
             document.getElementById('orientation-overlay').removeAttribute('hidden');
         } else {
             document.getElementById('orientation-overlay').setAttribute('hidden', '');
