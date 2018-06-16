@@ -387,6 +387,7 @@ p {
 }
 .btn1-list__item_big .btn1-list__link {
     padding: 0.4rem;
+    background-color: #DADAD3;
 }
 .btn1-list__item:not(:first-child){
     margin-left: -2px;
@@ -1764,6 +1765,7 @@ svg #ball {
     position: static;
     flex-direction: column;
     margin-bottom: 4rem;
+    min-height: 8rem;
     align-items: center;
 }
 .overlay__msg .btn1-list__item {
