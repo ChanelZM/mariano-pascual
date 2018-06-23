@@ -8,7 +8,11 @@
             if(document.querySelector('.bottom-nav').className.indexOf('hidden') >= 0){
                 document.querySelector('.bottom-nav').classList.remove('hidden');
             }
-            e.target.parentNode.classList.add('hidden');
+            if(e.target.parentNode.parentNode.parentNode.parentNode.className.indexOf('detail') >= 0){
+                e.target.parentNode.parentNode.parentNode.parentNode.classList.add('hidden');
+            } else {
+                e.target.parentNode.classList.add('hidden');
+            }
         });
     }
 })();
