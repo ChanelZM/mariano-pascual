@@ -860,7 +860,7 @@ a {
     padding: 0;
     width: 10rem;
     left: -0.5rem;
-    top: 1.7rem;
+    top: 1.5rem;
     background-color: #DADAD3;
     border-style: solid;
     border-width: 2px;
@@ -889,6 +889,7 @@ a {
     padding: 0.3rem 3rem 0 3rem;
 }
 .mac-bar_left .mac-bar__item {
+    position: static;
     margin-right: 1rem;
     -webkit-transform: translateY(-0.2rem);
     transform: translateY(-0.2rem);
