@@ -5,8 +5,8 @@
             clickSound = document.querySelector('.click-sound'),
             scrollbars = document.querySelectorAll('.scrollbar'),
             deviceApps = [document.querySelector('#latestwork'), document.querySelector('#about'), document.querySelector('#projects')],
-            projectInfoButtons = document.querySelectorAll('.see-project-info'),
-            projectInfoClose = document.querySelectorAll('.project-info-close'),
+            projectInfoIcons = document.querySelectorAll('.info-icon'),
+            projectInfoButtons = document.querySelectorAll('.see-project-info');
             projectTitles = document.querySelectorAll('.project__desc .desktop-folder__title-span');
 
         var i;
@@ -117,13 +117,12 @@
             printJS('https://chanelzm.github.io/mariano-pascual/PrintArtwork.pdf', 'pdf');
         }
 
-        function toggleProjectInfo(info, state){
-            if(state == 'open'){
+        function toggleProjectInfo(info){
+            if(info.querySelector('.folder-content').className.indexOf('hidden') >= 0){
                 info.querySelector('.folder-content').classList.remove('hidden');
                 info.querySelector('.see-project-info').classList.add('hidden');
                 info.querySelector('.desktop-folder__title-span').classList.remove('hidden');
             } else {
-                console.log(info);
                 info.querySelector('.folder-content').classList.add('hidden');
                 info.querySelector('.see-project-info').classList.remove('hidden');
                 info.querySelector('.desktop-folder__title-span').classList.add('hidden');
@@ -147,14 +146,9 @@
                 projectInfos[i].classList.add('hidden');
             }
 
-            for(i = 0; i < projectInfoButtons.length; i++){
-                projectInfoButtons[i].addEventListener('click', function(e){
-                    toggleProjectInfo(e.target.parentNode.parentNode, 'open');
-                });
-            }
-            for(i = 0; i < projectInfoClose.length; i++){
-                projectInfoClose[i].addEventListener('click', function(e){
-                    toggleProjectInfo(e.target.parentNode.parentNode.parentNode, 'close');
+            for(i = 0; i < projectInfoIcons.length; i++){
+                projectInfoIcons[i].addEventListener('click', function(e){
+                    toggleProjectInfo(e.target.parentNode.parentNode);
                 });
             }
         }

@@ -141,7 +141,8 @@ a {
 .body-wrap {
     width: 100vw;
     height: 100vh;
-    background-color: #EC9696;
+    background-image: url('../img/pattern-grid.png');
+    background-size: 105rem;
 }
 .close {
     position: absolute;
@@ -465,17 +466,29 @@ a {
     display: -webkit-flex;
     display: -moz-flex;
     display: flex;
-    -webkit-align-items: flex-start;
-    -moz-align-items: flex-start;
-    align-items: flex-start;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    flex-wrap: wrap;
     margin-top: 16px;
     margin-top: 1rem;
 }
+.aboutme-content {
+    width: 100%;
+    font-size: 1.4rem;
+    text-align: center;
+}
 .about__images {
-    padding-bottom: 2rem;
     padding-right: 1.9rem;
+    margin: 3rem 0;
+}
+.aboutme-content p {
+    margin: 5rem 0;
 }
 .head {
+    height: 12rem;
     width: 12rem;
 }
 .title1 {
@@ -1240,7 +1253,7 @@ a {
 }
 #grid, .grid {
     background-image: url('../img/pattern-grid.png');
-    background-size: 96rem;
+    background-size: 105rem;
 }
 #red-cow-pattern, .red-cow-pattern {
     background-image: url('../img/pattern-redcow.png');
@@ -1469,6 +1482,9 @@ a {
     width: 30rem;
     box-shadow: -0.6rem 0.6rem 0 rgba(29, 30, 28, 0.26);
     z-index: 1;
+}
+.info-icon {
+    display: none;
 }
 .project__desc_small {
     height: 9rem;
@@ -2176,12 +2192,18 @@ svg #ball {
     .tab {
         padding: 1rem;
     }
+    .aboutme-content p {
+        margin: 3rem 0;
+        font-size: 1.1rem;
+    }
     .about__images {
         padding-bottom: 1rem;
-        padding-right: 1rem;
+        padding-right: 2rem;
+        margin: 0.2rem 0 0 0;
     }
     .head {
-        width: 11rem;
+        width: 10.5rem;
+        height: 10.5rem;
     }
     .title1 {
         font-size: 1.9rem;
@@ -2732,6 +2754,7 @@ svg #ball {
         height: 21.3rem;
     }
     .about-wrap {
+        height: 14.5rem;
         margin-top: 1.4rem;
         max-width: 34.5rem;
     }
@@ -2748,11 +2771,15 @@ svg #ball {
     .btn1-list__item_big {
         font-size: 0.9rem;
     }
-    .head {
-        width: 7rem;
+    .about__images {
+        margin: 1.2rem 0 0 0;
     }
-    .about-wrap {
-        height: 14.5rem;
+    .head {
+        width: 8rem;
+        height: 8rem;
+    }
+    .aboutme-content p {
+        font-size: 1rem;
     }
     .folder-content__title2 {
         margin: 0.5rem 0;
@@ -3244,6 +3271,13 @@ svg #ball {
         border-bottom: 3px solid black;
         z-index: 2;
     }
+    .info-icon {
+        display: block;
+        position: absolute;
+        width: 2rem;
+        right: 0;
+        top: 0;
+    }
     .project__desc p {
         padding: 0 0 1rem 0;
         margin: 0;
@@ -3283,6 +3317,9 @@ svg #ball {
     .project__desc .close {
         display: none;
     }
+    .project__desc .detail__title {
+        position: relative;
+    }
     .detail > .close {
         top: 0.5rem;
         left: 0.3rem;
@@ -3305,17 +3342,19 @@ svg #ball {
     }
     .about__images {
         padding-right: 0;
+        margin: 0 0 0.5rem 0;
     }
     .about-wrap {
         -moz-box-sizing: border-box;
         box-sizing: border-box;
         height: -webkit-calc(100% - 4rem);
         height: calc(100% - 4rem);
+        max-width: 100%;
         margin-top: 3.4rem;
     }
     .section2 {
         display: block;
-        max-width: 33rem;
+        max-width: 40rem;
         margin: 0.1rem auto;
         text-align: center;
     }
@@ -3334,10 +3373,16 @@ svg #ball {
         -moz-flex-direction: column;
         flex-direction: column;
     }
+    .aboutme-content {
+        font-size: 1.2rem;
+    }
     .about__title {
         display: block;
         margin: 0.5rem 0;
         font-size: 1.5rem;
+    }
+    .aboutme-content p {
+        margin: 2rem 0;
     }
     .btn1-list_top {
         display: none;
@@ -3405,11 +3450,17 @@ svg #ball {
         border-bottom: 2px solid black;
     }
     /* ABOUT */
+    .section2 {
+        max-width: 31rem;
+    }
     .head {
         width: 10rem;
     }
     .title1 {
         font-size: 2.3rem;
+    }
+    .aboutme-content p {
+        font-size: 1.1rem;
     }
     .folder-content__title2 {
         font-size: 1.5rem;
@@ -3518,6 +3569,7 @@ svg #ball {
     }
     .section2 {
         max-width: 30rem;
+        padding: 0 1rem;
     }
     .title1 {
         font-size: 2rem;
@@ -3536,6 +3588,9 @@ svg #ball {
     }
     .btn1-list__item_big {
         font-size: 1rem;
+    }
+    .aboutme-content p {
+        font-size: 0.9rem;
     }
 }
 @media screen and (max-width: 38rem) and (orientation: portrait){
@@ -3622,7 +3677,7 @@ svg #ball {
     }
     /* ABOUT */
     #about .folder-content__wrap-overflow {
-        padding: 0 0 4rem 0;
+        padding: 0;
     }
     .about-wrap {
         height: -webkit-calc(100% - 3.1rem);
@@ -3634,7 +3689,7 @@ svg #ball {
         top: 2rem;
     }
     .folder-content__title2 {
-        margin: 1rem 0;
+        margin: 1rem;
     }
     .arrow-down {
         bottom: 1rem;
