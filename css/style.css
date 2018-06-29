@@ -731,9 +731,10 @@ a {
 }
 .gallery__icon {
     display: block;
-    width: 10rem;
+    width: 7rem;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 2rem;
 }
 .gallery__title {
     margin: 0;
@@ -2495,6 +2496,9 @@ svg #ball {
     /* GALLERY */
     .gallery__title {
         font-size: 1.6rem;
+    }
+    .gallery-h3 {
+        font-size: 0.7rem;
     }
 }
 
