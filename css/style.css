@@ -3033,6 +3033,9 @@ svg #ball {
     p {
         line-height: 1.3;
     }
+    .body-wrap {
+        background: #EC9696;
+    }
     .mobile-app {
         position: static;
         height: -webkit-calc(100vh - 11rem);
