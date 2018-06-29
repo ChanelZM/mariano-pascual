@@ -141,7 +141,7 @@ a {
 .body-wrap {
     width: 100vw;
     height: 100vh;
-    background-image: url('../img/pattern-grid.png');
+    background: url('../img/pattern-grid.png');
     background-size: 105rem;
 }
 .close {
@@ -1237,30 +1237,30 @@ a {
     z-index: 5;
 }
 #pink, .pink {
-    background-color: #EC9696;
+    background: #EC9696;
 }
 #green, .green {
-    background-color: #54B9AD;
+    background: #54B9AD;
 }
 #yellow, .yellow {
-    background-color: #F8D059;
+    background: #F8D059;
 }
 #blue, .blue {
-    background-color: #50C1EC;
+    background: #50C1EC;
 }
 #black, .black {
-    background-color: black;
+    background: black;
 }
 #grid, .grid {
-    background-image: url('../img/pattern-grid.png');
+    background: url('../img/pattern-grid.png');
     background-size: 105rem;
 }
 #red-cow-pattern, .red-cow-pattern {
-    background-image: url('../img/pattern-redcow.png');
+    background: url('../img/pattern-redcow.png');
     background-size: 90rem;
 }
 #space, .space {
-    background-image: url('../img/pattern-space.png');
+    background: url('../img/pattern-space.png');
     background-size: 108rem;
 }
 #grid,
