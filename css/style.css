@@ -134,6 +134,7 @@ a {
 }
 .desktop-folder__title.drag {
     cursor: move;
+    cursor: url('../img/cursor-move.png'), default;
 }
 .body-overflow-h {
     overflow: hidden;
