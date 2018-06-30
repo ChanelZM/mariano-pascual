@@ -99,12 +99,13 @@ a {
     cursor: pointer;
     cursor: url('../img/cursor-pointer.png'), default;
 }
-img {
-	opacity: 1;
-	transition: opacity 0.8s;
-}
 img[data-src] {
 	opacity: 0;
+    transition: opacity 0.8s;
+}
+img {
+	opacity: 1;
+    transition: opacity 0.8s;
 }
 .opac::before {
     opacity: 0;
