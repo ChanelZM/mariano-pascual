@@ -71,6 +71,11 @@
             section.removeAttribute('hidden');
             section.classList.remove('hidden');
         }
+
+        [].forEach.call(section.querySelectorAll('img[data-src]'), function(img) {
+            img.setAttribute('src', img.getAttribute('data-src'));
+            img.removeAttribute('data-src');
+        });
         //If you're viewing this page on a touch device, styling is different
         if (window.innerWidth < 1088) {
             var folders = document.querySelectorAll('.mobile-app');
