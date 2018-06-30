@@ -101,9 +101,8 @@ a {
 }
 img {
 	opacity: 1;
-	transition: opacity 0.3s;
+	transition: opacity 0.8s;
 }
-
 img[data-src] {
 	opacity: 0;
 }
@@ -2383,8 +2382,12 @@ svg #ball {
     }
     .detail_b
     .desktop-folder__title-background {
-        -webkit-transform: scaleX(1.02);
-        transform: scaleX(1.02);
+        -webkit-transform: scaleX(1.15);
+        transform: scaleX(1.15);
+    }
+    .project__desc .desktop-folder__title-background {
+        -webkit-transform: none;
+        transform: none;
     }
     .detail_c {
         height: 40.5rem;
