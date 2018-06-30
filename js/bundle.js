@@ -439,7 +439,6 @@
                 info.querySelector('.see-project-info').classList.add('hidden');
                 info.querySelector('.desktop-folder__title-span').classList.remove('hidden');
             } else {
-                console.log(info);
                 info.querySelector('.folder-content').classList.add('hidden');
                 info.querySelector('.see-project-info').classList.remove('hidden');
                 info.querySelector('.desktop-folder__title-span').classList.add('hidden');
@@ -454,6 +453,13 @@
         document.querySelector('body').addEventListener('click', function(){
             clickSound.autoplay = true;
             clickSound.load();
+        });
+
+        [].forEach.call(document.querySelectorAll('img[data-src]'), function(img) {
+            img.setAttribute('src', img.getAttribute('data-src'));
+            img.onload = function() {
+                img.removeAttribute('data-src');
+            };
         });
 
         if(window.innerWidth < 1088){

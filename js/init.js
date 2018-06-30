@@ -139,6 +139,13 @@
             clickSound.load();
         });
 
+        [].forEach.call(document.querySelectorAll('img[data-src]'), function(img) {
+            img.setAttribute('src', img.getAttribute('data-src'));
+            img.onload = function() {
+                img.removeAttribute('data-src');
+            };
+        });
+
         if(window.innerWidth < 1088){
             var projectInfos = document.querySelectorAll('.project__desc .folder-content');
 
