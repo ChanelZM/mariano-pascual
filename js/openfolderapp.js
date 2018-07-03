@@ -71,7 +71,7 @@
             section.removeAttribute('hidden');
             section.classList.remove('hidden');
         }
-
+        console.log(section.className);
         if(section.className.indexOf('lazyload') >= 0){
             loadImages(section);
         }

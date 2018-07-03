@@ -547,7 +547,7 @@
             section.removeAttribute('hidden');
             section.classList.remove('hidden');
         }
-
+        console.log(section.className);
         if(section.className.indexOf('lazyload') >= 0){
             loadImages(section);
         }
@@ -905,6 +905,8 @@
 
             document.getElementById(id).classList.remove('hidden');
 
+            loadImages(document.querySelector(e.target.hash));
+
             for(i = 0; i < windows.length; i++){
                 windows[i].classList.remove('hidden');
             }
@@ -917,6 +919,13 @@
             }
         }
     };
+
+    function loadImages(parent){
+        [].forEach.call(parent.querySelectorAll('img[data-src]'), function(img) {
+            img.setAttribute('src', img.getAttribute('data-src'));
+            img.removeAttribute('data-src');
+        });
+    }
 
     for(i = 0; i < folderLinks.length; i++){
         folderLinks[i].addEventListener('click', detail.open);
