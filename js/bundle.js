@@ -924,6 +924,10 @@
         [].forEach.call(parent.querySelectorAll('img[data-src]'), function(img) {
             img.setAttribute('src', img.getAttribute('data-src'));
             img.removeAttribute('data-src');
+            img.style.opacity = '0';
+            setTimeout(function(){
+                img.style.opacity = '1';
+            }, 150);
         });
     }
 
