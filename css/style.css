@@ -99,13 +99,20 @@ a {
     cursor: pointer;
     cursor: url('../img/cursor-pointer.png'), default;
 }
-img[data-src] {
-	opacity: 0;
-    transition: opacity 0.8s;
-}
 img {
 	opacity: 1;
     transition: opacity 0.8s;
+}
+img[data-src] {
+	opacity: 0;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 .opac::before {
     opacity: 0;
@@ -1439,6 +1446,7 @@ img {
     box-shadow: none;
 }
 .detail_d_wrap {
+    height: 0;
     overflow: hidden;
 }
 .detail_d > .folder-content.js {
@@ -2407,6 +2415,9 @@ svg #ball {
     .detail_c
     .desktop-folder__title {
         width: 40rem;
+    }
+    .detail .detail_d_wrap {
+        height: 0;
     }
     .detail_d__horizontal {
         height: 25.15rem;

@@ -72,10 +72,10 @@
             section.classList.remove('hidden');
         }
 
-        [].forEach.call(section.querySelectorAll('img[data-src]'), function(img) {
-            img.setAttribute('src', img.getAttribute('data-src'));
-            img.removeAttribute('data-src');
-        });
+        if(section.className.indexOf('lazyload') >= 0){
+            loadImages(section);
+        }
+
         //If you're viewing this page on a touch device, styling is different
         if (window.innerWidth < 1088) {
             var folders = document.querySelectorAll('.mobile-app');
@@ -88,6 +88,13 @@
             }
             section.classList.remove('hidden');
         }
+    }
+
+    function loadImages(parent){
+        [].forEach.call(parent.querySelectorAll('img[data-src]'), function(img) {
+            img.setAttribute('src', img.getAttribute('data-src'));
+            img.removeAttribute('data-src');
+        });
     }
 
     function toggleDropDown(e){
