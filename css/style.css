@@ -101,7 +101,7 @@ a {
 }
 img {
 	opacity: 1;
-    transition: opacity 0.8s ease 0.5s;
+    transition: opacity 0.8s ease;
 }
 img[data-src] {
 	opacity: 0;
