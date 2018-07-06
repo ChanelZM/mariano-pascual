@@ -1311,12 +1311,12 @@ img[data-src] {
 
 /* PROJECT LIST */
 .project-list {
-    display: -webkit-flex;
+    /* display: -webkit-flex;
     display: -moz-flex;
     display: flex;
     -webkit-flex-wrap: wrap;
     -moz-flex-wrap: wrap;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
     display: -webkit-grid;
     display: -moz-grid;
     display: -ms-grid;
@@ -1336,7 +1336,7 @@ img[data-src] {
 }
 .project-list__item {
     display: inline-block;
-    /* width: 19%; */
+    width: 19%;
     position: relative;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -1344,6 +1344,11 @@ img[data-src] {
     flex: 1;
     padding: 0.5rem;
     text-align: center;
+}
+@supports (display: grid){
+    .project-list__item {
+        width: auto;
+    }
 }
 .project-list__preview {
     -moz-box-sizing: border-box;
