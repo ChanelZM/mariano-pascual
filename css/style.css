@@ -2362,9 +2362,6 @@ svg #ball {
         height: -webkit-calc(100vh - 16.75rem);
         height: calc(100vh - 16.75rem);
     }
-    .detail_d .folder-content__wrap-overflow {
-        height: 0;
-    }
     .desktop-folder_open .detail__title-big {
         width: -webkit-calc(100vw - 8rem);
         width: calc(100vw - 8rem);
@@ -2440,6 +2437,9 @@ svg #ball {
         top: 15vh;
     }
     .detail_d .folder-content__wrap-overflow {
+        height: 0;
+    }
+    .detail_d > .folder-content.js {
         height: 0;
     }
     .detail_d__horizontal .folder-content.js {
@@ -2669,6 +2669,9 @@ svg #ball {
     }
     .detail_c .folder-content__wrap-overflow {
         height: 32.75rem;
+    }
+    .detail_d > .folder-content.js {
+        height: 0;
     }
     .detail_d__horizontal {
         height: 22.95rem;
