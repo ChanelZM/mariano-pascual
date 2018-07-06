@@ -3040,6 +3040,9 @@ svg #ball {
     }
 }
 @media screen and (orientation: portrait){
+    .mac-bar {
+        background-color:#DADAD3;
+    }
     /* TOUCH DEVICE*/
     .touch {
         overflow: visible;
