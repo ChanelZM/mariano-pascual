@@ -1327,6 +1327,7 @@ img[data-src] {
     overflow-x: hidden;
 }
 .project-list__item {
+    width: 20%;
     position: relative;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
