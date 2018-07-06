@@ -1317,6 +1317,14 @@ img[data-src] {
     -webkit-flex-wrap: wrap;
     -moz-flex-wrap: wrap;
     flex-wrap: wrap;
+    display: -webkit-grid;
+    display: -moz-grid;
+    display: -ms-grid;
+    display: grid;
+    -webkit-grid-template-columns: auto auto auto auto auto;
+    -moz-grid-template-columns: auto auto auto auto auto;
+    -ms-grid-template-columns: auto auto auto auto auto;
+    grid-template-columns: auto auto auto auto auto;
 }
 .folder-content__wrap-overflow {
     -moz-box-sizing: border-box;
@@ -1328,7 +1336,7 @@ img[data-src] {
 }
 .project-list__item {
     display: inline-block;
-    width: 19%;
+    /* width: 19%; */
     position: relative;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
