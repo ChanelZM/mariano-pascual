@@ -1393,7 +1393,7 @@ img[data-src] {
     border: 2px solid black;
     box-shadow: -0.6rem 0.6rem 0 rgba(29, 30, 28, 0.26);
     cursor: move;
-    cursor: url('../img/cursor-move.png'), move;
+    cursor: url('../img/cursor-drag.png'), move;
 }
 
 /* DETAILS */
@@ -2122,6 +2122,9 @@ svg #ball {
     background-color: #E7E7E1;
     z-index: 999;
 }
+#orientation-overlay {
+    background-color: #EC9696;
+}
 .overlay__msg {
     position: absolute;
     left: 50%;
@@ -2152,7 +2155,11 @@ svg #ball {
     margin-top: 2rem;
 }
 .orient-msg__img {
-    width: 80%;
+    width: 34%;
+}
+.orient-msg__h2 {
+    font-weight: normal;
+    font-size: 1.3rem;
 }
 .overlay__msg  .porn__title {
     width: 100%;
